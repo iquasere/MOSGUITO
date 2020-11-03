@@ -1,0 +1,23 @@
+.App {
+  background-color: #282c34;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.header {
+  font-size: calc(10px + 2vmin);
+  color: white;
+}
+
+.main {
+  margin-top: 32px;
+  width: 100%;
+  max-width: 600px;
+}
+
+.form {
+  display: flex;
+  flex-direction: column;
+}
