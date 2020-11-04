@@ -26,21 +26,8 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="75167860-5315-49c7-8bd4-159fb3049cae" name="Default Changelist" comment="First steps">
-      <change afterPath="$PROJECT_DIR$/src/components/labelledCheckbox.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/components/labelledNumberField.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/components/labelledSelect.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/components/labelledTextFiel.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/utils/keggMaps.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/package.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/App.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/App.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/App.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/App.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/accordions.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/accordions.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/fieldGenerators.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/fieldGenerators.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/utils/defaultValues.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/utils/defaultValues.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/utils/options.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/utils/options.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/workshop_webdev_29-10-2020-mosguito.zip" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/yarn.lock" beforeDir="false" afterPath="$PROJECT_DIR$/yarn.lock" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/package-lock.json" beforeDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -124,7 +111,7 @@
       <workItem from="1603986423461" duration="11129000" />
       <workItem from="1604053332133" duration="25191000" />
       <workItem from="1604404991278" duration="4100000" />
-      <workItem from="1604481992349" duration="11113000" />
+      <workItem from="1604481992349" duration="12342000" />
     </task>
     <task id="LOCAL-00001" summary="First steps">
       <created>1603985640072</created>
@@ -147,7 +134,14 @@
       <option name="project" value="LOCAL" />
       <updated>1604402491743</updated>
     </task>
-    <option name="localTasksCounter" value="4" />
+    <task id="LOCAL-00004" summary="Get all the arguments except those damn accordions">
+      <created>1604498978832</created>
+      <option name="number" value="00004" />
+      <option name="presentableId" value="LOCAL-00004" />
+      <option name="project" value="LOCAL" />
+      <updated>1604498978833</updated>
+    </task>
+    <option name="localTasksCounter" value="5" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -179,7 +173,8 @@
   </component>
   <component name="VcsManagerConfiguration">
     <MESSAGE value="First steps" />
-    <option name="LAST_COMMIT_MESSAGE" value="First steps" />
+    <MESSAGE value="Get all the arguments except those damn accordions" />
+    <option name="LAST_COMMIT_MESSAGE" value="Get all the arguments except those damn accordions" />
   </component>
   <component name="WindowStateProjectService">
     <state x="541" y="252" key="#com.intellij.fileTypes.FileTypeChooser" timestamp="1604403051121">
@@ -214,10 +209,11 @@
       <screen x="0" y="0" width="1600" height="900" />
     </state>
     <state x="301" y="95" key="SettingsEditor/0.0.1600.900/1600.0.1360.768@0.0.1600.900" timestamp="1604483707179" />
-    <state x="320" y="137" key="Vcs.Push.Dialog.v2" timestamp="1604402502725">
+    <state x="320" y="137" key="Vcs.Push.Dialog.v2" timestamp="1604498992746">
       <screen x="0" y="0" width="1600" height="900" />
     </state>
     <state x="320" y="137" key="Vcs.Push.Dialog.v2/0.0.1600.900/1600.-124.1280.1024@0.0.1600.900" timestamp="1604402502725" />
+    <state x="320" y="137" key="Vcs.Push.Dialog.v2/0.0.1600.900/1600.0.1360.768@0.0.1600.900" timestamp="1604498992746" />
     <state x="1872" y="117" key="Vcs.Push.Dialog.v2/0.0.1600.900/1600.0.1360.768@1600.0.1360.768" timestamp="1603985650978" />
   </component>
 </project>
