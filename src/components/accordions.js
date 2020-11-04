@@ -1,127 +1,72 @@
-import React from 'react';
-import { withStyles } from '@material-ui/core/styles';
-import MuiAccordion from '@material-ui/core/Accordion';
-import MuiAccordionSummary from '@material-ui/core/AccordionSummary';
-import MuiAccordionDetails from '@material-ui/core/AccordionDetails';
-import Typography from '@material-ui/core/Typography';
+import React from 'react'
+import { Accordion } from 'semantic-ui-react';
 
-const Accordion = withStyles({
-  root: {
-    border: '1px solid rgba(0, 0, 0, .125)',
-    boxShadow: 'none',
-    '&:not(:last-child)': {
-      borderBottom: 0,
-    },
-    '&:before': {
-      display: 'none',
-    },
-    '&$expanded': {
-      margin: 'auto',
-    },
+const AccordionContent = (content) => (
+  <div className="indent">
+    {content}
+  </div>
+)
+
+const SubAccordion1Panels = [
+  {
+    title: 'Sub Accordion 11',
+    content: { content: AccordionContent('11 Content'), key: '11-content'} ,
+    key: 'sub-accordion-11'
+  }, {
+    title: 'Sub Accordion 12',
+    content: { content: AccordionContent('12 Contents'), key: '12-content' },
+    key: 'sub-accordion-12'
+  }, {
+    title: 'Sub Accordion 13',
+    content: { content: AccordionContent('13 Contents'), key: '13-content' },
+    key: 'sub-accordion-13'
   },
-  expanded: {},
-})(MuiAccordion);
+]
 
-const AccordionSummary = withStyles({
-  root: {
-    backgroundColor: 'rgba(0, 0, 0, .03)',
-    borderBottom: '1px solid rgba(0, 0, 0, .125)',
-    marginBottom: -1,
-    minHeight: 56,
-    '&$expanded': {
-      minHeight: 56,
-    },
-  },
-  content: {
-    '&$expanded': {
-      margin: '12px 0',
-    },
-  },
-  expanded: {},
-})(MuiAccordionSummary);
+const SubAccordion1Content = (
+  <div className="indent">
+    <Accordion.Accordion
+      style={{marginLeft: "20px"}}
+      className="no-padding"
+      panels={SubAccordion1Panels}
+    />
+  </div>
+)
 
-const AccordionDetails = withStyles((theme) => ({
-  root: {
-    padding: theme.spacing(2),
-  },
-}))(MuiAccordionDetails);
+const SubAccordionPanels = [
+  {
+    title: 'Sub Accordion 1',
+    content: { content: SubAccordion1Content, key: 'sa1-content' },
+    key: 'sub-accordion-1'
+  }, {
+    title: 'Sub Accordion 2',
+    content: { content: AccordionContent('SA2 Content'), key: 'sa2-content' },
+    key: 'sub-accordion-2'
+  }, {
+    title: 'Sub Accordion 3',
+    content: { content: AccordionContent('SA3 Content'), key: 'sa3-content' },
+    key: 'sub-accordion-3'
+  }
+]
 
-export default function CustomizedAccordions() {
-  const [expanded, setExpanded] = React.useState('panel1');
+const SubAccordions = (
+  <div className="indent">
+    <Accordion.Accordion
+      className="no-padding"
+      panels={SubAccordionPanels}
+    />
+  </div>
+)
 
-  const handleChange = (panel) => (event, newExpanded) => {
-    setExpanded(newExpanded ? panel : false);
-  };
+const AccordionPanels = [
+  { title: 'Accordion', content: { content: SubAccordions, key: 'sub-accordions' } },
+]
 
-  return (
-    <div>
-      <Accordion square expanded={expanded === 'panel1'} onChange={handleChange('panel1')}>
-        <AccordionSummary aria-controls="panel1d-content" id="panel1d-header">
-          <Typography>Collapsible Group Item #1</Typography>
-        </AccordionSummary>
-        <AccordionDetails>
-          <Accordion square expanded={expanded === 'panel11'} onChange={handleChange('panel1')}>
-        <AccordionSummary aria-controls="panel11d-content" id="panel11d-header">
-          <Typography>Collapsible Group Item #11</Typography>
-        </AccordionSummary>
-        <AccordionDetails>
-          <Typography>
-            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse malesuada lacus ex,
-            sit amet blandit leo lobortis eget. Lorem ipsum dolor sit amet, consectetur adipiscing
-            elit. Suspendisse malesuada lacus ex, sit amet blandit leo lobortis eget.
-          </Typography>
-        </AccordionDetails>
-      </Accordion>
-      <Accordion square expanded={expanded === 'panel12'} onChange={handleChange('panel2')}>
-        <AccordionSummary aria-controls="panel12d-content" id="panel12d-header">
-          <Typography>Collapsible Group Item #12</Typography>
-        </AccordionSummary>
-        <AccordionDetails>
-          <Typography>
-            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse malesuada lacus ex,
-            sit amet blandit leo lobortis eget. Lorem ipsum dolor sit amet, consectetur adipiscing
-            elit. Suspendisse malesuada lacus ex, sit amet blandit leo lobortis eget.
-          </Typography>
-        </AccordionDetails>
-      </Accordion>
-      <Accordion square expanded={expanded === 'panel13'} onChange={handleChange('panel3')}>
-        <AccordionSummary aria-controls="panel13d-content" id="panel13d-header">
-          <Typography>Collapsible Group Item #13</Typography>
-        </AccordionSummary>
-        <AccordionDetails>
-          <Typography>
-            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse malesuada lacus ex,
-            sit amet blandit leo lobortis eget. Lorem ipsum dolor sit amet, consectetur adipiscing
-            elit. Suspendisse malesuada lacus ex, sit amet blandit leo lobortis eget.
-          </Typography>
-        </AccordionDetails>
-      </Accordion>
-        </AccordionDetails>
-      </Accordion>
-      <Accordion square expanded={expanded === 'panel2'} onChange={handleChange('panel2')}>
-        <AccordionSummary aria-controls="panel2d-content" id="panel2d-header">
-          <Typography>Collapsible Group Item #2</Typography>
-        </AccordionSummary>
-        <AccordionDetails>
-          <Typography>
-            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse malesuada lacus ex,
-            sit amet blandit leo lobortis eget. Lorem ipsum dolor sit amet, consectetur adipiscing
-            elit. Suspendisse malesuada lacus ex, sit amet blandit leo lobortis eget.
-          </Typography>
-        </AccordionDetails>
-      </Accordion>
-      <Accordion square expanded={expanded === 'panel3'} onChange={handleChange('panel3')}>
-        <AccordionSummary aria-controls="panel3d-content" id="panel3d-header">
-          <Typography>Collapsible Group Item #3</Typography>
-        </AccordionSummary>
-        <AccordionDetails>
-          <Typography>
-            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse malesuada lacus ex,
-            sit amet blandit leo lobortis eget. Lorem ipsum dolor sit amet, consectetur adipiscing
-            elit. Suspendisse malesuada lacus ex, sit amet blandit leo lobortis eget.
-          </Typography>
-        </AccordionDetails>
-      </Accordion>
-    </div>
-  );
-}
+const AccordionExampleNested = () => (
+  <Accordion
+    defaultActiveIndex={0}
+    panels={AccordionPanels}
+  />
+)
+
+export default AccordionExampleNested

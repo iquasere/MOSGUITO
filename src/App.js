@@ -4,8 +4,6 @@ import {
   Card,
   CardContent,
   CardActions,
-  TextField,
-  Select,
   MenuItem,
   Accordion,
   AccordionSummary,
@@ -13,64 +11,34 @@ import {
   Button
 } from '@material-ui/core'
 import ExpandMoreIcon from '@material-ui/icons/ExpandMore'
-import {
-  ACheckbox,
-  ANumbersField
-} from './components/fieldGenerators'
 import CustomizedAccordions from './components/accordions'
+import LabelledTextField from "./components/labelledTextFiel";
+import LabelledNumberField from "./components/labelledNumberField";
+import LabelledCheckbox from "./components/labelledCheckbox"
+import LabelledSelect from "./components/labelledSelect"
 import ReactApp from './components/subaccordions'
 import { defaultValues } from './utils/defaultValues'
-import { assemblerOptions } from './utils/options'
+import { keggMaps } from './utils/keggMaps'
+import {
+  assemblerOptions,
+  errorModelOptions,
+  markersetOptions,
+  normalizationMethodOptions,
+  keggcharterTaxaLevelOptions
+} from './utils/options'
 import './App.css'
+import AccordionExampleNested from "./components/accordions";
 
 const Main = () => {
 
   const [values, setValues] = useState(defaultValues)
 
   console.log(values)
+  console.log(keggMaps)
 
   const handleChange = (field, value) => {
     const newValue = { ...values, [field]: value }
     setValues(newValue)
-  }
-
-  const checkboxesList = [
-          {
-      checked: values.doAssembly,
-      field: 'doAssembly',
-      label: 'Perform assembly'
-    },
-    {
-      checked: values.downloadUniprot,
-      field: 'downloadUniprot',
-      label: 'Download UniProt'
-    }
-  ]
-
-  const textFieldsList = [
-    {
-      value: values.output,
-      field: 'output',
-      label: 'Output directory to use'
-    }
-  ]
-
-  const intFieldsList = [
-    {
-      value: values.threads,
-      field: 'threads',
-      label: 'Number of threads to use'
-    },
-    {
-      value: values.diamondMaxTargetSeqs,
-      field: 'diamondMaxTargetSeqs',
-      label: 'Number of identifications per protein to be reported by DIAMOND'
-    }
-  ]
-
-  const output_stuff = {
-    span: 'Set the output directory',
-    field: 'output'
   }
 
   const handleSubmit = (ev) => {
@@ -80,14 +48,48 @@ const Main = () => {
     console.log(YAML.stringify(values))
   }
 
-  const LabelledTextField = ({ label, value, onChange }) => {
-    return <div><span>{label}</span>
-            <TextField
-              type='text'
-              fullWidth
-              value={value}
-              onChange={onChange}
-            /></div>
+  const bacon = 'Spicy jalapeno bacon ipsum dolor amet spare ribs picanha'
+
+  const ToggledSection = () => {
+    const [isOpen, setIsOpen] = useState(false)
+    const toggleIsOpen = () => setIsOpen(!isOpen)
+
+    return (
+      <section>
+        <div>
+          <input
+            type='checkbox'
+            checked={isOpen}
+            onChange={toggleIsOpen}
+          />
+          <span>Toggle me senpai</span>
+        </div>
+        {
+          isOpen && (
+            <p>
+              {`${bacon} ${bacon} ${bacon}`}
+            </p>
+          )
+        }
+      </section>
+    )
+  }
+
+  function AssemblerOrErrorModel(props){
+    if (props.doAssembly) {
+      return <LabelledSelect
+        label='Choose assembler'
+        value={values.assembler}
+        onChange={(ev) => handleChange('assembler', ev.target.value)}
+        options={assemblerOptions}
+        />
+    }
+    return <LabelledSelect
+        label='Choose error model'
+        value={values.errorModel}
+        onChange={(ev) => handleChange('errorModel', ev.target.value)}
+        options={errorModelOptions}
+        />
   }
 
   return (
@@ -95,51 +97,83 @@ const Main = () => {
       <form className='form' onSubmit={handleSubmit}>
         <Card>
           <CardContent>
+
             <LabelledTextField
-              label='Output'
+              label='Output directory'
               value={values.output}
               onChange={(ev) => handleChange('output', ev.target.value)}
             />
 
-            <span>Output</span>
-            <TextField
-              type='text'
-              fullWidth
-              value={values.output}
-              onChange={(ev) => handleChange('output', ev.target.value)}
+            <LabelledTextField
+              label='Resources directory'
+              value={values.resourcesDirectory}
+              onChange={(ev) => handleChange('resourcesDirectory', ev.target.value)}
             />
 
-            {
-              intFieldsList.map((box, index) => {
-                return (
-                  <ANumbersField
-                    key={index}
-                    defaultValue={box.value}
-                    updateValue={(ev) => handleChange(box.field, ev.target.value)}
-                    label={box.label}
-                  />
-                )
-              })
-            }
+            <LabelledNumberField
+              label='Number of threads to use'
+              value={values.threads}
+              onChange={(ev) => handleChange('threads', ev.target.value)}
+              />
 
-            <span>Assembler</span>
-            <Select
-                  value={values.assembler}
-                  onChange={(ev) => handleChange('assembler', ev.target.value)}
-                >
-                  {
-                    assemblerOptions.map((option) => {
-                      return (
-                        <MenuItem
-                          key={option}
-                          value={option}
-                        >
-                          {option}
-                        </MenuItem>
-                      )
-                    })
-                  }
-                </Select>
+            <LabelledCheckbox
+                label='Perform assembly'
+                checked={values.doAssembly}
+                setChecked={(ev) => handleChange('doAssembly', ev.target.checked)}
+            />
+
+            <AssemblerOrErrorModel doAssembly={values.doAssembly} />
+
+            <LabelledSelect
+                label='Choose markerset'
+                value={values.markerset}
+                onChange={(ev) => handleChange('markerset', ev.target.value)}
+                options={markersetOptions}
+            />
+
+            <LabelledTextField
+              label='DIAMOND database'
+              value={values.diamondDatabase}
+              onChange={(ev) => handleChange('diamondDatabase', ev.target.value)}
+            />
+
+            <LabelledCheckbox
+                label='Download UniProt'
+                checked={values.downloadUniprot}
+                setChecked={(ev) => handleChange('downloadUniprot', ev.target.checked)}
+            />
+
+            <LabelledNumberField
+              label='Number of identifications per protein'
+              value={values.diamondMaxTargetSeqs}
+              onChange={(ev) => handleChange('diamondMaxTargetSeqs', ev.target.value)}
+            />
+
+            <LabelledSelect
+                label='Choose normalization method'
+                value={values.normalizationMethod}
+                onChange={(ev) => handleChange('normalizationMethod', ev.target.value)}
+                options={normalizationMethodOptions}
+            />
+
+            <LabelledSelect
+                label='Choose the taxonomic level to represent with KEGGCharter'
+                value={values.keggcharterTaxaLevel}
+                onChange={(ev) => handleChange('keggcharterTaxaLevel', ev.target.value)}
+                options={keggcharterTaxaLevelOptions}
+            />
+
+            <LabelledNumberField
+              label='Number of taxa to represent with KEGGCharter'
+              value={values.keggcharterNumberOfTaxa}
+              onChange={(ev) => handleChange('keggcharterNumberOfTaxa', ev.target.value)}
+            />
+
+            <p>DAMN ACCORDIONS</p>
+
+            <ToggledSection />
+
+            <AccordionExampleNested/>
 
             <Accordion
               expanded={values.doAssembly}
@@ -155,18 +189,6 @@ const Main = () => {
               </AccordionDetails>
             </Accordion>
 
-            {
-              checkboxesList.map((box, index) => {
-                return (
-                  <ACheckbox
-                    key={index}
-                    checked={box.checked}
-                    setChecked={(ev) => handleChange(box.field, ev.target.checked)}
-                    label={box.label}
-                  />
-                )
-              })
-            }
 
             <CustomizedAccordions/>
 

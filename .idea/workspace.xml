@@ -19,17 +19,51 @@
     <select>
       <path>
         <item name="ROOT" type="e8cecc67:BranchNodeDescriptor" />
-        <item name="REMOTE_ROOT" type="e8cecc67:BranchNodeDescriptor" />
-        <item name="GROUP_NODE:origin" type="e8cecc67:BranchNodeDescriptor" />
+        <item name="LOCAL_ROOT" type="e8cecc67:BranchNodeDescriptor" />
+        <item name="BRANCH:development" type="e8cecc67:BranchNodeDescriptor" />
       </path>
     </select>
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="75167860-5315-49c7-8bd4-159fb3049cae" name="Default Changelist" comment="First steps" />
+    <list default="true" id="75167860-5315-49c7-8bd4-159fb3049cae" name="Default Changelist" comment="First steps">
+      <change afterPath="$PROJECT_DIR$/src/components/labelledCheckbox.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/components/labelledNumberField.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/components/labelledSelect.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/components/labelledTextFiel.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/utils/keggMaps.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/package.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/App.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/App.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/App.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/App.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/accordions.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/accordions.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/fieldGenerators.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/fieldGenerators.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/utils/defaultValues.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/utils/defaultValues.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/utils/options.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/utils/options.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/workshop_webdev_29-10-2020-mosguito.zip" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/yarn.lock" beforeDir="false" afterPath="$PROJECT_DIR$/yarn.lock" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
     <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="FileTemplateManagerImpl">
+    <option name="RECENT_TEMPLATES">
+      <list>
+        <option value="JavaScript File" />
+      </list>
+    </option>
+  </component>
+  <component name="FlaskConsoleOptions" custom-start-script="import sys&#10;sys.path.extend([WORKING_DIR_AND_PYTHON_PATHS])&#10;from flask.cli import ScriptInfo&#10;locals().update(ScriptInfo(create_app=None).load_app().make_shell_context())&#10;print(&quot;Python %s on %s\nApp: %s [%s]\nInstance: %s&quot; % (sys.version, sys.platform, app.import_name, app.env, app.instance_path))">
+    <envs>
+      <env key="FLASK_APP" value="app" />
+    </envs>
+    <option name="myCustomStartScript" value="import sys&#10;sys.path.extend([WORKING_DIR_AND_PYTHON_PATHS])&#10;from flask.cli import ScriptInfo&#10;locals().update(ScriptInfo(create_app=None).load_app().make_shell_context())&#10;print(&quot;Python %s on %s\nApp: %s [%s]\nInstance: %s&quot; % (sys.version, sys.platform, app.import_name, app.env, app.instance_path))" />
+    <option name="myEnvs">
+      <map>
+        <entry key="FLASK_APP" value="app" />
+      </map>
+    </option>
   </component>
   <component name="Git.Settings">
     <option name="RECENT_BRANCH_BY_REPOSITORY">
@@ -51,6 +85,7 @@
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="last_opened_file_path" value="$PROJECT_DIR$" />
     <property name="nodejs_package_manager_path" value="yarn" />
+    <property name="settings.editor.selected.configurable" value="editor.preferences.tabs" />
     <property name="ts.external.directory.path" value="C:\Program Files\JetBrains\PyCharm 2020.2.3\plugins\JavaScriptLanguage\jsLanguageServicesImpl\external" />
   </component>
   <component name="RunManager">
@@ -87,7 +122,9 @@
       <updated>1603985262372</updated>
       <workItem from="1603985263627" duration="1140000" />
       <workItem from="1603986423461" duration="11129000" />
-      <workItem from="1604053332133" duration="24148000" />
+      <workItem from="1604053332133" duration="25191000" />
+      <workItem from="1604404991278" duration="4100000" />
+      <workItem from="1604481992349" duration="11113000" />
     </task>
     <task id="LOCAL-00001" summary="First steps">
       <created>1603985640072</created>
@@ -103,7 +140,14 @@
       <option name="project" value="LOCAL" />
       <updated>1604402450322</updated>
     </task>
-    <option name="localTasksCounter" value="3" />
+    <task id="LOCAL-00003" summary="First steps">
+      <created>1604402491743</created>
+      <option name="number" value="00003" />
+      <option name="presentableId" value="LOCAL-00003" />
+      <option name="project" value="LOCAL" />
+      <updated>1604402491743</updated>
+    </task>
+    <option name="localTasksCounter" value="4" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -114,7 +158,19 @@
       <map>
         <entry key="MAIN">
           <value>
-            <State />
+            <State>
+              <option name="FILTERS">
+                <map>
+                  <entry key="branch">
+                    <value>
+                      <list>
+                        <option value="development" />
+                      </list>
+                    </value>
+                  </entry>
+                </map>
+              </option>
+            </State>
           </value>
         </entry>
       </map>
@@ -126,30 +182,42 @@
     <option name="LAST_COMMIT_MESSAGE" value="First steps" />
   </component>
   <component name="WindowStateProjectService">
-    <state width="1557" height="235" key="GridCell.Tab.0.bottom" timestamp="1604070674126">
+    <state x="541" y="252" key="#com.intellij.fileTypes.FileTypeChooser" timestamp="1604403051121">
       <screen x="0" y="0" width="1600" height="900" />
     </state>
+    <state x="541" y="252" key="#com.intellij.fileTypes.FileTypeChooser/0.0.1600.900/1600.-124.1280.1024@0.0.1600.900" timestamp="1604403051121" />
+    <state width="1557" height="235" key="GridCell.Tab.0.bottom" timestamp="1604403539072">
+      <screen x="0" y="0" width="1600" height="900" />
+    </state>
+    <state width="1557" height="235" key="GridCell.Tab.0.bottom/0.0.1600.900/1600.-124.1280.1024@0.0.1600.900" timestamp="1604403539072" />
     <state width="1557" height="235" key="GridCell.Tab.0.bottom/0.0.1600.900/1600.0.1360.768@0.0.1600.900" timestamp="1604070674126" />
     <state width="1317" height="192" key="GridCell.Tab.0.bottom/0.0.1600.900/1600.0.1360.768@1600.0.1360.768" timestamp="1604052255619" />
-    <state width="1557" height="235" key="GridCell.Tab.0.center" timestamp="1604070674126">
+    <state width="1557" height="235" key="GridCell.Tab.0.center" timestamp="1604403539071">
       <screen x="0" y="0" width="1600" height="900" />
     </state>
+    <state width="1557" height="235" key="GridCell.Tab.0.center/0.0.1600.900/1600.-124.1280.1024@0.0.1600.900" timestamp="1604403539071" />
     <state width="1557" height="235" key="GridCell.Tab.0.center/0.0.1600.900/1600.0.1360.768@0.0.1600.900" timestamp="1604070674126" />
     <state width="1317" height="192" key="GridCell.Tab.0.center/0.0.1600.900/1600.0.1360.768@1600.0.1360.768" timestamp="1604052255618" />
-    <state width="1557" height="235" key="GridCell.Tab.0.left" timestamp="1604070674125">
+    <state width="1557" height="235" key="GridCell.Tab.0.left" timestamp="1604403539071">
       <screen x="0" y="0" width="1600" height="900" />
     </state>
+    <state width="1557" height="235" key="GridCell.Tab.0.left/0.0.1600.900/1600.-124.1280.1024@0.0.1600.900" timestamp="1604403539071" />
     <state width="1557" height="235" key="GridCell.Tab.0.left/0.0.1600.900/1600.0.1360.768@0.0.1600.900" timestamp="1604070674125" />
     <state width="1317" height="192" key="GridCell.Tab.0.left/0.0.1600.900/1600.0.1360.768@1600.0.1360.768" timestamp="1604052255618" />
-    <state width="1557" height="235" key="GridCell.Tab.0.right" timestamp="1604070674126">
+    <state width="1557" height="235" key="GridCell.Tab.0.right" timestamp="1604403539071">
       <screen x="0" y="0" width="1600" height="900" />
     </state>
+    <state width="1557" height="235" key="GridCell.Tab.0.right/0.0.1600.900/1600.-124.1280.1024@0.0.1600.900" timestamp="1604403539071" />
     <state width="1557" height="235" key="GridCell.Tab.0.right/0.0.1600.900/1600.0.1360.768@0.0.1600.900" timestamp="1604070674126" />
     <state width="1317" height="192" key="GridCell.Tab.0.right/0.0.1600.900/1600.0.1360.768@1600.0.1360.768" timestamp="1604052255619" />
-    <state x="320" y="137" key="Vcs.Push.Dialog.v2" timestamp="1604402398369">
+    <state x="301" y="95" key="SettingsEditor" timestamp="1604483707179">
       <screen x="0" y="0" width="1600" height="900" />
     </state>
-    <state x="320" y="137" key="Vcs.Push.Dialog.v2/0.0.1600.900/1600.-124.1280.1024@0.0.1600.900" timestamp="1604402398369" />
+    <state x="301" y="95" key="SettingsEditor/0.0.1600.900/1600.0.1360.768@0.0.1600.900" timestamp="1604483707179" />
+    <state x="320" y="137" key="Vcs.Push.Dialog.v2" timestamp="1604402502725">
+      <screen x="0" y="0" width="1600" height="900" />
+    </state>
+    <state x="320" y="137" key="Vcs.Push.Dialog.v2/0.0.1600.900/1600.-124.1280.1024@0.0.1600.900" timestamp="1604402502725" />
     <state x="1872" y="117" key="Vcs.Push.Dialog.v2/0.0.1600.900/1600.0.1360.768@1600.0.1360.768" timestamp="1603985650978" />
   </component>
 </project>
