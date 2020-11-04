@@ -4,19 +4,16 @@ import {
   Card,
   CardContent,
   CardActions,
-  MenuItem,
   Accordion,
   AccordionSummary,
   AccordionDetails,
   Button
 } from '@material-ui/core'
 import ExpandMoreIcon from '@material-ui/icons/ExpandMore'
-import CustomizedAccordions from './components/accordions'
-import LabelledTextField from "./components/labelledTextFiel";
-import LabelledNumberField from "./components/labelledNumberField";
+import LabelledTextField from "./components/labelledTextFiel"
+import LabelledNumberField from "./components/labelledNumberField"
 import LabelledCheckbox from "./components/labelledCheckbox"
 import LabelledSelect from "./components/labelledSelect"
-import ReactApp from './components/subaccordions'
 import { defaultValues } from './utils/defaultValues'
 import { keggMaps } from './utils/keggMaps'
 import {
@@ -28,6 +25,7 @@ import {
 } from './utils/options'
 import './App.css'
 import AccordionExampleNested from "./components/accordions";
+import KeggcharterAccordion from "./components/keggcharterAccordion";
 
 const Main = () => {
 
@@ -175,24 +173,10 @@ const Main = () => {
 
             <AccordionExampleNested/>
 
-            <Accordion
-              expanded={values.doAssembly}
-              onChange={(_, value) => handleChange('doAssembly', value)}
-            >
-              <AccordionSummary
-                expandIcon={<ExpandMoreIcon />}
-              >
-                KEGG metabolic maps
-              </AccordionSummary>
-              <AccordionDetails>
-
-              </AccordionDetails>
-            </Accordion>
-
-
-            <CustomizedAccordions/>
-
-            <ReactApp/>
+            <KeggcharterAccordion
+                maps={keggMaps}
+                mapsList={values.keggcharterMaps}
+            />
 
           </CardContent>
           <CardActions

@@ -26,8 +26,12 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="75167860-5315-49c7-8bd4-159fb3049cae" name="Default Changelist" comment="First steps">
+      <change afterPath="$PROJECT_DIR$/src/components/keggcharterAccordion.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/package-lock.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/App.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/App.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/fieldGenerators.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/subaccordions.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/utils/defaultValues.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/utils/defaultValues.js" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -111,7 +115,7 @@
       <workItem from="1603986423461" duration="11129000" />
       <workItem from="1604053332133" duration="25191000" />
       <workItem from="1604404991278" duration="4100000" />
-      <workItem from="1604481992349" duration="12342000" />
+      <workItem from="1604481992349" duration="16353000" />
     </task>
     <task id="LOCAL-00001" summary="First steps">
       <created>1603985640072</created>
@@ -141,7 +145,14 @@
       <option name="project" value="LOCAL" />
       <updated>1604498978833</updated>
     </task>
-    <option name="localTasksCounter" value="5" />
+    <task id="LOCAL-00005" summary="There can be only one... install!">
+      <created>1604500568066</created>
+      <option name="number" value="00005" />
+      <option name="presentableId" value="LOCAL-00005" />
+      <option name="project" value="LOCAL" />
+      <updated>1604500568066</updated>
+    </task>
+    <option name="localTasksCounter" value="6" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -174,13 +185,18 @@
   <component name="VcsManagerConfiguration">
     <MESSAGE value="First steps" />
     <MESSAGE value="Get all the arguments except those damn accordions" />
-    <option name="LAST_COMMIT_MESSAGE" value="Get all the arguments except those damn accordions" />
+    <MESSAGE value="There can be only one... install!" />
+    <option name="LAST_COMMIT_MESSAGE" value="There can be only one... install!" />
   </component>
   <component name="WindowStateProjectService">
     <state x="541" y="252" key="#com.intellij.fileTypes.FileTypeChooser" timestamp="1604403051121">
       <screen x="0" y="0" width="1600" height="900" />
     </state>
     <state x="541" y="252" key="#com.intellij.fileTypes.FileTypeChooser/0.0.1600.900/1600.-124.1280.1024@0.0.1600.900" timestamp="1604403051121" />
+    <state x="530" y="197" key="#com.intellij.refactoring.safeDelete.UnsafeUsagesDialog" timestamp="1604501897294">
+      <screen x="0" y="0" width="1600" height="900" />
+    </state>
+    <state x="530" y="197" key="#com.intellij.refactoring.safeDelete.UnsafeUsagesDialog/0.0.1600.900/1600.0.1360.768@0.0.1600.900" timestamp="1604501897294" />
     <state width="1557" height="235" key="GridCell.Tab.0.bottom" timestamp="1604403539072">
       <screen x="0" y="0" width="1600" height="900" />
     </state>
@@ -209,11 +225,11 @@
       <screen x="0" y="0" width="1600" height="900" />
     </state>
     <state x="301" y="95" key="SettingsEditor/0.0.1600.900/1600.0.1360.768@0.0.1600.900" timestamp="1604483707179" />
-    <state x="320" y="137" key="Vcs.Push.Dialog.v2" timestamp="1604498992746">
+    <state x="320" y="137" key="Vcs.Push.Dialog.v2" timestamp="1604500574664">
       <screen x="0" y="0" width="1600" height="900" />
     </state>
     <state x="320" y="137" key="Vcs.Push.Dialog.v2/0.0.1600.900/1600.-124.1280.1024@0.0.1600.900" timestamp="1604402502725" />
-    <state x="320" y="137" key="Vcs.Push.Dialog.v2/0.0.1600.900/1600.0.1360.768@0.0.1600.900" timestamp="1604498992746" />
+    <state x="320" y="137" key="Vcs.Push.Dialog.v2/0.0.1600.900/1600.0.1360.768@0.0.1600.900" timestamp="1604500574664" />
     <state x="1872" y="117" key="Vcs.Push.Dialog.v2/0.0.1600.900/1600.0.1360.768@1600.0.1360.768" timestamp="1603985650978" />
   </component>
 </project>

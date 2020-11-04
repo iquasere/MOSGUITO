@@ -18,6 +18,7 @@ export const defaultValues = {
   diamondMaxTargetSeqs: 1,
   downloadUniprot: true,
   normalizationMethod: normalizationMethodOptions[0],
+  keggcharterMaps: [],
   keggcharterTaxaLevel: keggcharterTaxaLevelOptions[0],
   keggcharterNumberOfTaxa: 10
 }
