@@ -171,7 +171,6 @@ const Main = () => {
 
             <ToggledSection />
 
-            <AccordionExampleNested/>
 
             <KeggcharterAccordion
                 maps={keggMaps}
