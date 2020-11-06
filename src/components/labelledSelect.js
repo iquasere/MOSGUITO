@@ -2,7 +2,7 @@ import {MenuItem, Select} from "@material-ui/core";
 import React from "react";
 
 const LabelledSelect = ({ label, value, onChange, options }) => {
-    return <div><span>{label}{"\t"}</span>
+    return <div><span>{label}</span>
         <Select
             value={value}
             onChange={onChange}
