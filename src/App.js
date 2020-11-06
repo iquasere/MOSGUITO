@@ -118,12 +118,14 @@ const Main = () => {
               label='Output directory'
               value={values.output}
               onChange={(ev) => handleChange('output', ev.target.value)}
+              placeholder={defaultValues.output}
             />
 
             <LabelledTextField
               label='Resources directory'
               value={values.resourcesDirectory}
               onChange={(ev) => handleChange('resourcesDirectory', ev.target.value)}
+              placeholder={defaultValues.resourcesDirectory}
             />
 
             <LabelledNumberField
@@ -151,6 +153,7 @@ const Main = () => {
               label='DIAMOND database'
               value={values.diamondDatabase}
               onChange={(ev) => handleChange('diamondDatabase', ev.target.value)}
+              placeholder={defaultValues.diamondDatabase}
             />
 
             <LabelledCheckbox
