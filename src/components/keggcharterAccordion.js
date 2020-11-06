@@ -6,13 +6,15 @@ import ExpandMoreIcon from '@material-ui/icons/ExpandMore'
 import LabelledCheckbox from "./labelledCheckbox"
 import {defaultValues} from "../utils/defaultValues";
 
-function handleValue(array, value){
+/*
+function handleChange(array, value){
     const index = array.indexOf(value);
     if (index > -1) {
         array.splice(index, 1);
     } else {
         array.push(value)
     }
+    setValues(array)
 }
 
 const SubSubSubAccordion = ({ grandgrandchild }) => {
@@ -31,9 +33,10 @@ const SubSubSubAccordion = ({ grandgrandchild }) => {
             <LabelledCheckbox
                 label={grandgrandgrandchild['name'][0] + ':' + grandgrandgrandchild[1]}
                 checked={values.includes(grandgrandgrandchild['name'][0])}
-                setChecked={(ev) => handleValue(values, grandgrandgrandchild['name'][0])}
+                setChecked={(ev) => handleChange(values, grandgrandgrandchild['name'][0])}
             />
-        }
+            }
+        )
         </AccordionSummary>
 
         <AccordionDetails>
@@ -60,9 +63,21 @@ const SubSubAccordion = ({ grandchild }) => {
         </AccordionDetails>
     </Accordion>)
 }
+*/
 
-const SubAccordion = ({ child, mapsList }) => {
-    const [mapsList, setMapsList] = useState(mapsList)
+            /*{
+                child.children.map((grandchild, index) => {
+                      return (
+                        <SubSubAccordion
+                            key={index}
+                            child={grandchild}
+                        />
+                      )
+                })
+            }-> put this in SubAccordion AccodionDetails under this
+            */
+
+const SubAccordion = ({ child }) => {
     const [isOpen, setIsOpen] = useState(false)
     const toggleIsOpen = () => setIsOpen(!isOpen)
     console.log(child.children)
@@ -77,17 +92,9 @@ const SubAccordion = ({ child, mapsList }) => {
             {child['name']}
         </AccordionSummary>
         <AccordionDetails>
-            {
-                child.children.map((grandchild, index) => {
-                      return (
-                        <SubSubAccordion
-                            key={index}
-                            child={grandchild}
-                            mapsList={mapsList}
-                        />
-                      )
-                })
-            }
+
+
+
         </AccordionDetails>
     </Accordion>
 }
@@ -113,7 +120,6 @@ const KeggcharterAccordion = ({ maps, mapsList }) => {
                         <SubAccordion
                             key={index}
                             child={child}
-                            mapsList={mapsList}
                         />
                       )
                 })

@@ -9,6 +9,8 @@
 .header {
   font-size: calc(10px + 2vmin);
   color: white;
+  width: 50%;
+  text-align: center;
 }
 
 .main {

@@ -4,12 +4,8 @@ import {
   Card,
   CardContent,
   CardActions,
-  Accordion,
-  AccordionSummary,
-  AccordionDetails,
   Button
 } from '@material-ui/core'
-import ExpandMoreIcon from '@material-ui/icons/ExpandMore'
 import LabelledTextField from "./components/labelledTextFiel"
 import LabelledNumberField from "./components/labelledNumberField"
 import LabelledCheckbox from "./components/labelledCheckbox"
@@ -24,7 +20,6 @@ import {
   keggcharterTaxaLevelOptions
 } from './utils/options'
 import './App.css'
-import AccordionExampleNested from "./components/accordions";
 import KeggcharterAccordion from "./components/keggcharterAccordion";
 
 const Main = () => {
@@ -42,7 +37,7 @@ const Main = () => {
   const handleSubmit = (ev) => {
     ev.preventDefault()
 
-    console.log(JSON.stringify(values, null, 2))
+    console.log(JSON.stringify(values, null, 2).toString())
     console.log(YAML.stringify(values))
   }
 
@@ -88,6 +83,29 @@ const Main = () => {
         onChange={(ev) => handleChange('errorModel', ev.target.value)}
         options={errorModelOptions}
         />
+  }
+
+  // Function to download data to a file
+  function Download(data, filename, type) {
+    var file = new Blob([data], {type: type});
+    if (window.navigator.msSaveOrOpenBlob) // IE10+
+        window.navigator.msSaveOrOpenBlob(file, filename);
+    else { // Others
+        var a = document.createElement("a"),
+                url = URL.createObjectURL(file);
+        a.href = url;
+        a.download = filename;
+        document.body.appendChild(a);
+        a.click();
+        setTimeout(function() {
+            document.body.removeChild(a);
+            window.URL.revokeObjectURL(url);
+        }, 0);
+    }
+}
+
+    function DownloadJson() {
+    JSON.stringify(values, null, 2).toString()
   }
 
   return (
@@ -167,11 +185,6 @@ const Main = () => {
               onChange={(ev) => handleChange('keggcharterNumberOfTaxa', ev.target.value)}
             />
 
-            <p>DAMN ACCORDIONS</p>
-
-            <ToggledSection />
-
-
             <KeggcharterAccordion
                 maps={keggMaps}
                 mapsList={values.keggcharterMaps}
@@ -188,8 +201,9 @@ const Main = () => {
               type='submit'
               variant='contained'
               color='secondary'
+              onClick={(ev) => Download(JSON.stringify(values, null, 2), 'config.json', 'json')}
             >
-              Save me plox
+              Download configuration file
             </Button>
           </CardActions>
         </Card>
@@ -202,11 +216,12 @@ const Header = () => {
   return (
     <header className='header'>
       <h1>
-        Mosguito
+        MOSGUITO
       </h1>
-      <a href='ftp://ftp.uniprot.org/pub/databases/uniprot/current_release/knowledgebase/complete/uniprot_sprot.fasta.gz' >
-        <span style={{ color: 'wheat' }}>fasta for free</span>
-      </a>
+      To run MOSCA, you need both a configuration and an experiments files. MOSGUITO is used to obtained configuration files, and you can
+      <a href='https://raw.githubusercontent.com/iquasere/MOSCA/master/config/experiments.tsv' >
+        <span style={{ color: 'wheat' }}> download</span></a> an example of experiments file from MOSCA's repository.
+
     </header>
   )
 }
