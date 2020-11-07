@@ -26,9 +26,15 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="75167860-5315-49c7-8bd4-159fb3049cae" name="Default Changelist" comment="Add space on select fields">
+      <change afterPath="$PROJECT_DIR$/src/utils/uniprotColumns.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/package-lock.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/package.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/App.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/App.css" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/App.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/App.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/labelledTextFiel.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/labelledTextFiel.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/keggcharterAccordion.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/keggcharterAccordion.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/labelledSelect.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/labelledSelect.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/yarn.lock" beforeDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -116,6 +122,9 @@
       <workItem from="1604568812951" duration="1163000" />
       <workItem from="1604593310457" duration="6422000" />
       <workItem from="1604654656637" duration="6147000" />
+      <workItem from="1604677137779" duration="1092000" />
+      <workItem from="1604679740942" duration="253000" />
+      <workItem from="1604680517786" duration="11818000" />
     </task>
     <task id="LOCAL-00001" summary="First steps">
       <created>1603985640072</created>
@@ -229,6 +238,10 @@
       <screen x="0" y="0" width="1600" height="900" />
     </state>
     <state x="530" y="197" key="#com.intellij.refactoring.safeDelete.UnsafeUsagesDialog/0.0.1600.900/1600.0.1360.768@0.0.1600.900" timestamp="1604501897294" />
+    <state x="580" y="205" key="FileChooserDialogImpl" timestamp="1604676473876">
+      <screen x="0" y="0" width="1600" height="900" />
+    </state>
+    <state x="580" y="205" key="FileChooserDialogImpl/0.0.1600.900/1600.0.1360.768@0.0.1600.900" timestamp="1604676473876" />
     <state width="1557" height="235" key="GridCell.Tab.0.bottom" timestamp="1604403539072">
       <screen x="0" y="0" width="1600" height="900" />
     </state>

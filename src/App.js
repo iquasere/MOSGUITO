@@ -219,11 +219,9 @@ const Header = () => {
   return (
     <header className='header'>
       <h1>
-        MOSGUITO
+        MOSca's GUI TO generate config files (MOSGUITO)
       </h1>
-      To run MOSCA, you need both a configuration and an experiments files. MOSGUITO is used to obtained configuration files, and you can
-      <a href='https://raw.githubusercontent.com/iquasere/MOSCA/master/config/experiments.tsv' >
-        <span style={{ color: 'wheat' }}> download</span></a> an example of experiments file from MOSCA's repository.
+      To run MOSCA, you need both a configuration and an experiments files. MOSGUITO is used to obtained configuration files, and you can <a href='https://raw.githubusercontent.com/iquasere/MOSCA/master/config/experiments.tsv' ><span style={{ color: 'wheat' }}>download</span></a> an example of experiments file from MOSCA's repository.
 
     </header>
   )

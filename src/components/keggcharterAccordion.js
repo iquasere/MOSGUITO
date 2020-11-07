@@ -6,7 +6,6 @@ import ExpandMoreIcon from '@material-ui/icons/ExpandMore'
 import LabelledCheckbox from "./labelledCheckbox"
 import {defaultValues} from "../utils/defaultValues";
 
-/*
 function handleChange(array, value){
     const index = array.indexOf(value);
     if (index > -1) {
@@ -14,13 +13,11 @@ function handleChange(array, value){
     } else {
         array.push(value)
     }
-    setValues(array)
 }
 
-const SubSubSubAccordion = ({ grandgrandchild }) => {
+const SubSubSubAccordion = ( props ) => {
     const [isOpen, setIsOpen] = useState(false)
     const toggleIsOpen = () => setIsOpen(!isOpen)
-    console.log(grandgrandchild)
     return (<Accordion
         expanded={isOpen}
         onChange={toggleIsOpen}
@@ -29,11 +26,11 @@ const SubSubSubAccordion = ({ grandgrandchild }) => {
         <AccordionSummary
             expandIcon={<ExpandMoreIcon/>}
         >
-            grandgrandchild['children'].map((grandgrandgrandchild, index) => {
+            props.child.children.map((props, index) => {
             <LabelledCheckbox
-                label={grandgrandgrandchild['name'][0] + ':' + grandgrandgrandchild[1]}
-                checked={values.includes(grandgrandgrandchild['name'][0])}
-                setChecked={(ev) => handleChange(values, grandgrandgrandchild['name'][0])}
+                label={props.child['name'][0] + ':' + props.child[1]}
+                //checked={values.includes(props['name'][0])}
+                //setChecked={(ev) => handleChange(values, props['name'][0])}
             />
             }
         )
@@ -44,56 +41,58 @@ const SubSubSubAccordion = ({ grandgrandchild }) => {
     </Accordion>)
 }
 
-const SubSubAccordion = ({ grandchild }) => {
+const SubSubAccordion = ( props ) => {
     const [isOpen, setIsOpen] = useState(false)
     const toggleIsOpen = () => setIsOpen(!isOpen)
-    console.log(grandchild)
     return (<Accordion
         expanded={isOpen}
         onChange={toggleIsOpen}
-        style={{width: '100%'}}
     >
         <AccordionSummary
             expandIcon={<ExpandMoreIcon/>}
         >
-            {grandchild['name']}
+            {props.child['name']}
         </AccordionSummary>
 
         <AccordionDetails>
+            {
+                props.child.children.map((props, index) => {
+                    return(
+                    <LabelledCheckbox
+                        key={index}
+                        label={props.name[1]}
+                    />)
+                })
+            }
         </AccordionDetails>
     </Accordion>)
 }
-*/
 
-            /*{
-                child.children.map((grandchild, index) => {
+const SubAccordion = ( props ) => {
+    const [isOpen, setIsOpen] = useState(false)
+    const toggleIsOpen = () => setIsOpen(!isOpen)
+    return <Accordion
+        expanded={isOpen}
+        onChange={toggleIsOpen}
+    >
+        <AccordionSummary
+            expandIcon={<ExpandMoreIcon/>}
+        >
+            {props.child['name']}
+        </AccordionSummary>
+        <AccordionDetails>
+
+            {
+                props.child.children.map((grandchild, index) => {
                       return (
                         <SubSubAccordion
                             key={index}
                             child={grandchild}
+
                         />
                       )
                 })
-            }-> put this in SubAccordion AccodionDetails under this
-            */
-
-const SubAccordion = ({ child }) => {
-    const [isOpen, setIsOpen] = useState(false)
-    const toggleIsOpen = () => setIsOpen(!isOpen)
-    console.log(child.children)
-    return <Accordion
-        expanded={isOpen}
-        onChange={toggleIsOpen}
-        style={{ width: '100%' }}
-    >
-        <AccordionSummary
-            expandIcon={<ExpandMoreIcon/>}
-        >
-            {child['name']}
-        </AccordionSummary>
-        <AccordionDetails>
-
-
+            }
 
         </AccordionDetails>
     </Accordion>
