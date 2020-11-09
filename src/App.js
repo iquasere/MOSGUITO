@@ -27,6 +27,7 @@ const Main = () => {
   const [values, setValues] = useState(defaultValues)
 
   console.log(values)
+  console.log(keggMaps)
 
   const handleChange = (field, value) => {
     const newValue = { ...values, [field]: value }
@@ -189,8 +190,7 @@ const Main = () => {
 
             <KeggcharterAccordion
                 maps={keggMaps}
-                keggMapsList={values.keggcharterMaps}
-                //onChange={(ev) => handleChange('keggcharterMaps', ev.target.value)}
+                mapsList={values.keggcharterMaps}
             />
 
           </CardContent>
