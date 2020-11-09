@@ -4,7 +4,9 @@ import {
   Card,
   CardContent,
   CardActions,
-  Button
+  Button,
+  Typography,
+  Divider
 } from '@material-ui/core'
 import LabelledTextField from "./components/labelledTextFiel"
 import LabelledNumberField from "./components/labelledNumberField"
@@ -48,6 +50,12 @@ const Main = () => {
       <form className='form' onSubmit={handleSubmit}>
         <Card>
           <CardContent>
+
+            <Typography variant='body1'>
+              To run MOSCA, you need both a configuration and an experiments files. MOSGUITO is used to obtained configuration files, and you can <a href='https://raw.githubusercontent.com/iquasere/MOSCA/master/config/experiments.tsv' ><span style={{ color: 'red' }}>download</span></a> an example of experiments file from MOSCA's repository.
+            </Typography>
+
+            <Divider style={{ margin: '1rem 0' }} />
 
             <LabelledTextField
               label='Output directory'
@@ -169,10 +177,12 @@ const Main = () => {
 const Header = () => {
   return (
     <header className='header'>
-      <h1>
-        MOSca's GUI TO generate config files (MOSGUITO)
-      </h1>
-      To run MOSCA, you need both a configuration and an experiments files. MOSGUITO is used to obtained configuration files, and you can <a href='https://raw.githubusercontent.com/iquasere/MOSCA/master/config/experiments.tsv' ><span style={{ color: 'wheat' }}>download</span></a> an example of experiments file from MOSCA's repository.
+      <Typography variant='h4'>
+        MOSGUITO
+      </Typography>
+      <Typography variant='h6'>
+        MOSca's GUI TO generate config files
+      </Typography>
 
     </header>
   )
