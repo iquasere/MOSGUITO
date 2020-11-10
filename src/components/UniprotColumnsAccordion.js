@@ -1,9 +1,9 @@
 import Accordion from './Accordion'
 import LabelledCheckbox from "./labelledCheckbox"
 
-const UniprotAccordion = ({ maps, keggMapList, onChange }) => {
+const UniprotColumnsAccordion = ({ columns, uniprotColumnsList, onChange }) => {
   const handleCheck = value => {
-    const newList = [...keggMapList]
+    const newList = [...uniprotColumnsList]
 
     const index = newList.indexOf(value)
     if (index > -1) {
@@ -16,25 +16,20 @@ const UniprotAccordion = ({ maps, keggMapList, onChange }) => {
   }
 
   return (
-    <Accordion title='KEGG metabolic maps'>
+    <Accordion title='UniProt columns'>
       {
-        maps.children.map((category, index) => (
-          <Accordion key={index} title={category.name}>
+        Object.entries(columns).map(([section, columns_list], index) => (
+          <Accordion key={index} title={section}>
             {
-              category.children.map((subCategory, index) => (
-                <Accordion key={index} title={subCategory.name}>
-                  {
-                    subCategory.children.map(({ name }, index) => (
-                      <LabelledCheckbox
-                        key={index}
-                        label={name[1]}
-                        checked={keggMapList.indexOf(name[0]) > -1}
-                        setChecked={() => handleCheck(name[0])}
-                      />)
-                    )
-                  }
-                </Accordion>
-              ))
+              columns_list.map(( pair , index) => (
+                <LabelledCheckbox
+                  key={index}
+                  label={pair[0]}
+                  checked={uniprotColumnsList.indexOf(pair[1]) > -1}
+                  setChecked={() => handleCheck(pair[1])}
+                />
+                )
+              )
             }
           </Accordion>
         ))
@@ -43,4 +38,4 @@ const UniprotAccordion = ({ maps, keggMapList, onChange }) => {
   )
 }
 
-export default KeggcharterAccordion
+export default UniprotColumnsAccordion

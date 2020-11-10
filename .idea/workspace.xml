@@ -20,21 +20,17 @@
       <path>
         <item name="ROOT" type="e8cecc67:BranchNodeDescriptor" />
         <item name="LOCAL_ROOT" type="e8cecc67:BranchNodeDescriptor" />
-        <item name="BRANCH:development" type="e8cecc67:BranchNodeDescriptor" />
+        <item name="BRANCH:main" type="e8cecc67:BranchNodeDescriptor" />
       </path>
     </select>
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="75167860-5315-49c7-8bd4-159fb3049cae" name="Default Changelist" comment="Add space on select fields">
-      <change afterPath="$PROJECT_DIR$/src/utils/uniprotColumns.js" afterDir="false" />
+    <list default="true" id="75167860-5315-49c7-8bd4-159fb3049cae" name="Default Changelist" comment="Broken maps input">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/package-lock.json" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/package.json" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/App.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/App.css" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/App.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/App.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/keggcharterAccordion.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/keggcharterAccordion.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/labelledSelect.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/labelledSelect.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/yarn.lock" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/KeggCharter.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/KeggcharterAccordion.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/keggcharterAccordion.js" beforeDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -77,7 +73,7 @@
   <component name="PropertiesComponent">
     <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/../reCOGnizer" />
     <property name="nodejs_package_manager_path" value="yarn" />
     <property name="settings.editor.selected.configurable" value="editor.preferences.tabs" />
     <property name="ts.external.directory.path" value="C:\Program Files\JetBrains\PyCharm 2020.2.3\plugins\JavaScriptLanguage\jsLanguageServicesImpl\external" />
@@ -124,7 +120,10 @@
       <workItem from="1604654656637" duration="6147000" />
       <workItem from="1604677137779" duration="1092000" />
       <workItem from="1604679740942" duration="253000" />
-      <workItem from="1604680517786" duration="11818000" />
+      <workItem from="1604680517786" duration="16780000" />
+      <workItem from="1604780680797" duration="888000" />
+      <workItem from="1604918673034" duration="14127000" />
+      <workItem from="1605004979445" duration="2578000" />
     </task>
     <task id="LOCAL-00001" summary="First steps">
       <created>1603985640072</created>
@@ -189,7 +188,21 @@
       <option name="project" value="LOCAL" />
       <updated>1604658935185</updated>
     </task>
-    <option name="localTasksCounter" value="10" />
+    <task id="LOCAL-00010" summary="Set subaccordions to pile horizontally instead of vertically&#10;A little space for selection boxes&#10;Built the JSON for UniProt columns">
+      <created>1604753532231</created>
+      <option name="number" value="00010" />
+      <option name="presentableId" value="LOCAL-00010" />
+      <option name="project" value="LOCAL" />
+      <updated>1604753532231</updated>
+    </task>
+    <task id="LOCAL-00011" summary="Broken maps input">
+      <created>1604957590746</created>
+      <option name="number" value="00011" />
+      <option name="presentableId" value="LOCAL-00011" />
+      <option name="project" value="LOCAL" />
+      <updated>1604957590746</updated>
+    </task>
+    <option name="localTasksCounter" value="12" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -206,7 +219,7 @@
                   <entry key="branch">
                     <value>
                       <list>
-                        <option value="development" />
+                        <option value="main" />
                       </list>
                     </value>
                   </entry>
@@ -227,7 +240,9 @@
     <MESSAGE value="Accordions on full fight!" />
     <MESSAGE value="trying to go live" />
     <MESSAGE value="Add space on select fields" />
-    <option name="LAST_COMMIT_MESSAGE" value="Add space on select fields" />
+    <MESSAGE value="Set subaccordions to pile horizontally instead of vertically&#10;A little space for selection boxes&#10;Built the JSON for UniProt columns" />
+    <MESSAGE value="Broken maps input" />
+    <option name="LAST_COMMIT_MESSAGE" value="Broken maps input" />
   </component>
   <component name="WindowStateProjectService">
     <state x="541" y="252" key="#com.intellij.fileTypes.FileTypeChooser" timestamp="1604403051121">
@@ -238,10 +253,11 @@
       <screen x="0" y="0" width="1600" height="900" />
     </state>
     <state x="530" y="197" key="#com.intellij.refactoring.safeDelete.UnsafeUsagesDialog/0.0.1600.900/1600.0.1360.768@0.0.1600.900" timestamp="1604501897294" />
-    <state x="580" y="205" key="FileChooserDialogImpl" timestamp="1604676473876">
+    <state x="580" y="205" key="FileChooserDialogImpl" timestamp="1605006376311">
       <screen x="0" y="0" width="1600" height="900" />
     </state>
-    <state x="580" y="205" key="FileChooserDialogImpl/0.0.1600.900/1600.0.1360.768@0.0.1600.900" timestamp="1604676473876" />
+    <state x="580" y="205" key="FileChooserDialogImpl/0.0.1600.900/1600.0.1360.768@0.0.1600.900" timestamp="1604931335297" />
+    <state x="580" y="205" key="FileChooserDialogImpl/0.0.1600.900@0.0.1600.900" timestamp="1605006376311" />
     <state width="1557" height="235" key="GridCell.Tab.0.bottom" timestamp="1604403539072">
       <screen x="0" y="0" width="1600" height="900" />
     </state>
@@ -270,11 +286,12 @@
       <screen x="0" y="0" width="1600" height="900" />
     </state>
     <state x="301" y="95" key="SettingsEditor/0.0.1600.900/1600.0.1360.768@0.0.1600.900" timestamp="1604483707179" />
-    <state x="320" y="137" key="Vcs.Push.Dialog.v2" timestamp="1604658949182">
+    <state x="320" y="137" key="Vcs.Push.Dialog.v2" timestamp="1604960117004">
       <screen x="0" y="0" width="1600" height="900" />
     </state>
     <state x="320" y="137" key="Vcs.Push.Dialog.v2/0.0.1600.900/1600.-124.1280.1024@0.0.1600.900" timestamp="1604402502725" />
     <state x="320" y="137" key="Vcs.Push.Dialog.v2/0.0.1600.900/1600.0.1360.768@0.0.1600.900" timestamp="1604658949182" />
     <state x="1872" y="117" key="Vcs.Push.Dialog.v2/0.0.1600.900/1600.0.1360.768@1600.0.1360.768" timestamp="1603985650978" />
+    <state x="320" y="137" key="Vcs.Push.Dialog.v2/0.0.1600.900@0.0.1600.900" timestamp="1604960117004" />
   </component>
 </project>

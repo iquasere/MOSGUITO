@@ -14,6 +14,8 @@ import LabelledCheckbox from "./components/labelledCheckbox"
 import LabelledSelect from "./components/labelledSelect"
 import { defaultValues } from './utils/defaultValues'
 import { keggMaps } from './utils/keggMaps'
+import { uniprotColumns } from "./utils/uniprotColumns"
+import { uniprotDatabases } from "./utils/uniprotDatabases"
 import download from './utils/download'
 import {
   assemblerOptions,
@@ -23,7 +25,9 @@ import {
   keggcharterTaxaLevelOptions
 } from './utils/options'
 import './App.css'
-import KeggCharter from './components/KeggCharter'
+import KeggMapsAccordion from './components/KeggMapsAccordion'
+import UniprotColumnsAccordion from './components/UniprotColumnsAccordion'
+import UniprotDatabasesAccordion from './components/UniprotDatabasesAccordion'
 
 const Main = () => {
   const [values, setValues] = useState(defaultValues)
@@ -127,6 +131,18 @@ const Main = () => {
               onChange={(ev) => handleChange('diamondMaxTargetSeqs', ev.target.value)}
             />
 
+            <UniprotColumnsAccordion
+              columns={uniprotColumns}
+              uniprotColumnsList={values.uniprotColumns}
+              onChange={(value) => handleChange('uniprotColumns', value)}
+            />
+
+            <UniprotDatabasesAccordion
+              columns={uniprotDatabases}
+              uniprotDatabasesList={values.uniprotDatabases}
+              onChange={(value) => handleChange('uniprotDatabases', value)}
+            />
+
             <LabelledSelect
               label='Choose normalization method'
               value={values.normalizationMethod}
@@ -147,7 +163,7 @@ const Main = () => {
               onChange={(ev) => handleChange('keggcharterNumberOfTaxa', ev.target.value)}
             />
 
-            <KeggCharter
+            <KeggMapsAccordion
               maps={keggMaps}
               keggMapList={values.keggcharterMaps}
               onChange={(value) => handleChange('keggcharterMaps', value)}

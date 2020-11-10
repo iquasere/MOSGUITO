@@ -17,6 +17,8 @@ export const defaultValues = {
   diamondDatabase: 'resources_directory/uniprot.dmnd',
   diamondMaxTargetSeqs: 1,
   downloadUniprot: true,
+  uniprotColumns: [],
+  uniprotDatabases: [],
   normalizationMethod: normalizationMethodOptions[0],
   keggcharterMaps: [],
   keggcharterTaxaLevel: keggcharterTaxaLevelOptions[0],
