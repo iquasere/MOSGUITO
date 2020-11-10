@@ -1,7 +1,8 @@
 import {TextField} from '@material-ui/core'
 
 const LabelledTextField = ({ label, value, onChange, placeholder }) => {
-return <div><span>{label}</span>
+  return <div style={{ margin: '0.5rem 0' }}>
+  <span>{label}</span>
         <TextField
           type='text'
           fullWidth
