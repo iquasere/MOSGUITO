@@ -1,7 +1,7 @@
 import Accordion from './Accordion'
 import LabelledCheckbox from "./labelledCheckbox"
 
-const KeggCharter = ({ maps, keggMapList, onChange }) => {
+const KeggcharterAccordion = ({ maps, keggMapList, onChange }) => {
   const handleCheck = value => {
     const newList = [...keggMapList]
 
@@ -43,4 +43,4 @@ const KeggCharter = ({ maps, keggMapList, onChange }) => {
   )
 }
 
-export default KeggCharter
+export default KeggcharterAccordion
