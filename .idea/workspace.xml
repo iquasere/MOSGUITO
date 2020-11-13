@@ -27,10 +27,7 @@
   <component name="ChangeListManager">
     <list default="true" id="75167860-5315-49c7-8bd4-159fb3049cae" name="Default Changelist" comment="Broken maps input">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/App.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/App.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/App.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/App.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/KeggCharter.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/KeggcharterAccordion.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/keggcharterAccordion.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/utils/defaultValues.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/utils/defaultValues.js" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -73,7 +70,7 @@
   <component name="PropertiesComponent">
     <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/../reCOGnizer" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
     <property name="nodejs_package_manager_path" value="yarn" />
     <property name="settings.editor.selected.configurable" value="editor.preferences.tabs" />
     <property name="ts.external.directory.path" value="C:\Program Files\JetBrains\PyCharm 2020.2.3\plugins\JavaScriptLanguage\jsLanguageServicesImpl\external" />
@@ -123,7 +120,10 @@
       <workItem from="1604680517786" duration="16780000" />
       <workItem from="1604780680797" duration="888000" />
       <workItem from="1604918673034" duration="14127000" />
-      <workItem from="1605004979445" duration="2578000" />
+      <workItem from="1605004979445" duration="8519000" />
+      <workItem from="1605086745272" duration="865000" />
+      <workItem from="1605180641830" duration="19000" />
+      <workItem from="1605260075016" duration="704000" />
     </task>
     <task id="LOCAL-00001" summary="First steps">
       <created>1603985640072</created>
@@ -286,12 +286,12 @@
       <screen x="0" y="0" width="1600" height="900" />
     </state>
     <state x="301" y="95" key="SettingsEditor/0.0.1600.900/1600.0.1360.768@0.0.1600.900" timestamp="1604483707179" />
-    <state x="320" y="137" key="Vcs.Push.Dialog.v2" timestamp="1604960117004">
+    <state x="320" y="137" key="Vcs.Push.Dialog.v2" timestamp="1605028652616">
       <screen x="0" y="0" width="1600" height="900" />
     </state>
     <state x="320" y="137" key="Vcs.Push.Dialog.v2/0.0.1600.900/1600.-124.1280.1024@0.0.1600.900" timestamp="1604402502725" />
     <state x="320" y="137" key="Vcs.Push.Dialog.v2/0.0.1600.900/1600.0.1360.768@0.0.1600.900" timestamp="1604658949182" />
     <state x="1872" y="117" key="Vcs.Push.Dialog.v2/0.0.1600.900/1600.0.1360.768@1600.0.1360.768" timestamp="1603985650978" />
-    <state x="320" y="137" key="Vcs.Push.Dialog.v2/0.0.1600.900@0.0.1600.900" timestamp="1604960117004" />
+    <state x="320" y="137" key="Vcs.Push.Dialog.v2/0.0.1600.900@0.0.1600.900" timestamp="1605028652616" />
   </component>
 </project>
