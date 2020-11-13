@@ -40,13 +40,17 @@ const Main = () => {
     setValues(newValue)
   }
 
+  const camelToSnakeCase = str => str.replace(/[A-Z]/g, letter => `_${letter.toLowerCase()}`);
+
   const handleSubmit = (ev) => {
     ev.preventDefault()
 
     console.log(JSON.stringify(values, null, 2).toString())
     console.log(YAML.stringify(values))
+    const snake_case_values = {}
+    Object.keys(values).map((key) => snake_case_values[camelToSnakeCase(key)] = values[key])
 
-    download(JSON.stringify(values, null, 2), 'config.json', 'json')
+    download(JSON.stringify(snake_case_values, null, 2), 'config.json', 'json')
   }
 
   return (

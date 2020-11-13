@@ -20,14 +20,14 @@
       <path>
         <item name="ROOT" type="e8cecc67:BranchNodeDescriptor" />
         <item name="LOCAL_ROOT" type="e8cecc67:BranchNodeDescriptor" />
-        <item name="BRANCH:main" type="e8cecc67:BranchNodeDescriptor" />
+        <item name="BRANCH:development" type="e8cecc67:BranchNodeDescriptor" />
       </path>
     </select>
   </component>
   <component name="ChangeListManager">
     <list default="true" id="75167860-5315-49c7-8bd4-159fb3049cae" name="Default Changelist" comment="Broken maps input">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/utils/defaultValues.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/utils/defaultValues.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/App.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/App.js" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -123,7 +123,7 @@
       <workItem from="1605004979445" duration="8519000" />
       <workItem from="1605086745272" duration="865000" />
       <workItem from="1605180641830" duration="19000" />
-      <workItem from="1605260075016" duration="704000" />
+      <workItem from="1605260075016" duration="3079000" />
     </task>
     <task id="LOCAL-00001" summary="First steps">
       <created>1603985640072</created>
@@ -202,7 +202,14 @@
       <option name="project" value="LOCAL" />
       <updated>1604957590746</updated>
     </task>
-    <option name="localTasksCounter" value="12" />
+    <task id="LOCAL-00012" summary="Set defaults&#10;* UPIMAPI columns&#10;* UPIMAPI databses&#10;* KEGGCharter maps">
+      <created>1605261270633</created>
+      <option name="number" value="00012" />
+      <option name="presentableId" value="LOCAL-00012" />
+      <option name="project" value="LOCAL" />
+      <updated>1605261270633</updated>
+    </task>
+    <option name="localTasksCounter" value="13" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -219,7 +226,7 @@
                   <entry key="branch">
                     <value>
                       <list>
-                        <option value="main" />
+                        <option value="development" />
                       </list>
                     </value>
                   </entry>
@@ -242,7 +249,8 @@
     <MESSAGE value="Add space on select fields" />
     <MESSAGE value="Set subaccordions to pile horizontally instead of vertically&#10;A little space for selection boxes&#10;Built the JSON for UniProt columns" />
     <MESSAGE value="Broken maps input" />
-    <option name="LAST_COMMIT_MESSAGE" value="Broken maps input" />
+    <MESSAGE value="Set defaults&#10;* UPIMAPI columns&#10;* UPIMAPI databses&#10;* KEGGCharter maps" />
+    <option name="LAST_COMMIT_MESSAGE" value="Set defaults&#10;* UPIMAPI columns&#10;* UPIMAPI databses&#10;* KEGGCharter maps" />
   </component>
   <component name="WindowStateProjectService">
     <state x="541" y="252" key="#com.intellij.fileTypes.FileTypeChooser" timestamp="1604403051121">
@@ -286,11 +294,11 @@
       <screen x="0" y="0" width="1600" height="900" />
     </state>
     <state x="301" y="95" key="SettingsEditor/0.0.1600.900/1600.0.1360.768@0.0.1600.900" timestamp="1604483707179" />
-    <state x="320" y="137" key="Vcs.Push.Dialog.v2" timestamp="1605028652616">
+    <state x="320" y="137" key="Vcs.Push.Dialog.v2" timestamp="1605261297390">
       <screen x="0" y="0" width="1600" height="900" />
     </state>
     <state x="320" y="137" key="Vcs.Push.Dialog.v2/0.0.1600.900/1600.-124.1280.1024@0.0.1600.900" timestamp="1604402502725" />
-    <state x="320" y="137" key="Vcs.Push.Dialog.v2/0.0.1600.900/1600.0.1360.768@0.0.1600.900" timestamp="1604658949182" />
+    <state x="320" y="137" key="Vcs.Push.Dialog.v2/0.0.1600.900/1600.0.1360.768@0.0.1600.900" timestamp="1605261297390" />
     <state x="1872" y="117" key="Vcs.Push.Dialog.v2/0.0.1600.900/1600.0.1360.768@1600.0.1360.768" timestamp="1603985650978" />
     <state x="320" y="137" key="Vcs.Push.Dialog.v2/0.0.1600.900@0.0.1600.900" timestamp="1605028652616" />
   </component>
