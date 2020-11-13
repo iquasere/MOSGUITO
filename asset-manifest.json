@@ -1,8 +1,8 @@
 {
   "files": {
     "main.css": "/MOSGUITO/static/css/main.3b76b811.chunk.css",
-    "main.js": "/MOSGUITO/static/js/main.93513574.chunk.js",
-    "main.js.map": "/MOSGUITO/static/js/main.93513574.chunk.js.map",
+    "main.js": "/MOSGUITO/static/js/main.672df9f9.chunk.js",
+    "main.js.map": "/MOSGUITO/static/js/main.672df9f9.chunk.js.map",
     "runtime-main.js": "/MOSGUITO/static/js/runtime-main.ff33fea8.js",
     "runtime-main.js.map": "/MOSGUITO/static/js/runtime-main.ff33fea8.js.map",
     "static/js/2.9edb437f.chunk.js": "/MOSGUITO/static/js/2.9edb437f.chunk.js",
@@ -17,6 +17,6 @@
     "static/js/runtime-main.ff33fea8.js",
     "static/js/2.9edb437f.chunk.js",
     "static/css/main.3b76b811.chunk.css",
-    "static/js/main.93513574.chunk.js"
+    "static/js/main.672df9f9.chunk.js"
   ]
 }
