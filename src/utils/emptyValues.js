@@ -10,6 +10,7 @@ export const emptyValues = {
     "output":"",
     "resourcesDirectory":"",
     "threads":1,
+    "experiments": "",
     "doAssembly":true,
     "assembler":assemblerOptions[0],
     "errorModel":errorModelOptions[0],

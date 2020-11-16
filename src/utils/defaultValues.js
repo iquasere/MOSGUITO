@@ -10,6 +10,7 @@ export const defaultValues = {
     "output":"output",
     "resourcesDirectory":"resources_directory",
     "threads":1,
+    "experiments": "path/to/experiments.tsv",
     "doAssembly":true,
     "assembler":assemblerOptions[0],
     "errorModel":errorModelOptions[0],

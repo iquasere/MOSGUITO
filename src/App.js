@@ -89,6 +89,13 @@ const Main = () => {
               placeholder={defaultValues.resourcesDirectory}
             />
 
+            <LabelledTextField
+              label='Experiments filename'
+              value={values.experiments}
+              onChange={(ev) => handleChange('experiments', ev.target.value)}
+              placeholder={defaultValues.experiments}
+            />
+
             <LabelledNumberField
               label='Number of threads to use'
               value={values.threads}
