@@ -42,20 +42,29 @@ const Main = () => {
 
   const camelToSnakeCase = str => str.replace(/[A-Z]/g, letter => `_${letter.toLowerCase()}`);
 
-  const handleSubmit = (ev) => {
+  const downloadJson = (ev) => {
     ev.preventDefault()
 
     console.log(JSON.stringify(values, null, 2).toString())
-    console.log(YAML.stringify(values))
     const snake_case_values = {}
     Object.keys(values).map((key) => snake_case_values[camelToSnakeCase(key)] = values[key])
 
     download(JSON.stringify(snake_case_values, null, 2), 'config.json', 'json')
   }
 
+  const downloadYaml = (ev) => {
+    ev.preventDefault()
+
+    console.log(YAML.stringify(values))
+    const snake_case_values = {}
+    Object.keys(values).map((key) => snake_case_values[camelToSnakeCase(key)] = values[key])
+
+    download(YAML.stringify(snake_case_values, null, 2), 'config.yaml', 'yaml')
+  }
+
   return (
     <main className='main'>
-      <form className='form' onSubmit={handleSubmit}>
+      <form className='form' >
         <Card>
           <CardContent>
 
@@ -181,11 +190,19 @@ const Main = () => {
             }}
           >
             <Button
-              type='submit'
+              onClick={(ev) => downloadYaml(ev)}
               variant='contained'
               color='secondary'
             >
-              Download configuration file
+              Download YAML
+            </Button>
+
+            <Button
+              onClick={(ev) => downloadJson(ev)}
+              variant='contained'
+              color='secondary'
+            >
+              Download JSON
             </Button>
           </CardActions>
         </Card>

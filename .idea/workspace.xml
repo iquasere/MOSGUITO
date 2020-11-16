@@ -123,7 +123,8 @@
       <workItem from="1605004979445" duration="8519000" />
       <workItem from="1605086745272" duration="865000" />
       <workItem from="1605180641830" duration="19000" />
-      <workItem from="1605260075016" duration="3079000" />
+      <workItem from="1605260075016" duration="3940000" />
+      <workItem from="1605520907791" duration="1353000" />
     </task>
     <task id="LOCAL-00001" summary="First steps">
       <created>1603985640072</created>
@@ -209,7 +210,14 @@
       <option name="project" value="LOCAL" />
       <updated>1605261270633</updated>
     </task>
-    <option name="localTasksCounter" value="13" />
+    <task id="LOCAL-00013" summary="Config file is now produced in snake_case">
+      <created>1605281167241</created>
+      <option name="number" value="00013" />
+      <option name="presentableId" value="LOCAL-00013" />
+      <option name="project" value="LOCAL" />
+      <updated>1605281167241</updated>
+    </task>
+    <option name="localTasksCounter" value="14" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -250,7 +258,8 @@
     <MESSAGE value="Set subaccordions to pile horizontally instead of vertically&#10;A little space for selection boxes&#10;Built the JSON for UniProt columns" />
     <MESSAGE value="Broken maps input" />
     <MESSAGE value="Set defaults&#10;* UPIMAPI columns&#10;* UPIMAPI databses&#10;* KEGGCharter maps" />
-    <option name="LAST_COMMIT_MESSAGE" value="Set defaults&#10;* UPIMAPI columns&#10;* UPIMAPI databses&#10;* KEGGCharter maps" />
+    <MESSAGE value="Config file is now produced in snake_case" />
+    <option name="LAST_COMMIT_MESSAGE" value="Config file is now produced in snake_case" />
   </component>
   <component name="WindowStateProjectService">
     <state x="541" y="252" key="#com.intellij.fileTypes.FileTypeChooser" timestamp="1604403051121">
@@ -294,12 +303,12 @@
       <screen x="0" y="0" width="1600" height="900" />
     </state>
     <state x="301" y="95" key="SettingsEditor/0.0.1600.900/1600.0.1360.768@0.0.1600.900" timestamp="1604483707179" />
-    <state x="320" y="137" key="Vcs.Push.Dialog.v2" timestamp="1605261297390">
-      <screen x="0" y="0" width="1600" height="900" />
+    <state x="1872" y="117" key="Vcs.Push.Dialog.v2" timestamp="1605281171952">
+      <screen x="1600" y="0" width="1360" height="768" />
     </state>
     <state x="320" y="137" key="Vcs.Push.Dialog.v2/0.0.1600.900/1600.-124.1280.1024@0.0.1600.900" timestamp="1604402502725" />
     <state x="320" y="137" key="Vcs.Push.Dialog.v2/0.0.1600.900/1600.0.1360.768@0.0.1600.900" timestamp="1605261297390" />
-    <state x="1872" y="117" key="Vcs.Push.Dialog.v2/0.0.1600.900/1600.0.1360.768@1600.0.1360.768" timestamp="1603985650978" />
+    <state x="1872" y="117" key="Vcs.Push.Dialog.v2/0.0.1600.900/1600.0.1360.768@1600.0.1360.768" timestamp="1605281171952" />
     <state x="320" y="137" key="Vcs.Push.Dialog.v2/0.0.1600.900@0.0.1600.900" timestamp="1605028652616" />
   </component>
 </project>
