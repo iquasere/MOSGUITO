@@ -13,6 +13,7 @@ import LabelledNumberField from "./components/labelledNumberField"
 import LabelledCheckbox from "./components/labelledCheckbox"
 import LabelledSelect from "./components/labelledSelect"
 import { defaultValues } from './utils/defaultValues'
+import { emptyValues } from './utils/emptyValues'
 import { keggMaps } from './utils/keggMaps'
 import { uniprotColumns } from "./utils/uniprotColumns"
 import { uniprotDatabases } from "./utils/uniprotDatabases"
@@ -33,7 +34,6 @@ const Main = () => {
   const [values, setValues] = useState(defaultValues)
 
   console.log(values)
-  console.log(keggMaps)
 
   const handleChange = (field, value) => {
     const newValue = { ...values, [field]: value }
@@ -61,6 +61,7 @@ const Main = () => {
 
     download(YAML.stringify(snake_case_values, null, 2), 'config.yaml', 'yaml')
   }
+
 
   return (
     <main className='main'>
@@ -189,6 +190,23 @@ const Main = () => {
               justifyContent: 'flex-end'
             }}
           >
+
+            <Button
+              onClick={() => setValues(defaultValues)}
+              variant='contained'
+              color='primary'
+            >
+              Set to default values
+            </Button>
+
+            <Button
+              onClick={() => setValues(emptyValues)}
+              variant='contained'
+              color='primary'
+            >
+              Clear values
+            </Button>
+
             <Button
               onClick={(ev) => downloadYaml(ev)}
               variant='contained'
