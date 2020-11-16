@@ -70,7 +70,7 @@ const Main = () => {
           <CardContent>
 
             <Typography variant='body1'>
-              To run MOSCA, you need both a configuration and an experiments files. MOSGUITO is used to obtained configuration files, and you can <a href='https://raw.githubusercontent.com/iquasere/MOSCA/master/config/experiments.tsv' ><span style={{ color: 'red' }}>download</span></a> an example of experiments file from MOSCA's repository.
+              To run MOSCA, you need both a configuration and an experiments files. MOSGUITO is used to obtained configuration files, and you can <a href='https://docs.google.com/spreadsheets/d/12BppOf32QPRl6Ey39ACWoOXPVWtTrGIUN2u-_BpwSvo/edit#gid=0' ><span style={{ color: 'red' }}>access</span></a> an example of experiments file from MOSCA's repository.
             </Typography>
 
             <Divider style={{ margin: '1rem 0' }} />

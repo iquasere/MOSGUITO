@@ -26,8 +26,9 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="75167860-5315-49c7-8bd4-159fb3049cae" name="Default Changelist" comment="Broken maps input">
-      <change afterPath="$PROJECT_DIR$/src/utils/emptyValues.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/package-lock.json" beforeDir="false" afterPath="$PROJECT_DIR$/package-lock.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/package.json" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/App.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/App.js" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -125,7 +126,7 @@
       <workItem from="1605086745272" duration="865000" />
       <workItem from="1605180641830" duration="19000" />
       <workItem from="1605260075016" duration="3940000" />
-      <workItem from="1605520907791" duration="4867000" />
+      <workItem from="1605520907791" duration="7098000" />
     </task>
     <task id="LOCAL-00001" summary="First steps">
       <created>1603985640072</created>
@@ -225,7 +226,14 @@
       <option name="project" value="LOCAL" />
       <updated>1605522337552</updated>
     </task>
-    <option name="localTasksCounter" value="15" />
+    <task id="LOCAL-00015" summary="Added buttons for setting config&#10;* to default values&#10;* to empty values">
+      <created>1605527936500</created>
+      <option name="number" value="00015" />
+      <option name="presentableId" value="LOCAL-00015" />
+      <option name="project" value="LOCAL" />
+      <updated>1605527936500</updated>
+    </task>
+    <option name="localTasksCounter" value="16" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -268,7 +276,8 @@
     <MESSAGE value="Set defaults&#10;* UPIMAPI columns&#10;* UPIMAPI databses&#10;* KEGGCharter maps" />
     <MESSAGE value="Config file is now produced in snake_case" />
     <MESSAGE value="Can now download YAML format" />
-    <option name="LAST_COMMIT_MESSAGE" value="Can now download YAML format" />
+    <MESSAGE value="Added buttons for setting config&#10;* to default values&#10;* to empty values" />
+    <option name="LAST_COMMIT_MESSAGE" value="Added buttons for setting config&#10;* to default values&#10;* to empty values" />
   </component>
   <component name="WindowStateProjectService">
     <state x="541" y="252" key="#com.intellij.fileTypes.FileTypeChooser" timestamp="1604403051121">
@@ -312,10 +321,10 @@
       <screen x="0" y="0" width="1600" height="900" />
     </state>
     <state x="301" y="95" key="SettingsEditor/0.0.1600.900/1600.0.1360.768@0.0.1600.900" timestamp="1604483707179" />
-    <state x="320" y="137" key="Vcs.Push.Dialog.v2" timestamp="1605522345342">
+    <state x="320" y="137" key="Vcs.Push.Dialog.v2" timestamp="1605527942643">
       <screen x="0" y="0" width="1600" height="900" />
     </state>
-    <state x="320" y="137" key="Vcs.Push.Dialog.v2/0.0.1600.900/1600.-124.1280.1024@0.0.1600.900" timestamp="1604402502725" />
+    <state x="320" y="137" key="Vcs.Push.Dialog.v2/0.0.1600.900/1600.-124.1280.1024@0.0.1600.900" timestamp="1605527942643" />
     <state x="320" y="137" key="Vcs.Push.Dialog.v2/0.0.1600.900/1600.0.1024.768@0.0.1600.900" timestamp="1605522345342" />
     <state x="320" y="137" key="Vcs.Push.Dialog.v2/0.0.1600.900/1600.0.1360.768@0.0.1600.900" timestamp="1605261297390" />
     <state x="1872" y="117" key="Vcs.Push.Dialog.v2/0.0.1600.900/1600.0.1360.768@1600.0.1360.768" timestamp="1605281171952" />
