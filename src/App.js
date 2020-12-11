@@ -8,10 +8,11 @@ import {
   Typography,
   Divider
 } from '@material-ui/core'
-import LabelledTextField from "./components/labelledTextFiel"
-import LabelledNumberField from "./components/labelledNumberField"
-import LabelledCheckbox from "./components/labelledCheckbox"
-import LabelledSelect from "./components/labelledSelect"
+import LabelledTextField from "./components/LabelledTextField"
+import LabelledNumberField from "./components/LabelledNumberField"
+import LabelledCheckbox from "./components/LabelledCheckbox"
+import LabelledSelect from "./components/LabelledSelect"
+import ExperimentsTable from "./components/ExperimentsTable"
 import { defaultValues } from './utils/defaultValues'
 import { emptyValues } from './utils/emptyValues'
 import { keggMaps } from './utils/keggMaps'
@@ -32,8 +33,7 @@ import UniprotDatabasesAccordion from './components/UniprotDatabasesAccordion'
 
 const Main = () => {
   const [values, setValues] = useState(defaultValues)
-
-  console.log(values)
+  const [experiments, setExperiments] = useState([])
 
   const handleChange = (field, value) => {
     const newValue = { ...values, [field]: value }
@@ -62,11 +62,10 @@ const Main = () => {
     download(YAML.stringify(snake_case_values, null, 2), 'config.yaml', 'yaml')
   }
 
-
   return (
     <main className='main'>
       <form className='form' >
-        <Card>
+        <Card >
           <CardContent>
 
             <Typography variant='body1'>
@@ -99,7 +98,7 @@ const Main = () => {
             <LabelledNumberField
               label='Number of threads to use'
               value={values.threads}
-              onChange={(ev) => handleChange('threads', ev.target.value)}
+              onChange={(ev) => handleChange('threads', ev.target.valueAsNumber)}
             />
 
             <LabelledCheckbox
@@ -149,7 +148,7 @@ const Main = () => {
             <LabelledNumberField
               label='Number of identifications per protein'
               value={values.diamondMaxTargetSeqs}
-              onChange={(ev) => handleChange('diamondMaxTargetSeqs', ev.target.value)}
+              onChange={(ev) => handleChange('diamondMaxTargetSeqs', ev.target.valueAsNumber)}
             />
 
             <UniprotColumnsAccordion
@@ -181,13 +180,18 @@ const Main = () => {
             <LabelledNumberField
               label='Number of taxa to represent with KEGGCharter'
               value={values.keggcharterNumberOfTaxa}
-              onChange={(ev) => handleChange('keggcharterNumberOfTaxa', ev.target.value)}
+              onChange={(ev) => handleChange('keggcharterNumberOfTaxa', ev.target.valueAsNumber)}
             />
 
             <KeggMapsAccordion
               maps={keggMaps}
               keggMapList={values.keggcharterMaps}
               onChange={(value) => handleChange('keggcharterMaps', value)}
+            />
+
+            <ExperimentsTable
+              experiments={experiments}
+              onChange={(value) => setExperiments(value)}
             />
 
           </CardContent>

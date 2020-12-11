@@ -1,5 +1,5 @@
 import Accordion from './Accordion'
-import LabelledCheckbox from "./labelledCheckbox"
+import LabelledCheckbox from "./LabelledCheckbox"
 
 const UniprotDatabasesAccordion = ({ columns, uniprotDatabasesList, onChange }) => {
   const handleCheck = value => {
