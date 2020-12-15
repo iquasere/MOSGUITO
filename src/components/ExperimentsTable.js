@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
-import PropTypes from 'prop-types';
 import { withStyles } from '@material-ui/core/styles';
+import LabelledSelect from "./LabelledSelect";
 
 import {
   Toolbar,
@@ -10,7 +10,9 @@ import {
   TableCell,
   TableHead,
   TableRow,
-  Paper, Button, CardActions, TextField,
+  Paper,
+  Button,
+  TextField,
 } from '@material-ui/core';
 
 const styles = theme => ({
@@ -24,10 +26,7 @@ const styles = theme => ({
   },
 });
 
-
-const attributes = ["Files", "Sample", "Data type", "Condition", "Name"]
-
-const ExperimentsTable = ({ experiments, onChange }) => {
+const ExperimentsTable = ({ experiments, onExperimentsChange }) => {
 
   const [nrows, setRows] = useState(0)
 
@@ -44,7 +43,7 @@ const ExperimentsTable = ({ experiments, onChange }) => {
       }
     )
 
-    onChange(newExperiments)
+    onExperimentsChange(newExperiments)
     setRows(nrows + 1)
   }
 
@@ -53,7 +52,7 @@ const ExperimentsTable = ({ experiments, onChange }) => {
 
     newExperiments[n][field] = value
 
-    onChange(newExperiments)
+    onExperimentsChange(newExperiments)
   }
 
   return (
@@ -66,31 +65,63 @@ const ExperimentsTable = ({ experiments, onChange }) => {
       <Table>
         <TableHead>
           <TableRow>
-            {
-              attributes.map((attr, index) => (
-                <TableCell key={index}>{attr}</TableCell>
-              ))
-            }
+            <TableCell>Files</TableCell>
+            <TableCell width="20%">Sample</TableCell>
+            <TableCell width="15%">Data type</TableCell>
+            <TableCell width="10%">Condition</TableCell>
+            <TableCell width="20%">Name</TableCell>
           </TableRow>
         </TableHead>
         <TableBody>
           {
             Array(nrows).fill().map((_, n) => (
               <TableRow key={n}>
-                {
-                  attributes.map((attr, index) => (
-                    <TableCell key={index}>
-                      <TextField
-                        key={index}
-                        type='text'
-                        value={experiments[n][attr]}
-                        onChange={(ev) => editExperiments(ev.target.value, n, attr)}
-                        placeholder={""}
-                      />
-                    </TableCell>
-                    )
-                  )
-                }
+                <TableCell>
+                  <TextField
+                    type='text'
+                    value={experiments[n]["Files"]}
+                    onChange={(ev) => editExperiments(ev.target.value, n, "Files")}
+                    placeholder={""}
+                    multiline
+                    fullWidth
+                  />
+                </TableCell>
+
+                <TableCell>
+                  <TextField
+                    type='text'
+                    value={experiments[n]["Sample"]}
+                    onChange={(ev) => editExperiments(ev.target.value, n, "Sample")}
+                    placeholder={""}
+                  />
+                </TableCell>
+
+                <TableCell>
+                  <LabelledSelect
+                    type='text'
+                    value={experiments[n]["Data type"]}
+                    onChange={(ev) => editExperiments(ev.target.value, n, "Data type")}
+                    options={["dna", "mrna", "protein"]}
+                  />
+                </TableCell>
+
+                <TableCell>
+                  <TextField
+                    type='text'
+                    value={experiments[n]["Condition"]}
+                    onChange={(ev) => editExperiments(ev.target.value, n, "Condition")}
+                    placeholder={""}
+                  />
+                </TableCell>
+
+                <TableCell>
+                  <TextField
+                    type='text'
+                    value={experiments[n]["Name"]}
+                    onChange={(ev) => editExperiments(ev.target.value, n, "Name")}
+                    placeholder={""}
+                  />
+                </TableCell>
               </TableRow>
             ))
           }

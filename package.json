@@ -6,11 +6,17 @@
   "dependencies": {
     "@material-ui/core": "^4.11.0",
     "@material-ui/icons": "^4.9.1",
+    "awesome-react-icons": "^1.4.4",
     "ba-js-base-components": "^1.2.8",
     "d3": "^6.3.1",
     "mui-datatables": "^3.7.1",
     "react": "^17.0.1",
     "react-dom": "^17.0.1",
+    "react-icons": "^4.1.0",
+    "react-minimal-side-navigation": "^1.5.1",
+    "react-router": "^5.2.0",
+    "react-router-config": "^5.1.1",
+    "react-router-dom": "^5.2.0",
     "react-scripts": "4.0.0",
     "web-vitals": "^0.2.4",
     "yaml": "^1.10.0"

@@ -20,18 +20,18 @@
       <path>
         <item name="ROOT" type="e8cecc67:BranchNodeDescriptor" />
         <item name="LOCAL_ROOT" type="e8cecc67:BranchNodeDescriptor" />
-        <item name="BRANCH:development" type="e8cecc67:BranchNodeDescriptor" />
+        <item name="BRANCH:main" type="e8cecc67:BranchNodeDescriptor" />
       </path>
     </select>
   </component>
   <component name="ChangeListManager">
     <list default="true" id="75167860-5315-49c7-8bd4-159fb3049cae" name="Default Changelist" comment="Broken maps input">
-      <change afterPath="$PROJECT_DIR$/src/components/experimentsTable.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/package-lock.json" beforeDir="false" afterPath="$PROJECT_DIR$/package-lock.json" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/package.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/App.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/App.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/KeggMapsAccordion.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/KeggMapsAccordion.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/ExperimentsTable.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/ExperimentsTable.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/index.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/index.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/yarn.lock" beforeDir="false" afterPath="$PROJECT_DIR$/yarn.lock" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -65,6 +65,9 @@
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
     <option name="SET_USER_NAME_GLOBALLY" value="false" />
   </component>
+  <component name="HighlightingSettingsPerFile">
+    <setting file="file://$PROJECT_DIR$/node_modules/@types/react/index.d.ts" root0="SKIP_INSPECTION" />
+  </component>
   <component name="JupyterTrust" id="f9ba5b0f-2873-44a9-9c2c-7de8cd922a0e" />
   <component name="ProjectId" id="1jYe4eiVW4ZOGMrUO3CqEh3jXhv" />
   <component name="ProjectViewState">
@@ -72,7 +75,9 @@
     <option name="showLibraryContents" value="true" />
   </component>
   <component name="PropertiesComponent">
+    <property name="ASKED_ADD_EXTERNAL_FILES" value="true" />
     <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
+    <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="last_opened_file_path" value="$PROJECT_DIR$" />
     <property name="node.js.detected.package.eslint" value="true" />
@@ -82,7 +87,7 @@
     <property name="node.js.selected.package.eslint" value="(autodetect)" />
     <property name="node.js.selected.package.stylelint" value="" />
     <property name="nodejs_package_manager_path" value="yarn" />
-    <property name="settings.editor.selected.configurable" value="editor.preferences.tabs" />
+    <property name="settings.editor.selected.configurable" value="preferences.keymap" />
     <property name="ts.external.directory.path" value="C:\Program Files\JetBrains\PyCharm 2020.2.3\plugins\JavaScriptLanguage\jsLanguageServicesImpl\external" />
   </component>
   <component name="RunManager">
@@ -139,6 +144,11 @@
       <workItem from="1607631536124" duration="1784000" />
       <workItem from="1607638879172" duration="3787000" />
       <workItem from="1607680558220" duration="9004000" />
+      <workItem from="1607700767659" duration="1132000" />
+      <workItem from="1607803857451" duration="734000" />
+      <workItem from="1607943180230" duration="10422000" />
+      <workItem from="1607977275152" duration="4993000" />
+      <workItem from="1608029123434" duration="6855000" />
     </task>
     <task id="LOCAL-00001" summary="First steps">
       <created>1603985640072</created>
@@ -259,7 +269,14 @@
       <option name="project" value="LOCAL" />
       <updated>1605537993739</updated>
     </task>
-    <option name="localTasksCounter" value="18" />
+    <task id="LOCAL-00018" summary="Added experiments table&#10;* still not functional, and huge memory leak problem">
+      <created>1607703234461</created>
+      <option name="number" value="00018" />
+      <option name="presentableId" value="LOCAL-00018" />
+      <option name="project" value="LOCAL" />
+      <updated>1607703234461</updated>
+    </task>
+    <option name="localTasksCounter" value="19" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -276,7 +293,7 @@
                   <entry key="branch">
                     <value>
                       <list>
-                        <option value="development" />
+                        <option value="main" />
                       </list>
                     </value>
                   </entry>
@@ -305,61 +322,7 @@
     <MESSAGE value="Added buttons for setting config&#10;* to default values&#10;* to empty values" />
     <MESSAGE value="Experiments file as google sheet&#10;* for now" />
     <MESSAGE value="Added customization of experiments in config file" />
-    <option name="LAST_COMMIT_MESSAGE" value="Added customization of experiments in config file" />
-  </component>
-  <component name="WindowStateProjectService">
-    <state x="541" y="252" key="#com.intellij.fileTypes.FileTypeChooser" timestamp="1604403051121">
-      <screen x="0" y="0" width="1600" height="900" />
-    </state>
-    <state x="541" y="252" key="#com.intellij.fileTypes.FileTypeChooser/0.0.1600.900/1600.-124.1280.1024@0.0.1600.900" timestamp="1604403051121" />
-    <state x="530" y="197" key="#com.intellij.refactoring.safeDelete.UnsafeUsagesDialog" timestamp="1604501897294">
-      <screen x="0" y="0" width="1600" height="900" />
-    </state>
-    <state x="530" y="197" key="#com.intellij.refactoring.safeDelete.UnsafeUsagesDialog/0.0.1600.900/1600.0.1360.768@0.0.1600.900" timestamp="1604501897294" />
-    <state x="580" y="205" key="FileChooserDialogImpl" timestamp="1605006376311">
-      <screen x="0" y="0" width="1600" height="900" />
-    </state>
-    <state x="580" y="205" key="FileChooserDialogImpl/0.0.1600.900/1600.0.1360.768@0.0.1600.900" timestamp="1604931335297" />
-    <state x="580" y="205" key="FileChooserDialogImpl/0.0.1600.900@0.0.1600.900" timestamp="1605006376311" />
-    <state width="1557" height="235" key="GridCell.Tab.0.bottom" timestamp="1604403539072">
-      <screen x="0" y="0" width="1600" height="900" />
-    </state>
-    <state width="1557" height="235" key="GridCell.Tab.0.bottom/0.0.1600.900/1600.-124.1280.1024@0.0.1600.900" timestamp="1604403539072" />
-    <state width="1557" height="235" key="GridCell.Tab.0.bottom/0.0.1600.900/1600.0.1360.768@0.0.1600.900" timestamp="1604070674126" />
-    <state width="1317" height="192" key="GridCell.Tab.0.bottom/0.0.1600.900/1600.0.1360.768@1600.0.1360.768" timestamp="1604052255619" />
-    <state width="1557" height="235" key="GridCell.Tab.0.center" timestamp="1604403539071">
-      <screen x="0" y="0" width="1600" height="900" />
-    </state>
-    <state width="1557" height="235" key="GridCell.Tab.0.center/0.0.1600.900/1600.-124.1280.1024@0.0.1600.900" timestamp="1604403539071" />
-    <state width="1557" height="235" key="GridCell.Tab.0.center/0.0.1600.900/1600.0.1360.768@0.0.1600.900" timestamp="1604070674126" />
-    <state width="1317" height="192" key="GridCell.Tab.0.center/0.0.1600.900/1600.0.1360.768@1600.0.1360.768" timestamp="1604052255618" />
-    <state width="1557" height="235" key="GridCell.Tab.0.left" timestamp="1604403539071">
-      <screen x="0" y="0" width="1600" height="900" />
-    </state>
-    <state width="1557" height="235" key="GridCell.Tab.0.left/0.0.1600.900/1600.-124.1280.1024@0.0.1600.900" timestamp="1604403539071" />
-    <state width="1557" height="235" key="GridCell.Tab.0.left/0.0.1600.900/1600.0.1360.768@0.0.1600.900" timestamp="1604070674125" />
-    <state width="1317" height="192" key="GridCell.Tab.0.left/0.0.1600.900/1600.0.1360.768@1600.0.1360.768" timestamp="1604052255618" />
-    <state width="1557" height="235" key="GridCell.Tab.0.right" timestamp="1604403539071">
-      <screen x="0" y="0" width="1600" height="900" />
-    </state>
-    <state width="1557" height="235" key="GridCell.Tab.0.right/0.0.1600.900/1600.-124.1280.1024@0.0.1600.900" timestamp="1604403539071" />
-    <state width="1557" height="235" key="GridCell.Tab.0.right/0.0.1600.900/1600.0.1360.768@0.0.1600.900" timestamp="1604070674126" />
-    <state width="1317" height="192" key="GridCell.Tab.0.right/0.0.1600.900/1600.0.1360.768@1600.0.1360.768" timestamp="1604052255619" />
-    <state x="301" y="95" key="SettingsEditor" timestamp="1604483707179">
-      <screen x="0" y="0" width="1600" height="900" />
-    </state>
-    <state x="301" y="95" key="SettingsEditor/0.0.1600.900/1600.0.1360.768@0.0.1600.900" timestamp="1604483707179" />
-    <state x="320" y="137" key="Vcs.Push.Dialog.v2" timestamp="1605537025576">
-      <screen x="0" y="0" width="1600" height="900" />
-    </state>
-    <state x="320" y="137" key="Vcs.Push.Dialog.v2/0.0.1600.900/1600.-124.1280.1024@0.0.1600.900" timestamp="1605537025576" />
-    <state x="320" y="137" key="Vcs.Push.Dialog.v2/0.0.1600.900/1600.0.1024.768@0.0.1600.900" timestamp="1605522345342" />
-    <state x="320" y="137" key="Vcs.Push.Dialog.v2/0.0.1600.900/1600.0.1360.768@0.0.1600.900" timestamp="1605261297390" />
-    <state x="1872" y="117" key="Vcs.Push.Dialog.v2/0.0.1600.900/1600.0.1360.768@1600.0.1360.768" timestamp="1605281171952" />
-    <state x="320" y="137" key="Vcs.Push.Dialog.v2/0.0.1600.900@0.0.1600.900" timestamp="1605028652616" />
-    <state x="617" y="364" key="com.intellij.openapi.vcs.update.UpdateOrStatusOptionsDialogupdate-v2" timestamp="1605523671919">
-      <screen x="0" y="0" width="1600" height="900" />
-    </state>
-    <state x="617" y="364" key="com.intellij.openapi.vcs.update.UpdateOrStatusOptionsDialogupdate-v2/0.0.1600.900/1600.0.1024.768@0.0.1600.900" timestamp="1605523671919" />
+    <MESSAGE value="Added experiments table&#10;* still not functional, and huge memory leak problem" />
+    <option name="LAST_COMMIT_MESSAGE" value="Added experiments table&#10;* still not functional, and huge memory leak problem" />
   </component>
 </project>
