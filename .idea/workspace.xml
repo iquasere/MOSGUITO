@@ -27,11 +27,7 @@
   <component name="ChangeListManager">
     <list default="true" id="75167860-5315-49c7-8bd4-159fb3049cae" name="Default Changelist" comment="Broken maps input">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/package-lock.json" beforeDir="false" afterPath="$PROJECT_DIR$/package-lock.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/package.json" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/components/ExperimentsTable.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/ExperimentsTable.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/index.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/index.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/yarn.lock" beforeDir="false" afterPath="$PROJECT_DIR$/yarn.lock" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -148,7 +144,7 @@
       <workItem from="1607803857451" duration="734000" />
       <workItem from="1607943180230" duration="10422000" />
       <workItem from="1607977275152" duration="4993000" />
-      <workItem from="1608029123434" duration="6855000" />
+      <workItem from="1608029123434" duration="9535000" />
     </task>
     <task id="LOCAL-00001" summary="First steps">
       <created>1603985640072</created>
@@ -276,7 +272,14 @@
       <option name="project" value="LOCAL" />
       <updated>1607703234461</updated>
     </task>
-    <option name="localTasksCounter" value="19" />
+    <task id="LOCAL-00019" summary="Began structuring side menu">
+      <created>1608053497259</created>
+      <option name="number" value="00019" />
+      <option name="presentableId" value="LOCAL-00019" />
+      <option name="project" value="LOCAL" />
+      <updated>1608053497259</updated>
+    </task>
+    <option name="localTasksCounter" value="20" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -323,6 +326,7 @@
     <MESSAGE value="Experiments file as google sheet&#10;* for now" />
     <MESSAGE value="Added customization of experiments in config file" />
     <MESSAGE value="Added experiments table&#10;* still not functional, and huge memory leak problem" />
-    <option name="LAST_COMMIT_MESSAGE" value="Added experiments table&#10;* still not functional, and huge memory leak problem" />
+    <MESSAGE value="Began structuring side menu" />
+    <option name="LAST_COMMIT_MESSAGE" value="Began structuring side menu" />
   </component>
 </project>

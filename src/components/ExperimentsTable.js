@@ -26,8 +26,8 @@ const styles = theme => ({
   },
 });
 
-const ExperimentsTable = ({ experiments, onExperimentsChange }) => {
-
+const ExperimentsTable = ({ experiments, setExperiments }) => {
+  console.log(experiments)
   const [nrows, setRows] = useState(0)
 
   const increaseRows = () => {
@@ -43,7 +43,7 @@ const ExperimentsTable = ({ experiments, onExperimentsChange }) => {
       }
     )
 
-    onExperimentsChange(newExperiments)
+    setExperiments(newExperiments)
     setRows(nrows + 1)
   }
 
@@ -52,7 +52,7 @@ const ExperimentsTable = ({ experiments, onExperimentsChange }) => {
 
     newExperiments[n][field] = value
 
-    onExperimentsChange(newExperiments)
+    setExperiments(newExperiments)
   }
 
   return (
