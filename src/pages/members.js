@@ -1,11 +1,12 @@
 import React from 'react';
+import AlignItemsList from '../components/MembersList'
 
 import {DashboardLayout} from '../components/Layout';
 
 const MembersPage = () => {
   return (
     <DashboardLayout>
-      <h2>Members Page</h2>
+
     </DashboardLayout>
   )
 }

@@ -1,27 +1,33 @@
-import React, {useState} from "react";
+import React from "react";
 import { BrowserRouter, Switch, Route } from "react-router-dom";
 
 import SettingsPage from "./settings";
-import ProjectsPage from "./projects";
+import ProjectPage from "./project";
 import MembersPage from "./members";
 import AboutPage from "./about";
 import TeamsPage from "./teams";
 import HomePage from "./home";
 import Config from "./config"
 import Experiments from "./experiments";
+import {keggMaps} from "../utils/keggMaps";
+import KeggMapsAccordion from "../components/KeggMapsAccordion";
+import {CardContent} from "@material-ui/core";
+import UniprotInfo from "./uniprotinfo";
+import KeggMaps from "./keggmaps";
 
-const Routes = ({ configData, setConfig, experiments, setExperiments, nExperimentsRows, setExperimentsRows }) => {
+const Routes = ({ configData, onConfigChange, experiments, setExperiments, nExperimentsRows, setExperimentsRows }) => {
 
   return (
     <BrowserRouter>
       <Switch>
-        <Route path="/config">
+        <Route path="/MOSGUITO/general-configuration">
           <Config
             configData={configData}
-            setConfig={setConfig}
+            onConfigChange={onConfigChange}
           />
         </Route>
-        <Route path="/experiments">
+
+        <Route path="/MOSGUITO/experiments">
           <Experiments
             experiments={experiments}
             setExperiments={setExperiments}
@@ -29,24 +35,45 @@ const Routes = ({ configData, setConfig, experiments, setExperiments, nExperimen
             setExperimentsRows={setExperimentsRows}
           />
         </Route>
-        <Route path="/config">
+
+        <Route path="/MOSGUITO/uniprotinfo">
+          <UniprotInfo
+            configData={configData}
+            onConfigChange={onConfigChange}
+          />
         </Route>
-        <Route path="/about/members">
+
+        <Route path="/MOSGUITO/keggmaps">
+          <KeggMaps
+            configData={configData}
+            onConfigChange={onConfigChange}
+          />
+        </Route>
+
+        <Route path="/MOSGUITO/about">
+        </Route>
+
+        <Route path="/MOSGUITO/about/members">
           <MembersPage />
         </Route>
-        <Route path="/about/projects">
-          <ProjectsPage />
+
+        <Route path="/MOSGUITO/about/projects">
+          <ProjectPage />
         </Route>
-        <Route path="/about">
+
+        <Route path="/MOSGUITO/about">
           <AboutPage />
         </Route>
-        <Route path="/another/teams">
+
+        <Route path="/MOSGUITO/another/teams">
           <TeamsPage />
         </Route>
-        <Route path="/settings">
+
+        <Route path="/MOSGUITO/settings">
           <SettingsPage />
         </Route>
-        <Route path="/">
+
+        <Route path="/MOSGUITO">
           <HomePage />
         </Route>
       </Switch>

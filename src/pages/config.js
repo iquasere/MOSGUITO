@@ -14,9 +14,6 @@ import LabelledCheckbox from "../components/LabelledCheckbox"
 import LabelledSelect from "../components/LabelledSelect"
 import { defaultValues } from '../utils/defaultValues'
 import { emptyValues } from '../utils/emptyValues'
-import { keggMaps } from '../utils/keggMaps'
-import { uniprotColumns } from "../utils/uniprotColumns"
-import { uniprotDatabases } from "../utils/uniprotDatabases"
 import download from '../utils/download'
 import {
   assemblerOptions,
@@ -26,17 +23,9 @@ import {
   keggcharterTaxaLevelOptions
 } from '../utils/options'
 import './../App.css'
-import KeggMapsAccordion from '../components/KeggMapsAccordion'
-import UniprotColumnsAccordion from '../components/UniprotColumnsAccordion'
-import UniprotDatabasesAccordion from '../components/UniprotDatabasesAccordion'
 import {DashboardLayout} from "../components/Layout";
 
-const Main = ({ configData, setConfig }) => {
-
-  const onConfigChange = (field, value) => {
-    const newValue = { ...configData, [field]: value }
-    setConfig(newValue)
-  }
+const Main = ({ configData, onConfigChange }) => {
 
   console.log(configData)
   const camelToSnakeCase = str => str.replace(/[A-Z]/g, letter => `_${letter.toLowerCase()}`);
@@ -146,18 +135,6 @@ const Main = ({ configData, setConfig }) => {
               onChange={(ev) => onConfigChange('diamondMaxTargetSeqs', ev.target.valueAsNumber)}
             />
 
-            <UniprotColumnsAccordion
-              columns={uniprotColumns}
-              uniprotColumnsList={configData.uniprotColumns}
-              onChange={(value) => onConfigChange('uniprotColumns', value)}
-            />
-
-            <UniprotDatabasesAccordion
-              columns={uniprotDatabases}
-              uniprotDatabasesList={configData.uniprotDatabases}
-              onChange={(value) => onConfigChange('uniprotDatabases', value)}
-            />
-
             <LabelledSelect
               label='Choose normalization method'
               value={configData.normalizationMethod}
@@ -177,13 +154,6 @@ const Main = ({ configData, setConfig }) => {
               value={configData.keggcharterNumberOfTaxa}
               onChange={(ev) => onConfigChange('keggcharterNumberOfTaxa', ev.target.valueAsNumber)}
             />
-
-            <KeggMapsAccordion
-              maps={keggMaps}
-              keggMapList={configData.keggcharterMaps}
-              onChange={(value) => onConfigChange('keggcharterMaps', value)}
-            />
-
 
           </CardContent>
           <CardActions
@@ -245,7 +215,7 @@ const Header = () => {
   )
 }
 
-function Config({ configData, onConfigChange, setConfig }) {
+function Config({ configData, onConfigChange }) {
   return (
     <DashboardLayout>
       <div className='App'>
@@ -253,7 +223,6 @@ function Config({ configData, onConfigChange, setConfig }) {
         <Main
           configData={configData}
           onConfigChange={onConfigChange}
-          setConfig={setConfig}
         />
       </div>
     </DashboardLayout>

@@ -1,7 +1,8 @@
 import Accordion from './Accordion'
 import LabelledCheckbox from "./LabelledCheckbox"
+import {uniprotDatabases} from "../utils/uniprotDatabases"
 
-const UniprotDatabasesAccordion = ({ columns, uniprotDatabasesList, onChange }) => {
+const UniprotDatabasesAccordion = ({ uniprotDatabasesList, onChange }) => {
   const handleCheck = value => {
     const newList = [...uniprotDatabasesList]
 
@@ -18,7 +19,7 @@ const UniprotDatabasesAccordion = ({ columns, uniprotDatabasesList, onChange }) 
   return (
     <Accordion title='UniProt databases'>
       {
-        Object.entries(columns).map(([section, columns_list], index) => (
+        Object.entries(uniprotDatabases).map(([section, columns_list], index) => (
           <Accordion key={index} title={section}>
             {
               columns_list.map(( pair , index) => (

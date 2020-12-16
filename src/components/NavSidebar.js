@@ -46,36 +46,44 @@ export const NavSidebar = () => {
           items={[
             {
               title: "Home",
-              itemId: "/home",
+              itemId: "/MOSGUITO/home",
               elemBefore: () => <Icon name="coffee" />
             },
             {
               title: "About",
-              itemId: "/about",
+              itemId: "/MOSGUITO/about",
               elemBefore: () => <Icon name="user" />,
               subNav: [
                 {
                   title: "Projects",
-                  itemId: "/about/projects"
+                  itemId: "/MOSGUITO/about/projects"
                 },
                 {
                   title: "Members",
-                  itemId: "/about/members"
+                  itemId: "/MOSGUITO/about/members"
                 }
               ]
             },
             {
               title: "Configuration",
-              itemId: "/config",
+              itemId: "/MOSGUITO/config",
               elemBefore: () => <Icon name="settings" />,
               subNav: [
                 {
-                  title: "Config",
-                  itemId: "/config"
+                  title: "General configuration",
+                  itemId: "/MOSGUITO/general-configuration"
                 },
                 {
                   title: "Experiments",
-                  itemId: "/experiments"
+                  itemId: "/MOSGUITO/experiments"
+                },
+                {
+                  title: "UniProt information",
+                  itemId: "/MOSGUITO/uniprotinfo"
+                },
+                {
+                  title: "KEGG metabolic maps",
+                  itemId: "/MOSGUITO/keggmaps"
                 }
               ]
             }
@@ -88,7 +96,7 @@ export const NavSidebar = () => {
             items={[
               {
                 title: "Settings",
-                itemId: "/settings",
+                itemId: "/MOSGUITO/settings",
                 elemBefore: () => <Icon name="activity" />
               }
             ]}

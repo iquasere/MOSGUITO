@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React from 'react';
 import { withStyles } from '@material-ui/core/styles';
 import LabelledSelect from "./LabelledSelect";
 
@@ -43,6 +43,15 @@ const ExperimentsTable = ({ experiments, setExperiments, nExperimentsRows, setEx
 
     setExperiments(newExperiments)
     setExperimentsRows(nExperimentsRows + 1)
+  }
+
+  const decreaseRows = () => {
+    const newExperiments = [...experiments]
+
+    newExperiments.pop()
+
+    setExperiments(newExperiments)
+    setExperimentsRows(nExperimentsRows - 1)
   }
 
   const editExperiments = (value, n, field) => {
@@ -131,6 +140,13 @@ const ExperimentsTable = ({ experiments, setExperiments, nExperimentsRows, setEx
         color='secondary'
       >
         Add row
+      </Button>
+      <Button
+        onClick={(ev) => decreaseRows()}
+        variant='contained'
+        color='secondary'
+      >
+        Remove last row
       </Button>
     </Paper>
   );
