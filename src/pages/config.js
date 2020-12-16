@@ -1,4 +1,4 @@
-import React, { useState } from 'react'
+import React from 'react'
 import YAML from 'yaml'
 import {
   Card,
@@ -146,6 +146,17 @@ const Main = ({ configData, setConfig }) => {
               onChange={(ev) => onConfigChange('diamondMaxTargetSeqs', ev.target.valueAsNumber)}
             />
 
+            <UniprotColumnsAccordion
+              columns={uniprotColumns}
+              uniprotColumnsList={configData.uniprotColumns}
+              onChange={(value) => onConfigChange('uniprotColumns', value)}
+            />
+
+            <UniprotDatabasesAccordion
+              columns={uniprotDatabases}
+              uniprotDatabasesList={configData.uniprotDatabases}
+              onChange={(value) => onConfigChange('uniprotDatabases', value)}
+            />
 
             <LabelledSelect
               label='Choose normalization method'
@@ -165,6 +176,12 @@ const Main = ({ configData, setConfig }) => {
               label='Number of taxa to represent with KEGGCharter'
               value={configData.keggcharterNumberOfTaxa}
               onChange={(ev) => onConfigChange('keggcharterNumberOfTaxa', ev.target.valueAsNumber)}
+            />
+
+            <KeggMapsAccordion
+              maps={keggMaps}
+              keggMapList={configData.keggcharterMaps}
+              onChange={(value) => onConfigChange('keggcharterMaps', value)}
             />
 
 
@@ -218,10 +235,10 @@ const Header = () => {
   return (
     <header className='header'>
       <Typography variant='h4'>
-        MOSGUITO
+        General configuration
       </Typography>
       <Typography variant='h6'>
-        MOSca's GUI TO generate config files
+        Tweak different parameters to customize MOSCA's workflow
       </Typography>
 
     </header>
@@ -232,6 +249,7 @@ function Config({ configData, onConfigChange, setConfig }) {
   return (
     <DashboardLayout>
       <div className='App'>
+        <Header />
         <Main
           configData={configData}
           onConfigChange={onConfigChange}

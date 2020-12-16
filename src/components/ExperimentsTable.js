@@ -26,9 +26,7 @@ const styles = theme => ({
   },
 });
 
-const ExperimentsTable = ({ experiments, setExperiments }) => {
-  console.log(experiments)
-  const [nrows, setRows] = useState(0)
+const ExperimentsTable = ({ experiments, setExperiments, nExperimentsRows, setExperimentsRows }) => {
 
   const increaseRows = () => {
     const newExperiments = [...experiments]
@@ -44,7 +42,7 @@ const ExperimentsTable = ({ experiments, setExperiments }) => {
     )
 
     setExperiments(newExperiments)
-    setRows(nrows + 1)
+    setExperimentsRows(nExperimentsRows + 1)
   }
 
   const editExperiments = (value, n, field) => {
@@ -74,7 +72,7 @@ const ExperimentsTable = ({ experiments, setExperiments }) => {
         </TableHead>
         <TableBody>
           {
-            Array(nrows).fill().map((_, n) => (
+            Array(nExperimentsRows).fill().map((_, n) => (
               <TableRow key={n}>
                 <TableCell>
                   <TextField

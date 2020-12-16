@@ -10,7 +10,7 @@ import HomePage from "./home";
 import Config from "./config"
 import Experiments from "./experiments";
 
-const Routes = ({ configData, setConfig, experiments, setExperiments }) => {
+const Routes = ({ configData, setConfig, experiments, setExperiments, nExperimentsRows, setExperimentsRows }) => {
 
   return (
     <BrowserRouter>
@@ -25,6 +25,8 @@ const Routes = ({ configData, setConfig, experiments, setExperiments }) => {
           <Experiments
             experiments={experiments}
             setExperiments={setExperiments}
+            nExperimentsRows={nExperimentsRows}
+            setExperimentsRows={setExperimentsRows}
           />
         </Route>
         <Route path="/config">

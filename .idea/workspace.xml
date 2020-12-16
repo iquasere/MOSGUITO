@@ -26,8 +26,16 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="75167860-5315-49c7-8bd4-159fb3049cae" name="Default Changelist" comment="Broken maps input">
+      <change afterPath="$PROJECT_DIR$/src/utils/downloadExcel.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/package-lock.json" beforeDir="false" afterPath="$PROJECT_DIR$/package-lock.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/package.json" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/components/ExperimentsTable.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/ExperimentsTable.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/pages/_app.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/pages/_app.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/pages/_routes.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/pages/_routes.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/pages/config.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/pages/config.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/pages/experiments.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/pages/experiments.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/yarn.lock" beforeDir="false" afterPath="$PROJECT_DIR$/yarn.lock" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -84,7 +92,7 @@
     <property name="node.js.selected.package.stylelint" value="" />
     <property name="nodejs_package_manager_path" value="yarn" />
     <property name="settings.editor.selected.configurable" value="preferences.keymap" />
-    <property name="ts.external.directory.path" value="C:\Program Files\JetBrains\PyCharm 2020.2.3\plugins\JavaScriptLanguage\jsLanguageServicesImpl\external" />
+    <property name="ts.external.directory.path" value="C:\Users\Catarina\AppData\Local\JetBrains\Toolbox\apps\PyCharm-P\ch-0\203.5981.165\plugins\JavaScriptLanguage\jsLanguageServicesImpl\external" />
   </component>
   <component name="RunManager">
     <configuration name="MOSGUITO" type="PythonConfigurationType" factoryName="Python">
@@ -144,7 +152,8 @@
       <workItem from="1607803857451" duration="734000" />
       <workItem from="1607943180230" duration="10422000" />
       <workItem from="1607977275152" duration="4993000" />
-      <workItem from="1608029123434" duration="9535000" />
+      <workItem from="1608029123434" duration="11424000" />
+      <workItem from="1608111477905" duration="6237000" />
     </task>
     <task id="LOCAL-00001" summary="First steps">
       <created>1603985640072</created>
@@ -279,7 +288,14 @@
       <option name="project" value="LOCAL" />
       <updated>1608053497259</updated>
     </task>
-    <option name="localTasksCounter" value="20" />
+    <task id="LOCAL-00020" summary="Fixed changing config and experiments">
+      <created>1608060139155</created>
+      <option name="number" value="00020" />
+      <option name="presentableId" value="LOCAL-00020" />
+      <option name="project" value="LOCAL" />
+      <updated>1608060139155</updated>
+    </task>
+    <option name="localTasksCounter" value="21" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -327,6 +343,7 @@
     <MESSAGE value="Added customization of experiments in config file" />
     <MESSAGE value="Added experiments table&#10;* still not functional, and huge memory leak problem" />
     <MESSAGE value="Began structuring side menu" />
-    <option name="LAST_COMMIT_MESSAGE" value="Began structuring side menu" />
+    <MESSAGE value="Fixed changing config and experiments" />
+    <option name="LAST_COMMIT_MESSAGE" value="Fixed changing config and experiments" />
   </component>
 </project>

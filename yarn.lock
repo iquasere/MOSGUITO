@@ -1082,6 +1082,18 @@
   dependencies:
     "purgecss" "^3.1.0"
 
+"@grapecity/spread-excelio@^14.0.3":
+  "integrity" "sha512-qE+PPDCIUkT/3S840E2fUmnwGSuutLw/5NYaeYt4DEBaZshECsRHI18rAfm7ul4Y64MDOsLJccJCV96WX8+yIQ=="
+  "resolved" "https://registry.npmjs.org/@grapecity/spread-excelio/-/spread-excelio-14.0.3.tgz"
+  "version" "14.0.3"
+  dependencies:
+    "@grapecity/spread-sheets" "14.0.3"
+
+"@grapecity/spread-sheets@14.0.3":
+  "integrity" "sha512-neuDPzfP1OTgvBqAalZIr5sC1CFJfLYEFdcfua72HT8mDb/SVuM2/E+68w7vmcA+ZPQ09fusGgB0v0qAL++GfA=="
+  "resolved" "https://registry.npmjs.org/@grapecity/spread-sheets/-/spread-sheets-14.0.3.tgz"
+  "version" "14.0.3"
+
 "@hapi/address@2.x.x":
   "integrity" "sha512-QD1PhQk+s31P1ixsX0H0Suoupp3VMXzIVMSwobR3F3MSUO2YCV0B7xqLcUw/Bh8yuvd3LhpyqLQWTNcRmp6IdQ=="
   "resolved" "https://registry.npmjs.org/@hapi/address/-/address-2.1.4.tgz"
@@ -5438,6 +5450,11 @@
   dependencies:
     "loader-utils" "^2.0.0"
     "schema-utils" "^3.0.0"
+
+"file-saver@^2.0.5":
+  "integrity" "sha512-P9bmyZ3h/PRG+Nzga+rbdI4OEpNDzAVyy74uVO9ATgzLK6VtAsYybF/+TOCvrc0MO793d6+42lLyZTw7/ArVzA=="
+  "resolved" "https://registry.npmjs.org/file-saver/-/file-saver-2.0.5.tgz"
+  "version" "2.0.5"
 
 "filename-reserved-regex@^1.0.0":
   "integrity" "sha1-5hz4BfDeHJhFZ9A4bcXfUO5a9+Q="
@@ -12075,6 +12092,11 @@
   "version" "3.17.1"
   dependencies:
     "tslib" "^1.8.1"
+
+"tsv@^0.2.0":
+  "integrity" "sha1-koaaPLX1AzLz3JD8qCvmZ9tvctY="
+  "resolved" "https://registry.npmjs.org/tsv/-/tsv-0.2.0.tgz"
+  "version" "0.2.0"
 
 "tty-browserify@0.0.0":
   "integrity" "sha1-oVe6QC2iTpv5V/mqadUk7tQpAaY="
