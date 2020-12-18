@@ -55,12 +55,12 @@ export const NavSidebar = () => {
               elemBefore: () => <Icon name="user" />,
               subNav: [
                 {
-                  title: "Projects",
-                  itemId: "/MOSGUITO/about/projects"
+                  title: "Project",
+                  itemId: "/MOSGUITO/project"
                 },
                 {
                   title: "Members",
-                  itemId: "/MOSGUITO/about/members"
+                  itemId: "/MOSGUITO/members"
                 }
               ]
             },
@@ -84,6 +84,10 @@ export const NavSidebar = () => {
                 {
                   title: "KEGG metabolic maps",
                   itemId: "/MOSGUITO/keggmaps"
+                },
+                {
+                  title: "Proteomics configuration",
+                  itemId: "/MOSGUITO/proteomics-configuration"
                 }
               ]
             }
@@ -95,8 +99,8 @@ export const NavSidebar = () => {
             activeItemId={location.pathname}
             items={[
               {
-                title: "Settings",
-                itemId: "/MOSGUITO/settings",
+                title: "Results",
+                itemId: "/MOSGUITO/results",
                 elemBefore: () => <Icon name="activity" />
               }
             ]}

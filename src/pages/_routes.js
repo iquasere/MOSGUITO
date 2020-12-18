@@ -1,7 +1,7 @@
 import React from "react";
 import { BrowserRouter, Switch, Route } from "react-router-dom";
 
-import SettingsPage from "./settings";
+import ResultsPage from "./results";
 import ProjectPage from "./project";
 import MembersPage from "./members";
 import AboutPage from "./about";
@@ -9,11 +9,10 @@ import TeamsPage from "./teams";
 import HomePage from "./home";
 import Config from "./config"
 import Experiments from "./experiments";
-import {keggMaps} from "../utils/keggMaps";
-import KeggMapsAccordion from "../components/KeggMapsAccordion";
 import {CardContent} from "@material-ui/core";
 import UniprotInfo from "./uniprotinfo";
 import KeggMaps from "./keggmaps";
+import ProteomicsConfiguration from "./proteomicsConfiguration";
 
 const Routes = ({ configData, onConfigChange, experiments, setExperiments, nExperimentsRows, setExperimentsRows }) => {
 
@@ -50,14 +49,21 @@ const Routes = ({ configData, onConfigChange, experiments, setExperiments, nExpe
           />
         </Route>
 
+        <Route path="/MOSGUITO/proteomics-configuration">
+          <ProteomicsConfiguration
+            configData={configData}
+            onConfigChange={onConfigChange}
+          />
+        </Route>
+
         <Route path="/MOSGUITO/about">
         </Route>
 
-        <Route path="/MOSGUITO/about/members">
+        <Route path="/MOSGUITO/members">
           <MembersPage />
         </Route>
 
-        <Route path="/MOSGUITO/about/projects">
+        <Route path="/MOSGUITO/project">
           <ProjectPage />
         </Route>
 
@@ -69,8 +75,8 @@ const Routes = ({ configData, onConfigChange, experiments, setExperiments, nExpe
           <TeamsPage />
         </Route>
 
-        <Route path="/MOSGUITO/settings">
-          <SettingsPage />
+        <Route path="/MOSGUITO/results">
+          <ResultsPage />
         </Route>
 
         <Route path="/MOSGUITO">

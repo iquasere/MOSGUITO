@@ -137,14 +137,14 @@ const ExperimentsTable = ({ experiments, setExperiments, nExperimentsRows, setEx
       <Button
         onClick={(ev) => increaseRows()}
         variant='contained'
-        color='secondary'
+        color='primary'
       >
         Add row
       </Button>
       <Button
         onClick={(ev) => decreaseRows()}
         variant='contained'
-        color='secondary'
+        color='primary'
       >
         Remove last row
       </Button>

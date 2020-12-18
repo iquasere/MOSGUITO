@@ -10,7 +10,7 @@ export const defaultValues = {
     "output":"output",
     "resourcesDirectory":"resources_directory",
     "threads":1,
-    "experiments": "path/to/experiments.tsv",
+    "experiments": "experiments.tsv",
     "doAssembly":true,
     "assembler":assemblerOptions[0],
     "errorModel":errorModelOptions[0],
@@ -308,5 +308,6 @@ export const defaultValues = {
         "04810"
     ],
     "keggcharterTaxaLevel":keggcharterTaxaLevelOptions[0],
-    "keggcharterNumberOfTaxa":10
+    "keggcharterNumberOfTaxa":10,
+    "proteomicsWorkflow":"compomics"
 }

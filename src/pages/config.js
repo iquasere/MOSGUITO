@@ -27,7 +27,6 @@ import {DashboardLayout} from "../components/Layout";
 
 const Main = ({ configData, onConfigChange }) => {
 
-  console.log(configData)
   const camelToSnakeCase = str => str.replace(/[A-Z]/g, letter => `_${letter.toLowerCase()}`);
 
   const downloadJson = (ev) => {
@@ -93,12 +92,21 @@ const Main = ({ configData, onConfigChange }) => {
 
             {
               configData.doAssembly ? (
-                <LabelledSelect
-                  label='Choose assembler'
-                  value={configData.assembler}
-                  onChange={(ev) => onConfigChange('assembler', ev.target.value)}
-                  options={assemblerOptions}
-                />
+                <>
+                  <LabelledSelect
+                    label='Choose assembler'
+                    value={configData.assembler}
+                    onChange={(ev) => onConfigChange('assembler', ev.target.value)}
+                    options={assemblerOptions}
+                  />
+
+                  <LabelledSelect
+                    label='Choose markerset'
+                    value={configData.markerset}
+                    onChange={(ev) => onConfigChange('markerset', ev.target.value)}
+                    options={markersetOptions}
+                  />
+                </>
               ) : (
                   <LabelledSelect
                     label='Choose error model'
@@ -106,16 +114,8 @@ const Main = ({ configData, onConfigChange }) => {
                     onChange={(ev) => onConfigChange('errorModel', ev.target.value)}
                     options={errorModelOptions}
                   />
-                )
+              )
             }
-
-            <LabelledSelect
-              label='Choose markerset'
-              value={configData.markerset}
-              onChange={(ev) => onConfigChange('markerset', ev.target.value)}
-              options={markersetOptions}
-            />
-
             <LabelledTextField
               label='DIAMOND database'
               value={configData.diamondDatabase}
