@@ -26,15 +26,9 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="75167860-5315-49c7-8bd4-159fb3049cae" name="Default Changelist" comment="Broken maps input">
-      <change afterPath="$PROJECT_DIR$/src/components/Member.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/pages/proteomicsConfiguration.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/ExperimentsTable.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/ExperimentsTable.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/NavSidebar.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/NavSidebar.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/pages/_routes.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/pages/_routes.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/pages/_app.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/pages/_app.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/pages/config.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/pages/config.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/pages/members.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/pages/members.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/pages/settings.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/pages/results.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/utils/defaultValues.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/utils/defaultValues.js" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -83,7 +77,7 @@
     <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/../../MOSCA_entire_project/MOSCA_dev" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/../UPIMAPI" />
     <property name="node.js.detected.package.eslint" value="true" />
     <property name="node.js.detected.package.stylelint" value="true" />
     <property name="node.js.path.for.package.eslint" value="project" />
@@ -155,7 +149,9 @@
       <workItem from="1608029123434" duration="11424000" />
       <workItem from="1608111477905" duration="13611000" />
       <workItem from="1608196061295" duration="2771000" />
-      <workItem from="1608284978817" duration="6293000" />
+      <workItem from="1608284978817" duration="7502000" />
+      <workItem from="1608543823664" duration="543000" />
+      <workItem from="1610531550135" duration="3798000" />
     </task>
     <task id="LOCAL-00001" summary="First steps">
       <created>1603985640072</created>
@@ -311,7 +307,14 @@
       <option name="project" value="LOCAL" />
       <updated>1608141563520</updated>
     </task>
-    <option name="localTasksCounter" value="23" />
+    <task id="LOCAL-00023" summary="Started working on proteomics input&#10;Added members page&#10;Also changed settings to results - will be base for visualization of results">
+      <created>1608308544175</created>
+      <option name="number" value="00023" />
+      <option name="presentableId" value="LOCAL-00023" />
+      <option name="project" value="LOCAL" />
+      <updated>1608308544175</updated>
+    </task>
+    <option name="localTasksCounter" value="24" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -362,6 +365,7 @@
     <MESSAGE value="Fixed changing config and experiments" />
     <MESSAGE value="Experiments can now be downloaded as TSV" />
     <MESSAGE value="Separated the accordions from the general configurations&#10;* Also reworked the links" />
-    <option name="LAST_COMMIT_MESSAGE" value="Separated the accordions from the general configurations&#10;* Also reworked the links" />
+    <MESSAGE value="Started working on proteomics input&#10;Added members page&#10;Also changed settings to results - will be base for visualization of results" />
+    <option name="LAST_COMMIT_MESSAGE" value="Started working on proteomics input&#10;Added members page&#10;Also changed settings to results - will be base for visualization of results" />
   </component>
 </project>

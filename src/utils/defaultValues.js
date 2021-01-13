@@ -9,7 +9,7 @@ import {
 export const defaultValues = {
     "output":"output",
     "resourcesDirectory":"resources_directory",
-    "threads":1,
+    "threads":14,
     "experiments": "experiments.tsv",
     "doAssembly":true,
     "assembler":assemblerOptions[0],

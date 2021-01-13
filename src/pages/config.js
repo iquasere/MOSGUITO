@@ -164,7 +164,7 @@ const Main = ({ configData, onConfigChange }) => {
           >
 
             <Button
-              onClick={() => onConfigChange(defaultValues)}
+              onClick={() => Object.keys(configData).map((key, index) => onConfigChange(key, defaultValues[key]))}
               variant='contained'
               color='primary'
             >
@@ -172,7 +172,7 @@ const Main = ({ configData, onConfigChange }) => {
             </Button>
 
             <Button
-              onClick={() => onConfigChange(emptyValues)}
+              onClick={() => Object.keys(configData).map((key, index) => onConfigChange(key, emptyValues[key]))}
               variant='contained'
               color='primary'
             >

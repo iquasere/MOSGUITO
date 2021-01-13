@@ -17,6 +17,8 @@ const App = () => {
   const [nExperimentsRows, setExperimentsRows] = useState(1)
 
   const onConfigChange = (field, value) => {
+    console.log(field)
+    console.log(value)
     const newValue = { ...configData, [field]: value }
     setConfig(newValue)
   }
