@@ -31,7 +31,7 @@ const Main = ({ configData, onConfigChange }) => {
 
   const downloadJson = (ev) => {
     ev.preventDefault()
-    console.log(JSON.stringify(configData, null, 2).toString())
+    if (configData['doAssembly']) {onConfigChange('errorModel', 'complete')}
     const snake_case_values = {}
     Object.keys(configData).map((key) => snake_case_values[camelToSnakeCase(key)] = configData[key])
     download(JSON.stringify(snake_case_values, null, 2), 'config.json', 'json')
@@ -39,10 +39,19 @@ const Main = ({ configData, onConfigChange }) => {
 
   const downloadYaml = (ev) => {
     ev.preventDefault()
-    console.log(YAML.stringify(configData))
+    if (configData['doAssembly']) {onConfigChange('errorModel', 'complete')}
     const snake_case_values = {}
     Object.keys(configData).map((key) => snake_case_values[camelToSnakeCase(key)] = configData[key])
-    download(YAML.stringify(snake_case_values, null, 2), 'config.yaml', 'yaml')
+    download(YAML.stringify(snake_case_values, null), 'config.yaml', 'yaml')
+  }
+
+  const correctValues = () => {
+    console.log(configData)
+    if (configData['doAssembly']) {
+      onConfigChange('errorModel', 'complete')
+      console.log('will do assembly')
+    }
+    console.log(configData)
   }
 
   return (
@@ -164,7 +173,7 @@ const Main = ({ configData, onConfigChange }) => {
           >
 
             <Button
-              onClick={() => Object.keys(configData).map((key, index) => onConfigChange(key, defaultValues[key]))}
+              onClick={() => Object.keys(defaultValues).map((key) => onConfigChange(key, defaultValues[key]))}
               variant='contained'
               color='primary'
             >
@@ -172,7 +181,7 @@ const Main = ({ configData, onConfigChange }) => {
             </Button>
 
             <Button
-              onClick={() => Object.keys(configData).map((key, index) => onConfigChange(key, emptyValues[key]))}
+              onClick={() => Object.keys(emptyValues).map((key) => onConfigChange(key, emptyValues[key]))}
               variant='contained'
               color='primary'
             >

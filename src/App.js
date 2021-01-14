@@ -203,7 +203,7 @@ const Main = () => {
           >
 
             <Button
-              onClick={() => setValues(defaultValues)}
+              onClick={() => handleChange("output", defaultValues["output"])}
               variant='contained'
               color='primary'
             >
@@ -211,7 +211,7 @@ const Main = () => {
             </Button>
 
             <Button
-              onClick={() => setValues(emptyValues)}
+              onClick={() => handleChange("output", emptyValues["output"])}
               variant='contained'
               color='primary'
             >
