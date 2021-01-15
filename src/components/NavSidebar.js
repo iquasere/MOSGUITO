@@ -78,8 +78,12 @@ export const NavSidebar = () => {
                   itemId: "/MOSGUITO/experiments"
                 },
                 {
-                  title: "UniProt information",
-                  itemId: "/MOSGUITO/uniprotinfo"
+                  title: "UniProt columns",
+                  itemId: "/MOSGUITO/uniprot-columns"
+                },
+                {
+                  title: "UniProt databases",
+                  itemId: "/MOSGUITO/uniprot-databases"
                 },
                 {
                   title: "KEGG metabolic maps",

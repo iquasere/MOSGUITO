@@ -28,8 +28,6 @@ import {
 } from './utils/options'
 import './App.css'
 import KeggMapsAccordion from './components/KeggMapsAccordion'
-import UniprotColumnsAccordion from './components/UniprotColumnsAccordion'
-import UniprotDatabasesAccordion from './components/UniprotDatabasesAccordion'
 
 const Main = () => {
   const [values, setValues] = useState(defaultValues)

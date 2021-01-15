@@ -1,7 +1,7 @@
 import React from 'react';
 
 import {DashboardLayout} from '../components/Layout';
-import {CardContent, Typography} from "@material-ui/core";
+import {CardContent, Toolbar, Typography} from "@material-ui/core";
 import KeggMapsAccordion from "../components/KeggMapsAccordion";
 import {keggMaps} from "../utils/keggMaps";
 
@@ -9,6 +9,11 @@ const Main = ({ configData, onConfigChange }) => {
 
   return (
     <main className='main'>
+      <Toolbar>
+        <div>
+          <Typography variant="h6">KEGG metabolic maps for KEGGCharter</Typography>
+        </div>
+      </Toolbar>
       <KeggMapsAccordion
         keggMapList={configData.keggcharterMaps}
         onChange={(value) => onConfigChange('keggcharterMaps', value)}

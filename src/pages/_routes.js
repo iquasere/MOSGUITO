@@ -10,9 +10,12 @@ import HomePage from "./home";
 import Config from "./config"
 import Experiments from "./experiments";
 import {CardContent} from "@material-ui/core";
-import UniprotInfo from "./uniprotinfo";
+import UniprotColumns from "./uniprotColumns";
+import UniprotDatabases from "./uniprotDatabases"
 import KeggMaps from "./keggmaps";
 import ProteomicsConfiguration from "./proteomicsConfiguration";
+import {uniprotDatabases} from "../utils/uniprotDatabases"
+import {uniprotColumns} from "../utils/uniprotColumns"
 
 const Routes = ({ configData, onConfigChange, experiments, setExperiments, nExperimentsRows, setExperimentsRows }) => {
 
@@ -35,10 +38,21 @@ const Routes = ({ configData, onConfigChange, experiments, setExperiments, nExpe
           />
         </Route>
 
-        <Route path="/MOSGUITO/uniprotinfo">
-          <UniprotInfo
-            configData={configData}
-            onConfigChange={onConfigChange}
+        <Route path="/MOSGUITO/uniprot-columns">
+          <UniprotColumns
+            uniprotList={configData.uniprotColumns}
+            onChange={(value) => onConfigChange('uniprotColumns', value)}
+            uniprotPossibilities={uniprotColumns}
+            label={"UniProt columns"}
+          />
+        </Route>
+
+        <Route path="/MOSGUITO/uniprot-databases">
+          <UniprotDatabases
+            uniprotList={configData.uniprotDatabases}
+            onChange={(value) => onConfigChange('uniprotDatabases', value)}
+            uniprotPossibilities={uniprotDatabases}
+            label={"UniProt databases"}
           />
         </Route>
 
