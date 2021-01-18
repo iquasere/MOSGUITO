@@ -26,18 +26,14 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="75167860-5315-49c7-8bd4-159fb3049cae" name="Default Changelist" comment="Broken maps input">
-      <change afterPath="$PROJECT_DIR$/src/components/UniprotAccordion.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/pages/uniprotColumns.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/pages/uniprotDatabases.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/App.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/App.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/debug.log" beforeDir="false" afterPath="$PROJECT_DIR$/debug.log" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/components/KeggMapsAccordion.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/KeggMapsAccordion.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/NavSidebar.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/NavSidebar.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/UniprotColumnsAccordion.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/UniprotDatabasesAccordion.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/UniprotDatabasesAccordion.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/pages/_routes.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/pages/_routes.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/pages/config.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/pages/config.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/pages/experiments.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/pages/experiments.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/pages/keggmaps.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/pages/keggmaps.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/pages/uniprotinfo.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/pages/proteomicsConfiguration.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/pages/proteomicsConfiguration.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/utils/defaultValues.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/utils/defaultValues.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/utils/options.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/utils/options.js" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -163,7 +159,9 @@
       <workItem from="1610531550135" duration="7560000" />
       <workItem from="1610637041892" duration="1328000" />
       <workItem from="1610643078747" duration="4986000" />
-      <workItem from="1610722708547" duration="2547000" />
+      <workItem from="1610722708547" duration="2742000" />
+      <workItem from="1610731483792" duration="1858000" />
+      <workItem from="1610967773852" duration="6015000" />
     </task>
     <task id="LOCAL-00001" summary="First steps">
       <created>1603985640072</created>
@@ -340,7 +338,14 @@
       <option name="project" value="LOCAL" />
       <updated>1610643202206</updated>
     </task>
-    <option name="localTasksCounter" value="26" />
+    <task id="LOCAL-00026" summary="Split UniProt columns and databases">
+      <created>1610725823228</created>
+      <option name="number" value="00026" />
+      <option name="presentableId" value="LOCAL-00026" />
+      <option name="project" value="LOCAL" />
+      <updated>1610725823228</updated>
+    </task>
+    <option name="localTasksCounter" value="27" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -394,6 +399,7 @@
     <MESSAGE value="Started working on proteomics input&#10;Added members page&#10;Also changed settings to results - will be base for visualization of results" />
     <MESSAGE value="Trying to solve sets&#10;* to default values&#10;* to empty values" />
     <MESSAGE value="errorModel now changes with doAssembly&#10;* if doAssembly, errorModel changes to &quot;complete&quot; at download time" />
-    <option name="LAST_COMMIT_MESSAGE" value="errorModel now changes with doAssembly&#10;* if doAssembly, errorModel changes to &quot;complete&quot; at download time" />
+    <MESSAGE value="Split UniProt columns and databases" />
+    <option name="LAST_COMMIT_MESSAGE" value="Split UniProt columns and databases" />
   </component>
 </project>

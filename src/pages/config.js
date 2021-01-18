@@ -93,6 +93,24 @@ const Main = ({ configData, onConfigChange }) => {
               onChange={(ev) => onConfigChange('threads', ev.target.valueAsNumber)}
             />
 
+            <LabelledNumberField
+              label='Minimum read length'
+              value={configData.minimumReadLength}
+              onChange={(ev) => onConfigChange('minimumReadLength', ev.target.valueAsNumber)}
+            />
+
+            <LabelledNumberField
+              label='Minimum read average quality'
+              value={configData.minimumReadAverageQuality}
+              onChange={(ev) => onConfigChange('minimumReadAverageQuality', ev.target.valueAsNumber)}
+            />
+
+            <LabelledNumberField
+              label='Maximum memory'
+              value={configData.maxMemory}
+              onChange={(ev) => onConfigChange('maxMemory', ev.target.valueAsNumber)}
+            />
+
             <LabelledCheckbox
               label='Perform assembly'
               checked={configData.doAssembly}

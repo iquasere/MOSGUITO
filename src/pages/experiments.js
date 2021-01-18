@@ -6,7 +6,6 @@ import download from "../utils/download";
 import TSV from "tsv";
 
 const Experiments = ({ experiments, setExperiments, nExperimentsRows, setExperimentsRows }) => {
-  console.log(JSON.stringify(experiments, null, 2).toString())
 
   return (
     <DashboardLayout>

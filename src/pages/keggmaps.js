@@ -9,15 +9,15 @@ const Main = ({ configData, onConfigChange }) => {
 
   return (
     <main className='main'>
-      <Toolbar>
-        <div>
+      <card>
+        <Toolbar>
           <Typography variant="h6">KEGG metabolic maps for KEGGCharter</Typography>
-        </div>
-      </Toolbar>
+        </Toolbar>
       <KeggMapsAccordion
         keggMapList={configData.keggcharterMaps}
         onChange={(value) => onConfigChange('keggcharterMaps', value)}
       />
+      </card>
     </main>
   )
 }

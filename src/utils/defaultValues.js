@@ -11,7 +11,10 @@ export const defaultValues = {
     "resourcesDirectory":"resources_directory",
     "threads":14,
     "experiments": "experiments.tsv",
+    "minimumReadLength":100,
+    "minimumReadAverageQuality":20,
     "doAssembly":true,
+    "maxMemory":4096,
     "assembler":assemblerOptions[0],
     "errorModel":errorModelOptions[0],
     "markerset":markersetOptions[0],
@@ -309,5 +312,10 @@ export const defaultValues = {
     ],
     "keggcharterTaxaLevel":keggcharterTaxaLevelOptions[0],
     "keggcharterNumberOfTaxa":10,
-    "proteomicsWorkflow":"compomics"
+    "proteomicsWorkflow":"compomics",
+    "useCrap":true,
+    "proteomicsContaminantesDatabase":"crap.fasta",
+    "referenceProteomesTaxaLevel":"GENUS",
+    "protease":"Trypsin",
+    "proteaseFile":""
 }

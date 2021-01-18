@@ -1,7 +1,6 @@
 import Accordion from './Accordion'
 import LabelledCheckbox from "./LabelledCheckbox"
 import { keggMaps } from '../utils/keggMaps'
-import {Card, CardContent, Typography} from "@material-ui/core";
 import React from "react";
 
 const KeggMapsAccordion = ({ keggMapList, onChange }) => {
@@ -20,8 +19,6 @@ const KeggMapsAccordion = ({ keggMapList, onChange }) => {
   } 
 
   return (
-      <div>
-      {
         keggMaps.children.map((category, index) => (
           <Accordion key={index} title={category.name}>
             {
@@ -42,8 +39,6 @@ const KeggMapsAccordion = ({ keggMapList, onChange }) => {
             }
           </Accordion>
         ))
-      }
-      </div>
   )
 }
 
