@@ -3,6 +3,7 @@ import { Navigation } from "react-minimal-side-navigation";
 import { useHistory, useLocation } from "react-router-dom";
 import Icon from "awesome-react-icons";
 import React, { useState } from "react";
+import { FaChartPie } from 'react-icons/fa';
 
 import "react-minimal-side-navigation/lib/ReactMinimalSideNavigation.css";
 
@@ -105,7 +106,21 @@ export const NavSidebar = () => {
               {
                 title: "Results",
                 itemId: "/MOSGUITO/results",
-                elemBefore: () => <Icon name="activity" />
+                elemBefore: () => <FaChartPie />,
+                subNav: [
+                {
+                  title: "Load results",
+                  itemId: "/MOSGUITO/load-results"
+                },
+                {
+                  title: "Preprocessing",
+                  itemId: "/MOSGUITO/preprocessing"
+                },
+                {
+                  title: "Assembly",
+                  itemId: "/MOSGUITO/assembly"
+                }
+              ]
               }
             ]}
             onSelect={({ itemId }) => {

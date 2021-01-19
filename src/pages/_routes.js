@@ -16,6 +16,7 @@ import KeggMaps from "./keggmaps";
 import ProteomicsConfiguration from "./proteomicsConfiguration";
 import {uniprotDatabases} from "../utils/uniprotDatabases"
 import {uniprotColumns} from "../utils/uniprotColumns"
+import LoadResults from "./results";
 
 const Routes = ({ configData, onConfigChange, experiments, setExperiments, nExperimentsRows, setExperimentsRows }) => {
 
@@ -91,6 +92,10 @@ const Routes = ({ configData, onConfigChange, experiments, setExperiments, nExpe
 
         <Route path="/MOSGUITO/results">
           <ResultsPage />
+        </Route>
+
+        <Route path="/MOSGUITO/load-results">
+          <LoadResults />
         </Route>
 
         <Route path="/MOSGUITO">

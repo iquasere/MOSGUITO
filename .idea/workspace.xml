@@ -26,15 +26,14 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="75167860-5315-49c7-8bd4-159fb3049cae" name="Default Changelist" comment="Broken maps input">
+      <change afterPath="$PROJECT_DIR$/src/utils/importForm.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/debug.log" beforeDir="false" afterPath="$PROJECT_DIR$/debug.log" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/KeggMapsAccordion.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/KeggMapsAccordion.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/pages/config.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/pages/config.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/pages/experiments.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/pages/experiments.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/pages/keggmaps.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/pages/keggmaps.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/pages/proteomicsConfiguration.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/pages/proteomicsConfiguration.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/utils/defaultValues.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/utils/defaultValues.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/utils/options.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/utils/options.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/package-lock.json" beforeDir="false" afterPath="$PROJECT_DIR$/package-lock.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/package.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/NavSidebar.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/NavSidebar.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/pages/_routes.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/pages/_routes.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/pages/results.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/pages/results.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/yarn.lock" beforeDir="false" afterPath="$PROJECT_DIR$/yarn.lock" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -161,7 +160,8 @@
       <workItem from="1610643078747" duration="4986000" />
       <workItem from="1610722708547" duration="2742000" />
       <workItem from="1610731483792" duration="1858000" />
-      <workItem from="1610967773852" duration="6015000" />
+      <workItem from="1610967773852" duration="9475000" />
+      <workItem from="1611058077751" duration="16379000" />
     </task>
     <task id="LOCAL-00001" summary="First steps">
       <created>1603985640072</created>
@@ -345,7 +345,14 @@
       <option name="project" value="LOCAL" />
       <updated>1610725823228</updated>
     </task>
-    <option name="localTasksCounter" value="27" />
+    <task id="LOCAL-00027" summary="Added simple proteomics configurations">
+      <created>1610990887104</created>
+      <option name="number" value="00027" />
+      <option name="presentableId" value="LOCAL-00027" />
+      <option name="project" value="LOCAL" />
+      <updated>1610990887104</updated>
+    </task>
+    <option name="localTasksCounter" value="28" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -400,6 +407,7 @@
     <MESSAGE value="Trying to solve sets&#10;* to default values&#10;* to empty values" />
     <MESSAGE value="errorModel now changes with doAssembly&#10;* if doAssembly, errorModel changes to &quot;complete&quot; at download time" />
     <MESSAGE value="Split UniProt columns and databases" />
-    <option name="LAST_COMMIT_MESSAGE" value="Split UniProt columns and databases" />
+    <MESSAGE value="Added simple proteomics configurations" />
+    <option name="LAST_COMMIT_MESSAGE" value="Added simple proteomics configurations" />
   </component>
 </project>
