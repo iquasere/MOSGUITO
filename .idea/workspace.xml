@@ -26,11 +26,7 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="75167860-5315-49c7-8bd4-159fb3049cae" name="Default Changelist" comment="Broken maps input">
-      <change afterPath="$PROJECT_DIR$/src/pages/assemblyQC.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/pages/fastQCReports.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/NavSidebar.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/NavSidebar.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/pages/_routes.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/pages/_routes.js" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -159,7 +155,7 @@
       <workItem from="1610731483792" duration="1858000" />
       <workItem from="1610967773852" duration="9475000" />
       <workItem from="1611058077751" duration="16487000" />
-      <workItem from="1611136644909" duration="2554000" />
+      <workItem from="1611136644909" duration="4138000" />
     </task>
     <task id="LOCAL-00001" summary="First steps">
       <created>1603985640072</created>
@@ -357,7 +353,14 @@
       <option name="project" value="LOCAL" />
       <updated>1611082347330</updated>
     </task>
-    <option name="localTasksCounter" value="29" />
+    <task id="LOCAL-00029" summary="Added some results stuff">
+      <created>1611141449544</created>
+      <option name="number" value="00029" />
+      <option name="presentableId" value="LOCAL-00029" />
+      <option name="project" value="LOCAL" />
+      <updated>1611141449544</updated>
+    </task>
+    <option name="localTasksCounter" value="30" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -388,7 +391,6 @@
     <option name="oldMeFiltersMigrated" value="true" />
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="Get all the arguments except those damn accordions" />
     <MESSAGE value="There can be only one... install!" />
     <MESSAGE value="Removed some outdated classes&#10;Accordions going forward!" />
     <MESSAGE value="Accordions on full fight!" />
@@ -413,6 +415,7 @@
     <MESSAGE value="Split UniProt columns and databases" />
     <MESSAGE value="Added simple proteomics configurations" />
     <MESSAGE value="Started working HARD on results" />
-    <option name="LAST_COMMIT_MESSAGE" value="Started working HARD on results" />
+    <MESSAGE value="Added some results stuff" />
+    <option name="LAST_COMMIT_MESSAGE" value="Added some results stuff" />
   </component>
 </project>
