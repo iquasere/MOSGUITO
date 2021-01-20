@@ -113,12 +113,12 @@ export const NavSidebar = () => {
                   itemId: "/MOSGUITO/load-results"
                 },
                 {
-                  title: "Preprocessing",
-                  itemId: "/MOSGUITO/preprocessing"
+                  title: "FastQC reports",
+                  itemId: "/MOSGUITO/fastqc-reports"
                 },
                 {
-                  title: "Assembly",
-                  itemId: "/MOSGUITO/assembly"
+                  title: "Assembly QC",
+                  itemId: "/MOSGUITO/assembly-qc"
                 }
               ]
               }
