@@ -1,10 +1,44 @@
-import React from 'react';
+import React, {useState} from 'react';
 
 import {DashboardLayout} from '../components/Layout';
-import {Toolbar, Typography} from "@material-ui/core";
-import UniprotAccordion from "../components/UniprotAccordion";
+import {Button, Toolbar, Typography} from "@material-ui/core";
+import ReactHtmlParser from "react-html-parser";
+import Accordion from "../components/Accordion";
 
-const Main = ({ uniprotList, onChange, uniprotPossibilities, label }) => {
+const Main = ({ outputsFiles }) => {
+
+  const [fastQCRaws, setFastQCRaws] = useState([])
+  let fileReader = new FileReader()
+
+  const selectFastQCFiles = (files) => {
+    let fQCFiles = []
+    Object.keys(files).map((index) => {
+        if (files[index]["webkitRelativePath"].includes("fastqc_reports")){
+            fQCFiles.push(files[index])
+        }
+    })
+    return fQCFiles
+  }
+
+  const addToFastQCRaws = value => {
+    const newList = [...fastQCRaws]
+    newList.push(value)
+    setFastQCRaws(newList)
+  }
+
+  const handleFolder = files => {
+    const file = files[0];
+    fileReader.onloadend = handleFileRead;
+    fileReader.readAsText(file)
+  }
+
+  const handleFileRead = (e) => {
+    const content = fileReader.result;
+    addToFastQCRaws(content)
+  }
+
+  const fastQCFiles = selectFastQCFiles(outputsFiles.outputsFiles)
+
 
   return (
     <main className='main'>
@@ -13,26 +47,54 @@ const Main = ({ uniprotList, onChange, uniprotPossibilities, label }) => {
           <Typography variant="h6">FastQC reports from preprocessing with MOSCA</Typography>
         </div>
       </Toolbar>
-        <UniprotAccordion
-          uniprotList={uniprotList}
-          onChange={onChange}
-          uniprotPossibilities={uniprotPossibilities}
-        />
+
+      <Button
+        variant='contained'
+        color='secondary'
+        component="label"
+        onClick={(ev) => {console.log(fastQCFiles)}}
+      >
+      Show files
+      </Button>
+
+      <Button
+        variant='contained'
+        color='secondary'
+        component="label"
+        onClick={(ev) => {console.log(handleFolder(fastQCFiles))}}
+      >
+      Show first raw
+      </Button>
+
+      <Button
+        variant='contained'
+        color='secondary'
+        component="label"
+        onClick={(ev) => {console.log(fastQCRaws)}}
+      >
+      Show RAWs
+      </Button>
+
+
+        {
+        fastQCRaws.map((file, index)=>{
+          <Accordion key={index} title={index}>
+            { ReactHtmlParser(file) }
+          </Accordion>
+      })}
+
     </main>
   )
 }
 
-const UniprotColumns = ({ uniprotList, onChange, uniprotPossibilities, label }) => {
+const FastQCReports = ( outputsFiles ) => {
   return (
     <DashboardLayout>
       <Main
-        uniprotList={uniprotList}
-        onChange={onChange}
-        uniprotPossibilities={uniprotPossibilities}
-        label={label}
+        outputsFiles={outputsFiles}
       />
     </DashboardLayout>
   )
 }
 
-export default UniprotColumns;
+export default FastQCReports;

@@ -15,6 +15,7 @@ const App = () => {
     ])
   const [configData, setConfig] = useState(defaultValues)
   const [nExperimentsRows, setExperimentsRows] = useState(1)
+  const [outputsFiles, setOutputsFiles] = useState([])
 
   const onConfigChange = (field, value) => {
     const newValue = { ...configData, [field]: value }
@@ -28,6 +29,8 @@ const App = () => {
     setExperimentsRows={setExperimentsRows}
     experiments={experiments}
     setExperiments={setExperiments}
+    outputsFiles={outputsFiles}
+    setOutputsFiles={setOutputsFiles}
   />;
 };
 

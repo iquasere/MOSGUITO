@@ -14,7 +14,7 @@ export const defaultValues = {
     "minimumReadLength":100,
     "minimumReadAverageQuality":20,
     "doAssembly":true,
-    "maxMemory":4096,
+    "maxMemory":4,
     "assembler":assemblerOptions[0],
     "errorModel":errorModelOptions[0],
     "markerset":markersetOptions[0],

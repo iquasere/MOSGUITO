@@ -106,7 +106,7 @@ const Main = ({ configData, onConfigChange }) => {
             />
 
             <LabelledNumberField
-              label='Maximum memory'
+              label='Maximum memory (Gb)'
               value={configData.maxMemory}
               onChange={(ev) => onConfigChange('maxMemory', ev.target.valueAsNumber)}
             />

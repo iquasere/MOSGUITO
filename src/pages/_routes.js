@@ -17,8 +17,11 @@ import ProteomicsConfiguration from "./proteomicsConfiguration";
 import {uniprotDatabases} from "../utils/uniprotDatabases"
 import {uniprotColumns} from "../utils/uniprotColumns"
 import LoadResults from "./results";
+import FastQCReports from "./fastQCReports";
+import AssemblyQC from "./assemblyQC";
 
-const Routes = ({ configData, onConfigChange, experiments, setExperiments, nExperimentsRows, setExperimentsRows }) => {
+const Routes = ({ configData, onConfigChange, experiments, setExperiments, nExperimentsRows, setExperimentsRows,
+                  outputsFiles, setOutputsFiles }) => {
 
   return (
     <BrowserRouter>
@@ -95,9 +98,23 @@ const Routes = ({ configData, onConfigChange, experiments, setExperiments, nExpe
         </Route>
 
         <Route path="/MOSGUITO/load-results">
-          <LoadResults />
+          <LoadResults
+            outputsFiles={outputsFiles}
+            setOutputsFiles={setOutputsFiles}
+          />
         </Route>
 
+        <Route path="/MOSGUITO/fastqc-reports">
+          <FastQCReports
+            outputsFiles={outputsFiles}
+          />
+        </Route>
+
+        <Route path="/MOSGUITO/assembly-qc">
+          <AssemblyQC
+            outputsFolder={outputsFiles}
+          />
+        </Route>
 
         <Route path="/MOSGUITO">
           <HomePage />

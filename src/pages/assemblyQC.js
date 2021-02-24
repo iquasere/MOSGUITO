@@ -1,38 +1,30 @@
 import React from 'react';
 
 import {DashboardLayout} from '../components/Layout';
-import {Toolbar, Typography} from "@material-ui/core";
-import UniprotAccordion from "../components/UniprotAccordion";
+import {Button, Toolbar, Typography} from "@material-ui/core";
 
-const Main = ({ uniprotList, onChange, uniprotPossibilities, label }) => {
+const Main = ({ outputsFolder }) => {
 
   return (
     <main className='main'>
       <Toolbar>
         <div>
-          <Typography variant="h6">{ label }</Typography>
+          <Typography variant="h6">Quality check reports from assembly</Typography>
         </div>
+
       </Toolbar>
-        <UniprotAccordion
-          uniprotList={uniprotList}
-          onChange={onChange}
-          uniprotPossibilities={uniprotPossibilities}
-        />
     </main>
   )
 }
 
-const UniprotColumns = ({ uniprotList, onChange, uniprotPossibilities, label }) => {
+const AssemblyQC = ({ outputsFolder }) => {
   return (
     <DashboardLayout>
       <Main
-        uniprotList={uniprotList}
-        onChange={onChange}
-        uniprotPossibilities={uniprotPossibilities}
-        label={label}
+        outputsFolder={outputsFolder}
       />
     </DashboardLayout>
   )
 }
 
-export default UniprotColumns;
+export default AssemblyQC;

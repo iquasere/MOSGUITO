@@ -1,51 +1,54 @@
 import React, { useState } from 'react';
-import ReactFileReader from 'react-file-reader';
 import {DashboardLayout} from '../components/Layout';
 import {Button, Toolbar, Typography} from "@material-ui/core";
 import ReactHtmlParser from 'react-html-parser';
 
-const Main = () => {
-  const [image, setImage] = useState('')
+const Main = ({ outputsFiles, setOutputsFiles }) => {
 
   let fileReader;
 
-  const handleFiles = files => {
-    const file = files.item(0);
-    fileReader = new FileReader();
-    fileReader.onloadend = handleFileRead;
-    fileReader.readAsText(file);
+    const handleFolder = files => {
+        setOutputsFiles(files)
+        console.log(files)
+        const file = files.item(0);
+
     }
 
-  const handleFileRead = (e) => {
-    const content = fileReader.result;
-    console.log(content)
-    setImage(content)
-  }
+
 
   return (
     <>
-      <ReactFileReader handleFiles={handleFiles} fileTypes={[".xlsx",".html", ".txt"]} >
         <Button
           variant='contained'
           color='secondary'
+          component="label"
         >
-          Upload results
+          Upload results folder
+          <input
+            type="file"
+            directory=""
+            webkitdirectory=""
+            onChange={ev => handleFolder(ev.target.files)}
+            hidden
+          />
         </Button>
-      </ReactFileReader>
 
-      <>{ ReactHtmlParser(image) }</>
+      <>{ ReactHtmlParser() }</>
 
     </>
   )
 }
 
-const LoadResults = () => {
+const LoadResults = ({ outputsFiles, setOutputsFiles }) => {
   return (
     <DashboardLayout>
       <Toolbar>
         <Typography variant="h6">MOSCA results page</Typography>
       </Toolbar>
-      <Main />
+      <Main
+        outputsFiles={outputsFiles}
+        setOutputsFiles={setOutputsFiles}
+      />
     </DashboardLayout>
 
   )
