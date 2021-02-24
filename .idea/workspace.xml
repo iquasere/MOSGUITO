@@ -27,9 +27,7 @@
   <component name="ChangeListManager">
     <list default="true" id="75167860-5315-49c7-8bd4-159fb3049cae" name="Default Changelist" comment="Broken maps input">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/UniprotAccordion.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/UniprotAccordion.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/pages/_routes.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/pages/_routes.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/utils/uniprotDatabases.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/utils/uniprotDatabases.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/utils/options.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/utils/options.js" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -77,7 +75,7 @@
     <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/../CBEDS" />
     <property name="node.js.detected.package.eslint" value="true" />
     <property name="node.js.detected.package.stylelint" value="true" />
     <property name="node.js.path.for.package.eslint" value="project" />
@@ -162,7 +160,7 @@
       <workItem from="1611224799214" duration="14774000" />
       <workItem from="1611332006992" duration="456000" />
       <workItem from="1611333440755" duration="3750000" />
-      <workItem from="1614167850725" duration="2956000" />
+      <workItem from="1614167850725" duration="4612000" />
     </task>
     <task id="LOCAL-00001" summary="First steps">
       <created>1603985640072</created>
@@ -381,7 +379,14 @@
       <option name="project" value="LOCAL" />
       <updated>1614168615706</updated>
     </task>
-    <option name="localTasksCounter" value="32" />
+    <task id="LOCAL-00032" summary="Fixed UniProt databases&#10;* DB name and code were replaced">
+      <created>1614175880110</created>
+      <option name="number" value="00032" />
+      <option name="presentableId" value="LOCAL-00032" />
+      <option name="project" value="LOCAL" />
+      <updated>1614175880110</updated>
+    </task>
+    <option name="localTasksCounter" value="33" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -412,7 +417,6 @@
     <option name="oldMeFiltersMigrated" value="true" />
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="Accordions on full fight!" />
     <MESSAGE value="trying to go live" />
     <MESSAGE value="Add space on select fields" />
     <MESSAGE value="Set subaccordions to pile horizontally instead of vertically&#10;A little space for selection boxes&#10;Built the JSON for UniProt columns" />
@@ -437,6 +441,7 @@
     <MESSAGE value="Added some results stuff" />
     <MESSAGE value="Update README" />
     <MESSAGE value="Started going on outputs&#10;Max memory now set as Gb" />
-    <option name="LAST_COMMIT_MESSAGE" value="Started going on outputs&#10;Max memory now set as Gb" />
+    <MESSAGE value="Fixed UniProt databases&#10;* DB name and code were replaced" />
+    <option name="LAST_COMMIT_MESSAGE" value="Fixed UniProt databases&#10;* DB name and code were replaced" />
   </component>
 </project>
