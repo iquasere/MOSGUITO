@@ -27,14 +27,9 @@
   <component name="ChangeListManager">
     <list default="true" id="75167860-5315-49c7-8bd4-159fb3049cae" name="Default Changelist" comment="Broken maps input">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/package-lock.json" beforeDir="false" afterPath="$PROJECT_DIR$/package-lock.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/package.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/pages/_app.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/pages/_app.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/UniprotAccordion.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/UniprotAccordion.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/pages/_routes.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/pages/_routes.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/pages/assemblyQC.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/pages/assemblyQC.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/pages/fastQCReports.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/pages/fastQCReports.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/pages/results.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/pages/results.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/yarn.lock" beforeDir="false" afterPath="$PROJECT_DIR$/yarn.lock" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/utils/uniprotDatabases.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/utils/uniprotDatabases.js" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -167,7 +162,7 @@
       <workItem from="1611224799214" duration="14774000" />
       <workItem from="1611332006992" duration="456000" />
       <workItem from="1611333440755" duration="3750000" />
-      <workItem from="1614167850725" duration="495000" />
+      <workItem from="1614167850725" duration="2956000" />
     </task>
     <task id="LOCAL-00001" summary="First steps">
       <created>1603985640072</created>
@@ -379,7 +374,14 @@
       <option name="project" value="LOCAL" />
       <updated>1611143644761</updated>
     </task>
-    <option name="localTasksCounter" value="31" />
+    <task id="LOCAL-00031" summary="Started going on outputs&#10;Max memory now set as Gb">
+      <created>1614168615706</created>
+      <option name="number" value="00031" />
+      <option name="presentableId" value="LOCAL-00031" />
+      <option name="project" value="LOCAL" />
+      <updated>1614168615706</updated>
+    </task>
+    <option name="localTasksCounter" value="32" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -410,7 +412,6 @@
     <option name="oldMeFiltersMigrated" value="true" />
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="Removed some outdated classes&#10;Accordions going forward!" />
     <MESSAGE value="Accordions on full fight!" />
     <MESSAGE value="trying to go live" />
     <MESSAGE value="Add space on select fields" />
@@ -435,6 +436,7 @@
     <MESSAGE value="Started working HARD on results" />
     <MESSAGE value="Added some results stuff" />
     <MESSAGE value="Update README" />
-    <option name="LAST_COMMIT_MESSAGE" value="Update README" />
+    <MESSAGE value="Started going on outputs&#10;Max memory now set as Gb" />
+    <option name="LAST_COMMIT_MESSAGE" value="Started going on outputs&#10;Max memory now set as Gb" />
   </component>
 </project>

@@ -20,9 +20,9 @@ import LoadResults from "./results";
 import FastQCReports from "./fastQCReports";
 import AssemblyQC from "./assemblyQC";
 
-const Routes = ({ configData, onConfigChange, experiments, setExperiments, nExperimentsRows, setExperimentsRows,
+const Routes = ({ configData, onConfigChange, experiments, setExperiments,
+                  nExperimentsRows, setExperimentsRows,
                   outputsFiles, setOutputsFiles }) => {
-
   return (
     <BrowserRouter>
       <Switch>

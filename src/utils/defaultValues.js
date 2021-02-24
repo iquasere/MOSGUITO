@@ -53,7 +53,8 @@ export const defaultValues = {
         "Pfam",
         "Reactome",
         "RefSeq",
-        "UniPathway"
+        "UniPathway",
+        "GO"
     ],
     "normalizationMethod":normalizationMethodOptions[0],
     "keggcharterMaps":[
