@@ -20,10 +20,12 @@ import {
   errorModelOptions,
   markersetOptions,
   normalizationMethodOptions,
-  keggcharterTaxaLevelOptions
+  keggcharterTaxaLevelOptions,
+  recognizerDatabasesOptions
 } from '../utils/options'
 import './../App.css'
 import {DashboardLayout} from "../components/Layout";
+import Accordion from "../components/Accordion";
 
 const Main = ({ configData, onConfigChange }) => {
 
@@ -52,6 +54,19 @@ const Main = ({ configData, onConfigChange }) => {
       console.log('will do assembly')
     }
     console.log(configData)
+  }
+
+  const handleCheck = value => {
+    const newList = [...configData.recognizerDatabases]
+
+    const index = newList.indexOf(value)
+    if (index > -1) {
+      newList.splice(index, 1)
+    } else {
+      newList.push(value)
+    }
+
+    onConfigChange('recognizerDatabases', newList)
   }
 
   return (
@@ -155,6 +170,26 @@ const Main = ({ configData, onConfigChange }) => {
               checked={configData.downloadUniprot}
               setChecked={(ev) => onConfigChange('downloadUniprot', ev.target.checked)}
             />
+
+            <LabelledCheckbox
+              label='Download CDD'
+              checked={configData.downloadCdd}
+              setChecked={(ev) => onConfigChange('downloadCdd', ev.target.checked)}
+            />
+
+            <Accordion title="Pick databases of reCOGnizer">
+              {
+                recognizerDatabasesOptions.map(( value, index) => (
+                  <LabelledCheckbox
+                    key={index}
+                    label={value}
+                    checked={configData.recognizerDatabases.indexOf(value) > -1}
+                    setChecked={(ev) => handleCheck(value)}
+                  />
+                  )
+                )
+              }
+            </Accordion>
 
             <LabelledNumberField
               label='Number of identifications per protein'

@@ -3,7 +3,8 @@ import {
   errorModelOptions,
   markersetOptions,
   normalizationMethodOptions,
-  keggcharterTaxaLevelOptions
+  keggcharterTaxaLevelOptions,
+  recognizerDatabasesOptions
 } from './options'
 
 export const defaultValues = {
@@ -21,6 +22,7 @@ export const defaultValues = {
     "diamondDatabase":"resources_directory/uniprot.dmnd",
     "diamondMaxTargetSeqs":1,
     "downloadUniprot":true,
+    "downloadCdd":true,
     "uniprotColumns":[
         "id",
         "entry name",
@@ -56,6 +58,7 @@ export const defaultValues = {
         "UniPathway",
         "GO"
     ],
+    "recognizerDatabases":recognizerDatabasesOptions,
     "normalizationMethod":normalizationMethodOptions[0],
     "keggcharterMaps":[
         "00010",

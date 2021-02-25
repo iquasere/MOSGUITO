@@ -13,11 +13,11 @@ const Main = ({ uniprotList, onChange, uniprotPossibilities, label }) => {
           <Typography variant="h6">{ label }</Typography>
         </div>
       </Toolbar>
-        <UniprotAccordion
-          uniprotList={uniprotList}
-          onChange={onChange}
-          uniprotPossibilities={uniprotPossibilities}
-        />
+      <UniprotAccordion
+        uniprotList={uniprotList}
+        onChange={onChange}
+        uniprotPossibilities={uniprotPossibilities}
+      />
     </main>
   )
 }
