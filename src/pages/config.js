@@ -158,6 +158,7 @@ const Main = ({ configData, onConfigChange }) => {
                   />
               )
             }
+
             <LabelledTextField
               label='DIAMOND database'
               value={configData.diamondDatabase}
@@ -226,7 +227,7 @@ const Main = ({ configData, onConfigChange }) => {
           >
 
             <Button
-              onClick={() => Object.keys(defaultValues).map((key) => onConfigChange(key, defaultValues[key]))}
+              onClick={() => Object.keys(configData).map((key) => onConfigChange(key, defaultValues[key]))}
               variant='contained'
               color='primary'
             >
@@ -234,7 +235,7 @@ const Main = ({ configData, onConfigChange }) => {
             </Button>
 
             <Button
-              onClick={() => Object.keys(emptyValues).map((key) => onConfigChange(key, emptyValues[key]))}
+              onClick={() => Object.keys(configData).map((key) => onConfigChange(key, emptyValues[key]))}
               variant='contained'
               color='primary'
             >

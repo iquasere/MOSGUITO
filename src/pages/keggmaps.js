@@ -3,7 +3,6 @@ import React from 'react';
 import {DashboardLayout} from '../components/Layout';
 import {CardContent, Toolbar, Typography} from "@material-ui/core";
 import KeggMapsAccordion from "../components/KeggMapsAccordion";
-import {keggMaps} from "../utils/keggMaps";
 
 const Main = ({ configData, onConfigChange }) => {
 

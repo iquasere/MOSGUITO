@@ -26,11 +26,10 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="75167860-5315-49c7-8bd4-159fb3049cae" name="Default Changelist" comment="Broken maps input">
+      <change afterPath="$PROJECT_DIR$/.idea/codeStyles/codeStyleConfig.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/pages/config.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/pages/config.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/pages/uniprotColumns.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/pages/uniprotColumns.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/utils/defaultValues.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/utils/defaultValues.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/utils/options.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/utils/options.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/pages/results.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/pages/results.js" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -77,6 +76,7 @@
     <property name="ASKED_ADD_EXTERNAL_FILES" value="true" />
     <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
+    <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="last_opened_file_path" value="$PROJECT_DIR$/../CBEDS" />
     <property name="node.js.detected.package.eslint" value="true" />
@@ -87,7 +87,7 @@
     <property name="node.js.selected.package.stylelint" value="" />
     <property name="nodejs_package_manager_path" value="yarn" />
     <property name="settings.editor.selected.configurable" value="preferences.keymap" />
-    <property name="ts.external.directory.path" value="C:\Users\Catarina\AppData\Local\JetBrains\Toolbox\apps\PyCharm-P\ch-0\203.5981.165\plugins\JavaScriptLanguage\jsLanguageServicesImpl\external" />
+    <property name="ts.external.directory.path" value="C:\Program Files\JetBrains\PyCharm 2020.2.3\plugins\JavaScriptLanguage\jsLanguageServicesImpl\external" />
   </component>
   <component name="RunManager">
     <configuration name="MOSGUITO" type="PythonConfigurationType" factoryName="Python">
@@ -164,7 +164,14 @@
       <workItem from="1611332006992" duration="456000" />
       <workItem from="1611333440755" duration="3750000" />
       <workItem from="1614167850725" duration="4973000" />
-      <workItem from="1614259823711" duration="2222000" />
+      <workItem from="1614259823711" duration="3233000" />
+      <workItem from="1614879248875" duration="53000" />
+      <workItem from="1614881506568" duration="11000" />
+      <workItem from="1615831234758" duration="1119000" />
+      <workItem from="1616062628242" duration="918000" />
+      <workItem from="1617035091910" duration="3525000" />
+      <workItem from="1617284759946" duration="4530000" />
+      <workItem from="1617356341047" duration="2362000" />
     </task>
     <task id="LOCAL-00001" summary="First steps">
       <created>1603985640072</created>
@@ -397,7 +404,14 @@
       <option name="project" value="LOCAL" />
       <updated>1614182604715</updated>
     </task>
-    <option name="localTasksCounter" value="34" />
+    <task id="LOCAL-00034" summary="reCOGnizer databases&#10;* can now be picked">
+      <created>1614263266750</created>
+      <option name="number" value="00034" />
+      <option name="presentableId" value="LOCAL-00034" />
+      <option name="project" value="LOCAL" />
+      <updated>1614263266750</updated>
+    </task>
+    <option name="localTasksCounter" value="35" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -428,7 +442,6 @@
     <option name="oldMeFiltersMigrated" value="true" />
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="Add space on select fields" />
     <MESSAGE value="Set subaccordions to pile horizontally instead of vertically&#10;A little space for selection boxes&#10;Built the JSON for UniProt columns" />
     <MESSAGE value="Broken maps input" />
     <MESSAGE value="Set defaults&#10;* UPIMAPI columns&#10;* UPIMAPI databses&#10;* KEGGCharter maps" />
@@ -453,6 +466,17 @@
     <MESSAGE value="Started going on outputs&#10;Max memory now set as Gb" />
     <MESSAGE value="Fixed UniProt databases&#10;* DB name and code were replaced" />
     <MESSAGE value="Default error model now illumina_5" />
-    <option name="LAST_COMMIT_MESSAGE" value="Default error model now illumina_5" />
+    <MESSAGE value="reCOGnizer databases&#10;* can now be picked" />
+    <option name="LAST_COMMIT_MESSAGE" value="reCOGnizer databases&#10;* can now be picked" />
+  </component>
+  <component name="WindowStateProjectService">
+    <state x="2298" y="221" key="#JavaScript" timestamp="1617297135520">
+      <screen x="1920" y="0" width="1280" height="1024" />
+    </state>
+    <state x="2298" y="221" key="#JavaScript/0.0.1280.720/1920.0.1280.1024@1920.0.1280.1024" timestamp="1617297135520" />
+    <state x="0" y="0" width="587" height="720" key="find.popup" timestamp="1617036950153">
+      <screen x="0" y="0" width="1280" height="720" />
+    </state>
+    <state x="0" y="0" width="587" height="720" key="find.popup/0.0.1280.720/1920.0.1280.1024@0.0.1280.720" timestamp="1617036950153" />
   </component>
 </project>

@@ -14,8 +14,6 @@ const Main = ({ outputsFiles, setOutputsFiles }) => {
 
     }
 
-
-
   return (
     <>
         <Button

@@ -14,8 +14,6 @@ import UniprotColumns from "./uniprotColumns";
 import UniprotDatabases from "./uniprotDatabases"
 import KeggMaps from "./keggmaps";
 import ProteomicsConfiguration from "./proteomicsConfiguration";
-import {uniprotDatabases} from "../utils/uniprotDatabases"
-import {uniprotColumns} from "../utils/uniprotColumns"
 import LoadResults from "./results";
 import FastQCReports from "./fastQCReports";
 import AssemblyQC from "./assemblyQC";
@@ -46,8 +44,6 @@ const Routes = ({ configData, onConfigChange, experiments, setExperiments,
           <UniprotColumns
             uniprotList={configData.uniprotColumns}
             onChange={(value) => onConfigChange('uniprotColumns', value)}
-            uniprotPossibilities={uniprotColumns}
-            label={"UniProt columns"}
           />
         </Route>
 
@@ -55,8 +51,6 @@ const Routes = ({ configData, onConfigChange, experiments, setExperiments,
           <UniprotDatabases
             uniprotList={configData.uniprotDatabases}
             onChange={(value) => onConfigChange('uniprotDatabases', value)}
-            uniprotPossibilities={uniprotDatabases}
-            label={"UniProt databases"}
           />
         </Route>
 
