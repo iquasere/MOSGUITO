@@ -6,7 +6,7 @@ import {
   keggcharterTaxaLevelOptions
 } from './options'
 
-export const defaultValues = {
+export const defaultValues = { //default values contidos ai iniciar a webpage
     "output":"output",
     "resourcesDirectory":"resources_directory",
     "threads":14,
