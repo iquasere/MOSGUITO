@@ -12,6 +12,8 @@
     "d3": "^6.3.1",
     "extract-zip": "^2.0.1",
     "file-saver": "^2.0.5",
+    "jquery": "^3.6.0",
+    "jszip": "^3.6.0",
     "mui-datatables": "^3.7.1",
     "react": "^17.0.1",
     "react-dom": "^17.0.1",
