@@ -4,7 +4,7 @@ import {Button, Toolbar, Typography} from "@material-ui/core";
 import ReactHtmlParser from 'react-html-parser';
 
 const Main = ({ outputsFiles, setOutputsFiles }) => {
-
+  let ResultsDisposition = false;
   let fileReader;
 
     const handleFolder = files => {
@@ -28,6 +28,7 @@ const Main = ({ outputsFiles, setOutputsFiles }) => {
             webkitdirectory=""
             onChange={ev => handleFolder(ev.target.files)}
             hidden
+            onClick = {ResultsDisposition = true}
           />
         </Button>
 
