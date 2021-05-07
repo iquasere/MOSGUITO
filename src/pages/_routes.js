@@ -1,7 +1,6 @@
 import React from "react";
 import { BrowserRouter, Switch, Route } from "react-router-dom";
 
-import ResultsPage from "./results";
 import ProjectPage from "./project";
 import MembersPage from "./members";
 import AboutPage from "./about";
@@ -14,7 +13,7 @@ import UniprotColumns from "./uniprotColumns";
 import UniprotDatabases from "./uniprotDatabases"
 import KeggMaps from "./keggmaps";
 import ProteomicsConfiguration from "./proteomicsConfiguration";
-import LoadResults from "./results";
+import {LoadResults} from "./results";
 import FastQCReports from "./fastQCReports";
 import AssemblyQC from "./assemblyQC";
 
@@ -88,7 +87,10 @@ const Routes = ({ configData, onConfigChange, experiments, setExperiments,
         </Route>
 
         <Route path="/MOSGUITO/results">
-          <ResultsPage />
+          <LoadResults
+            outputsFiles = {outputsFiles}
+            setOutputsFiles = {setOutputsFiles}
+          />
         </Route>
 
         <Route path="/MOSGUITO/load-results">

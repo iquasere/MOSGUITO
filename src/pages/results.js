@@ -2,17 +2,21 @@ import React, { useState } from 'react';
 import {DashboardLayout} from '../components/Layout';
 import {Button, Toolbar, Typography} from "@material-ui/core";
 import ReactHtmlParser from 'react-html-parser';
+import { file } from 'jszip';
+
+export let ResultsDisposition = false;
+
+
 
 const Main = ({ outputsFiles, setOutputsFiles }) => {
-  let ResultsDisposition = false;
+
   let fileReader;
 
     const handleFolder = files => {
-        setOutputsFiles(files)
-        console.log(files)
-        const file = files.item(0);
-
-    }
+      setOutputsFiles(files)
+      console.log(files)
+      const file = files.item(0);
+    };
 
   return (
     <>
@@ -20,6 +24,7 @@ const Main = ({ outputsFiles, setOutputsFiles }) => {
           variant='contained'
           color='secondary'
           component="label"
+          ///ResultsDisposition = true // está a fazer com que o display resultados ative o subNav n sei porque* doen't make sense
         >
           Upload results folder
           <input
@@ -28,7 +33,6 @@ const Main = ({ outputsFiles, setOutputsFiles }) => {
             webkitdirectory=""
             onChange={ev => handleFolder(ev.target.files)}
             hidden
-            onClick = {ResultsDisposition = true}
           />
         </Button>
 
@@ -36,9 +40,9 @@ const Main = ({ outputsFiles, setOutputsFiles }) => {
 
     </>
   )
-}
+};
 
-const LoadResults = ({ outputsFiles, setOutputsFiles }) => {
+export const LoadResults = ({ outputsFiles, setOutputsFiles }) => {
   return (
     <DashboardLayout>
       <Toolbar>
@@ -53,4 +57,3 @@ const LoadResults = ({ outputsFiles, setOutputsFiles }) => {
   )
 }
 
-export default LoadResults;
