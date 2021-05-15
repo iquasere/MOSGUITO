@@ -2,10 +2,20 @@ import React, {useState} from 'react';
 
 import {DashboardLayout} from '../components/Layout';
 import {Button, Toolbar, Typography} from "@material-ui/core";
-import ReactHtmlParser from "react-html-parser";
+import ReactHtmlParser,{ processNodes, convertNodeToElement, htmlparser2 } from "react-html-parser";
 import Accordion from "../components/Accordion";
 
-const Main = ({ outputsFiles }) => {
+export const FastQCPage = (listFastQC) => {
+    console.log(readAsText(listFastQC))
+    
+    return(
+      <div id='display'>
+
+      </div>
+    )
+}
+
+/*const Main = ({ outputsFiles }) => {
 
   const [fastQCRaws, setFastQCRaws] = useState([])
   let fileReader = new FileReader()
@@ -97,4 +107,15 @@ const FastQCReports = ( outputsFiles ) => {
   )
 }
 
-export default FastQCReports;
+export default FastQCReports; */
+
+export const FastQCFiles = () => {
+  return (
+    <DashboardLayout>
+      <h1>Teste</h1>
+      <FastQCPage>
+
+      </FastQCPage>
+    </DashboardLayout>
+  )
+}

@@ -3,6 +3,7 @@ import { DashboardLayout } from '../components/Layout';
 import { Button, Toolbar, Typography } from "@material-ui/core";
 import ReactHtmlParser from 'react-html-parser';
 import * as zip from "@zip.js/zip.js/dist/zip.min.js";
+import {FastQCPage} from './fastQCReports'
 //import {reader} from './ServerUnzip'
 
 
@@ -12,20 +13,28 @@ async function render(event){
   const blobReader = new zip.BlobReader(file);
   const zipReader = new zip.ZipReader (blobReader);
   const entries = await zipReader.getEntries();
-  console.log(entries)
-  let urls = [];
+  let urlsFastqc = [];
   
   entries.forEach(async file => {
-    if (file.directory === false){ //aquilo que for uma diretoria não lhe interessa
-      const blob = await file.getData(new zip.BlobWriter(['image/jpeg', 'text/csv', 'text/html', 'application/json']));
+    if (file.directory === false){
+      if(file.filename.includes('Preprocess')){
+        const blob = await file.getData(new zip.BlobWriter(['text/html']))
+        const HtmlURL = URL.createObjectURL(blob)
+        urlsFastqc.push(HtmlURL)
+      }
+      //const blob = await file.getData(new zip.BlobWriter(['image/jpeg', 'text/csv', 'text/html', 'application/json']));
 
-      const imageURL = URL.createObjectURL(blob);
+      //const imageURL = URL.createObjectURL(blob);
     
-      urls.push(imageURL);
+      //urls.push(imageURL);
   }
   });
   await zipReader.close()
-  console.log(urls)
+  function badjoras (element, index, array){
+    FastQCPage(element)
+  }
+  urlsFastqc.forEach(badjoras);
+  //FastQCPage(urlsFastqc)
   //return urls;
 }
 

@@ -14,7 +14,7 @@ import UniprotDatabases from "./uniprotDatabases"
 import KeggMaps from "./keggmaps";
 import ProteomicsConfiguration from "./proteomicsConfiguration";
 import {LoadResults} from "./results";
-import FastQCReports from "./fastQCReports";
+import {FastQCFiles} from "./fastQCReports";
 import AssemblyQC from "./assemblyQC";
 
 const Routes = ({ configData, onConfigChange, experiments, setExperiments,
@@ -101,7 +101,7 @@ const Routes = ({ configData, onConfigChange, experiments, setExperiments,
         </Route>
 
         <Route path="/MOSGUITO/fastqc-reports">
-          <FastQCReports
+          <FastQCFiles
             outputsFiles={outputsFiles}
           />
         </Route>
