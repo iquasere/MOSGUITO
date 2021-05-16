@@ -3,8 +3,7 @@ import {
   errorModelOptions,
   markersetOptions,
   normalizationMethodOptions,
-  keggcharterTaxaLevelOptions,
-  recognizerDatabasesOptions
+  keggcharterTaxaLevelOptions
 } from './options'
 
 export const defaultValues = { //default values contidos ai iniciar a webpage
@@ -12,17 +11,13 @@ export const defaultValues = { //default values contidos ai iniciar a webpage
     "resourcesDirectory":"resources_directory",
     "threads":14,
     "experiments": "experiments.tsv",
-    "minimumReadLength":100,
-    "minimumReadAverageQuality":20,
     "doAssembly":true,
-    "maxMemory":4,
     "assembler":assemblerOptions[0],
     "errorModel":errorModelOptions[0],
     "markerset":markersetOptions[0],
     "diamondDatabase":"resources_directory/uniprot.dmnd",
     "diamondMaxTargetSeqs":1,
     "downloadUniprot":true,
-    "downloadCdd":true,
     "uniprotColumns":[
         "id",
         "entry name",
@@ -55,10 +50,8 @@ export const defaultValues = { //default values contidos ai iniciar a webpage
         "Pfam",
         "Reactome",
         "RefSeq",
-        "UniPathway",
-        "GO"
+        "UniPathway"
     ],
-    "recognizerDatabases":recognizerDatabasesOptions,
     "normalizationMethod":normalizationMethodOptions[0],
     "keggcharterMaps":[
         "00010",
@@ -316,10 +309,5 @@ export const defaultValues = { //default values contidos ai iniciar a webpage
     ],
     "keggcharterTaxaLevel":keggcharterTaxaLevelOptions[0],
     "keggcharterNumberOfTaxa":10,
-    "proteomicsWorkflow":"compomics",
-    "useCrap":true,
-    "proteomicsContaminantesDatabase":"crap.fasta",
-    "referenceProteomesTaxaLevel":"GENUS",
-    "protease":"Trypsin",
-    "proteaseFile":""
+    "proteomicsWorkflow":"compomics"
 }
