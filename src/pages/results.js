@@ -3,8 +3,46 @@ import $ from 'jquery'
 import {DashboardLayout} from '../components/Layout';
 import {Button, CardActions} from "@material-ui/core";
 
+<<<<<<< HEAD
 const ResultsPage = () => {
   let $Zipfile = $('#file') //inserir o botão responsável por modstrar a página dos result
+=======
+const Main = ({ outputsFiles, setOutputsFiles }) => {
+
+  let fileReader;
+
+    const handleFolder = files => {
+        setOutputsFiles(files)
+        console.log(files)
+        const file = files.item(0);
+
+    }
+
+  return (
+    <>
+        <Button
+          variant='contained'
+          color='secondary'
+          component="label"
+        >
+          Upload results folder
+          <input
+            type="file"
+            directory=""
+            webkitdirectory=""
+            onChange={ev => handleFolder(ev.target.files)}
+            hidden
+          />
+        </Button>
+
+      <>{ ReactHtmlParser() }</>
+
+    </>
+  )
+}
+
+const LoadResults = ({ outputsFiles, setOutputsFiles }) => {
+>>>>>>> parent of 1e89fc0 (VAriable- Loaded Results)
   return (
     <DashboardLayout>
       <h3>Choose the local(s) zip file(s)</h3>
