@@ -1,774 +1,774 @@
 export const uniprotDatabases = {
     "Protocols and materials databases":[
         [
-            "ABCD curated depository of sequenced antibodies",
-            "ABCD"
+            "ABCD",
+            "ABCD curated depository of sequenced antibodies"
         ],
         [
-			"Antibodypedia a portal for validated antibodies",
-            "Antibodypedia"
+            "Antibodypedia",
+            "Antibodypedia a portal for validated antibodies"
         ],
         [
-            "The CPTC Antibody Portal",
-            "CPTC"
+            "CPTC",
+            "The CPTC Antibody Portal"
         ],
         [
-            "The DNASU plasmid repository",
-            "DNASU"
+            "DNASU",
+            "The DNASU plasmid repository"
         ]
     ],
     "Protein family/group databases":[
         [
-            "Allergome; a platform for allergen knowledge",
-            "Allergome"
+            "Allergome",
+            "Allergome; a platform for allergen knowledge"
         ],
         [
-            "Carbohydrate-Active enZymes",
-            "CAZy"
+            "CAZy",
+            "Carbohydrate-Active enZymes"
         ],
         [
-            "CLAE, a database of fungal genes encoding lignocellulose-active proteins",
-            "CLAE"
+            "CLAE",
+            "CLAE, a database of fungal genes encoding lignocellulose-active proteins"
         ],
         [
-            "ESTHER database of the Alpha/Beta-hydrolase fold superfamily of proteins",
-            "ESTHER"
+            "ESTHER",
+            "ESTHER database of the Alpha/Beta-hydrolase fold superfamily of proteins"
         ],
         [
-            "Information system for G protein-coupled receptors (GPCRs)",
-            "GPCRDB"
+            "GPCRDB",
+            "Information system for G protein-coupled receptors (GPCRs)"
         ],
         [
-            "The international ImMunoGeneTics information system",
-            "IMGT_GENE-DB"
+            "IMGT_GENE-DB",
+            "The international ImMunoGeneTics information system"
         ],
         [
-            "MEROPS protease database",
-            "MEROPS"
+            "MEROPS",
+            "MEROPS protease database"
         ],
         [
-            "MoonDB Database of extreme multifunctional and moonlighting proteins",
-            "MoonDB"
+            "MoonDB",
+            "MoonDB Database of extreme multifunctional and moonlighting proteins"
         ],
         [
-            "MoonProt database of moonlighting proteins",
-            "MoonProt"
+            "MoonProt",
+            "MoonProt database of moonlighting proteins"
         ],
         [
-            "PeroxiBase, a peroxidase database",
-            "PeroxiBase"
+            "PeroxiBase",
+            "PeroxiBase, a peroxidase database"
         ],
         [
-            "Restriction enzymes and methylases database",
-            "REBASE"
+            "REBASE",
+            "Restriction enzymes and methylases database"
         ],
         [
-            "Transport Classification Database",
-            "TCDB"
+            "TCDB",
+            "Transport Classification Database"
         ],
         [
-            "UniLectin database of carbohydrate-binding proteins",
-            "UniLectin"
+            "UniLectin",
+            "UniLectin database of carbohydrate-binding proteins"
         ]
     ],
     "Organism-specific databases":[
         [
-            "ArachnoServer: Spider toxin database",
-            "ArachnoServer"
+            "ArachnoServer",
+            "ArachnoServer: Spider toxin database"
         ],
         [
-            "Arabidopsis Information Portal",
-            "Araport"
+            "Araport",
+            "Arabidopsis Information Portal"
         ],
         [
-            "Candida Genome Database",
-            "CGD"
+            "CGD",
+            "Candida Genome Database"
         ],
         [
-            "ConoServer: Cone snail toxin database",
-            "ConoServer"
+            "ConoServer",
+            "ConoServer: Cone snail toxin database"
         ],
         [
-            "Comparative Toxicogenomics Database",
-            "CTD"
+            "CTD",
+            "Comparative Toxicogenomics Database"
         ],
         [
-            "Dictyostelium discoideum online informatics resource",
-            "dictyBase"
+            "dictyBase",
+            "Dictyostelium discoideum online informatics resource"
         ],
         [
             "DisGeNET",
             "DisGeNET"
         ],
         [
-            "EchoBASE - an integrated post-genomic database for E. coli",
-            "EchoBASE"
+            "EchoBASE",
+            "EchoBASE - an integrated post-genomic database for E. coli"
         ],
         [
-            "European Hepatitis C Virus Database",
-            "euHCVdb"
+            "euHCVdb",
+            "European Hepatitis C Virus Database"
         ],
         [
-            "Eukaryotic Pathogen Database Resources",
-            "EuPathDB"
+            "EuPathDB",
+            "Eukaryotic Pathogen Database Resources"
         ],
         [
-            "Drosophila genome database",
-            "FlyBase"
+            "FlyBase",
+            "Drosophila genome database"
         ],
         [
-            "GenAtlas: human gene database",
-            "GenAtlas"
+            "GenAtlas",
+            "GenAtlas: human gene database"
         ],
         [
-            "GeneCards: human genes, protein and diseases",
-            "GeneCards"
+            "GeneCards",
+            "GeneCards: human genes, protein and diseases"
         ],
         [
-            "GeneReviews a resource of expert-authored, peer-reviewed disease descriptions.",
-            "GeneReviews"
+            "GeneReviews",
+            "GeneReviews a resource of expert-authored, peer-reviewed disease descriptions."
         ],
         [
-            "Human Gene Nomenclature Database",
-            "HGNC"
+            "HGNC",
+            "Human Gene Nomenclature Database"
         ],
         [
-            "Human Protein Atlas",
-            "HPA"
+            "HPA",
+            "Human Protein Atlas"
         ],
         [
-            "Human Unidentified Gene-Encoded large proteins database",
-            "HUGE"
+            "HUGE",
+            "Human Unidentified Gene-Encoded large proteins database"
         ],
         [
-            "Legionella pneumophila genome database",
-            "LegioList"
+            "LegioList",
+            "Legionella pneumophila genome database"
         ],
         [
-            "Mycobacterium leprae genome database",
-            "Leproma"
+            "Leproma",
+            "Mycobacterium leprae genome database"
         ],
         [
-            "Maize Genetics and Genomics Database",
-            "MaizeGDB"
+            "MaizeGDB",
+            "Maize Genetics and Genomics Database"
         ],
         [
-            "MalaCards human disease database",
-            "MalaCards"
+            "MalaCards",
+            "MalaCards human disease database"
         ],
         [
-            "Mouse genome database (MGD) from Mouse Genome Informatics (MGI)",
-            "MGI"
+            "MGI",
+            "Mouse genome database (MGD) from Mouse Genome Informatics (MGI)"
         ],
         [
-            "Microbial advanced database",
-            "Micado"
+            "Micado",
+            "Microbial advanced database"
         ],
         [
-            "Online Mendelian Inheritance in Man (OMIM)",
-            "MIM"
+            "MIM",
+            "Online Mendelian Inheritance in Man (OMIM)"
         ],
         [
-            "neXtProt; the human protein knowledge platform",
-            "neXtProt"
+            "neXtProt",
+            "neXtProt; the human protein knowledge platform"
         ],
         [
-            "NIAGADS Genomics Database",
-            "NIAGADS"
+            "NIAGADS",
+            "NIAGADS Genomics Database"
         ],
         [
-            "Open Targets",
-            "OpenTargets"
+            "OpenTargets",
+            "Open Targets"
         ],
         [
-            "Orphanet; a database dedicated to information on rare diseases and orphan drugs",
-            "Orphanet"
+            "Orphanet",
+            "Orphanet; a database dedicated to information on rare diseases and orphan drugs"
         ],
         [
-            "The Pharmacogenetics and Pharmacogenomics Knowledge Base",
-            "PharmGKB"
+            "PharmGKB",
+            "The Pharmacogenetics and Pharmacogenomics Knowledge Base"
         ],
         [
-            "Schizosaccharomyces pombe database",
-            "PomBase"
+            "PomBase",
+            "Schizosaccharomyces pombe database"
         ],
         [
-            "Pseudomonas genome database",
-            "PseudoCAP"
+            "PseudoCAP",
+            "Pseudomonas genome database"
         ],
         [
-            "Rat genome database",
-            "RGD"
+            "RGD",
+            "Rat genome database"
         ],
         [
-            "Rodent Unidentified Gene-Encoded large proteins database",
-            "Rouge"
+            "Rouge",
+            "Rodent Unidentified Gene-Encoded large proteins database"
         ],
         [
-            "Saccharomyces Genome Database",
-            "SGD"
+            "SGD",
+            "Saccharomyces Genome Database"
         ],
         [
-            "The Arabidopsis Information Resource",
-            "TAIR"
+            "TAIR",
+            "The Arabidopsis Information Resource"
         ],
         [
-            "Mycobacterium tuberculosis strain H37Rv genome database",
-            "TubercuList"
+            "TubercuList",
+            "Mycobacterium tuberculosis strain H37Rv genome database"
         ],
         [
-            "Vertebrate Gene Nomenclature Database",
-            "VGNC"
+            "VGNC",
+            "Vertebrate Gene Nomenclature Database"
         ],
         [
             "WormBase",
             "WormBase"
         ],
         [
-            "Xenopus laevis and tropicalis biology and genomics resource",
-            "Xenbase"
+            "Xenbase",
+            "Xenopus laevis and tropicalis biology and genomics resource"
         ],
         [
-            "Zebrafish Information Network genome database",
-            "ZFIN"
+            "ZFIN",
+            "Zebrafish Information Network genome database"
         ]
     ],
     "Gene expression databases":[
         [
-            "Bgee dataBase for Gene Expression Evolution",
-            "Bgee"
+            "Bgee",
+            "Bgee dataBase for Gene Expression Evolution"
         ],
         [
-            "CollecTF database of bacterial transcription factor binding sites",
-            "CollecTF"
+            "CollecTF",
+            "CollecTF database of bacterial transcription factor binding sites"
         ],
         [
-            "ExpressionAtlas, Differential and Baseline Expression",
-            "ExpressionAtlas"
+            "ExpressionAtlas",
+            "ExpressionAtlas, Differential and Baseline Expression"
         ],
         [
-            "Genevisible search portal to normalized and curated expression data from Genevestigator",
-            "Genevisible"
+            "Genevisible",
+            "Genevisible search portal to normalized and curated expression data from Genevestigator"
         ]
     ],
     "Chemistry databases":[
         [
-            "BindingDB database of measured binding affinities",
-            "BindingDB"
+            "BindingDB",
+            "BindingDB database of measured binding affinities"
         ],
         [
-            "ChEMBL database of bioactive drug-like small molecules",
-            "ChEMBL"
+            "ChEMBL",
+            "ChEMBL database of bioactive drug-like small molecules"
         ],
         [
-            "Drug and drug target database",
-            "DrugBank"
+            "DrugBank",
+            "Drug and drug target database"
         ],
         [
             "DrugCentral",
             "DrugCentral"
         ],
         [
-            "IUPHAR/BPS Guide to PHARMACOLOGY",
-            "GuidetoPHARMACOLOGY"
+            "GuidetoPHARMACOLOGY",
+            "IUPHAR/BPS Guide to PHARMACOLOGY"
         ],
         [
-            "SwissLipids knowledge resource for lipid biology",
-            "SwissLipids"
+            "SwissLipids",
+            "SwissLipids knowledge resource for lipid biology"
         ]
     ],
     "Enzyme and pathway databases":[
         [
-            "BioCyc Collection of Pathway/Genome Databases",
-            "BioCyc"
+            "BioCyc",
+            "BioCyc Collection of Pathway/Genome Databases"
         ],
         [
-            "BRENDA Comprehensive Enzyme Information System",
-            "BRENDA"
+            "BRENDA",
+            "BRENDA Comprehensive Enzyme Information System"
         ],
         [
-            "Enzyme nomenclature database",
-            "ENZYME"
+            "ENZYME",
+            "Enzyme nomenclature database"
         ],
         [
-            "Pathway Commons web resource for biological pathway data",
-            "PathwayCommons"
+            "PathwayCommons",
+            "Pathway Commons web resource for biological pathway data"
         ],
         [
-            "Reactome - a knowledgebase of biological pathways and processes for plant species",
-            "PlantReactome"
+            "PlantReactome",
+            "Reactome - a knowledgebase of biological pathways and processes for plant species"
         ],
         [
-            "Reactome - a knowledgebase of biological pathways and processes",
-            "Reactome"
+            "Reactome",
+            "Reactome - a knowledgebase of biological pathways and processes"
         ],
         [
-            "SABIO-RK: Biochemical Reaction Kinetics Database",
-            "SABIO-RK"
+            "SABIO-RK",
+            "SABIO-RK: Biochemical Reaction Kinetics Database"
         ],
         [
-            "SignaLink: a signaling pathway resource with multi-layered regulatory networks",
-            "SignaLink"
+            "SignaLink",
+            "SignaLink: a signaling pathway resource with multi-layered regulatory networks"
         ],
         [
-            "SIGNOR Signaling Network Open Resource",
-            "SIGNOR"
+            "SIGNOR",
+            "SIGNOR Signaling Network Open Resource"
         ],
         [
-            "UniPathway: a resource for the exploration and annotation of metabolic pathways",
-            "UniPathway"
+            "UniPathway",
+            "UniPathway: a resource for the exploration and annotation of metabolic pathways"
         ]
     ],
     "Protein-protein interaction databases":[
         [
-            "The Biological General Repository for Interaction Datasets (BioGRID)",
-            "BioGRID"
+            "BioGRID",
+            "The Biological General Repository for Interaction Datasets (BioGRID)"
         ],
         [
-            "ComplexPortal: manually curated resource of macromolecular complexes",
-            "ComplexPortal"
+            "ComplexPortal",
+            "ComplexPortal: manually curated resource of macromolecular complexes"
         ],
         [
-            "CORUM comprehensive resource of mammalian protein complexes",
-            "CORUM"
+            "CORUM",
+            "CORUM comprehensive resource of mammalian protein complexes"
         ],
         [
-            "Database of interacting proteins",
-            "DIP"
+            "DIP",
+            "Database of interacting proteins"
         ],
         [
-            "The Eukaryotic Linear Motif resource for Functional Sites in Proteins",
-            "ELM"
+            "ELM",
+            "The Eukaryotic Linear Motif resource for Functional Sites in Proteins"
         ],
         [
-            "Protein interaction database and analysis system",
-            "IntAct"
+            "IntAct",
+            "Protein interaction database and analysis system"
         ],
         [
-            "Molecular INTeraction database",
-            "MINT"
+            "MINT",
+            "Molecular INTeraction database"
         ],
         [
-            "STRING: functional protein association networks",
-            "STRING"
+            "STRING",
+            "STRING: functional protein association networks"
         ]
     ],
     "Miscellaneous databases":[
         [
-            "BioGRID ORCS database of CRISPR phenotype screens",
-            "BioGRID-ORCS"
+            "BioGRID-ORCS",
+            "BioGRID ORCS database of CRISPR phenotype screens"
         ],
         [
-            "ChiTaRS: a database of human, mouse and fruit fly chimeric transcripts and RNA-sequencing data",
-            "ChiTaRS"
+            "ChiTaRS",
+            "ChiTaRS: a database of human, mouse and fruit fly chimeric transcripts and RNA-sequencing data"
         ],
         [
-            "Relative evolutionary importance of amino acids within a protein sequence",
-            "EvolutionaryTrace"
+            "EvolutionaryTrace",
+            "Relative evolutionary importance of amino acids within a protein sequence"
         ],
         [
-            "The Gene Wiki collection of pages on human genes and proteins",
-            "GeneWiki"
+            "GeneWiki",
+            "The Gene Wiki collection of pages on human genes and proteins"
         ],
         [
-            "Database of phenotypes from RNA interference screens in Drosophila and Homo sapiens",
-            "GenomeRNAi"
+            "GenomeRNAi",
+            "Database of phenotypes from RNA interference screens in Drosophila and Homo sapiens"
         ],
         [
-            "Pharos NIH Druggable Genome Knowledgebase",
-            "Pharos"
+            "Pharos",
+            "Pharos NIH Druggable Genome Knowledgebase"
         ],
         [
-            "Pathogen-Host Interaction database",
-            "PHI-base"
+            "PHI-base",
+            "Pathogen-Host Interaction database"
         ],
         [
-            "Protein Ontology",
-            "PRO"
+            "PRO",
+            "Protein Ontology"
         ],
         [
             "Proteomes",
             "Proteomes"
         ],
         [
-            "RNAct, Protein-RNA interaction predictions for model organisms.",
-            "RNAct"
+            "RNAct",
+            "RNAct, Protein-RNA interaction predictions for model organisms."
         ],
         [
-            "The Stanford Online Universal Resource for Clones and ESTs",
-            "SOURCE"
+            "SOURCE",
+            "The Stanford Online Universal Resource for Clones and ESTs"
         ]
     ],
     "Polymorphism and mutation databases":[
         [
-            "BioMuta curated single-nucleotide variation and disease association database",
-            "BioMuta"
+            "BioMuta",
+            "BioMuta curated single-nucleotide variation and disease association database"
         ],
         [
-            "Database of single nucleotide polymorphism",
-            "dbSNP"
+            "dbSNP",
+            "Database of single nucleotide polymorphism"
         ],
         [
-            "Domain mapping of disease mutations (DMDM)",
-            "DMDM"
+            "DMDM",
+            "Domain mapping of disease mutations (DMDM)"
         ]
     ],
     "3D structure databases":[
         [
-            "Biological Magnetic Resonance Data Bank",
-            "BMRB"
+            "BMRB",
+            "Biological Magnetic Resonance Data Bank"
         ],
         [
-            "Database of comparative protein structure models",
-            "ModBase"
+            "ModBase",
+            "Database of comparative protein structure models"
         ],
         [
-            "The Protein Circular Dichroism Data Bank",
-            "PCDDB"
+            "PCDDB",
+            "The Protein Circular Dichroism Data Bank"
         ],
         [
-            "Protein Data Bank Europe",
-            "PDB"
+            "PDB",
+            "Protein Data Bank Europe"
         ],
         [
-            "Protein Data Bank in Europe - Knowledge Base",
-            "PDBe-KB"
+            "PDBe-KB",
+            "Protein Data Bank in Europe - Knowledge Base"
         ],
         [
-            "Protein Data Bank Japan",
-            "PDBj"
+            "PDBj",
+            "Protein Data Bank Japan"
         ],
         [
-            "PDBsum; at-a-glance overview of macromolecular structures",
-            "PDBsum"
+            "PDBsum",
+            "PDBsum; at-a-glance overview of macromolecular structures"
         ],
         [
-            "Protein Data Bank RCSB",
-            "RCSB-PDB"
+            "RCSB-PDB",
+            "Protein Data Bank RCSB"
         ],
         [
-            "Small Angle Scattering Biological Data Bank",
-            "SASBDB"
+            "SASBDB",
+            "Small Angle Scattering Biological Data Bank"
         ],
         [
-            "SWISS-MODEL Repository - a database of annotated 3D protein structure models",
-            "SMR"
+            "SMR",
+            "SWISS-MODEL Repository - a database of annotated 3D protein structure models"
         ],
         [
-            "SWISS-MODEL Interactive Workspace",
-            "SWISS-MODEL-Workspace"
+            "SWISS-MODEL-Workspace",
+            "SWISS-MODEL Interactive Workspace"
         ]
     ],
     "PTM databases":[
         [
-            "CarbonylDB database of protein carbonylation sites",
-            "CarbonylDB"
+            "CarbonylDB",
+            "CarbonylDB database of protein carbonylation sites"
         ],
         [
-            "DEPOD human dephosphorylation database",
-            "DEPOD"
+            "DEPOD",
+            "DEPOD human dephosphorylation database"
         ],
         [
-            "GlyConnect protein glycosylation platform",
-            "GlyConnect"
+            "GlyConnect",
+            "GlyConnect protein glycosylation platform"
         ],
         [
-            "GlyGen: Computational and Informatics Resources for Glycoscience",
-            "GlyGen"
+            "GlyGen",
+            "GlyGen: Computational and Informatics Resources for Glycoscience"
         ],
         [
-            "iPTMnet integrated resource for PTMs in systems biology context",
-            "iPTMnet"
+            "iPTMnet",
+            "iPTMnet integrated resource for PTMs in systems biology context"
         ],
         [
-            "MetOSite database of methionine sulfoxide sites",
-            "MetOSite"
+            "MetOSite",
+            "MetOSite database of methionine sulfoxide sites"
         ],
         [
-            "Comprehensive resource for the study of protein post-translational modifications (PTMs) in human, mouse and rat.",
-            "PhosphoSitePlus"
+            "PhosphoSitePlus",
+            "Comprehensive resource for the study of protein post-translational modifications (PTMs) in human, mouse and rat."
         ],
         [
-            "SwissPalm database of S-palmitoylation events",
-            "SwissPalm"
+            "SwissPalm",
+            "SwissPalm database of S-palmitoylation events"
         ],
         [
-            "UniCarbKB; an annotated and curated database of glycan structures",
-            "UniCarbKB"
+            "UniCarbKB",
+            "UniCarbKB; an annotated and curated database of glycan structures"
         ]
     ],
     "Sequence databases":[
         [
-            "The Consensus CDS (CCDS) project",
-            "CCDS"
+            "CCDS",
+            "The Consensus CDS (CCDS) project"
         ],
         [
-            "DNA Data Bank of Japan; a nucleotide sequence database",
-            "DDBJ"
+            "DDBJ",
+            "DNA Data Bank of Japan; a nucleotide sequence database"
         ],
         [
-            "EMBL nucleotide sequence database",
-            "EMBL"
+            "EMBL",
+            "EMBL nucleotide sequence database"
         ],
         [
-            "GenBank nucleotide sequence database",
-            "GenBank"
+            "GenBank",
+            "GenBank nucleotide sequence database"
         ],
         [
-            "Protein sequence database of the Protein Information Resource",
-            "PIR"
+            "PIR",
+            "Protein sequence database of the Protein Information Resource"
         ],
         [
-            "NCBI Reference Sequences",
-            "RefSeq"
+            "RefSeq",
+            "NCBI Reference Sequences"
         ]
     ],
     "Family and domain databases":[
         [
-            "Conserved Domains Database",
-            "CDD"
+            "CDD",
+            "Conserved Domains Database"
         ],
         [
-            "Database of protein disorder",
-            "DisProt"
+            "DisProt",
+            "Database of protein disorder"
         ],
         [
-            "Gene3D Structural and Functional Annotation of Protein Families",
-            "Gene3D"
+            "Gene3D",
+            "Gene3D Structural and Functional Annotation of Protein Families"
         ],
         [
-            "HAMAP database of protein families",
-            "HAMAP"
+            "HAMAP",
+            "HAMAP database of protein families"
         ],
         [
-            "Intrinsically Disordered proteins with Extensive Annotations and Literature",
-            "IDEAL"
+            "IDEAL",
+            "Intrinsically Disordered proteins with Extensive Annotations and Literature"
         ],
         [
-            "Integrated resource of protein families, domains and functional sites",
-            "InterPro"
+            "InterPro",
+            "Integrated resource of protein families, domains and functional sites"
         ],
         [
-            "MobiDB: a database of protein disorder and mobility annotations",
-            "MobiDB"
+            "MobiDB",
+            "MobiDB: a database of protein disorder and mobility annotations"
         ],
         [
-            "The PANTHER Classification System",
-            "PANTHER"
+            "PANTHER",
+            "The PANTHER Classification System"
         ],
         [
-            "Pfam protein domain database",
-            "Pfam"
+            "Pfam",
+            "Pfam protein domain database"
         ],
         [
-            "PIRSF; a whole-protein classification database",
-            "PIRSF"
+            "PIRSF",
+            "PIRSF; a whole-protein classification database"
         ],
         [
-            "Protein Motif fingerprint database; a protein domain database",
-            "PRINTS"
+            "PRINTS",
+            "Protein Motif fingerprint database; a protein domain database"
         ],
         [
-            "PROSITE; a protein domain and family database",
-            "PROSITE"
+            "PROSITE",
+            "PROSITE; a protein domain and family database"
         ],
         [
-            "ProtoNet; Automatic hierarchical classification of proteins",
-            "ProtoNet"
+            "ProtoNet",
+            "ProtoNet; Automatic hierarchical classification of proteins"
         ],
         [
-            "Structure-Function Linkage Database",
-            "SFLD"
+            "SFLD",
+            "Structure-Function Linkage Database"
         ],
         [
-            "Simple Modular Architecture Research Tool; a protein domain database",
-            "SMART"
+            "SMART",
+            "Simple Modular Architecture Research Tool; a protein domain database"
         ],
         [
-            "Superfamily database of structural and functional annotation",
-            "SUPFAM"
+            "SUPFAM",
+            "Superfamily database of structural and functional annotation"
         ],
         [
-            "TIGRFAMs; a protein family database",
-            "TIGRFAMs"
+            "TIGRFAMs",
+            "TIGRFAMs; a protein family database"
         ]
     ],
     "2D gel databases":[
         [
-            "2-DE database at Universidad Complutense de Madrid",
-            "COMPLUYEAST-2DPAGE"
+            "COMPLUYEAST-2DPAGE",
+            "2-DE database at Universidad Complutense de Madrid"
         ],
         [
-            "DOSAC-COBS 2D-PAGE database",
-            "DOSAC-COBS-2DPAGE"
+            "DOSAC-COBS-2DPAGE",
+            "DOSAC-COBS 2D-PAGE database"
         ],
         [
-            "USC-OGP 2-DE database",
-            "OGP"
+            "OGP",
+            "USC-OGP 2-DE database"
         ],
         [
             "REPRODUCTION-2DPAGE",
             "REPRODUCTION-2DPAGE"
         ],
         [
-            "Two-dimensional polyacrylamide gel electrophoresis database from the Geneva University Hospital",
-            "SWISS-2DPAGE"
+            "SWISS-2DPAGE",
+            "Two-dimensional polyacrylamide gel electrophoresis database from the Geneva University Hospital"
         ],
         [
-            "University College Dublin 2-DE Proteome Database",
-            "UCD-2DPAGE"
+            "UCD-2DPAGE",
+            "University College Dublin 2-DE Proteome Database"
         ],
         [
-            "The World-2DPAGE database",
-            "World-2DPAGE"
+            "World-2DPAGE",
+            "The World-2DPAGE database"
         ]
     ],
     "Proteomic databases":[
         [
-            "The CPTAC Assay portal",
-            "CPTAC"
+            "CPTAC",
+            "The CPTAC Assay portal"
         ],
         [
-            "Encyclopedia of Proteome Dynamics",
-            "EPD"
+            "EPD",
+            "Encyclopedia of Proteome Dynamics"
         ],
         [
-            "jPOST - Japan Proteome Standard Repository/Database",
-            "jPOST"
+            "jPOST",
+            "jPOST - Japan Proteome Standard Repository/Database"
         ],
         [
-            "MassIVE - Mass Spectrometry Interactive Virtual Environment",
-            "MassIVE"
+            "MassIVE",
+            "MassIVE - Mass Spectrometry Interactive Virtual Environment"
         ],
         [
-            "MaxQB - The MaxQuant DataBase",
-            "MaxQB"
+            "MaxQB",
+            "MaxQB - The MaxQuant DataBase"
         ],
         [
-            "PaxDb, a database of protein abundance averages across all three domains of life",
-            "PaxDb"
+            "PaxDb",
+            "PaxDb, a database of protein abundance averages across all three domains of life"
         ],
         [
             "PeptideAtlas",
             "PeptideAtlas"
         ],
         [
-            "PRoteomics IDEntifications database",
-            "PRIDE"
+            "PRIDE",
+            "PRoteomics IDEntifications database"
         ],
         [
-            "Protein Mass spectra EXtraction",
-            "ProMEX"
+            "ProMEX",
+            "Protein Mass spectra EXtraction"
         ],
         [
-            "ProteomicsDB: a multi-organism proteome resource",
-            "ProteomicsDB"
+            "ProteomicsDB",
+            "ProteomicsDB: a multi-organism proteome resource"
         ],
         [
-            "Consortium for Top Down Proteomics",
-            "TopDownProteomics"
+            "TopDownProteomics",
+            "Consortium for Top Down Proteomics"
         ]
     ],
     "Phylogenomic databases":[
         [
-            "evolutionary genealogy of genes: Non-supervised Orthologous Groups",
-            "eggNOG"
+            "eggNOG",
+            "evolutionary genealogy of genes: Non-supervised Orthologous Groups"
         ],
         [
-            "Ensembl GeneTree",
-            "GeneTree"
+            "GeneTree",
+            "Ensembl GeneTree"
         ],
         [
-            "The HOGENOM Database of Homologous Genes from Fully Sequenced Organisms",
-            "HOGENOM"
+            "HOGENOM",
+            "The HOGENOM Database of Homologous Genes from Fully Sequenced Organisms"
         ],
         [
-            "InParanoid: Eukaryotic Ortholog Groups",
-            "InParanoid"
+            "InParanoid",
+            "InParanoid: Eukaryotic Ortholog Groups"
         ],
         [
-            "KEGG Orthology (KO)",
-            "KO"
+            "KO",
+            "KEGG Orthology (KO)"
         ],
         [
-            "Identification of Orthologs from Complete Genome Data",
-            "OMA"
+            "OMA",
+            "Identification of Orthologs from Complete Genome Data"
         ],
         [
-            "Database of Orthologous Groups",
-            "OrthoDB"
+            "OrthoDB",
+            "Database of Orthologous Groups"
         ],
         [
-            "Database for complete collections of gene phylogenies",
-            "PhylomeDB"
+            "PhylomeDB",
+            "Database for complete collections of gene phylogenies"
         ],
         [
-            "TreeFam database of animal gene trees",
-            "TreeFam"
+            "TreeFam",
+            "TreeFam database of animal gene trees"
         ]
     ],
     "Genome annotation databases":[
         [
-            "Ensembl eukaryotic genome annotation project",
-            "Ensembl"
+            "Ensembl",
+            "Ensembl eukaryotic genome annotation project"
         ],
         [
-            "Ensembl bacterial and archaeal genome annotation project",
-            "EnsemblBacteria"
+            "EnsemblBacteria",
+            "Ensembl bacterial and archaeal genome annotation project"
         ],
         [
-            "Ensembl fungal genome annotation project",
-            "EnsemblFungi"
+            "EnsemblFungi",
+            "Ensembl fungal genome annotation project"
         ],
         [
-            "Ensembl metazoan genome annotation project",
-            "EnsemblMetazoa"
+            "EnsemblMetazoa",
+            "Ensembl metazoan genome annotation project"
         ],
         [
-            "Ensembl plant genome annotation project",
-            "EnsemblPlants"
+            "EnsemblPlants",
+            "Ensembl plant genome annotation project"
         ],
         [
-            "Ensembl protists genome annotation project",
-            "EnsemblProtists"
+            "EnsemblProtists",
+            "Ensembl protists genome annotation project"
         ],
         [
-            "GeneDB pathogen genome database from Sanger Institute",
-            "GeneDB"
+            "GeneDB",
+            "GeneDB pathogen genome database from Sanger Institute"
         ],
         [
-            "Database of genes from NCBI RefSeq genomes",
-            "GeneID"
+            "GeneID",
+            "Database of genes from NCBI RefSeq genomes"
         ],
         [
-            "Gramene; a comparative resource for plants",
-            "Gramene"
+            "Gramene",
+            "Gramene; a comparative resource for plants"
         ],
         [
-            "KEGG: Kyoto Encyclopedia of Genes and Genomes",
-            "KEGG"
+            "KEGG",
+            "KEGG: Kyoto Encyclopedia of Genes and Genomes"
         ],
         [
-            "Pathosystems Resource Integration Center (PATRIC)",
-            "PATRIC"
+            "PATRIC",
+            "Pathosystems Resource Integration Center (PATRIC)"
         ],
         [
-            "UCSC genome browser",
-            "UCSC"
+            "UCSC",
+            "UCSC genome browser"
         ],
         [
-            "Bioinformatics Resource for Invertebrate Vectors of Human Pathogens",
-            "VectorBase"
+            "VectorBase",
+            "Bioinformatics Resource for Invertebrate Vectors of Human Pathogens"
         ],
         [
-            "WormBase ParaSite",
-            "WBParaSite"
+            "WBParaSite",
+            "WormBase ParaSite"
         ]
     ],
     "Ontologies":[
         [
-            "Gene Ontology",
-            "GO"
+            "GO",
+            "Gene Ontology"
         ]
     ]
 }

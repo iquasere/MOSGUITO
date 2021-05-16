@@ -20,12 +20,10 @@ import {
   errorModelOptions,
   markersetOptions,
   normalizationMethodOptions,
-  keggcharterTaxaLevelOptions,
-  recognizerDatabasesOptions
+  keggcharterTaxaLevelOptions
 } from '../utils/options'
 import './../App.css'
 import {DashboardLayout} from "../components/Layout";
-import Accordion from "../components/Accordion";
 
 const Main = ({ configData, onConfigChange }) => {
 
@@ -54,19 +52,6 @@ const Main = ({ configData, onConfigChange }) => {
       console.log('will do assembly')
     }
     console.log(configData)
-  }
-
-  const handleCheck = value => {
-    const newList = [...configData.recognizerDatabases]
-
-    const index = newList.indexOf(value)
-    if (index > -1) {
-      newList.splice(index, 1)
-    } else {
-      newList.push(value)
-    }
-
-    onConfigChange('recognizerDatabases', newList)
   }
 
   return (
@@ -108,24 +93,6 @@ const Main = ({ configData, onConfigChange }) => {
               onChange={(ev) => onConfigChange('threads', ev.target.valueAsNumber)}
             />
 
-            <LabelledNumberField
-              label='Minimum read length'
-              value={configData.minimumReadLength}
-              onChange={(ev) => onConfigChange('minimumReadLength', ev.target.valueAsNumber)}
-            />
-
-            <LabelledNumberField
-              label='Minimum read average quality'
-              value={configData.minimumReadAverageQuality}
-              onChange={(ev) => onConfigChange('minimumReadAverageQuality', ev.target.valueAsNumber)}
-            />
-
-            <LabelledNumberField
-              label='Maximum memory (Gb)'
-              value={configData.maxMemory}
-              onChange={(ev) => onConfigChange('maxMemory', ev.target.valueAsNumber)}
-            />
-
             <LabelledCheckbox
               label='Perform assembly'
               checked={configData.doAssembly}
@@ -158,7 +125,6 @@ const Main = ({ configData, onConfigChange }) => {
                   />
               )
             }
-
             <LabelledTextField
               label='DIAMOND database'
               value={configData.diamondDatabase}
@@ -171,26 +137,6 @@ const Main = ({ configData, onConfigChange }) => {
               checked={configData.downloadUniprot}
               setChecked={(ev) => onConfigChange('downloadUniprot', ev.target.checked)}
             />
-
-            <LabelledCheckbox
-              label='Download CDD'
-              checked={configData.downloadCdd}
-              setChecked={(ev) => onConfigChange('downloadCdd', ev.target.checked)}
-            />
-
-            <Accordion title="Pick databases of reCOGnizer">
-              {
-                recognizerDatabasesOptions.map(( value, index) => (
-                  <LabelledCheckbox
-                    key={index}
-                    label={value}
-                    checked={configData.recognizerDatabases.indexOf(value) > -1}
-                    setChecked={(ev) => handleCheck(value)}
-                  />
-                  )
-                )
-              }
-            </Accordion>
 
             <LabelledNumberField
               label='Number of identifications per protein'
@@ -227,7 +173,7 @@ const Main = ({ configData, onConfigChange }) => {
           >
 
             <Button
-              onClick={() => Object.keys(configData).map((key) => onConfigChange(key, defaultValues[key]))}
+              onClick={() => Object.keys(defaultValues).map((key) => onConfigChange(key, defaultValues[key]))}
               variant='contained'
               color='primary'
             >
@@ -235,7 +181,7 @@ const Main = ({ configData, onConfigChange }) => {
             </Button>
 
             <Button
-              onClick={() => Object.keys(configData).map((key) => onConfigChange(key, emptyValues[key]))}
+              onClick={() => Object.keys(emptyValues).map((key) => onConfigChange(key, emptyValues[key]))}
               variant='contained'
               color='primary'
             >
