@@ -112,10 +112,6 @@ const Routes = ({ configData, onConfigChange, experiments, setExperiments,
           />
         </Route>
 
-        <Route path="MOSGUITO/results/Upload"> 
-          <ResultsPage />
-        </Route>
-
         <Route path="/MOSGUITO">
           <HomePage />
         </Route>

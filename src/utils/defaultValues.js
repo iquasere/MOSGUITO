@@ -7,7 +7,7 @@ import {
   recognizerDatabasesOptions
 } from './options'
 
-export const defaultValues = { //default values contidos ai iniciar a webpage
+export const defaultValues = {
     "output":"output",
     "resourcesDirectory":"resources_directory",
     "threads":14,
