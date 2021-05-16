@@ -26,11 +26,10 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="75167860-5315-49c7-8bd4-159fb3049cae" name="Default Changelist" comment="Broken maps input">
+      <change afterPath="$PROJECT_DIR$/.idea/codeStyles/codeStyleConfig.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/App.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/App.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/index.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/index.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/pages/_app.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/pages/_app.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/pages/config.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/pages/config.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/pages/results.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/pages/results.js" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -77,8 +76,9 @@
     <property name="ASKED_ADD_EXTERNAL_FILES" value="true" />
     <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
+    <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/../UPIMAPI" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/../CBEDS" />
     <property name="node.js.detected.package.eslint" value="true" />
     <property name="node.js.detected.package.stylelint" value="true" />
     <property name="node.js.path.for.package.eslint" value="project" />
@@ -87,7 +87,7 @@
     <property name="node.js.selected.package.stylelint" value="" />
     <property name="nodejs_package_manager_path" value="yarn" />
     <property name="settings.editor.selected.configurable" value="preferences.keymap" />
-    <property name="ts.external.directory.path" value="C:\Users\Catarina\AppData\Local\JetBrains\Toolbox\apps\PyCharm-P\ch-0\203.5981.165\plugins\JavaScriptLanguage\jsLanguageServicesImpl\external" />
+    <property name="ts.external.directory.path" value="C:\Program Files\JetBrains\PyCharm 2020.2.3\plugins\JavaScriptLanguage\jsLanguageServicesImpl\external" />
   </component>
   <component name="RunManager">
     <configuration name="MOSGUITO" type="PythonConfigurationType" factoryName="Python">
@@ -154,6 +154,24 @@
       <workItem from="1608543823664" duration="543000" />
       <workItem from="1610531550135" duration="7560000" />
       <workItem from="1610637041892" duration="1328000" />
+      <workItem from="1610643078747" duration="4986000" />
+      <workItem from="1610722708547" duration="2742000" />
+      <workItem from="1610731483792" duration="1858000" />
+      <workItem from="1610967773852" duration="9475000" />
+      <workItem from="1611058077751" duration="16487000" />
+      <workItem from="1611136644909" duration="5609000" />
+      <workItem from="1611224799214" duration="14774000" />
+      <workItem from="1611332006992" duration="456000" />
+      <workItem from="1611333440755" duration="3750000" />
+      <workItem from="1614167850725" duration="4973000" />
+      <workItem from="1614259823711" duration="3233000" />
+      <workItem from="1614879248875" duration="53000" />
+      <workItem from="1614881506568" duration="11000" />
+      <workItem from="1615831234758" duration="1119000" />
+      <workItem from="1616062628242" duration="918000" />
+      <workItem from="1617035091910" duration="3525000" />
+      <workItem from="1617284759946" duration="4530000" />
+      <workItem from="1617356341047" duration="2362000" />
     </task>
     <task id="LOCAL-00001" summary="First steps">
       <created>1603985640072</created>
@@ -323,7 +341,77 @@
       <option name="project" value="LOCAL" />
       <updated>1610536317528</updated>
     </task>
-    <option name="localTasksCounter" value="25" />
+    <task id="LOCAL-00025" summary="errorModel now changes with doAssembly&#10;* if doAssembly, errorModel changes to &quot;complete&quot; at download time">
+      <created>1610643202206</created>
+      <option name="number" value="00025" />
+      <option name="presentableId" value="LOCAL-00025" />
+      <option name="project" value="LOCAL" />
+      <updated>1610643202206</updated>
+    </task>
+    <task id="LOCAL-00026" summary="Split UniProt columns and databases">
+      <created>1610725823228</created>
+      <option name="number" value="00026" />
+      <option name="presentableId" value="LOCAL-00026" />
+      <option name="project" value="LOCAL" />
+      <updated>1610725823228</updated>
+    </task>
+    <task id="LOCAL-00027" summary="Added simple proteomics configurations">
+      <created>1610990887104</created>
+      <option name="number" value="00027" />
+      <option name="presentableId" value="LOCAL-00027" />
+      <option name="project" value="LOCAL" />
+      <updated>1610990887104</updated>
+    </task>
+    <task id="LOCAL-00028" summary="Started working HARD on results">
+      <created>1611082347263</created>
+      <option name="number" value="00028" />
+      <option name="presentableId" value="LOCAL-00028" />
+      <option name="project" value="LOCAL" />
+      <updated>1611082347330</updated>
+    </task>
+    <task id="LOCAL-00029" summary="Added some results stuff">
+      <created>1611141449544</created>
+      <option name="number" value="00029" />
+      <option name="presentableId" value="LOCAL-00029" />
+      <option name="project" value="LOCAL" />
+      <updated>1611141449544</updated>
+    </task>
+    <task id="LOCAL-00030" summary="Update README">
+      <created>1611143644761</created>
+      <option name="number" value="00030" />
+      <option name="presentableId" value="LOCAL-00030" />
+      <option name="project" value="LOCAL" />
+      <updated>1611143644761</updated>
+    </task>
+    <task id="LOCAL-00031" summary="Started going on outputs&#10;Max memory now set as Gb">
+      <created>1614168615706</created>
+      <option name="number" value="00031" />
+      <option name="presentableId" value="LOCAL-00031" />
+      <option name="project" value="LOCAL" />
+      <updated>1614168615706</updated>
+    </task>
+    <task id="LOCAL-00032" summary="Fixed UniProt databases&#10;* DB name and code were replaced">
+      <created>1614175880110</created>
+      <option name="number" value="00032" />
+      <option name="presentableId" value="LOCAL-00032" />
+      <option name="project" value="LOCAL" />
+      <updated>1614175880110</updated>
+    </task>
+    <task id="LOCAL-00033" summary="Default error model now illumina_5">
+      <created>1614182604696</created>
+      <option name="number" value="00033" />
+      <option name="presentableId" value="LOCAL-00033" />
+      <option name="project" value="LOCAL" />
+      <updated>1614182604715</updated>
+    </task>
+    <task id="LOCAL-00034" summary="reCOGnizer databases&#10;* can now be picked">
+      <created>1614263266750</created>
+      <option name="number" value="00034" />
+      <option name="presentableId" value="LOCAL-00034" />
+      <option name="project" value="LOCAL" />
+      <updated>1614263266750</updated>
+    </task>
+    <option name="localTasksCounter" value="35" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -354,13 +442,6 @@
     <option name="oldMeFiltersMigrated" value="true" />
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="First steps" />
-    <MESSAGE value="Get all the arguments except those damn accordions" />
-    <MESSAGE value="There can be only one... install!" />
-    <MESSAGE value="Removed some outdated classes&#10;Accordions going forward!" />
-    <MESSAGE value="Accordions on full fight!" />
-    <MESSAGE value="trying to go live" />
-    <MESSAGE value="Add space on select fields" />
     <MESSAGE value="Set subaccordions to pile horizontally instead of vertically&#10;A little space for selection boxes&#10;Built the JSON for UniProt columns" />
     <MESSAGE value="Broken maps input" />
     <MESSAGE value="Set defaults&#10;* UPIMAPI columns&#10;* UPIMAPI databses&#10;* KEGGCharter maps" />
@@ -376,6 +457,26 @@
     <MESSAGE value="Separated the accordions from the general configurations&#10;* Also reworked the links" />
     <MESSAGE value="Started working on proteomics input&#10;Added members page&#10;Also changed settings to results - will be base for visualization of results" />
     <MESSAGE value="Trying to solve sets&#10;* to default values&#10;* to empty values" />
-    <option name="LAST_COMMIT_MESSAGE" value="Trying to solve sets&#10;* to default values&#10;* to empty values" />
+    <MESSAGE value="errorModel now changes with doAssembly&#10;* if doAssembly, errorModel changes to &quot;complete&quot; at download time" />
+    <MESSAGE value="Split UniProt columns and databases" />
+    <MESSAGE value="Added simple proteomics configurations" />
+    <MESSAGE value="Started working HARD on results" />
+    <MESSAGE value="Added some results stuff" />
+    <MESSAGE value="Update README" />
+    <MESSAGE value="Started going on outputs&#10;Max memory now set as Gb" />
+    <MESSAGE value="Fixed UniProt databases&#10;* DB name and code were replaced" />
+    <MESSAGE value="Default error model now illumina_5" />
+    <MESSAGE value="reCOGnizer databases&#10;* can now be picked" />
+    <option name="LAST_COMMIT_MESSAGE" value="reCOGnizer databases&#10;* can now be picked" />
+  </component>
+  <component name="WindowStateProjectService">
+    <state x="2298" y="221" key="#JavaScript" timestamp="1617297135520">
+      <screen x="1920" y="0" width="1280" height="1024" />
+    </state>
+    <state x="2298" y="221" key="#JavaScript/0.0.1280.720/1920.0.1280.1024@1920.0.1280.1024" timestamp="1617297135520" />
+    <state x="0" y="0" width="587" height="720" key="find.popup" timestamp="1617036950153">
+      <screen x="0" y="0" width="1280" height="720" />
+    </state>
+    <state x="0" y="0" width="587" height="720" key="find.popup/0.0.1280.720/1920.0.1280.1024@0.0.1280.720" timestamp="1617036950153" />
   </component>
 </project>
