@@ -1,7 +1,6 @@
 import React from "react";
 import { BrowserRouter, Switch, Route } from "react-router-dom";
 
-import ResultsPage from "./results";
 import ProjectPage from "./project";
 import MembersPage from "./members";
 import AboutPage from "./about";
@@ -10,12 +9,17 @@ import HomePage from "./home";
 import Config from "./config"
 import Experiments from "./experiments";
 import {CardContent} from "@material-ui/core";
-import UniprotInfo from "./uniprotinfo";
+import UniprotColumns from "./uniprotColumns";
+import UniprotDatabases from "./uniprotDatabases"
 import KeggMaps from "./keggmaps";
 import ProteomicsConfiguration from "./proteomicsConfiguration";
+import {LoadResults} from "./results";
+import {FastQCFiles} from "./fastQCReports";
+import AssemblyQC from "./assemblyQC";
 
-const Routes = ({ configData, onConfigChange, experiments, setExperiments, nExperimentsRows, setExperimentsRows }) => {
-
+const Routes = ({ configData, onConfigChange, experiments, setExperiments,
+                  nExperimentsRows, setExperimentsRows,
+                  outputsFiles, setOutputsFiles }) => {
   return (
     <BrowserRouter>
       <Switch>
@@ -35,10 +39,17 @@ const Routes = ({ configData, onConfigChange, experiments, setExperiments, nExpe
           />
         </Route>
 
-        <Route path="/MOSGUITO/uniprotinfo">
-          <UniprotInfo
-            configData={configData}
-            onConfigChange={onConfigChange}
+        <Route path="/MOSGUITO/uniprot-columns">
+          <UniprotColumns
+            uniprotList={configData.uniprotColumns}
+            onChange={(value) => onConfigChange('uniprotColumns', value)}
+          />
+        </Route>
+
+        <Route path="/MOSGUITO/uniprot-databases">
+          <UniprotDatabases
+            uniprotList={configData.uniprotDatabases}
+            onChange={(value) => onConfigChange('uniprotDatabases', value)}
           />
         </Route>
 
@@ -76,7 +87,29 @@ const Routes = ({ configData, onConfigChange, experiments, setExperiments, nExpe
         </Route>
 
         <Route path="/MOSGUITO/results">
-          <ResultsPage />
+          <LoadResults
+            outputsFiles = {outputsFiles}
+            setOutputsFiles = {setOutputsFiles}
+          />
+        </Route>
+
+        <Route path="/MOSGUITO/load-results">
+          <LoadResults
+            outputsFiles={outputsFiles}
+            setOutputsFiles={setOutputsFiles}
+          />
+        </Route>
+
+        <Route path="/MOSGUITO/fastqc-reports">
+          <FastQCFiles
+            outputsFiles={outputsFiles}
+          />
+        </Route>
+
+        <Route path="/MOSGUITO/assembly-qc">
+          <AssemblyQC
+            outputsFolder={outputsFiles}
+          />
         </Route>
 
         <Route path="MOSGUITO/results/Upload"> 

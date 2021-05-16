@@ -1,7 +1,6 @@
 import Accordion from './Accordion'
 import LabelledCheckbox from "./LabelledCheckbox"
 import { keggMaps } from '../utils/keggMaps'
-import {Card, CardContent, Typography} from "@material-ui/core";
 import React from "react";
 
 const KeggMapsAccordion = ({ keggMapList, onChange }) => {
@@ -20,37 +19,26 @@ const KeggMapsAccordion = ({ keggMapList, onChange }) => {
   } 
 
   return (
-    <main className='main'>
-      <Card >
-        <CardContent>
-            <Typography variant='body1'>
-              KEGG metabolic maps for KEGGCharter
-            </Typography>
-          {
-            keggMaps.children.map((category, index) => (
-              <Accordion key={index} title={category.name}>
-                {
-                  category.children.map((subCategory, index) => (
-                    <Accordion key={index} title={subCategory.name}>
-                      {
-                        subCategory.children.map(({ name }, index) => (
-                          <LabelledCheckbox
-                            key={index}
-                            label={name[1]}
-                            checked={keggMapList.indexOf(name[0]) > -1}
-                            setChecked={() => handleCheck(name[0])}
-                          />)
-                        )
-                      }
-                    </Accordion>
-                  ))
-                }
-              </Accordion>
-            ))
-          }
-        </CardContent>
-      </Card>
-    </main>
+        keggMaps.children.map((category, index) => (
+          <Accordion key={index} title={category.name}>
+            {
+              category.children.map((subCategory, index) => (
+                <Accordion key={index} title={subCategory.name}>
+                  {
+                    subCategory.children.map(({ name }, index) => (
+                      <LabelledCheckbox
+                        key={index}
+                        label={name[1]}
+                        checked={keggMapList.indexOf(name[0]) > -1}
+                        setChecked={() => handleCheck(name[0])}
+                      />)
+                    )
+                  }
+                </Accordion>
+              ))
+            }
+          </Accordion>
+        ))
   )
 }
 
