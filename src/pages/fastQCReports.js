@@ -4,13 +4,36 @@ import {DashboardLayout} from '../components/Layout';
 import {Button, Toolbar, Typography} from "@material-ui/core";
 import ReactHtmlParser,{ processNodes, convertNodeToElement, htmlparser2 } from "react-html-parser";
 import Accordion from "../components/Accordion";
+import { file } from 'jszip';
 
 export const FastQCPage = (listFastQC) => {
-    console.log(readAsText(listFastQC))
-    
+    let HTML = listFastQC
+    console.log(HTML)
+    let text = HTML.innerHTML
+    console.log(text)
+
+    /*
+    function httpGet(theURL) { //função responsável por trandformar um URL em HTML Text
+      if(window.XMLHttpRequest){
+        xmlhttp = new XMLHttpRequest()
+      }else{
+        xmlhttp = new ActiveXObject('Microsoft.XMLHTTP')
+      }
+      xmlhttp.onreadystatechange = function(){
+        if(xmlhttp.readyState == 4 && xmlhttp.status == 200){
+          return xmlhttp.responseText;
+        }
+      }
+      xmlhttp.open('GET', theURL, false)
+      xmlhttp.send()
+    }
+
+    Badjoras = httpGet(HTML)
+    console.log(Badjoras)
+    */
     return(
       <div id='display'>
-
+        <div> {ReactHtmlParser(HTML)} </div> 
       </div>
     )
 }
