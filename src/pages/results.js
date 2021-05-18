@@ -3,8 +3,6 @@ import { DashboardLayout } from '../components/Layout';
 import { Button, Toolbar, Typography } from "@material-ui/core";
 import ReactHtmlParser from 'react-html-parser';
 import * as zip from "@zip.js/zip.js/dist/zip.min.js";
-import {FastQCPage} from './fastQCReports'
-//import {reader} from './ServerUnzip'
 
 
 export let ResultsDisposition = false;
@@ -13,42 +11,36 @@ async function obtainBlobArray(event){
   const blobReader = new zip.BlobReader(file);
   const zipReader = new zip.ZipReader (blobReader);
   const entries = await zipReader.getEntries();
-  let blobs = [];
+  let FastQCReports = [];
+  let KronaPlotsResults = [];
 
+  console.log(entries)
   for(let i = 0; i< entries.length; i++){
-    if (entries[i].directory === false){
+    if (entries[i].directory === false && entries[i].compressedSize != 0){
       if(entries[i].filename.includes('Preprocess')){
-        const blob = await entries[i].getData(new zip.BlobWriter(['text/html']))
-        //const HtmlURL = URL.createObjectURL(blob)
-        blobs.push(blob)
+        console.log(entries[i])
+        const blobFastQC = await entries[i].getData(new zip.BlobWriter(['text/html']))
+        FastQCReports.push(blobFastQC)
       }
-    }
+    if(entries[i].filename.includes('Annotation')){
+      const blobKronaPlots = await entries[i].getData(new zip.BlobWriter(['text/html']))
+      KronaPlotsResults.push(blobKronaPlots)
+    }}
   }
   
   await zipReader.close()
-
+  console.log(KronaPlotsResults)
   return {
-    qcReports: blobs
-  }; //
-
-  //for(let i = 0;  i< urlsFastqc.length; i++){
-    //console.log(urlsFastqc[i])
-  //}
-  //FastQCPage(urlsFastqc[0])
-  //return urls;
+    qcReports: FastQCReports,
+    KronaPlots: KronaPlotsResults 
+  }; 
 }
 
 
 const Main = ({ outputsFiles, setOutputsFiles }) => {
 
   
-  //let fileReader;
 
-  /*const handleFolder = files => {
-    setOutputsFiles(files)
-    console.log(files)
-    const file = files.item(0);
-  };*/
   const handleUploadClick = () => {
     ResultsDisposition = true
   }

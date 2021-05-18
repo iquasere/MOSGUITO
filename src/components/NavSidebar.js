@@ -226,6 +226,10 @@ export const NavSidebar = () => {
                 {
                   title: "Assembly QC",
                   itemId: "/MOSGUITO/assembly-qc"
+                },
+                {
+                  title: 'Annotation Results',
+                  itemId: '/MOSGUITO/annotation-results'
                 }
               ]
               }

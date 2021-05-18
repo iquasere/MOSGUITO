@@ -16,6 +16,7 @@ import ProteomicsConfiguration from "./proteomicsConfiguration";
 import {LoadResults} from "./results";
 import {FastQCFiles} from "./fastQCReports";
 import AssemblyQC from "./assemblyQC";
+import {AnnotationResults} from './Annotation';
 
 const Routes = ({ configData, onConfigChange, experiments, setExperiments,
                   nExperimentsRows, setExperimentsRows,
@@ -109,6 +110,12 @@ const Routes = ({ configData, onConfigChange, experiments, setExperiments,
         <Route path="/MOSGUITO/assembly-qc">
           <AssemblyQC
             outputsFolder={outputsFiles}
+          />
+        </Route>
+
+        <Route path = '/MOSGUITO/annotation-results'>
+          <AnnotationResults
+            outputsFiles = {outputsFiles.KronaPlots}
           />
         </Route>
 
