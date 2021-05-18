@@ -102,7 +102,7 @@ const Routes = ({ configData, onConfigChange, experiments, setExperiments,
 
         <Route path="/MOSGUITO/fastqc-reports">
           <FastQCFiles
-            outputsFiles={outputsFiles}
+            outputsFiles={outputsFiles.qcReports}
           />
         </Route>
 

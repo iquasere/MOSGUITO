@@ -4,34 +4,37 @@ import { Button, Toolbar, Typography } from "@material-ui/core";
 import ReactHtmlParser from 'react-html-parser';
 import * as zip from "@zip.js/zip.js/dist/zip.min.js";
 import {FastQCPage} from './fastQCReports'
-import $ from 'jquery'
 //import {reader} from './ServerUnzip'
 
 
 export let ResultsDisposition = false;
-async function render(event){
+async function obtainBlobArray(event){
   const file = event.target.files[0];
   const blobReader = new zip.BlobReader(file);
   const zipReader = new zip.ZipReader (blobReader);
   const entries = await zipReader.getEntries();
-  let urlsFastqc = [];
+  let blobs = [];
 
   for(let i = 0; i< entries.length; i++){
     if (entries[i].directory === false){
       if(entries[i].filename.includes('Preprocess')){
         const blob = await entries[i].getData(new zip.BlobWriter(['text/html']))
-        const HtmlURL = URL.createObjectURL(blob)
-        urlsFastqc.push(HtmlURL)
+        //const HtmlURL = URL.createObjectURL(blob)
+        blobs.push(blob)
       }
     }
   }
   
   await zipReader.close()
 
-  for(let i = 0;  i< urlsFastqc.length; i++){
-    console.log(urlsFastqc[i])
-  }
-  FastQCPage(urlsFastqc[0])
+  return {
+    qcReports: blobs
+  }; //
+
+  //for(let i = 0;  i< urlsFastqc.length; i++){
+    //console.log(urlsFastqc[i])
+  //}
+  //FastQCPage(urlsFastqc[0])
   //return urls;
 }
 
@@ -49,8 +52,8 @@ const Main = ({ outputsFiles, setOutputsFiles }) => {
   const handleUploadClick = () => {
     ResultsDisposition = true
   }
-  const handleZipChange = (event) => {
-    console.log(render(event))
+  const handleZipChange = async (event) => {
+    setOutputsFiles(await obtainBlobArray(event))
   }
   return (
     <>
@@ -68,6 +71,7 @@ const Main = ({ outputsFiles, setOutputsFiles }) => {
           hidden
         />
       </Button>
+
 
       <>{ReactHtmlParser()}</>
 
