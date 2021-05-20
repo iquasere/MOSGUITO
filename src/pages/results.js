@@ -13,6 +13,7 @@ async function obtainBlobArray(event){
   const entries = await zipReader.getEntries();
   let FastQCReports = [];
   let KronaPlotsResults = [];
+  let DifferentailExpressionResults = [];
 
   console.log(entries)
   for(let i = 0; i< entries.length; i++){
@@ -25,6 +26,10 @@ async function obtainBlobArray(event){
     if(entries[i].filename.includes('Annotation')){
       const blobKronaPlots = await entries[i].getData(new zip.BlobWriter(['text/html']))
       KronaPlotsResults.push(blobKronaPlots)
+    }if(entries[i].filename.includes('Differential expression analysis')){
+      const Heatmaps = await entries[i].getData(new zip.BlobWriter(['image/jpeg']))
+      DifferentailExpressionResults.push(Heatmaps)
+
     }}
   }
   
@@ -32,7 +37,8 @@ async function obtainBlobArray(event){
   console.log(KronaPlotsResults)
   return {
     qcReports: FastQCReports,
-    KronaPlots: KronaPlotsResults 
+    KronaPlots: KronaPlotsResults,
+    Heatmaps: DifferentailExpressionResults
   }; 
 }
 
