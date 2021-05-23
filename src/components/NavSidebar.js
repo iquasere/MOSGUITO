@@ -7,7 +7,17 @@ import { FaChartPie } from 'react-icons/fa';
 import {ResultsDisposition} from '../pages/results'
 import "react-minimal-side-navigation/lib/ReactMinimalSideNavigation.css";
 
-export const NavSidebar = () => {
+
+export const NavSidebar = ({outputsFiles}) => {
+  /*const Pagination = (filesinfo) =>{
+    return filesinfo.map(file =>{
+      let [name,blob] = file
+      return({
+        title: `${name}`,
+        itemId: `/MOSGUITO/${name}`
+      })
+    })
+  }*/
   const history = useHistory();
   const location = useLocation();
   const [isSidebarOpen, setIsSidebarOpen] = useState(false);
@@ -221,7 +231,8 @@ export const NavSidebar = () => {
                 },
                 {
                   title: "FastQC reports",
-                  itemId: "/MOSGUITO/fastqc-reports"
+                  itemId: "/MOSGUITO/fastqc-reports",
+                  //subNav: {Pagination(outputsFiles.qcReports)}
                 },
                 {
                   title: "Assembly QC",
@@ -230,6 +241,14 @@ export const NavSidebar = () => {
                 {
                   title: 'Annotation Results',
                   itemId: '/MOSGUITO/annotation-results'
+                },
+                {
+                  title: 'Differential Analysis',
+                  itemId: '/MOSFUITO/differential-analysis'
+                },
+                {
+                  title: 'KEGGmaps',
+                  itemId: '/MOSGUITO/keggmaps-results'
                 }
               ]
               }

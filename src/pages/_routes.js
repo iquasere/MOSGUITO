@@ -17,6 +17,8 @@ import {LoadResults} from "./results";
 import {FastQCFiles} from "./fastQCReports";
 import AssemblyQC from "./assemblyQC";
 import {AnnotationResults} from './Annotation';
+import {DifferentialResults} from './DiferrentialExpressianResults'
+import {KEGGMapsResults} from './KEGGMapsResults'
 
 const Routes = ({ configData, onConfigChange, experiments, setExperiments,
                   nExperimentsRows, setExperimentsRows,
@@ -103,19 +105,31 @@ const Routes = ({ configData, onConfigChange, experiments, setExperiments,
 
         <Route path="/MOSGUITO/fastqc-reports">
           <FastQCFiles
-            outputsFiles={outputsFiles.qcReports}
+            outputsFiles={outputsFiles}
           />
         </Route>
 
         <Route path="/MOSGUITO/assembly-qc">
           <AssemblyQC
-            outputsFolder={outputsFiles}
+            outputsFolder={outputsFiles} //está a funcionar de maneira diferente de maneira a testar Paginação no NavSideBar
           />
         </Route>
 
         <Route path = '/MOSGUITO/annotation-results'>
           <AnnotationResults
             outputsFiles = {outputsFiles.KronaPlots}
+          />
+        </Route>
+
+        <Route path = '/MOSFUITO/differential-analysis'>
+          <DifferentialResults
+            outputsFiles = {outputsFiles.Heatmaps}
+          />
+        </Route>
+        
+        <Route path = '/MOSGUITO/keggmaps-results'>
+          <KEGGMapsResults
+            outputsFiles = {outputsFiles.KEGGMaps}
           />
         </Route>
 

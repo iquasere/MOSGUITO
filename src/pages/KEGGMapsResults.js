@@ -5,9 +5,10 @@ import {Button, Toolbar, Typography} from "@material-ui/core";
 import ReactHtmlParser,{ processNodes, convertNodeToElement, htmlparser2 } from "react-html-parser";
 import Accordion from "../components/Accordion";
 import { file } from 'jszip';
+import { Autorenew } from '@material-ui/icons';
 
 
-export const FastQCFiles = ({ outputsFiles }) => {
+export const KEGGMapsResults = ({ outputsFiles }) => {
   const getJsxFromFiles = (files) => {
     let blobNumber = 0;
 
@@ -17,7 +18,7 @@ export const FastQCFiles = ({ outputsFiles }) => {
       const fileUrl = URL.createObjectURL(file)
 
       return <div key={`blob_${blobNumber}`}>
-      <iframe src={fileUrl} style={{width: "1000px", height: "300px"}}></iframe>
+      <img src={fileUrl} style={{margin: 'auto', justifyContent: 'center'}}></img>
       <br/>
       <hr/>
       <br/>
@@ -26,10 +27,10 @@ export const FastQCFiles = ({ outputsFiles }) => {
   }
 
   return (
-    <DashboardLayout outputsFiles = {outputsFiles}>
+    <DashboardLayout>
       <h1>Teste</h1>
       
-      {getJsxFromFiles(outputsFiles.qcReports)}
+      {getJsxFromFiles(outputsFiles)}
     </DashboardLayout>
   )
 }

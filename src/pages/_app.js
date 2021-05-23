@@ -3,7 +3,7 @@ import React, {useState} from "react";
 import Routes from "./_routes";
 import { defaultValues } from '../utils/defaultValues'
 
-const App = () => {
+export const App = () => {
   const [experiments, setExperiments] = useState([
     {
       "Files":"",
@@ -34,4 +34,3 @@ const App = () => {
   />;
 };
 
-export default App;
