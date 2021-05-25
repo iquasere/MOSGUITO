@@ -1,10 +1,9 @@
-import React, {useState} from 'react';
+import React, { useState } from 'react';
 
-import {DashboardLayout} from '../components/Layout';
-import {Button, Toolbar, Typography} from "@material-ui/core";
-import ReactHtmlParser,{ processNodes, convertNodeToElement, htmlparser2 } from "react-html-parser";
+import { DashboardLayout } from '../components/Layout';
+import { Button, Toolbar, Typography } from "@material-ui/core";
+import ReactHtmlParser, { processNodes, convertNodeToElement, htmlparser2 } from "react-html-parser";
 import Accordion from "../components/Accordion";
-import { file } from 'jszip';
 
 
 export const FastQCFiles = ({ outputsFiles }) => {
@@ -14,20 +13,19 @@ export const FastQCFiles = ({ outputsFiles }) => {
     return files.map(file => {
       blobNumber++;
 
-      const fileUrl = URL.createObjectURL(file)
+      const fileUrl = URL.createObjectURL(file.blob)
 
-      return <div key={`blob_${blobNumber}`}>
-      <iframe src={fileUrl} style={{width: "1000px", height: "300px"}}></iframe>
-      <br/>
-      <hr/>
-      <br/>
-      </div>
+      return <Accordion key={`accordion_${blobNumber}`} title={file.name}>
+        <iframe src={fileUrl} style={{ width: "100%", height: "1000px" }}></iframe>
+      </Accordion>
     })
   }
 
   return (
-    <DashboardLayout outputsFiles = {outputsFiles}>
-      <h1>Teste</h1>
+    <DashboardLayout outputsFiles={outputsFiles}>
+      <Toolbar>
+        <Typography variant="h6">FastQC Reports</Typography>
+      </Toolbar>
       
       {getJsxFromFiles(outputsFiles.qcReports)}
     </DashboardLayout>

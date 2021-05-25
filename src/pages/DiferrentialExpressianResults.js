@@ -15,20 +15,20 @@ export const DifferentialResults = ({ outputsFiles }) => {
     return files.map(file => {
       blobNumber++;
 
-      const fileUrl = URL.createObjectURL(file)
+      const fileUrl = URL.createObjectURL(file.blob)
 
       return <div key={`blob_${blobNumber}`}>
-      <img src={fileUrl} style={{margin: 'auto', justifyContent: 'center'}}></img>
-      <br/>
-      <hr/>
-      <br/>
+      <h1 style= {{textAlign: 'center', fontWeight:'bold', marginBottom:'1cm'}}>{file.name}</h1>
+      <img src={fileUrl} style={{margin: 'auto', marginBottom: '2cm', justifyContent: 'center'}} ></img>
       </div>
     })
   }
 
   return (
     <DashboardLayout>
-      <h1>Teste</h1>
+      <Toolbar>
+        <Typography variant="h6">Differential Analysis Results</Typography>
+      </Toolbar>
       
       {getJsxFromFiles(outputsFiles)}
     </DashboardLayout>

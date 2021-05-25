@@ -6,11 +6,11 @@ import BodyWrapper from "./BodyWrapper";
 export const DashboardLayout = ({ children }) => {
   return (
     <BodyWrapper>
-      <div className="flex h-screen bg-gray-200">
+      <div className="flex h-screen bg-gray-200 flex-grow-1">
         <NavSidebar />
 
-        <div className="flex flex-col flex-1 overflow-hidden">
-          <main className="content">
+        <div className="flex flex-col flex-1 overflow-hidden flex-grow-1">
+          <main className="content w-100 m-r-1-rem">
             <section className="sm:flex-row flex flex-col flex-1">
               <div
                 className="content-box"

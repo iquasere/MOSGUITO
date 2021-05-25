@@ -4,6 +4,12 @@ import { Button, Toolbar, Typography } from "@material-ui/core";
 import ReactHtmlParser from 'react-html-parser';
 import * as zip from "@zip.js/zip.js/dist/zip.min.js";
 
+const treatName = (name) =>{
+  let resultingString = name.split('/')
+  resultingString = resultingString[resultingString.length-1]
+  resultingString = resultingString.split('.')
+  return(resultingString[0])
+}
 
 export let ResultsDisposition = false;
 async function obtainBlobArray(event){
@@ -15,26 +21,25 @@ async function obtainBlobArray(event){
   let KronaPlotsResults = [];
   let DifferentailExpressionResults = [];
   let KEGGMapsResults = [];
-
-  console.log(entries)
   for(let i = 0; i< entries.length; i++){
     if (entries[i].directory === false && entries[i].compressedSize != 0){
       if(entries[i].filename.includes('Preprocess')){
-        console.log(entries[i])
         const blobFastQC = await entries[i].getData(new zip.BlobWriter(['text/html']))
-        FastQCReports.push(blobFastQC)
+        let fastQcName = treatName(entries[i].filename)
+        FastQCReports.push({name: fastQcName, blob: blobFastQC})
       }
     if(entries[i].filename.includes('Annotation')){
       const blobKronaPlots = await entries[i].getData(new zip.BlobWriter(['text/html']))
-      KronaPlotsResults.push(blobKronaPlots)
+      let kronaPlotsNames = treatName(entries[i].filename)
+      KronaPlotsResults.push({name: kronaPlotsNames, blob: blobKronaPlots})
     }
     if(entries[i].filename.includes('Differential expression analysis')){
       const blobHeatmaps = await entries[i].getData(new zip.BlobWriter(['image/jpeg']))
-      DifferentailExpressionResults.push(blobHeatmaps)
+      let heatMapsNames = treatName(entries[i].filename)
+      DifferentailExpressionResults.push({name: heatMapsNames, blob:blobHeatmaps})
 
     }
     if(entries[i].filename.includes('KEGGMaps')){
-      console.log(entries[i])
       const blobKEGGMaps = await entries[i].getData(new zip.BlobWriter(['image/png']))
       KEGGMapsResults.push(blobKEGGMaps)
 
@@ -42,7 +47,6 @@ async function obtainBlobArray(event){
   }
   
   await zipReader.close()
-  console.log(KronaPlotsResults)
   return {
     qcReports: FastQCReports,
     KronaPlots: KronaPlotsResults,
@@ -61,6 +65,7 @@ const Main = ({ outputsFiles, setOutputsFiles }) => {
   }
   const handleZipChange = async (event) => {
     setOutputsFiles(await obtainBlobArray(event))
+    console.log(outputsFiles)
   }
   return (
     <>
