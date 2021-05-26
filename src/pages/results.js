@@ -21,6 +21,8 @@ async function obtainBlobArray(event){
   let KronaPlotsResults = [];
   let DifferentailExpressionResults = [];
   let KEGGMapsResults = [];
+  let Assembly = [];
+
   for(let i = 0; i< entries.length; i++){
     if (entries[i].directory === false && entries[i].compressedSize != 0){
       if(entries[i].filename.includes('Preprocess')){
@@ -43,6 +45,10 @@ async function obtainBlobArray(event){
       const blobKEGGMaps = await entries[i].getData(new zip.BlobWriter(['image/png']))
       KEGGMapsResults.push(blobKEGGMaps)
 
+    }
+    if(entries[i].filename.includes('Assembly')){
+      const AssemblyReports = await entries[i].getdata(new zip.BlobWriter(['text/tab-separated-values']))
+      Assembly.push(AssemblyReports)
     }}
   }
   
@@ -51,7 +57,8 @@ async function obtainBlobArray(event){
     qcReports: FastQCReports,
     KronaPlots: KronaPlotsResults,
     Heatmaps: DifferentailExpressionResults,
-    KEGGMaps: KEGGMapsResults
+    KEGGMaps: KEGGMapsResults,
+    asReports: Assembly
   }; 
 }
 

@@ -6,6 +6,7 @@ import ReactHtmlParser,{ processNodes, convertNodeToElement, htmlparser2 } from 
 import Accordion from "../components/Accordion";
 import { file } from 'jszip';
 import { Autorenew } from '@material-ui/icons';
+import ImageZoom from 'react-medium-image-zoom'
 
 
 export const DifferentialResults = ({ outputsFiles }) => {
@@ -19,7 +20,7 @@ export const DifferentialResults = ({ outputsFiles }) => {
 
       return <div key={`blob_${blobNumber}`}>
       <h1 style= {{textAlign: 'center', fontWeight:'bold', marginBottom:'1cm'}}>{file.name}</h1>
-      <img src={fileUrl} style={{margin: 'auto', marginBottom: '2cm', justifyContent: 'center'}} ></img>
+      <ImageZoom image={{src:fileUrl, style:{margin: 'auto', marginBottom: '2cm', justifyContent: 'center'}, className : 'img'}} />
       </div>
     })
   }

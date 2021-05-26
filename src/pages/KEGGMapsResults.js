@@ -6,6 +6,7 @@ import ReactHtmlParser,{ processNodes, convertNodeToElement, htmlparser2 } from 
 import Accordion from "../components/Accordion";
 import { file } from 'jszip';
 import { Autorenew } from '@material-ui/icons';
+import ImageZoom from 'react-medium-image-zoom'
 
 
 export const KEGGMapsResults = ({ outputsFiles }) => {
@@ -18,7 +19,7 @@ export const KEGGMapsResults = ({ outputsFiles }) => {
       const fileUrl = URL.createObjectURL(file)
 
       return <div key={`blob_${blobNumber}`}>
-      <img src={fileUrl} style={{margin: 'auto', justifyContent: 'center'}}></img>
+      <ImageZoom image = {{src:fileUrl, style:{margin: 'auto', justifyContent: 'center'}, className : 'img'}}/>
       <br/>
       <hr/>
       <br/>
