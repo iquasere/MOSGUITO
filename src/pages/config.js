@@ -23,7 +23,7 @@ import {
   keggcharterTaxaLevelOptions,
   recognizerDatabasesOptions
 } from '../utils/options'
-import './../App.css'
+import '../App.css'
 import {DashboardLayout} from "../components/Layout";
 import Accordion from "../components/Accordion";
 
@@ -159,18 +159,24 @@ const Main = ({ configData, onConfigChange }) => {
               )
             }
 
-            <LabelledTextField
-              label='DIAMOND database'
-              value={configData.diamondDatabase}
-              onChange={(ev) => onConfigChange('diamondDatabase', ev.target.value)}
-              placeholder={defaultValues.diamondDatabase}
-            />
-
             <LabelledCheckbox
               label='Download UniProt'
               checked={configData.downloadUniprot}
               setChecked={(ev) => onConfigChange('downloadUniprot', ev.target.checked)}
             />
+
+            {
+              configData.downloadUniprot ? (
+                <></>
+              ) : (
+                <LabelledTextField
+                  label='DIAMOND database'
+                  value={configData.diamondDatabase}
+                  onChange={(ev) => onConfigChange('diamondDatabase', ev.target.value)}
+                  placeholder={defaultValues.diamondDatabase}
+                />
+              )
+            }
 
             <LabelledCheckbox
               label='Download CDD'

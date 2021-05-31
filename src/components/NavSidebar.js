@@ -13,7 +13,7 @@ export const NavSidebar = () => {
   const [isSidebarOpen, setIsSidebarOpen] = useState(false);
 
   return (
-    <React.Fragment>
+    <>
       {/* Sidebar Overlay */}
       <div
         onClick={() => setIsSidebarOpen(false)}
@@ -95,15 +95,8 @@ export const NavSidebar = () => {
                   itemId: "/MOSGUITO/proteomics-configuration"
                 }
               ]
-            }
-          ]}
-        />
-
-        <div className="absolute bottom-0 w-full my-8">
-          <Navigation
-            activeItemId={location.pathname}
-            items={[
-              {
+            },
+            {
                 title: "Results",
                 itemId: "/MOSGUITO/results",
                 elemBefore: () => <FaChartPie />,
@@ -122,13 +115,9 @@ export const NavSidebar = () => {
                 }
               ]
               }
-            ]}
-            onSelect={({ itemId }) => {
-              history.push(itemId);
-            }}
-          />
-        </div>
+          ]}
+        />
       </div>
-    </React.Fragment>
+    </>
   );
 };
