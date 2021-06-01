@@ -47,7 +47,7 @@ async function obtainBlobArray(event){
 
     }
     if(entries[i].filename.includes('Assembly')){
-      const AssemblyReports = await entries[i].getdata(new zip.BlobWriter(['text/tab-separated-values']))
+      const AssemblyReports = await entries[i].getData(new zip.BlobWriter(['text/tab-separated-values']))
       Assembly.push(AssemblyReports)
     }}
   }
