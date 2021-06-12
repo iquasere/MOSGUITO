@@ -19,6 +19,7 @@ import AssemblyQC from "./assemblyQC";
 import {AnnotationResults} from './Annotation';
 import {DifferentialResults} from './DiferrentialExpressianResults'
 import {KEGGMapsResults} from './KEGGMapsResults'
+import EntryReports from "./entryReport";
 
 const Routes = ({ configData, onConfigChange, experiments, setExperiments,
                   nExperimentsRows, setExperimentsRows,
@@ -111,7 +112,7 @@ const Routes = ({ configData, onConfigChange, experiments, setExperiments,
 
         <Route path="/MOSGUITO/assembly-qc">
           <AssemblyQC
-            outputsFolder={outputsFiles} //está a funcionar de maneira diferente de maneira a testar Paginação no NavSideBar
+            outputsFolder={outputsFiles.asReports}
           />
         </Route>
 
@@ -130,6 +131,12 @@ const Routes = ({ configData, onConfigChange, experiments, setExperiments,
         <Route path = '/MOSGUITO/keggmaps-results'>
           <KEGGMapsResults
             outputsFiles = {outputsFiles.KEGGMaps}
+          />
+        </Route>
+
+        <Route path = '/MOSGUITO/entry-reports'>
+          <EntryReports
+            outputsFolder = {outputsFiles.entryReport}
           />
         </Route>
 

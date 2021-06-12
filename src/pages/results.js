@@ -22,6 +22,7 @@ async function obtainBlobArray(event){
   let DifferentailExpressionResults = [];
   let KEGGMapsResults = [];
   let Assembly = [];
+  let entry = [];
 
   for(let i = 0; i< entries.length; i++){
     if (entries[i].directory === false && entries[i].compressedSize != 0){
@@ -48,17 +49,23 @@ async function obtainBlobArray(event){
     }
     if(entries[i].filename.includes('Assembly')){
       const AssemblyReports = await entries[i].getData(new zip.BlobWriter(['text/tab-separated-values']))
-      Assembly.push(AssemblyReports)
+      let assemblyName = treatName(entries[i].filename)
+      Assembly.push({name: assemblyName, blob: AssemblyReports})
+    }
+    if(entries[i].filename.includes('Entry')){
+      const entryReport = await entries[i].getData(new zip.BlobWriter(['text/tab-separated-values']))
+      let entryName = treatName(entries[i].filename)
+      entry.push({name: entryName, blob: entryReport})
     }}
   }
-  
   await zipReader.close()
   return {
     qcReports: FastQCReports,
     KronaPlots: KronaPlotsResults,
     Heatmaps: DifferentailExpressionResults,
     KEGGMaps: KEGGMapsResults,
-    asReports: Assembly
+    asReports: Assembly,
+    entryReport: entry
   }; 
 }
 
@@ -72,7 +79,6 @@ const Main = ({ outputsFiles, setOutputsFiles }) => {
   }
   const handleZipChange = async (event) => {
     setOutputsFiles(await obtainBlobArray(event))
-    console.log(outputsFiles)
   }
   return (
     <>

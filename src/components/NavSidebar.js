@@ -235,6 +235,10 @@ export const NavSidebar = ({ outputsFiles }) => {
                     {
                       title: 'KEGGmaps',
                       itemId: '/MOSGUITO/keggmaps-results'
+                    },
+                    {
+                      title: 'EntryReports',
+                      itemId: '/MOSGUITO/entry-reports'
                     }
                   ]
                 }
