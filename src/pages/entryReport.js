@@ -23,6 +23,7 @@ const Main = ({ outputsFolder }) => {
             download: true,
             header: true,
             complete: function (results) {
+                results.data.pop()
                 updateTables({ fileContent: results.data, fileName });
             }
         })

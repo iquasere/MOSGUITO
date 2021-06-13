@@ -92,8 +92,11 @@ const Routes = ({ configData, onConfigChange, experiments, setExperiments,
 
         <Route path="/MOSGUITO/results">
           <LoadResults
-            outputsFiles = {outputsFiles}
-            setOutputsFiles = {setOutputsFiles}
+            outputsFiles={outputsFiles}
+            setOutputsFiles={setOutputsFiles}
+            onConfigChange ={onConfigChange}
+            setExperiments = {setExperiments}
+            setExperimentsRows = {setExperimentsRows}
           />
         </Route>
 
@@ -101,6 +104,9 @@ const Routes = ({ configData, onConfigChange, experiments, setExperiments,
           <LoadResults
             outputsFiles={outputsFiles}
             setOutputsFiles={setOutputsFiles}
+            onConfigChange ={onConfigChange}
+            setExperiments = {setExperiments}
+            setExperimentsRows = {setExperimentsRows}
           />
         </Route>
 
