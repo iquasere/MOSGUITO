@@ -4,7 +4,7 @@ import { keggMaps } from '../utils/keggMaps'
 import React from "react";
 
 const KeggMapsAccordion = ({ keggMapList, onChange }) => {
-
+  console.log(keggMapList)
   const handleCheck = value => {
     const newList = [...keggMapList]
 

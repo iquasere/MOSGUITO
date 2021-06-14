@@ -50,7 +50,9 @@ async function ObtainBlobArray(event){
     }
     if(entries[i].filename.includes('KEGGMaps')){
       const blobKEGGMaps = await entries[i].getData(new zip.BlobWriter(['image/png']))
-      KEGGMapsResults.push(blobKEGGMaps)
+      let keggMaps = treatName(entries[i].filename)
+      let number = KEGGMapsResults.length
+      KEGGMapsResults.push({name:[number,keggMaps],blob:blobKEGGMaps})
 
     }
     if(entries[i].filename.includes('Assembly')){
@@ -68,6 +70,7 @@ async function ObtainBlobArray(event){
       const fileUrl = URL.createObjectURL(config)
       $.getJSON(fileUrl, function(json){
         configFile = json
+        console.log(configFile)
       })
     }
     if(entries[i].filename.includes('experiments')){
