@@ -20,6 +20,8 @@ import {AnnotationResults} from './Annotation';
 import {DifferentialResults} from './DiferrentialExpressianResults'
 import {KEGGMapsResults} from './KEGGMapsResults'
 import EntryReports from "./entryReport";
+import GeneralReports from "./GeneralReports";
+import ProteinReports from "./ProteinReports";
 
 const Routes = ({ configData, onConfigChange, experiments, setExperiments,
                   nExperimentsRows, setExperimentsRows,
@@ -143,6 +145,18 @@ const Routes = ({ configData, onConfigChange, experiments, setExperiments,
         <Route path = '/MOSGUITO/entry-reports'>
           <EntryReports
             outputsFolder = {outputsFiles.entryReport}
+          />
+        </Route>
+
+        <Route path = '/MOSGUITO/general-reports'>
+          <GeneralReports
+            outputsFolder = {outputsFiles.generalReport}
+          />
+        </Route>
+
+        <Route path = '/MOSGUITO/protein-reports'>
+          <ProteinReports
+            outputsFolder = {outputsFiles.proteinReport}
           />
         </Route>
 

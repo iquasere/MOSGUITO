@@ -19,7 +19,6 @@ const Main = ({ outputsFolder }) => {
             return newReplace
         })
     }
-
     const [table, setTable] = useState([])
     let auxTables = []
 
@@ -37,7 +36,7 @@ const Main = ({ outputsFolder }) => {
             complete: function (results) {
                 results.data.pop()
                 let parse = replaceArray(results.data)
-                updateTables({ fileContent: parse, fileName });
+                updateTables({ fileContent: results.data, fileName });
             }
         })
     }
@@ -90,7 +89,7 @@ const Main = ({ outputsFolder }) => {
     )
 }
 
-const EntryReports = ({ outputsFolder }) => {
+const GeneralReports = ({ outputsFolder }) => {
     return (
         <DashboardLayout>
             <Main
@@ -100,4 +99,4 @@ const EntryReports = ({ outputsFolder }) => {
     )
 }
 
-export default EntryReports;
+export default GeneralReports;

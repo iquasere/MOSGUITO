@@ -5,7 +5,6 @@ import * as Papa from "papaparse"
 import styled from 'styled-components';
 import DataTable from 'react-data-table-component'
 import Accordion from "../components/Accordion";
-import { file } from 'jszip';
 
 const Main = ({ outputsFolder }) => {
   const [tables, setTables] = useState([])

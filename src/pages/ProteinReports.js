@@ -19,7 +19,6 @@ const Main = ({ outputsFolder }) => {
             return newReplace
         })
     }
-
     const [table, setTable] = useState([])
     let auxTables = []
 
@@ -90,7 +89,7 @@ const Main = ({ outputsFolder }) => {
     )
 }
 
-const EntryReports = ({ outputsFolder }) => {
+const ProteinReports = ({ outputsFolder }) => {
     return (
         <DashboardLayout>
             <Main
@@ -100,4 +99,4 @@ const EntryReports = ({ outputsFolder }) => {
     )
 }
 
-export default EntryReports;
+export default ProteinReports;

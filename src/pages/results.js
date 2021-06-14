@@ -27,6 +27,8 @@ async function ObtainBlobArray(event){
   let entry = [];
   let configFile = [];
   let exper = [];
+  let general = [];
+  let protein = [];
 
   for(let i = 0; i< entries.length; i++){
     if (entries[i].directory === false && entries[i].compressedSize != 0){
@@ -71,6 +73,17 @@ async function ObtainBlobArray(event){
     if(entries[i].filename.includes('experiments')){
       const exp = await entries[i].getData(new zip.BlobWriter(['text/tab-separated-values']))
       exper = exp
+    }
+    if(entries[i].filename.includes('General')){
+      const genReport = await entries[i].getData(new zip.BlobWriter(['text/tab-separated-values']))
+      let genName = treatName(entries[i].filename)
+      general.push({name: genName, blob: genReport})
+
+    }
+    if(entries[i].filename.includes('Protein')){
+      const proteinReport = await entries[i].getData(new zip.BlobWriter(['text/tab-separated-values']))
+      let protName = treatName(entries[i].filename)
+      protein.push({name: protName, blob: proteinReport})
     }}
   }
   await zipReader.close()
@@ -80,7 +93,9 @@ async function ObtainBlobArray(event){
     Heatmaps: DifferentailExpressionResults,
     KEGGMaps: KEGGMapsResults,
     asReports: Assembly,
-    entryReport: entry
+    entryReport: entry,
+    generalReport: general,
+    proteinReport: protein
   }, configFile, exper]
 }
 
@@ -98,6 +113,7 @@ const Main = ({ outputsFiles, setOutputsFiles, onConfigChange, setExperiments, s
     for(const[key, value] of  Object.entries(Output[1])){
       onConfigChange(key, value)
     }
+    
     const readCsv = (csvUrl)=>{
       Papa.parse(csvUrl,{
         download: true,

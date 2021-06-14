@@ -239,6 +239,14 @@ export const NavSidebar = ({ outputsFiles }) => {
                     {
                       title: 'EntryReports',
                       itemId: '/MOSGUITO/entry-reports'
+                    },
+                    {
+                      title: 'GeneralReports',
+                      itemId: '/MOSGUITO/general-reports'
+                    },
+                    {
+                      title: 'ProteinReports',
+                      itemId: '/MOSGUITO/protein-reports'
                     }
                   ]
                 }
