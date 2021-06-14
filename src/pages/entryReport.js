@@ -13,7 +13,7 @@ const Main = ({ outputsFolder }) => {
         return array.map((dic)=>{
             const newReplace = {}
             for(const [key, value] of Object.entries(dic)){
-                let newKey = key.replace('.', '/').replace('[','(').replace(']',')')
+                let newKey = key.replaceAll('.', '/').replaceAll('[','(').replaceAll(']',')').replaceAll(':','_')
                 newReplace[newKey] = value
             }
             return newReplace
@@ -56,19 +56,17 @@ const Main = ({ outputsFolder }) => {
 
     const getColumnNamesFromData = (fileContent) => {
         return Object.keys(fileContent[0]).map(key => {
-            console.log(key)
             return ({ name: capitalizeFirstLetter(key), selector: key, sortable: true })
         })
     }
 
-    console.log(table)
-    console.log(table[0])
     const checkVoid = (file) =>{
-        console.log(file)
         if(file[0] != undefined){
             return(<DataTable
+                style={{ width: "100%", height: "100%" , margin: 'auto'}}
                 title={file[0].fileName}
                 pagination
+                paginationRowsPerPageOptions = {[10,20,30,40,50]}
                 noHeader
                 columns={getColumnNamesFromData(file[0].fileContent)}
                 data={file[0].fileContent}
@@ -93,7 +91,7 @@ const Main = ({ outputsFolder }) => {
 const EntryReports = ({ outputsFolder }) => {
     return (
         <DashboardLayout>
-            <Main
+            <Main style = {{width: "100%", height: "100%"}}
                 outputsFolder={outputsFolder}
             />
         </DashboardLayout>

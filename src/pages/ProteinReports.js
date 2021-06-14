@@ -13,7 +13,7 @@ const Main = ({ outputsFolder }) => {
         return array.map((dic)=>{
             const newReplace = {}
             for(const [key, value] of Object.entries(dic)){
-                let newKey = key.replace('.', '/').replace('[','(').replace(']',')')
+                let newKey = key.replaceAll('.', '/').replaceAll('[','(').replaceAll(']',')').replaceAll(':','_')
                 newReplace[newKey] = value
             }
             return newReplace
@@ -60,14 +60,14 @@ const Main = ({ outputsFolder }) => {
         })
     }
 
-    console.log(table)
-    console.log(table[0])
     const checkVoid = (file) =>{
         console.log(file)
         if(file[0] != undefined){
             return(<DataTable
+                style={{ width: "100%", height: "100%" }}
                 title={file[0].fileName}
                 pagination
+                paginationRowsPerPageOptions = {[10,20,30,40,50]}
                 noHeader
                 columns={getColumnNamesFromData(file[0].fileContent)}
                 data={file[0].fileContent}
@@ -81,7 +81,7 @@ const Main = ({ outputsFolder }) => {
     return (
         <main className='main'>
             <Toolbar>
-                <Typography variant="h6">Entry Reports</Typography>
+                <Typography variant="h6">Protein Reports</Typography>
             </Toolbar>
             {checkVoid(table)}
             

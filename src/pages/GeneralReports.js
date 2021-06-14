@@ -13,7 +13,7 @@ const Main = ({ outputsFolder }) => {
         return array.map((dic)=>{
             const newReplace = {}
             for(const [key, value] of Object.entries(dic)){
-                let newKey = key.replace('.', '/').replace('[','(').replace(']',')')
+                let newKey = key.replaceAll('.', '/').replaceAll('[','(').replaceAll(']',')').replaceAll(':','_').replace('Unnamed_ 0', 'Sample Nº')
                 newReplace[newKey] = value
             }
             return newReplace
@@ -36,7 +36,7 @@ const Main = ({ outputsFolder }) => {
             complete: function (results) {
                 results.data.pop()
                 let parse = replaceArray(results.data)
-                updateTables({ fileContent: results.data, fileName });
+                updateTables({ fileContent: parse, fileName });
             }
         })
     }
@@ -55,19 +55,14 @@ const Main = ({ outputsFolder }) => {
 
     const getColumnNamesFromData = (fileContent) => {
         return Object.keys(fileContent[0]).map(key => {
-            console.log(key)
             return ({ name: capitalizeFirstLetter(key), selector: key, sortable: true })
         })
     }
-
-    console.log(table)
-    console.log(table[0])
     const checkVoid = (file) =>{
-        console.log(file)
         if(file[0] != undefined){
             return(<DataTable
+                style={{ width: "100%", height: "100%" }}
                 title={file[0].fileName}
-                pagination
                 noHeader
                 columns={getColumnNamesFromData(file[0].fileContent)}
                 data={file[0].fileContent}
@@ -81,7 +76,7 @@ const Main = ({ outputsFolder }) => {
     return (
         <main className='main'>
             <Toolbar>
-                <Typography variant="h6">Entry Reports</Typography>
+                <Typography variant="h6">General Reports</Typography>
             </Toolbar>
             {checkVoid(table)}
             

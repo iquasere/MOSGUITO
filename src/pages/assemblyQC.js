@@ -59,6 +59,7 @@ const Main = ({ outputsFolder }) => {
         return (
           <Accordion key={`accordion_${tableCounter}`} title={file.fileName}>
             <DataTable
+              style={{ width: "100%", height: "100%" }}
               pagination
               noHeader
               columns={getColumnNamesFromData(file.fileContent)}
