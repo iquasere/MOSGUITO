@@ -13,7 +13,7 @@ const Main = ({ outputsFolder }) => {
         return array.map((dic)=>{
             const newReplace = {}
             for(const [key, value] of Object.entries(dic)){
-                let newKey = key.replaceAll('.', '/').replaceAll('[','(').replaceAll(']',')').replaceAll(':','_')
+                let newKey = key.replaceAll('.', '/').replaceAll('[','(').replaceAll(']',')').replaceAll(':','_').replaceAll('{','(').replaceAll('}',')')
                 newReplace[newKey] = value
             }
             return newReplace
