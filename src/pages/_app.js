@@ -21,12 +21,16 @@ export const App = () => {
     const newValue = { ...configData, [field]: value }
     setConfig(newValue)
   }
+<<<<<<< HEAD
 
   const onConfigOverwrite = (newConfigData) => {
     const newValue = newConfigData
     setConfig(newValue)
   }
 
+=======
+  console.log(configData)
+>>>>>>> parent of 9913a61 (Download &SearchBar table)
   return <Routes
     configData={configData}
     onConfigChange={onConfigChange}
