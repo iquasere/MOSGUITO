@@ -14,6 +14,7 @@ const treatName = (name) =>{
 }
 
 export let ResultsDisposition = false;
+
 async function ObtainBlobArray(event){
   const file = event.target.files[0];
   const blobReader = new zip.BlobReader(file);
@@ -70,7 +71,6 @@ async function ObtainBlobArray(event){
       const fileUrl = URL.createObjectURL(config)
       $.getJSON(fileUrl, function(json){
         configFile = json
-        console.log(configFile)
       })
     }
     if(entries[i].filename.includes('experiments')){
@@ -103,9 +103,15 @@ async function ObtainBlobArray(event){
 }
 
 
-const Main = ({ outputsFiles, setOutputsFiles, onConfigChange, setExperiments, setExperimentsRows }) => {
+const Main = ({ outputsFiles, setOutputsFiles, onConfigOverwrite, setExperiments, setExperimentsRows }) => {
 
-  
+  const snakeToCamelCase = str => {
+    return str.replace(/([-_][a-z])/ig, ($1) => {
+      return $1.toUpperCase()
+        .replace('-', '')
+        .replace('_', '');
+    });
+  };
 
   const handleUploadClick = () => {
     ResultsDisposition = true
@@ -113,9 +119,11 @@ const Main = ({ outputsFiles, setOutputsFiles, onConfigChange, setExperiments, s
   const handleZipChange = async (event) => {
     let Output = await ObtainBlobArray(event)
     setOutputsFiles(Output[0])
-    for(const[key, value] of  Object.entries(Output[1])){
-      onConfigChange(key, value)
-    }
+    console.log(Output[1])
+    Object.keys(Output[1]).map(
+      (key) => delete Object.assign(Output[1], {[snakeToCamelCase(key)]: Output[1][key]})[key])
+    console.log(Output[1])
+    onConfigOverwrite(Output[1])
     
     const readCsv = (csvUrl)=>{
       Papa.parse(csvUrl,{
@@ -140,23 +148,19 @@ const Main = ({ outputsFiles, setOutputsFiles, onConfigChange, setExperiments, s
         component="label"
         onClick={handleUploadClick}
       >
-        Upload results folder
-          <input
+        Select results' ZIP archive
+        <input
           type="file"
           accept='application/zip'
           onChange={handleZipChange}
           hidden
         />
       </Button>
-
-
-      <>{ReactHtmlParser()}</>
-
     </>
   )
 };
 
-export const LoadResults = ({ outputsFiles, setOutputsFiles, onConfigChange, setExperiments, setExperimentsRows }) => {
+export const LoadResults = ({ outputsFiles, setOutputsFiles, onConfigOverwrite, setExperiments, setExperimentsRows }) => {
   return (
     <DashboardLayout>
       <Toolbar>
@@ -165,12 +169,11 @@ export const LoadResults = ({ outputsFiles, setOutputsFiles, onConfigChange, set
       <Main
         outputsFiles={outputsFiles}
         setOutputsFiles={setOutputsFiles}
-        onConfigChange = {onConfigChange}
+        onConfigOverwrite = {onConfigOverwrite}
         setExperiments = {setExperiments}
         setExperimentsRows = {setExperimentsRows}
       />
     </DashboardLayout>
-
   )
 }
 

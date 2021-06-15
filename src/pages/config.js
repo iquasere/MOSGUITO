@@ -27,7 +27,7 @@ import './../App.css'
 import {DashboardLayout} from "../components/Layout";
 import Accordion from "../components/Accordion";
 
-const Main = ({ configData, onConfigChange }) => {
+const Main = ({ configData, onConfigChange, onConfigOverwrite }) => {
 
   const camelToSnakeCase = str => str.replace(/[A-Z]/g, letter => `_${letter.toLowerCase()}`);
 
@@ -227,7 +227,7 @@ const Main = ({ configData, onConfigChange }) => {
           >
 
             <Button
-              onClick={() => Object.keys(configData).map((key) => onConfigChange(key, defaultValues[key]))}
+              onClick={() => onConfigOverwrite(defaultValues)}
               variant='contained'
               color='primary'
             >
@@ -235,7 +235,7 @@ const Main = ({ configData, onConfigChange }) => {
             </Button>
 
             <Button
-              onClick={() => Object.keys(configData).map((key) => onConfigChange(key, emptyValues[key]))}
+              onClick={() => onConfigOverwrite(emptyValues)}
               variant='contained'
               color='primary'
             >
@@ -278,7 +278,7 @@ const Header = () => {
   )
 }
 
-function Config({ configData, onConfigChange }) {
+function Config({ configData, onConfigChange, onConfigOverwrite }) {
   return (
     <DashboardLayout>
       <div className='App'>
@@ -286,6 +286,7 @@ function Config({ configData, onConfigChange }) {
         <Main
           configData={configData}
           onConfigChange={onConfigChange}
+          onConfigOverwrite={onConfigOverwrite}
         />
       </div>
     </DashboardLayout>

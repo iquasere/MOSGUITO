@@ -23,7 +23,7 @@ import EntryReports from "./entryReport";
 import GeneralReports from "./GeneralReports";
 import ProteinReports from "./ProteinReports";
 
-const Routes = ({ configData, onConfigChange, experiments, setExperiments,
+const Routes = ({ configData, onConfigChange, onConfigOverwrite, experiments, setExperiments,
                   nExperimentsRows, setExperimentsRows,
                   outputsFiles, setOutputsFiles }) => {
   return (
@@ -33,6 +33,7 @@ const Routes = ({ configData, onConfigChange, experiments, setExperiments,
           <Config
             configData={configData}
             onConfigChange={onConfigChange}
+            onConfigOverwrite={onConfigOverwrite}
           />
         </Route>
 
@@ -96,7 +97,7 @@ const Routes = ({ configData, onConfigChange, experiments, setExperiments,
           <LoadResults
             outputsFiles={outputsFiles}
             setOutputsFiles={setOutputsFiles}
-            onConfigChange ={onConfigChange}
+            onConfigOverwrite ={onConfigOverwrite}
             setExperiments = {setExperiments}
             setExperimentsRows = {setExperimentsRows}
           />

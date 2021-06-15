@@ -21,10 +21,16 @@ export const App = () => {
     const newValue = { ...configData, [field]: value }
     setConfig(newValue)
   }
-  console.log(configData)
+
+  const onConfigOverwrite = (newConfigData) => {
+    const newValue = newConfigData
+    setConfig(newValue)
+  }
+
   return <Routes
     configData={configData}
     onConfigChange={onConfigChange}
+    onConfigOverwrite={onConfigOverwrite}
     nExperimentsRows={nExperimentsRows}
     setExperimentsRows={setExperimentsRows}
     experiments={experiments}

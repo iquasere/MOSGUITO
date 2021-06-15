@@ -20,6 +20,7 @@ export const emptyValues = {
     "downloadUniprot":true,
     "uniprotColumns":[],
     "uniprotDatabases":[],
+    "recognizerDatabases":[],
     "normalizationMethod":normalizationMethodOptions[0],
     "keggcharterMaps":[],
     "keggcharterTaxaLevel":keggcharterTaxaLevelOptions[0],
