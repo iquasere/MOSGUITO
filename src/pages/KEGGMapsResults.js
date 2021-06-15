@@ -14,35 +14,48 @@ const Main = ({outputsFiles}) =>{
   const keggNames = outputsFiles.map((name)=>{
     return(name.name)
   })
-  let show = false;
-  const [selected, setSelected] = useState([]); //state n funciona, necessa´rio para renderizar de novo a página
-  const accordionKeggMaps = () =>{
+  const [show, setShow] = useState(false);
+  const [final, setFinal] = useState([]);
+
+  const AccordionKeggMaps = () =>{
     const isTrue = (array) =>{
+      if(array.length == 0){
+        alert('Please select KEGGMaps to display')
+      }
       if(array.length > 6){
-        alert('Choose less KEGGMaps to displat for a better performance')
+        alert('Choose less KEGGMaps to display for a better performance')
       }else{
-        show = true
+        setFinal(selected)
+        setShow(true)
       }
     }
+    const [selected, setSelected] = useState([]);
     const handleCheck = value => {
-      const newList = selected
+      const newList = [...selected]
       
   
       const index = newList.indexOf(value)
       if (index > -1) {
-        alert()
         newList.splice(index, 1)
       } else {
         newList.push(value)
       }
-      console.log(newList)
       setSelected(newList)
-      console.log(selected)
+    }
+    const handleToogle = ()=>{
+      isTrue(selected)
     }
 
     return(
     <div>
-      <Accordion  title = 'KeggMaps Results'>
+    <Button
+      variant='contained'
+      color='primary'
+      component="label"
+      onClick = {handleToogle}>
+        Click to view the KEGGMaps
+    </Button>
+    <Accordion  title = 'KeggMaps Results'>
         {keggNames.map((index) =>(
           <LabelledCheckbox
             key = {index[0]}
@@ -51,40 +64,61 @@ const Main = ({outputsFiles}) =>{
             setChecked={() => handleCheck(index[1])}/>
       ))}
       </Accordion>
-      <Button
-      variant='contained'
-      color='primary'
-      component="label"
-      onClick = {isTrue(selected)}>
-        Click to view the KEGGMaps
-      </Button>
     </div>
     )
   }
-  const getJsxFromFiles = (files) => {
-    let blobNumber = 0;
 
-    return files.map(file => {
-      blobNumber++;
+  const ShowKeggmaps = ()=>{
+    const getJsxFromFiles = (files) => {
+      let blobNumber = 0;
 
-      const fileUrl = URL.createObjectURL(file)
+      return files.map(file => {
+        blobNumber++;
 
-      return <div key={`blob_${blobNumber}`}>
-      <ImageZoom image = {{src:fileUrl, style:{margin: 'auto', justifyContent: 'center'}, className : 'img'}}/>
-      <br/>
-      <hr/>
-      <br/>
+        const fileUrl = URL.createObjectURL(file.blob)
+
+        return <div key={`blob_${blobNumber}`}>
+        <h1 style= {{textAlign: 'center', fontWeight:'bold', marginBottom:'1cm'}}>{file.name}</h1>
+        <ImageZoom image = {{src:fileUrl, style:{margin: 'auto', justifyContent: 'center'}, className : 'img'}}/>
+        <br/>
+        <hr/>
+        <br/>
+        </div>
+      })
+    }
+    let keggToShow = [];
+    for(let i = 0; i < outputsFiles.length ; i++){
+      if(final.includes(outputsFiles[i].name[1])){
+        console.log(outputsFiles[i].name[1])
+        console.log(outputsFiles[i].blob)
+        keggToShow.push({name:outputsFiles[i].name[1], blob:outputsFiles[i].blob})
+      }
+    }
+
+    const handleBack = ()=>{
+       setShow(false)
+    }
+    return(
+      <div>
+        <Button
+        variant='contained'
+        color='primary'
+        component="label"
+        onClick = {handleBack}>
+          Click to view the KEGGMaps
+        </Button>
+        {getJsxFromFiles(keggToShow)}
       </div>
-    })
-  }
-  const badjoras = ()=>{
+    )
+}
+  const showMe = ()=>{
     if(show == false){
-      return(accordionKeggMaps)
+      return(AccordionKeggMaps)
     }else{
-      //Ver quais é que estão selecionados e mostra-los
+      return(ShowKeggmaps)
     }
   }
-  const KEGGChange = badjoras()
+  const KEGGChange = showMe()
 
 
   return(
@@ -99,7 +133,6 @@ export const KEGGMapsResults = ({ outputsFiles }) => {
 
   return (
     <DashboardLayout>
-      <h1>Teste</h1>
       <Main
         outputsFiles = {outputsFiles}
       />
