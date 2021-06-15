@@ -1,11 +1,11 @@
-import React, { Component, useState, useEffect } from 'react';
+import React, { Component, useState, useEffect, useMemo } from 'react';
 import { DashboardLayout } from '../components/Layout';
 import { Button, Toolbar, Typography } from "@material-ui/core";
 import * as Papa from "papaparse"
-import styled from 'styled-components';
 import DataTable from 'react-data-table-component'
-import Accordion from "../components/Accordion";
-import { file } from 'jszip';
+import FilterComponent from './FilterDataTest';
+import TSV from "tsv";
+import download from "../utils/download";
 
 const Main = ({ outputsFolder }) => {
 
@@ -59,18 +59,58 @@ const Main = ({ outputsFolder }) => {
             return ({ name: capitalizeFirstLetter(key), selector: key, sortable: true })
         })
     }
+    const [filterText, setFilterText] = useState("");
+    const [resetPaginationToggle, setResetPaginationToggle] = useState(false);
+    
+    const subHeaderComponent = useMemo(() => {
+        const handleClear = () => {
+        if (filterText) {
+        setResetPaginationToggle(!resetPaginationToggle);
+        setFilterText("");
+        }
+    };
+    
+    return (
+        <FilterComponent
+        onFilter={e => setFilterText(e.target.value)}
+        onClear={handleClear}
+        filterText={filterText}
+        />
+    );
+  }, [filterText, resetPaginationToggle]);
+
+    const downloadBeta = (downloadFile)=>{
+        download(TSV.stringify(downloadFile), "EntryReportsParsed.tsv", "tsv")
+    }
+
 
     const checkVoid = (file) =>{
         if(file[0] != undefined){
-            return(<DataTable
+            const filteredItems = table[0].fileContent.filter(
+                item =>
+                  JSON.stringify(item)
+                    .toLowerCase()
+                    .indexOf(filterText.toLowerCase()) !== -1);
+            const download = ()=>{
+                downloadBeta(filteredItems)
+                }
+            return(<div><DataTable
                 style={{ width: "100%", height: "100%" , margin: 'auto'}}
                 title={file[0].fileName}
                 pagination
                 paginationRowsPerPageOptions = {[10,20,30,40,50]}
                 noHeader
+                striped
+                subHeader
+                subHeaderComponent={subHeaderComponent}
                 columns={getColumnNamesFromData(file[0].fileContent)}
-                data={file[0].fileContent}
-            />)
+                data={filteredItems}
+            />
+            <Button onClick = {download} variant='contained'
+        color='secondary'>
+                Click to download the filtered results
+            </Button>
+            </div>)
         }else{
             return(<div/>)
         }

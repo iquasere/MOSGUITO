@@ -12,6 +12,7 @@
     "ba-js-base-components": "^1.2.10",
     "csvtojson": "^2.0.10",
     "d3": "^6.3.1",
+    "export-from-json": "^1.4.0",
     "file-saver": "^2.0.5",
     "html-react-parser": "^1.2.1",
     "html-to-react": "^1.4.5",
@@ -66,7 +67,7 @@
     ]
   },
   "devDependencies": {
-    "gh-pages": "^3.1.0",
+    "gh-pages": "^3.2.1",
     "html-loader": "^2.1.2"
   }
 }
