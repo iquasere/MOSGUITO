@@ -3,7 +3,7 @@ import React, {useState} from "react";
 import Routes from "./_routes";
 import { defaultValues } from '../utils/defaultValues'
 
-const App = () => {
+export const App = () => {
   const [experiments, setExperiments] = useState([
     {
       "Files":"",
@@ -15,13 +15,13 @@ const App = () => {
     ])
   const [configData, setConfig] = useState(defaultValues)
   const [nExperimentsRows, setExperimentsRows] = useState(1)
-  const [outputsFiles, setOutputsFiles] = useState([])
+  const [outputsFiles, setOutputsFiles] = useState({})
 
   const onConfigChange = (field, value) => {
     const newValue = { ...configData, [field]: value }
     setConfig(newValue)
   }
-
+  console.log(configData)
   return <Routes
     configData={configData}
     onConfigChange={onConfigChange}
@@ -34,4 +34,3 @@ const App = () => {
   />;
 };
 
-export default App;

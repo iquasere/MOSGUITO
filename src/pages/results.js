@@ -1,43 +1,162 @@
-import React, { useState } from 'react';
-import {DashboardLayout} from '../components/Layout';
-import {Button, Toolbar, Typography} from "@material-ui/core";
+import React, { useState, useEffect } from 'react';
+import { DashboardLayout } from '../components/Layout';
+import { Button, Toolbar, Typography } from "@material-ui/core";
 import ReactHtmlParser from 'react-html-parser';
+import * as zip from "@zip.js/zip.js/dist/zip.min.js";
+import $ from 'jquery'
+import * as Papa from "papaparse"
 
-const Main = ({ outputsFiles, setOutputsFiles }) => {
+const treatName = (name) =>{
+  let resultingString = name.split('/')
+  resultingString = resultingString[resultingString.length-1]
+  resultingString = resultingString.split('.')
+  return(resultingString[0])
+}
 
-  let fileReader;
+export let ResultsDisposition = false;
+async function ObtainBlobArray(event){
+  const file = event.target.files[0];
+  const blobReader = new zip.BlobReader(file);
+  const zipReader = new zip.ZipReader (blobReader);
+  const entries = await zipReader.getEntries();
+  let FastQCReports = [];
+  let KronaPlotsResults = [];
+  let DifferentailExpressionResults = [];
+  let KEGGMapsResults = [];
+  let Assembly = [];
+  let entry = [];
+  let configFile = [];
+  let exper = [];
+  let general = [];
+  let protein = [];
 
-    const handleFolder = files => {
-        setOutputsFiles(files)
-        console.log(files)
-        const file = files.item(0);
+  for(let i = 0; i< entries.length; i++){
+    if (entries[i].directory === false && entries[i].compressedSize != 0){
+      if(entries[i].filename.includes('Preprocess')){
+        const blobFastQC = await entries[i].getData(new zip.BlobWriter(['text/html']))
+        let fastQcName = treatName(entries[i].filename)
+        FastQCReports.push({name: fastQcName, blob: blobFastQC})
+      }
+    if(entries[i].filename.includes('Annotation')){
+      const blobKronaPlots = await entries[i].getData(new zip.BlobWriter(['text/html']))
+      let kronaPlotsNames = treatName(entries[i].filename)
+      KronaPlotsResults.push({name: kronaPlotsNames, blob: blobKronaPlots})
+    }
+    if(entries[i].filename.includes('Differential expression analysis')){
+      const blobHeatmaps = await entries[i].getData(new zip.BlobWriter(['image/jpeg']))
+      let heatMapsNames = treatName(entries[i].filename)
+      DifferentailExpressionResults.push({name: heatMapsNames, blob:blobHeatmaps})
 
     }
+    if(entries[i].filename.includes('KEGGMaps')){
+      const blobKEGGMaps = await entries[i].getData(new zip.BlobWriter(['image/png']))
+      let keggMaps = treatName(entries[i].filename)
+      let number = KEGGMapsResults.length
+      KEGGMapsResults.push({name:[number,keggMaps],blob:blobKEGGMaps})
 
+    }
+    if(entries[i].filename.includes('Assembly')){
+      const AssemblyReports = await entries[i].getData(new zip.BlobWriter(['text/tab-separated-values']))
+      let assemblyName = treatName(entries[i].filename)
+      Assembly.push({name: assemblyName, blob: AssemblyReports})
+    }
+    if(entries[i].filename.includes('Entry')){
+      const entryReport = await entries[i].getData(new zip.BlobWriter(['text/tab-separated-values']))
+      let entryName = treatName(entries[i].filename)
+      entry.push({name: entryName, blob: entryReport})
+    }
+    if(entries[i].filename.includes('config')){
+      const config = await entries[i].getData(new zip.BlobWriter(['	application/json']))
+      const fileUrl = URL.createObjectURL(config)
+      $.getJSON(fileUrl, function(json){
+        configFile = json
+        console.log(configFile)
+      })
+    }
+    if(entries[i].filename.includes('experiments')){
+      const exp = await entries[i].getData(new zip.BlobWriter(['text/tab-separated-values']))
+      exper = exp
+    }
+    if(entries[i].filename.includes('General')){
+      const genReport = await entries[i].getData(new zip.BlobWriter(['text/tab-separated-values']))
+      let genName = treatName(entries[i].filename)
+      general.push({name: genName, blob: genReport})
+
+    }
+    if(entries[i].filename.includes('Protein')){
+      const proteinReport = await entries[i].getData(new zip.BlobWriter(['text/tab-separated-values']))
+      let protName = treatName(entries[i].filename)
+      protein.push({name: protName, blob: proteinReport})
+    }}
+  }
+  await zipReader.close()
+  return [{
+    qcReports: FastQCReports,
+    KronaPlots: KronaPlotsResults,
+    Heatmaps: DifferentailExpressionResults,
+    KEGGMaps: KEGGMapsResults,
+    asReports: Assembly,
+    entryReport: entry,
+    generalReport: general,
+    proteinReport: protein
+  }, configFile, exper]
+}
+
+
+const Main = ({ outputsFiles, setOutputsFiles, onConfigChange, setExperiments, setExperimentsRows }) => {
+
+  
+
+  const handleUploadClick = () => {
+    ResultsDisposition = true
+  }
+  const handleZipChange = async (event) => {
+    let Output = await ObtainBlobArray(event)
+    setOutputsFiles(Output[0])
+    for(const[key, value] of  Object.entries(Output[1])){
+      onConfigChange(key, value)
+    }
+    
+    const readCsv = (csvUrl)=>{
+      Papa.parse(csvUrl,{
+        download: true,
+        header: true,
+        complete: function (results) {
+            results.data.pop()
+            let newData = results.data
+            setExperiments(newData);
+            setExperimentsRows(Object.keys(newData).length)
+        }
+    })
+    }
+    let csvUrl = URL.createObjectURL(Output[2])
+    readCsv(csvUrl)
+  }
   return (
     <>
-        <Button
-          variant='contained'
-          color='secondary'
-          component="label"
-        >
-          Upload results folder
+      <Button
+        variant='contained'
+        color='secondary'
+        component="label"
+        onClick={handleUploadClick}
+      >
+        Upload results folder
           <input
-            type="file"
-            directory=""
-            webkitdirectory=""
-            onChange={ev => handleFolder(ev.target.files)}
-            hidden
-          />
-        </Button>
+          type="file"
+          accept='application/zip'
+          onChange={handleZipChange}
+          hidden
+        />
+      </Button>
 
-      <>{ ReactHtmlParser() }</>
+
+      <>{ReactHtmlParser()}</>
 
     </>
   )
-}
+};
 
-const LoadResults = ({ outputsFiles, setOutputsFiles }) => {
+export const LoadResults = ({ outputsFiles, setOutputsFiles, onConfigChange, setExperiments, setExperimentsRows }) => {
   return (
     <DashboardLayout>
       <Toolbar>
@@ -46,10 +165,12 @@ const LoadResults = ({ outputsFiles, setOutputsFiles }) => {
       <Main
         outputsFiles={outputsFiles}
         setOutputsFiles={setOutputsFiles}
+        onConfigChange = {onConfigChange}
+        setExperiments = {setExperiments}
+        setExperimentsRows = {setExperimentsRows}
       />
     </DashboardLayout>
 
   )
 }
 
-export default LoadResults;

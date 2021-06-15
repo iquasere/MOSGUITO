@@ -1,7 +1,6 @@
 import React from "react";
 import { BrowserRouter, Switch, Route } from "react-router-dom";
 
-import ResultsPage from "./results";
 import ProjectPage from "./project";
 import MembersPage from "./members";
 import AboutPage from "./about";
@@ -14,9 +13,15 @@ import UniprotColumns from "./uniprotColumns";
 import UniprotDatabases from "./uniprotDatabases"
 import KeggMaps from "./keggmaps";
 import ProteomicsConfiguration from "./proteomicsConfiguration";
-import LoadResults from "./results";
-import FastQCReports from "./fastQCReports";
+import {LoadResults} from "./results";
+import {FastQCFiles} from "./fastQCReports";
 import AssemblyQC from "./assemblyQC";
+import {AnnotationResults} from './Annotation';
+import {DifferentialResults} from './DiferrentialExpressianResults'
+import {KEGGMapsResults} from './KEGGMapsResults'
+import EntryReports from "./entryReport";
+import GeneralReports from "./GeneralReports";
+import ProteinReports from "./ProteinReports";
 
 const Routes = ({ configData, onConfigChange, experiments, setExperiments,
                   nExperimentsRows, setExperimentsRows,
@@ -88,25 +93,70 @@ const Routes = ({ configData, onConfigChange, experiments, setExperiments,
         </Route>
 
         <Route path="/MOSGUITO/results">
-          <ResultsPage />
+          <LoadResults
+            outputsFiles={outputsFiles}
+            setOutputsFiles={setOutputsFiles}
+            onConfigChange ={onConfigChange}
+            setExperiments = {setExperiments}
+            setExperimentsRows = {setExperimentsRows}
+          />
         </Route>
 
         <Route path="/MOSGUITO/load-results">
           <LoadResults
             outputsFiles={outputsFiles}
             setOutputsFiles={setOutputsFiles}
+            onConfigChange ={onConfigChange}
+            setExperiments = {setExperiments}
+            setExperimentsRows = {setExperimentsRows}
           />
         </Route>
 
         <Route path="/MOSGUITO/fastqc-reports">
-          <FastQCReports
+          <FastQCFiles
             outputsFiles={outputsFiles}
           />
         </Route>
 
         <Route path="/MOSGUITO/assembly-qc">
           <AssemblyQC
-            outputsFolder={outputsFiles}
+            outputsFolder={outputsFiles.asReports}
+          />
+        </Route>
+
+        <Route path = '/MOSGUITO/annotation-results'>
+          <AnnotationResults
+            outputsFiles = {outputsFiles.KronaPlots}
+          />
+        </Route>
+
+        <Route path = '/MOSFUITO/differential-analysis'>
+          <DifferentialResults
+            outputsFiles = {outputsFiles.Heatmaps}
+          />
+        </Route>
+        
+        <Route path = '/MOSGUITO/keggmaps-results'>
+          <KEGGMapsResults
+            outputsFiles = {outputsFiles.KEGGMaps}
+          />
+        </Route>
+
+        <Route path = '/MOSGUITO/entry-reports'>
+          <EntryReports
+            outputsFolder = {outputsFiles.entryReport}
+          />
+        </Route>
+
+        <Route path = '/MOSGUITO/general-reports'>
+          <GeneralReports
+            outputsFolder = {outputsFiles.generalReport}
+          />
+        </Route>
+
+        <Route path = '/MOSGUITO/protein-reports'>
+          <ProteinReports
+            outputsFolder = {outputsFiles.proteinReport}
           />
         </Route>
 

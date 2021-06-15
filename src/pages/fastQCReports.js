@@ -1,100 +1,31 @@
-import React, {useState} from 'react';
-
-import {DashboardLayout} from '../components/Layout';
-import {Button, Toolbar, Typography} from "@material-ui/core";
-import ReactHtmlParser from "react-html-parser";
+import React, { useState } from 'react';
+import { DashboardLayout } from '../components/Layout';
+import { Button, Toolbar, Typography } from "@material-ui/core";
 import Accordion from "../components/Accordion";
 
-const Main = ({ outputsFiles }) => {
 
-  const [fastQCRaws, setFastQCRaws] = useState([])
-  let fileReader = new FileReader()
+export const FastQCFiles = ({ outputsFiles }) => {
+  const getJsxFromFiles = (files) => {
+    let blobNumber = 0;
 
-  const selectFastQCFiles = (files) => {
-    let fQCFiles = []
-    Object.keys(files).map((index) => {
-        if (files[index]["webkitRelativePath"].includes("fastqc_reports")){
-            fQCFiles.push(files[index])
-        }
+    return files.map(file => {
+      blobNumber++;
+
+      const fileUrl = URL.createObjectURL(file.blob)
+
+      return <Accordion key={`accordion_${blobNumber}`} title={file.name}>
+        <iframe src={fileUrl} style={{ width: "100%", height: "1000px" }}></iframe>
+      </Accordion>
     })
-    return fQCFiles
   }
-
-  const addToFastQCRaws = value => {
-    const newList = [...fastQCRaws]
-    newList.push(value)
-    setFastQCRaws(newList)
-  }
-
-  const handleFolder = files => {
-    const file = files[0];
-    fileReader.onloadend = handleFileRead;
-    fileReader.readAsText(file)
-  }
-
-  const handleFileRead = (e) => {
-    const content = fileReader.result;
-    addToFastQCRaws(content)
-  }
-
-  const fastQCFiles = selectFastQCFiles(outputsFiles.outputsFiles)
-
 
   return (
-    <main className='main'>
+    <DashboardLayout outputsFiles={outputsFiles}>
       <Toolbar>
-        <div>
-          <Typography variant="h6">FastQC reports from preprocessing with MOSCA</Typography>
-        </div>
+        <Typography variant="h6">FastQC Reports</Typography>
       </Toolbar>
-
-      <Button
-        variant='contained'
-        color='secondary'
-        component="label"
-        onClick={(ev) => {console.log(fastQCFiles)}}
-      >
-      Show files
-      </Button>
-
-      <Button
-        variant='contained'
-        color='secondary'
-        component="label"
-        onClick={(ev) => {console.log(handleFolder(fastQCFiles))}}
-      >
-      Show first raw
-      </Button>
-
-      <Button
-        variant='contained'
-        color='secondary'
-        component="label"
-        onClick={(ev) => {console.log(fastQCRaws)}}
-      >
-      Show RAWs
-      </Button>
-
-
-        {
-        fastQCRaws.map((file, index)=>{
-          <Accordion key={index} title={index}>
-            { ReactHtmlParser(file) }
-          </Accordion>
-      })}
-
-    </main>
-  )
-}
-
-const FastQCReports = ( outputsFiles ) => {
-  return (
-    <DashboardLayout>
-      <Main
-        outputsFiles={outputsFiles}
-      />
+      
+      {getJsxFromFiles(outputsFiles.qcReports)}
     </DashboardLayout>
   )
 }
-
-export default FastQCReports;

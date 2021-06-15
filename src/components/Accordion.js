@@ -6,13 +6,13 @@ import {
 } from '@material-ui/core'
 import ExpandMoreIcon from '@material-ui/icons/ExpandMore'
 
-const Accordion = ({ title, children }) => {
+const Accordion = ({ title, style, children }) => {
     const [isOpen, setIsOpen] = useState(false)
     const toggleIsOpen = () => setIsOpen(!isOpen)
     return (<MuiAccordion
         expanded={isOpen}
         onChange={toggleIsOpen}
-        style={{width: '100%'}}
+        style={style || {width: '100%'}}
     >
         <AccordionSummary
             expandIcon={<ExpandMoreIcon/>}
