@@ -19,11 +19,11 @@ const Main = ({outputsFiles}) =>{
 
   const AccordionKeggMaps = () =>{
     const isTrue = (array) =>{
-      if(array.length == 0){
-        alert('Please select KEGGMaps to display')
+      if(array.length == 0 | array.length>6){
+        if(array.length > 6){
+          alert('Choose less KEGGMaps to display for a better performance')
+        }else{alert('Please select KEGGMaps to display')
       }
-      if(array.length > 6){
-        alert('Choose less KEGGMaps to display for a better performance')
       }else{
         setFinal(selected)
         setShow(true)
