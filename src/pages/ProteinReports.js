@@ -1,11 +1,11 @@
-import React, { Component, useState, useEffect, useMemo } from 'react';
+import React, { Component, useState, useEffect } from 'react';
 import { DashboardLayout } from '../components/Layout';
 import { Button, Toolbar, Typography } from "@material-ui/core";
 import * as Papa from "papaparse"
+import styled from 'styled-components';
 import DataTable from 'react-data-table-component'
-import FilterComponent from './FilterDataTest';
-import TSV from "tsv";
-import download from "../utils/download";
+import Accordion from "../components/Accordion";
+import { file } from 'jszip';
 
 const Main = ({ outputsFolder }) => {
 
@@ -13,7 +13,7 @@ const Main = ({ outputsFolder }) => {
         return array.map((dic)=>{
             const newReplace = {}
             for(const [key, value] of Object.entries(dic)){
-                let newKey = key.replaceAll('.', '/').replaceAll('[','(').replaceAll(']',')').replaceAll(':','_').replaceAll('{','(').replaceAll('}',')')
+                let newKey = key.replaceAll('.', '/').replaceAll('[','(').replaceAll(']',')').replaceAll(':','_')
                 newReplace[newKey] = value
             }
             return newReplace
@@ -55,59 +55,23 @@ const Main = ({ outputsFolder }) => {
 
     const getColumnNamesFromData = (fileContent) => {
         return Object.keys(fileContent[0]).map(key => {
+            console.log(key)
             return ({ name: capitalizeFirstLetter(key), selector: key, sortable: true })
         })
     }
-    const [filterText, setFilterText] = useState("");
-    const [resetPaginationToggle, setResetPaginationToggle] = useState(false);
-    
-    const subHeaderComponent = useMemo(() => {
-        const handleClear = () => {
-        if (filterText) {
-        setResetPaginationToggle(!resetPaginationToggle);
-        setFilterText("");
-        }
-    };
-    
-    return (
-        <FilterComponent
-        onFilter={e => setFilterText(e.target.value)}
-        onClear={handleClear}
-        filterText={filterText}
-        />
-    );
-  }, [filterText, resetPaginationToggle]);
 
-    const downloadBeta = (downloadFile)=>{
-        download(TSV.stringify(downloadFile), "ProteinReportsParsed.tsv", "tsv")
-    }
     const checkVoid = (file) =>{
+        console.log(file)
         if(file[0] != undefined){
-            const filteredItems = table[0].fileContent.filter(
-                item =>
-                  JSON.stringify(item)
-                    .toLowerCase()
-                    .indexOf(filterText.toLowerCase()) !== -1);
-            const download = ()=>{
-                downloadBeta(filteredItems)
-                }
-                return(<div><DataTable
-                    style={{ width: "100%", height: "100%" , margin: 'auto'}}
-                    title={file[0].fileName}
-                    pagination
-                    paginationRowsPerPageOptions = {[10,20,30,40,50]}
-                    noHeader
-                    striped
-                    subHeader
-                    subHeaderComponent={subHeaderComponent}
-                    columns={getColumnNamesFromData(file[0].fileContent)}
-                    data={filteredItems}
-                />
-                <Button onClick = {download} variant='contained'
-            color='secondary'>
-                    Click to download the filtered results
-                </Button>
-                </div>)
+            return(<DataTable
+                style={{ width: "100%", height: "100%" }}
+                title={file[0].fileName}
+                pagination
+                paginationRowsPerPageOptions = {[10,20,30,40,50]}
+                noHeader
+                columns={getColumnNamesFromData(file[0].fileContent)}
+                data={file[0].fileContent}
+            />)
         }else{
             return(<div/>)
         }
