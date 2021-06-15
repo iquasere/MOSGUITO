@@ -21,6 +21,7 @@ export const App = () => {
     const newValue = { ...configData, [field]: value }
     setConfig(newValue)
   }
+  console.log(configData)
   return <Routes
     configData={configData}
     onConfigChange={onConfigChange}

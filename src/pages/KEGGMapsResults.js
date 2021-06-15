@@ -89,8 +89,6 @@ const Main = ({outputsFiles}) =>{
     let keggToShow = [];
     for(let i = 0; i < outputsFiles.length ; i++){
       if(final.includes(outputsFiles[i].name[1])){
-        console.log(outputsFiles[i].name[1])
-        console.log(outputsFiles[i].blob)
         keggToShow.push({name:outputsFiles[i].name[1], blob:outputsFiles[i].blob})
       }
     }

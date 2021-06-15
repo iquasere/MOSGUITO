@@ -123,9 +123,9 @@ const Main = ({ outputsFiles, setOutputsFiles, onConfigChange, setExperiments, s
         header: true,
         complete: function (results) {
             results.data.pop()
-            let badjoras = results.data
-            setExperiments(badjoras);
-            setExperimentsRows(Object.keys(badjoras).length)
+            let newData = results.data
+            setExperiments(newData);
+            setExperimentsRows(Object.keys(newData).length)
         }
     })
     }
