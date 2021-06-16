@@ -119,10 +119,8 @@ const Main = ({ outputsFiles, setOutputsFiles, onConfigOverwrite, setExperiments
   const handleZipChange = async (event) => {
     let Output = await ObtainBlobArray(event)
     setOutputsFiles(Output[0])
-    console.log(Output[1])
     Object.keys(Output[1]).map(
-      (key) => delete Object.assign(Output[1], {[snakeToCamelCase(key)]: Output[1][key]})[key])
-    console.log(Output[1])
+      (key) => delete Object.assign(Output[1], {[snakeToCamelCase(key)]: Output[1][key]}))
     onConfigOverwrite(Output[1])
     
     const readCsv = (csvUrl)=>{
