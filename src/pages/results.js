@@ -1,8 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import { DashboardLayout } from '../components/Layout';
 import { Button, Toolbar, Typography } from "@material-ui/core";
-import ReactHtmlParser from 'react-html-parser';
-import * as zip from "@zip.js/zip.js/dist/zip.min.js";
+import {BlobReader, ZipReader, BlobWriter} from "@zip.js/zip.js" //problema no imports do package
 import $ from 'jquery'
 import * as Papa from "papaparse"
 
@@ -17,10 +16,8 @@ export let ResultsDisposition = false;
 
 async function ObtainBlobArray(event){
   const file = event.target.files[0];
-  console.log(file)
-  const blobReader = new zip.BlobReader(file);
-  console.log(blobReader)
-  const zipReader = new zip.ZipReader (blobReader);
+  const blobReader = new BlobReader(file);
+  const zipReader = new ZipReader (blobReader);
   const entries = await zipReader.getEntries();
   let FastQCReports = [];
   let KronaPlotsResults = [];
