@@ -17,9 +17,7 @@ export let ResultsDisposition = false;
 
 async function ObtainBlobArray(event){
   const file = event.target.files[0];
-  console.log(file)
   const blobReader = new zip.BlobReader(file);
-  console.log(blobReader)
   const zipReader = new zip.ZipReader (blobReader);
   const entries = await zipReader.getEntries();
   let FastQCReports = [];
