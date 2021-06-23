@@ -68,7 +68,6 @@
   "devDependencies": {
     "@testing-library/react": "^11.2.7",
     "gh-pages": "^3.2.1",
-    "html-loader": "^2.1.2",
-    "webpack-cli": "^4.7.2"
+    "html-loader": "^2.1.2"
   }
 }
