@@ -3,11 +3,8 @@ import { DashboardLayout } from '../components/Layout';
 import { Button, Toolbar, Typography } from "@material-ui/core";
 import ReactHtmlParser from 'react-html-parser';
 import $ from 'jquery'
-import * as ZIP from "@zip.js/zip.js"
+import * as ZIP from "@zip.js/zip.js/dist/zip-fs-full"
 import * as Papa from "papaparse"
-
-var JSZip = require("jszip");
-var zip = new JSZip();
 
 
 const treatName = (name) =>{
@@ -24,16 +21,8 @@ async function ObtainBlobArray(event){
   const blobReader = new ZIP.BlobReader(file);
   const zipReader = new ZIP.ZipReader (blobReader);
   const entries = await zipReader.getEntries();
-  const unzipped = await zip.loadAsync(file)
-  const entries2 = unzipped.files
-  console.log(entries2)
-  console.log(entries)
+
   let KronaPlotsResults = [];
-
-
-  var blob = new Blob([entries2["MOSCA_results/Annotation/pretty_commune_fun.html"]._data.compressedContent.buffer], {type:"text/html;charset=utf-8"})
-  KronaPlotsResults.push({name: 'HenriqueLindo', blob:blob})
-
   let FastQCReports = [];
   let DifferentailExpressionResults = [];
   let KEGGMapsResults = [];
