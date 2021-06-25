@@ -2,9 +2,13 @@ import React, { useState, useEffect } from 'react';
 import { DashboardLayout } from '../components/Layout';
 import { Button, Toolbar, Typography } from "@material-ui/core";
 import ReactHtmlParser from 'react-html-parser';
-import * as zip from "@zip.js/zip.js/dist/zip.min.js";
 import $ from 'jquery'
+import * as ZIP from "@zip.js/zip.js"
 import * as Papa from "papaparse"
+
+var JSZip = require("jszip");
+var zip = new JSZip();
+
 
 const treatName = (name) =>{
   let resultingString = name.split('/')
@@ -17,11 +21,20 @@ export let ResultsDisposition = false;
 
 async function ObtainBlobArray(event){
   const file = event.target.files[0];
-  const blobReader = new zip.BlobReader(file);
-  const zipReader = new zip.ZipReader (blobReader);
+  const blobReader = new ZIP.BlobReader(file);
+  const zipReader = new ZIP.ZipReader (blobReader);
   const entries = await zipReader.getEntries();
-  let FastQCReports = [];
+  const unzipped = await zip.loadAsync(file)
+  const entries2 = unzipped.files
+  console.log(entries2)
+  console.log(entries)
   let KronaPlotsResults = [];
+
+
+  var blob = new Blob([entries2["MOSCA_results/Annotation/pretty_commune_fun.html"]._data.compressedContent.buffer], {type:"text/html;charset=utf-8"})
+  KronaPlotsResults.push({name: 'HenriqueLindo', blob:blob})
+
+  let FastQCReports = [];
   let DifferentailExpressionResults = [];
   let KEGGMapsResults = [];
   let Assembly = [];
@@ -31,65 +44,77 @@ async function ObtainBlobArray(event){
   let general = [];
   let protein = [];
 
-  for(let i = 0; i< entries.length; i++){
+  for(let i = 0; i < entries.length; i++){
     if (entries[i].directory === false && entries[i].compressedSize != 0){
       if(entries[i].filename.includes('Preprocess')){
-        const blobFastQC = await entries[i].getData(new zip.BlobWriter(['text/html']))
+        console.log(entries[i].getData)
+        const blobFastQC = await entries[i].getData(new ZIP.BlobWriter(['text/html']))
         let fastQcName = treatName(entries[i].filename)
         FastQCReports.push({name: fastQcName, blob: blobFastQC})
       }
     if(entries[i].filename.includes('Annotation')){
-      const blobKronaPlots = await entries[i].getData(new zip.BlobWriter(['text/html']))
+      console.log(entries[i].getData)
+      const blobKronaPlots = await entries[i].getData(new ZIP.BlobWriter(['text/html']))
       let kronaPlotsNames = treatName(entries[i].filename)
       KronaPlotsResults.push({name: kronaPlotsNames, blob: blobKronaPlots})
     }
     if(entries[i].filename.includes('Differential expression analysis')){
-      const blobHeatmaps = await entries[i].getData(new zip.BlobWriter(['image/jpeg']))
+      const blobHeatmaps = await entries[i].getData(new ZIP.BlobWriter(['image/jpeg']))
       let heatMapsNames = treatName(entries[i].filename)
       DifferentailExpressionResults.push({name: heatMapsNames, blob:blobHeatmaps})
 
     }
     if(entries[i].filename.includes('KEGGMaps')){
-      const blobKEGGMaps = await entries[i].getData(new zip.BlobWriter(['image/png']))
+      const blobKEGGMaps = await entries[i].getData(new ZIP.BlobWriter(['image/png']))
       let keggMaps = treatName(entries[i].filename)
       let number = KEGGMapsResults.length
       KEGGMapsResults.push({name:[number,keggMaps],blob:blobKEGGMaps})
 
     }
     if(entries[i].filename.includes('Assembly')){
-      const AssemblyReports = await entries[i].getData(new zip.BlobWriter(['text/tab-separated-values']))
+      const AssemblyReports = await entries[i].getData(new ZIP.BlobWriter(['text/tab-separated-values']))
       let assemblyName = treatName(entries[i].filename)
       Assembly.push({name: assemblyName, blob: AssemblyReports})
     }
     if(entries[i].filename.includes('Entry')){
-      const entryReport = await entries[i].getData(new zip.BlobWriter(['text/tab-separated-values']))
+      const entryReport = await entries[i].getData(new ZIP.BlobWriter(['text/tab-separated-values']))
       let entryName = treatName(entries[i].filename)
       entry.push({name: entryName, blob: entryReport})
     }
     if(entries[i].filename.includes('config')){
-      const config = await entries[i].getData(new zip.BlobWriter(['	application/json']))
+      const config = await entries[i].getData(new ZIP.BlobWriter(['	application/json']))
       const fileUrl = URL.createObjectURL(config)
       $.getJSON(fileUrl, function(json){
         configFile = json
       })
     }
     if(entries[i].filename.includes('experiments')){
-      const exp = await entries[i].getData(new zip.BlobWriter(['text/tab-separated-values']))
+      const exp = await entries[i].getData(new ZIP.BlobWriter(['text/tab-separated-values']))
       exper = exp
     }
     if(entries[i].filename.includes('General')){
-      const genReport = await entries[i].getData(new zip.BlobWriter(['text/tab-separated-values']))
+      const genReport = await entries[i].getData(new ZIP.BlobWriter(['text/tab-separated-values']))
       let genName = treatName(entries[i].filename)
       general.push({name: genName, blob: genReport})
 
     }
     if(entries[i].filename.includes('Protein')){
-      const proteinReport = await entries[i].getData(new zip.BlobWriter(['text/tab-separated-values']))
+      const proteinReport = await entries[i].getData(new ZIP.BlobWriter(['text/tab-separated-values']))
       let protName = treatName(entries[i].filename)
       protein.push({name: protName, blob: proteinReport})
     }}
   }
   await zipReader.close()
+  console.log([{
+    qcReports: FastQCReports,
+    KronaPlots: KronaPlotsResults,
+    Heatmaps: DifferentailExpressionResults,
+    KEGGMaps: KEGGMapsResults,
+    asReports: Assembly,
+    entryReport: entry,
+    generalReport: general,
+    proteinReport: protein
+  }, configFile, exper])
   return [{
     qcReports: FastQCReports,
     KronaPlots: KronaPlotsResults,
