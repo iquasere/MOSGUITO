@@ -20,6 +20,7 @@ async function ObtainBlobArray(event){
   const file = event.target.files[0];
   const blobReader = new ZIP.BlobReader(file);
   const zipReader = new ZIP.ZipReader (blobReader);
+
   const entries = await zipReader.getEntries();
 
   let KronaPlotsResults = [];
@@ -36,13 +37,11 @@ async function ObtainBlobArray(event){
   for(let i = 0; i < entries.length; i++){
     if (entries[i].directory === false && entries[i].compressedSize != 0){
       if(entries[i].filename.includes('Preprocess')){
-        console.log(entries[i].getData)
         const blobFastQC = await entries[i].getData(new ZIP.BlobWriter(['text/html']))
         let fastQcName = treatName(entries[i].filename)
         FastQCReports.push({name: fastQcName, blob: blobFastQC})
       }
     if(entries[i].filename.includes('Annotation')){
-      console.log(entries[i].getData)
       const blobKronaPlots = await entries[i].getData(new ZIP.BlobWriter(['text/html']))
       let kronaPlotsNames = treatName(entries[i].filename)
       KronaPlotsResults.push({name: kronaPlotsNames, blob: blobKronaPlots})

@@ -8,12 +8,13 @@ import { file } from 'jszip';
 import { Autorenew } from '@material-ui/icons';
 import ImageZoom from 'react-medium-image-zoom'
 import LabelledCheckbox from '../components/LabelledCheckbox';
-import KeggMaps from './keggmaps';
+import { accordeon } from './Categorys'
 
 const Main = ({outputsFiles}) =>{
   const keggNames = outputsFiles.map((name)=>{
     return(name.name)
   })
+  const badjoras = accordeon(keggNames)
   const [show, setShow] = useState(false);
   const [final, setFinal] = useState([]);
 
@@ -31,10 +32,12 @@ const Main = ({outputsFiles}) =>{
     }
     const [selected, setSelected] = useState([]);
     const handleCheck = value => {
+      console.log(value)
       const newList = [...selected]
       
   
       const index = newList.indexOf(value)
+      console.log(index)
       if (index > -1) {
         newList.splice(index, 1)
       } else {
@@ -55,15 +58,28 @@ const Main = ({outputsFiles}) =>{
       onClick = {handleToogle}>
         Click to view the KEGGMaps
     </Button>
-    <Accordion  title = 'KeggMaps Results'>
-        {keggNames.map((index) =>(
-          <LabelledCheckbox
-            key = {index[0]}
-            label = {index[1]}
-            checked = {selected.indexOf(index[1]) > -1}
-            setChecked={() => handleCheck(index[1])}/>
-      ))}
+    {badjoras.children.map((category, index) =>(
+      <Accordion key={index} title={category.name}>
+        {
+          category.children.map((subCategory, index) =>(
+          <Accordion key={index} title={subCategory.name}>{
+            subCategory.children.map((subSubCategory, index) =>(
+              <Accordion key={index} title={subSubCategory.name}>
+                {subSubCategory.children.map(({name}, index)=>(
+                  <LabelledCheckbox
+                  key={name[0]}
+                  label={name[1]}
+                  checked = {selected.indexOf(name[1]) > -1}
+                  setChecked = {()=> handleCheck(name[1])}/>)
+                  )
+                  }
+              </Accordion>
+            ))
+          } </Accordion>
+          ))
+        }
       </Accordion>
+    ))}
     </div>
     )
   }
