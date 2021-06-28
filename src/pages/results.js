@@ -2,7 +2,7 @@ import React, { useState, useEffect } from 'react';
 import { DashboardLayout } from '../components/Layout';
 import { Button, Toolbar, Typography } from "@material-ui/core";
 import ReactHtmlParser from 'react-html-parser';
-import * as zip from "@zip.js/zip.js/dist/zip.min.js";
+import * as zip from "@zip.js/zip.js";
 import $ from 'jquery'
 import * as Papa from "papaparse"
 
