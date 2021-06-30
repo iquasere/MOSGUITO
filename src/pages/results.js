@@ -6,6 +6,8 @@ import * as zip from "@zip.js/zip.js";
 import $ from 'jquery'
 import * as Papa from "papaparse"
 
+zip.configure({ useWebWorkers: false });
+
 const treatName = (name) =>{
   let resultingString = name.split('/')
   resultingString = resultingString[resultingString.length-1]
