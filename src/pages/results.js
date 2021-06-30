@@ -2,11 +2,11 @@ import React, { useState, useEffect } from 'react';
 import { DashboardLayout } from '../components/Layout';
 import { Button, Toolbar, Typography } from "@material-ui/core";
 import ReactHtmlParser from 'react-html-parser';
+import * as zip from "@zip.js/zip.js";
 import $ from 'jquery'
 import * as ZIP from "@zip.js/zip.js/dist/zip-fs-full"
 import * as Papa from "papaparse"
-
-
+zip.configure({ useWebWorkers: false });
 const treatName = (name) =>{
   let resultingString = name.split('/')
   resultingString = resultingString[resultingString.length-1]
