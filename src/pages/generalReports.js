@@ -1,9 +1,9 @@
-import React, { Component, useState, useEffect, useMemo } from 'react';
+import React, { useState, useEffect, useMemo } from 'react';
 import { DashboardLayout } from '../components/Layout';
-import { Button, Toolbar, Typography } from "@material-ui/core";
+import { Toolbar, Typography } from "@material-ui/core";
 import * as Papa from "papaparse"
 import DataTable from 'react-data-table-component'
-import FilterComponent from './FilterDataTest';
+import FilterComponent from './filterDataTest';
 
 const Main = ({ outputsFolder }) => {
 
@@ -78,7 +78,7 @@ const Main = ({ outputsFolder }) => {
   }, [filterText, resetPaginationToggle]);
 
     const checkVoid = (file) =>{
-        if(file[0] != undefined){
+        if(file[0] !== undefined){
             const filteredItems = table[0].fileContent.filter(
                 item =>
                   JSON.stringify(item)

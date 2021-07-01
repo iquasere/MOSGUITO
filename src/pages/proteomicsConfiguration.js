@@ -1,7 +1,6 @@
 import React from 'react';
 import {DashboardLayout} from '../components/Layout';
 import {Card, CardActions, CardContent, Toolbar, Typography} from "@material-ui/core";
-import LabelledNumberField from "../components/LabelledNumberField";
 import LabelledTextField from "../components/LabelledTextField";
 import {defaultValues} from "../utils/defaultValues";
 import LabelledSelect from "../components/LabelledSelect";
@@ -61,7 +60,7 @@ const Main = ({ configData, onConfigChange }) => {
             />
 
             {
-              ((configData.protease) != "File") ? (<></>) : (
+              ((configData.protease) !== "File") ? (<></>) : (
                 <LabelledTextField
                   label='Set the filename of protease FASTA file'
                   value={configData.proteaseFile}

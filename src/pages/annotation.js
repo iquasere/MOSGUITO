@@ -1,6 +1,6 @@
-import React, {useState} from 'react';
+import React from 'react';
 import {DashboardLayout} from '../components/Layout';
-import { Button, Toolbar, Typography } from "@material-ui/core";
+import { Toolbar, Typography } from "@material-ui/core";
 import  Accordion  from "../components/Accordion";
 
 export const AnnotationResults = ({ outputsFiles }) => {
@@ -14,10 +14,11 @@ export const AnnotationResults = ({ outputsFiles }) => {
       const fileUrl = URL.createObjectURL(file.blob)
       console.log(fileUrl)
 
-      return <Accordion key={`accordion_${blobNumber}`} title = {file.name}>
-      <iframe src={fileUrl} style={{width: "100%", height: "1000px"}}></iframe>
-      </Accordion>
-    })
+      return (
+        <Accordion key={`accordion_${blobNumber}`} title={file.name}>
+          <iframe src={fileUrl} style={{width: "100%", height: "1000px"}}></iframe>
+        </Accordion>
+      )})
   }
 
   return (

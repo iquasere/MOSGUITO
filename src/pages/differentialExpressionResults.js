@@ -1,11 +1,7 @@
-import React, {useState} from 'react';
+import React from 'react';
 
 import {DashboardLayout} from '../components/Layout';
-import {Button, Toolbar, Typography} from "@material-ui/core";
-import ReactHtmlParser,{ processNodes, convertNodeToElement, htmlparser2 } from "react-html-parser";
-import Accordion from "../components/Accordion";
-import { file } from 'jszip';
-import { Autorenew } from '@material-ui/icons';
+import { Toolbar, Typography} from "@material-ui/core";
 import ImageZoom from 'react-medium-image-zoom'
 
 

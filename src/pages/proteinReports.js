@@ -1,9 +1,9 @@
-import React, { Component, useState, useEffect, useMemo } from 'react';
+import React, { useState, useEffect, useMemo } from 'react';
 import { DashboardLayout } from '../components/Layout';
 import { Button, Toolbar, Typography } from "@material-ui/core";
 import * as Papa from "papaparse"
 import DataTable from 'react-data-table-component'
-import FilterComponent from './FilterDataTest';
+import FilterComponent from './filterDataTest';
 import TSV from "tsv";
 import download from "../utils/download";
 
@@ -82,7 +82,7 @@ const Main = ({ outputsFolder }) => {
         download(TSV.stringify(downloadFile), "ProteinReportsParsed.tsv", "tsv")
     }
     const checkVoid = (file) =>{
-        if(file[0] != undefined){
+        if(file[0] !== undefined){
             const filteredItems = table[0].fileContent.filter(
                 item =>
                   JSON.stringify(item)

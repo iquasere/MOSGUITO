@@ -1,6 +1,6 @@
-import React, { useState } from 'react';
+import React from 'react';
 import { DashboardLayout } from '../components/Layout';
-import { Button, Toolbar, Typography } from "@material-ui/core";
+import { Toolbar, Typography } from "@material-ui/core";
 import Accordion from "../components/Accordion";
 
 

@@ -1,6 +1,3 @@
-import {CardContent} from "@material-ui/core";
-import React from "react";
-
 export const assemblerOptions = ['metaspades', 'megahit']
 export const errorModelOptions = ['illumina_5', 'illumina_10', 'sanger_5', 'sanger_10', '454_10', '454_30', 'complete']
 export const recognizerDatabasesOptions = ["CDD", "Pfam", "NCBIfam", "Protein_Clusters", "Smart", "TIGRFAM", "COG", "KOG"]

@@ -8,7 +8,6 @@ import TeamsPage from "./teams";
 import HomePage from "./home";
 import Config from "./config"
 import Experiments from "./experiments";
-import {CardContent} from "@material-ui/core";
 import UniprotColumns from "./uniprotColumns";
 import UniprotDatabases from "./uniprotDatabases"
 import KeggMaps from "./keggmaps";
@@ -16,12 +15,12 @@ import ProteomicsConfiguration from "./proteomicsConfiguration";
 import {LoadResults} from "./results";
 import {FastQCFiles} from "./fastQCReports";
 import AssemblyQC from "./assemblyQC";
-import {AnnotationResults} from './Annotation';
-import {DifferentialResults} from './DiferrentialExpressianResults'
-import {KEGGMapsResults} from './KEGGMapsResults'
+import {AnnotationResults} from './annotation';
+import {DifferentialResults} from './differentialExpressionResults'
+import {KeggMapsResults} from './keggMapsResults'
 import EntryReports from "./entryReport";
-import GeneralReports from "./GeneralReports";
-import ProteinReports from "./ProteinReports";
+import GeneralReports from "./generalReports";
+import ProteinReports from "./proteinReports";
 
 const Routes = ({ configData, onConfigChange, onConfigOverwrite, experiments, setExperiments,
                   nExperimentsRows, setExperimentsRows,
@@ -138,7 +137,7 @@ const Routes = ({ configData, onConfigChange, onConfigOverwrite, experiments, se
         </Route>
         
         <Route path = '/MOSGUITO/keggmaps-results'>
-          <KEGGMapsResults
+          <KeggMapsResults
             outputsFiles = {outputsFiles.KEGGMaps}
           />
         </Route>

@@ -1,14 +1,11 @@
 import React, {useState} from 'react';
 
 import {DashboardLayout} from '../components/Layout';
-import {Button, Toolbar, Typography} from "@material-ui/core";
-import ReactHtmlParser,{ processNodes, convertNodeToElement, htmlparser2 } from "react-html-parser";
+import {Button} from "@material-ui/core";
 import Accordion from "../components/Accordion";
-import { file } from 'jszip';
-import { Autorenew } from '@material-ui/icons';
 import ImageZoom from 'react-medium-image-zoom'
 import LabelledCheckbox from '../components/LabelledCheckbox';
-import { accordeon } from './Categorys'
+import { accordeon } from './categories'
 
 const Main = ({outputsFiles}) =>{
   const keggNames = outputsFiles.map((name)=>{
@@ -20,7 +17,7 @@ const Main = ({outputsFiles}) =>{
 
   const AccordionKeggMaps = () =>{
     const isTrue = (array) =>{
-      if(array.length == 0 | array.length>6){
+      if(array.length === 0 | array.length>6){
         if(array.length > 6){
           alert('Choose less KEGGMaps to display for a better performance')
         }else{alert('Please select KEGGMaps to display')
@@ -126,7 +123,7 @@ const Main = ({outputsFiles}) =>{
     )
 }
   const showMe = ()=>{
-    if(show == false){
+    if(show === false){
       return(AccordionKeggMaps)
     }else{
       return(ShowKeggmaps)
@@ -143,7 +140,7 @@ const Main = ({outputsFiles}) =>{
   </>
   )
 }
-export const KEGGMapsResults = ({ outputsFiles }) => {
+export const KeggMapsResults = ({ outputsFiles }) => {
 
   return (
     <DashboardLayout>

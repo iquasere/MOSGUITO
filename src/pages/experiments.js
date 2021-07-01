@@ -1,7 +1,7 @@
 import React from 'react';
 import {DashboardLayout} from '../components/Layout';
 import ExperimentsTable from "../components/ExperimentsTable";
-import {Button, CardActions} from "@material-ui/core";
+import {Button} from "@material-ui/core";
 import download from "../utils/download";
 import TSV from "tsv";
 

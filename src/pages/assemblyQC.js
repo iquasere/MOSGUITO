@@ -1,8 +1,7 @@
-import React, { Component, useState, useEffect } from 'react';
+import React, { useState, useEffect } from 'react';
 import { DashboardLayout } from '../components/Layout';
-import { Button, Toolbar, Typography } from "@material-ui/core";
+import { Toolbar, Typography } from "@material-ui/core";
 import * as Papa from "papaparse"
-import styled from 'styled-components';
 import DataTable from 'react-data-table-component'
 import Accordion from "../components/Accordion";
 

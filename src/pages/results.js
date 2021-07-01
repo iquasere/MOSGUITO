@@ -1,7 +1,6 @@
-import React, { useState, useEffect } from 'react';
+import React from 'react';
 import { DashboardLayout } from '../components/Layout';
 import { Button, Toolbar, Typography } from "@material-ui/core";
-import ReactHtmlParser from 'react-html-parser';
 import * as zip from "@zip.js/zip.js";
 import $ from 'jquery'
 import * as ZIP from "@zip.js/zip.js/dist/zip-fs-full"
@@ -35,7 +34,7 @@ async function ObtainBlobArray(event){
   let protein = [];
 
   for(let i = 0; i < entries.length; i++){
-    if (entries[i].directory === false && entries[i].compressedSize != 0){
+    if (entries[i].directory === false && entries[i].compressedSize !== 0){
       if(entries[i].filename.includes('Preprocess')){
         const blobFastQC = await entries[i].getData(new ZIP.BlobWriter(['text/html']))
         let fastQcName = treatName(entries[i].filename)
@@ -187,4 +186,3 @@ export const LoadResults = ({ outputsFiles, setOutputsFiles, onConfigOverwrite, 
     </DashboardLayout>
   )
 }
-
