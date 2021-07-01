@@ -12,6 +12,7 @@ export const AnnotationResults = ({ outputsFiles }) => {
       blobNumber++;
 
       const fileUrl = URL.createObjectURL(file.blob)
+      console.log(fileUrl)
 
       return <Accordion key={`accordion_${blobNumber}`} title = {file.name}>
       <iframe src={fileUrl} style={{width: "100%", height: "1000px"}}></iframe>
