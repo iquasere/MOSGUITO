@@ -6,6 +6,8 @@ import $ from 'jquery'
 import * as ZIP from "@zip.js/zip.js/dist/zip-fs-full"
 import * as Papa from "papaparse"
 zip.configure({ useWebWorkers: false });
+
+
 const treatName = (name) =>{
   let resultingString = name.split('/')
   resultingString = resultingString[resultingString.length-1]
@@ -69,8 +71,9 @@ async function ObtainBlobArray(event){
       entry.push({name: entryName, blob: entryReport})
     }
     if(entries[i].filename.includes('config')){
-      const config = await entries[i].getData(new ZIP.BlobWriter(['	application/json']))
+      const config = await entries[i].getData(new ZIP.BlobWriter(['application/json']))
       const fileUrl = URL.createObjectURL(config)
+      // eslint-disable-next-line no-loop-func
       $.getJSON(fileUrl, function(json){
         configFile = json
       })
@@ -92,16 +95,7 @@ async function ObtainBlobArray(event){
     }}
   }
   await zipReader.close()
-  console.log([{
-    qcReports: FastQCReports,
-    KronaPlots: KronaPlotsResults,
-    Heatmaps: DifferentailExpressionResults,
-    KEGGMaps: KEGGMapsResults,
-    asReports: Assembly,
-    entryReport: entry,
-    generalReport: general,
-    proteinReport: protein
-  }, configFile, exper])
+
   return [{
     qcReports: FastQCReports,
     KronaPlots: KronaPlotsResults,

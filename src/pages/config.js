@@ -47,15 +47,6 @@ const Main = ({ configData, onConfigChange, onConfigOverwrite }) => {
     download(YAML.stringify(snake_case_values, null), 'config.yaml', 'yaml')
   }
 
-  const correctValues = () => {
-    console.log(configData)
-    if (configData['doAssembly']) {
-      onConfigChange('errorModel', 'complete')
-      console.log('will do assembly')
-    }
-    console.log(configData)
-  }
-
   const handleCheck = value => {
     const newList = [...configData.recognizerDatabases]
 

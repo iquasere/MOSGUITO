@@ -14,7 +14,7 @@ export const FastQCFiles = ({ outputsFiles }) => {
       const fileUrl = URL.createObjectURL(file.blob)
 
       return <Accordion key={`accordion_${blobNumber}`} title={file.name}>
-        <iframe src={fileUrl} style={{ width: "100%", height: "1000px" }}></iframe>
+        <iframe title={`iframe_${blobNumber}`} src={fileUrl} style={{ width: "100%", height: "1000px" }}></iframe>
       </Accordion>
     })
   }

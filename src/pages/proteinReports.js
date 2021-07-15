@@ -42,11 +42,11 @@ const Main = ({ outputsFolder }) => {
     }
 
     useEffect(() => {
-        outputsFolder.map(file => {
+        outputsFolder.forEach(file => {
           let csvUrl = URL.createObjectURL(file.blob)
           readCsv(csvUrl, file.name)
         })
-      }, []);
+      });
 
 
     const capitalizeFirstLetter = (text) => {

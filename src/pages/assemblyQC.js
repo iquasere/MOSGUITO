@@ -29,11 +29,11 @@ const Main = ({ outputsFolder }) => {
   }
 
   useEffect(() => {
-    outputsFolder.map(file => {
+    outputsFolder.forEach(file => {
       let csvUrl = URL.createObjectURL(file.blob)
       readCsv(csvUrl, file.name)
     })
-  }, []);
+  });
 
   let tableCounter = 0
 

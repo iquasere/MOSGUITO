@@ -17,7 +17,7 @@ import {FastQCFiles} from "./fastQCReports";
 import AssemblyQC from "./assemblyQC";
 import {AnnotationResults} from './annotation';
 import {DifferentialResults} from './differentialExpressionResults'
-import {KeggMapsResults} from './keggMapsResults'
+import {KeggmapsResults} from './keggmapsResults'
 import EntryReports from "./entryReport";
 import GeneralReports from "./generalReports";
 import ProteinReports from "./proteinReports";
@@ -137,7 +137,7 @@ const Routes = ({ configData, onConfigChange, onConfigOverwrite, experiments, se
         </Route>
         
         <Route path = '/MOSGUITO/keggmaps-results'>
-          <KeggMapsResults
+          <KeggmapsResults
             outputsFiles = {outputsFiles.KEGGMaps}
           />
         </Route>

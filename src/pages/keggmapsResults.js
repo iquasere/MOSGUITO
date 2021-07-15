@@ -5,36 +5,30 @@ import {Button} from "@material-ui/core";
 import Accordion from "../components/Accordion";
 import ImageZoom from 'react-medium-image-zoom'
 import LabelledCheckbox from '../components/LabelledCheckbox';
-import { accordeon } from './categories'
+import { Accordeon } from './categories'
 
 const Main = ({outputsFiles}) =>{
   const keggNames = outputsFiles.map((name)=>{
     return(name.name)
   })
-  const badjoras = accordeon(keggNames)
+  const badjoras = Accordeon(keggNames)
   const [show, setShow] = useState(false);
   const [final, setFinal] = useState([]);
 
-  const AccordionKeggMaps = () =>{
+  const AccordionKeggMaps = () => {
     const isTrue = (array) =>{
-      if(array.length === 0 | array.length>6){
-        if(array.length > 6){
-          alert('Choose less KEGGMaps to display for a better performance')
-        }else{alert('Please select KEGGMaps to display')
-      }
-      }else{
+      if(array.length === 0){
+        alert('Please select KEGGMaps to display')
+      } else {
         setFinal(selected)
         setShow(true)
       }
     }
     const [selected, setSelected] = useState([]);
     const handleCheck = value => {
-      console.log(value)
       const newList = [...selected]
-      
-  
+
       const index = newList.indexOf(value)
-      console.log(index)
       if (index > -1) {
         newList.splice(index, 1)
       } else {
@@ -52,8 +46,9 @@ const Main = ({outputsFiles}) =>{
       variant='contained'
       color='primary'
       component="label"
-      onClick = {handleToogle}>
-        Click to view the KEGGMaps
+      onClick = {handleToogle}
+    >
+      Click to view the KEGGMaps
     </Button>
     {badjoras.children.map((category, index) =>(
       <Accordion key={index} title={category.name}>
@@ -64,12 +59,12 @@ const Main = ({outputsFiles}) =>{
               <Accordion key={index} title={subSubCategory.name}>
                 {subSubCategory.children.map(({name}, index)=>(
                   <LabelledCheckbox
-                  key={name[0]}
-                  label={name[1]}
-                  checked = {selected.indexOf(name[1]) > -1}
-                  setChecked = {()=> handleCheck(name[1])}/>)
-                  )
-                  }
+                    key={name[0]}
+                    label={name[1]}
+                    checked = {selected.indexOf(name[1]) > -1}
+                    setChecked = {()=> handleCheck(name[1])}
+                  />
+                  ))}
               </Accordion>
             ))
           } </Accordion>
@@ -81,7 +76,7 @@ const Main = ({outputsFiles}) =>{
     )
   }
 
-  const ShowKeggmaps = ()=>{
+  const ShowKeggmaps = () =>{
     const getJsxFromFiles = (files) => {
       let blobNumber = 0;
 
@@ -90,13 +85,14 @@ const Main = ({outputsFiles}) =>{
 
         const fileUrl = URL.createObjectURL(file.blob)
 
-        return <div key={`blob_${blobNumber}`}>
-        <h1 style= {{textAlign: 'center', fontWeight:'bold', marginBottom:'1cm'}}>{file.name}</h1>
-        <ImageZoom image = {{src:fileUrl, style:{margin: 'auto', justifyContent: 'center'}, className : 'img'}}/>
-        <br/>
-        <hr/>
-        <br/>
-        </div>
+        return (
+          <div key={`blob_${blobNumber}`}>
+          <h1 style= {{textAlign: 'center', fontWeight:'bold', marginBottom:'1cm'}}>{file.name}</h1>
+          <ImageZoom image = {{src:fileUrl, style:{margin: 'auto', justifyContent: 'center'}, className : 'img'}}/>
+          <br/>
+          <hr/>
+          <br/>
+          </div>)
       })
     }
     let keggToShow = [];
@@ -135,12 +131,12 @@ const Main = ({outputsFiles}) =>{
   return(
   <>
     <div>
-    <KEGGChange/>
+      <KEGGChange />
     </div>
   </>
   )
 }
-export const KeggMapsResults = ({ outputsFiles }) => {
+export const KeggmapsResults = ({ outputsFiles }) => {
 
   return (
     <DashboardLayout>

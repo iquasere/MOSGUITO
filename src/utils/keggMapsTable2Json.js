@@ -3233,14 +3233,3 @@ export const category = [
       "general_category": "Drug Development",
       "category": "Skeleton-based classification"
     }]
-
-
-    /*<Accordion  title = 'KeggMaps Results'>
-        {keggNames.map((index) =>(
-          <LabelledCheckbox
-            key = {index[0]}
-            label = {index[1]}
-            checked = {selected.indexOf(index[1]) > -1}
-            setChecked={() => handleCheck(index[1])}/>
-      ))}
-      </Accordion>*/
