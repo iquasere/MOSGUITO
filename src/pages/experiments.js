@@ -1,29 +1,34 @@
 import React from 'react';
 import {DashboardLayout} from '../components/Layout';
 import ExperimentsTable from "../components/ExperimentsTable";
-import {Button} from "@material-ui/core";
-import download from "../utils/download";
-import TSV from "tsv";
+import {Typography} from "@material-ui/core";
+
+const Header = () => {
+  return (
+    <header className='header'>
+      <Typography variant='h4'>
+        Experiments configuration
+      </Typography>
+      <Typography variant='h6'>
+        Set the metadata for your datasets
+      </Typography>
+    </header>
+  )
+}
 
 const Experiments = ({ experiments, setExperiments, nExperimentsRows, setExperimentsRows }) => {
 
   return (
     <DashboardLayout>
-      <ExperimentsTable
-        experiments={experiments}
-        setExperiments={setExperiments}
-        nExperimentsRows={nExperimentsRows}
-        setExperimentsRows={setExperimentsRows}
-      />
-
-      <Button
-        onClick={(ev) => download(TSV.stringify(experiments), "experiments.tsv", "tsv")}
-        variant='contained'
-        color='secondary'
-      >
-        Download TSV
-      </Button>
-
+      <div className='App'>
+        <Header />
+        <ExperimentsTable
+          experiments={experiments}
+          setExperiments={setExperiments}
+          nExperimentsRows={nExperimentsRows}
+          setExperimentsRows={setExperimentsRows}
+        />
+      </div>
     </DashboardLayout>
   )
 }

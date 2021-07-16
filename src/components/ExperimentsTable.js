@@ -3,8 +3,6 @@ import { withStyles } from '@material-ui/core/styles';
 import LabelledSelect from "./LabelledSelect";
 
 import {
-  Toolbar,
-  Typography,
   Table,
   TableBody,
   TableCell,
@@ -14,6 +12,8 @@ import {
   Button,
   TextField,
 } from '@material-ui/core';
+import download from "../utils/download";
+import TSV from "tsv";
 
 const styles = theme => ({
   root: {
@@ -50,8 +50,10 @@ const ExperimentsTable = ({ experiments, setExperiments, nExperimentsRows, setEx
 
     newExperiments.pop()
 
-    setExperiments(newExperiments)
-    setExperimentsRows(nExperimentsRows - 1)
+    if (nExperimentsRows > 1) {
+      setExperiments(newExperiments)
+      setExperimentsRows(nExperimentsRows - 1)
+    }
   }
 
   const editExperiments = (value, n, field) => {
@@ -64,11 +66,27 @@ const ExperimentsTable = ({ experiments, setExperiments, nExperimentsRows, setEx
 
   return (
     <Paper>
-      <Toolbar>
-        <div>
-          <Typography variant="h6">Experiments</Typography>
-        </div>
-      </Toolbar>
+      <Button
+        onClick={(ev) => increaseRows()}
+        variant='contained'
+        color='primary'
+      >
+        Add row
+      </Button>
+      <Button
+        onClick={(ev) => decreaseRows()}
+        variant='contained'
+        color='primary'
+      >
+        Remove last row
+      </Button>
+      <Button
+        onClick={(ev) => download(TSV.stringify(experiments), "experiments.tsv", "tsv")}
+        variant='contained'
+        color='secondary'
+      >
+        Download TSV
+      </Button>
       <Table>
         <TableHead>
           <TableRow>
@@ -134,20 +152,6 @@ const ExperimentsTable = ({ experiments, setExperiments, nExperimentsRows, setEx
           }
         </TableBody>
       </Table>
-      <Button
-        onClick={(ev) => increaseRows()}
-        variant='contained'
-        color='primary'
-      >
-        Add row
-      </Button>
-      <Button
-        onClick={(ev) => decreaseRows()}
-        variant='contained'
-        color='primary'
-      >
-        Remove last row
-      </Button>
     </Paper>
   );
 }

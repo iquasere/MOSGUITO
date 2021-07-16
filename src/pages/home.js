@@ -1,7 +1,7 @@
 import React from 'react';
 
 import {DashboardLayout} from '../components/Layout';
-import {Typography} from "@material-ui/core";
+import {Divider, Typography} from "@material-ui/core";
 
 const Header = () => {
   return (
@@ -18,10 +18,22 @@ const Header = () => {
   )
 }
 
+const Main = () => {
+  return (
+    <main className='main'>
+      This is landing page
+    </main>
+  )
+}
+
 const HomePage = () => {
   return (
     <DashboardLayout>
-      <Header />
+      <div>
+        <Header />
+        <Divider style={{ margin: '1rem 0' }} />
+        <Main />
+      </div>
     </DashboardLayout>
   )
 }

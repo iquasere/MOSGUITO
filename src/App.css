@@ -15,8 +15,9 @@
 
 .main {
   margin-top: 32px;
-  width: 100%;
+  width: 95%;
   max-width: 1000px;
+  margin-left: 1rem;
   margin-right: 1rem;
 }
 

@@ -26,10 +26,12 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="75167860-5315-49c7-8bd4-159fb3049cae" name="Default Changelist" comment="Broken maps input">
-      <change afterPath="$PROJECT_DIR$/.idea/codeStyles/codeStyleConfig.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/pages/config.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/pages/config.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/pages/results.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/pages/results.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/package.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/App.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/App.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/ExperimentsTable.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/ExperimentsTable.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/pages/experiments.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/pages/experiments.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/pages/home.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/pages/home.js" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -84,7 +86,7 @@
     <property name="node.js.path.for.package.eslint" value="project" />
     <property name="node.js.path.for.package.stylelint" value="project" />
     <property name="node.js.selected.package.eslint" value="(autodetect)" />
-    <property name="node.js.selected.package.stylelint" value="" />
+    <property name="node.js.selected.package.stylelint" value="C:\Users\Utilizador\Documents\Trabalho\github_projects\MOSGUITO\node_modules\stylelint" />
     <property name="nodejs_package_manager_path" value="yarn" />
     <property name="settings.editor.selected.configurable" value="preferences.keymap" />
     <property name="ts.external.directory.path" value="C:\Program Files\JetBrains\PyCharm 2020.2.3\plugins\JavaScriptLanguage\jsLanguageServicesImpl\external" />
@@ -411,7 +413,14 @@
       <option name="project" value="LOCAL" />
       <updated>1614263266750</updated>
     </task>
-    <option name="localTasksCounter" value="35" />
+    <task id="LOCAL-00035" summary="MOSFUITO">
+      <created>1626432180224</created>
+      <option name="number" value="00035" />
+      <option name="presentableId" value="LOCAL-00035" />
+      <option name="project" value="LOCAL" />
+      <updated>1626432180224</updated>
+    </task>
+    <option name="localTasksCounter" value="36" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -442,7 +451,6 @@
     <option name="oldMeFiltersMigrated" value="true" />
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="Set subaccordions to pile horizontally instead of vertically&#10;A little space for selection boxes&#10;Built the JSON for UniProt columns" />
     <MESSAGE value="Broken maps input" />
     <MESSAGE value="Set defaults&#10;* UPIMAPI columns&#10;* UPIMAPI databses&#10;* KEGGCharter maps" />
     <MESSAGE value="Config file is now produced in snake_case" />
@@ -467,16 +475,17 @@
     <MESSAGE value="Fixed UniProt databases&#10;* DB name and code were replaced" />
     <MESSAGE value="Default error model now illumina_5" />
     <MESSAGE value="reCOGnizer databases&#10;* can now be picked" />
-    <option name="LAST_COMMIT_MESSAGE" value="reCOGnizer databases&#10;* can now be picked" />
+    <MESSAGE value="MOSFUITO" />
+    <option name="LAST_COMMIT_MESSAGE" value="MOSFUITO" />
   </component>
   <component name="WindowStateProjectService">
-    <state x="2298" y="221" key="#JavaScript" timestamp="1617297135520">
-      <screen x="1920" y="0" width="1280" height="1024" />
+    <state x="2192" y="117" key="Vcs.Push.Dialog.v2" timestamp="1626432184508">
+      <screen x="1920" y="0" width="1360" height="768" />
     </state>
-    <state x="2298" y="221" key="#JavaScript/0.0.1280.720/1920.0.1280.1024@1920.0.1280.1024" timestamp="1617297135520" />
-    <state x="0" y="0" width="587" height="720" key="find.popup" timestamp="1617036950153">
-      <screen x="0" y="0" width="1280" height="720" />
+    <state x="2192" y="117" key="Vcs.Push.Dialog.v2/0.0.1280.720/1920.0.1360.768@1920.0.1360.768" timestamp="1626432184508" />
+    <state x="2306" y="117" width="587" height="534" key="find.popup" timestamp="1626432155930">
+      <screen x="1920" y="0" width="1360" height="768" />
     </state>
-    <state x="0" y="0" width="587" height="720" key="find.popup/0.0.1280.720/1920.0.1280.1024@0.0.1280.720" timestamp="1617036950153" />
+    <state x="2306" y="117" width="587" height="534" key="find.popup/0.0.1280.720/1920.0.1360.768@1920.0.1360.768" timestamp="1626432155930" />
   </component>
 </project>
