@@ -130,7 +130,7 @@ const Routes = ({ configData, onConfigChange, onConfigOverwrite, experiments, se
           />
         </Route>
 
-        <Route path = '/MOSFUITO/differential-analysis'>
+        <Route path = '/MOSGUITO/differential-analysis'>
           <DifferentialResults
             outputsFiles = {outputsFiles.Heatmaps}
           />

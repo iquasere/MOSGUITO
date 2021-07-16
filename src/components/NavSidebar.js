@@ -230,7 +230,7 @@ export const NavSidebar = ({ outputsFiles }) => {
                     },
                     {
                       title: 'Differential Analysis',
-                      itemId: '/MOSFUITO/differential-analysis'
+                      itemId: '/MOSGUITO/differential-analysis'
                     },
                     {
                       title: 'KEGGmaps',
