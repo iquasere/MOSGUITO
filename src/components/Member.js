@@ -28,7 +28,7 @@ const Member = ({ name, imageLink, pageLink, company, role }) => {
         <ListItemText
           primary={name}
           secondary={
-            <React.Fragment>
+            <>
               <Typography
                 component="span"
                 variant="body2"
@@ -38,7 +38,7 @@ const Member = ({ name, imageLink, pageLink, company, role }) => {
                 {role}
               </Typography>
               {<a href={pageLink} target="_blank" rel="noreferrer"><span style={{ color: 'orange' }}>at {company}</span></a>}
-            </React.Fragment>
+            </>
           }
         />
       </ListItem>

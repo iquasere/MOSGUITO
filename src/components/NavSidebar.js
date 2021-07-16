@@ -55,7 +55,7 @@ export const NavSidebar = ({ outputsFiles }) => {
                 elemBefore: () => <Icon name="user" />,
                 subNav: [
                   {
-                    title: "Project",
+                    title: "The MOSCA project",
                     itemId: "/MOSGUITO/project"
                   },
                   {

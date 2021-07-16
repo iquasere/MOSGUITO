@@ -27,10 +27,9 @@
   <component name="ChangeListManager">
     <list default="true" id="75167860-5315-49c7-8bd4-159fb3049cae" name="Default Changelist" comment="Broken maps input">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/package.json" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/App.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/App.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/ExperimentsTable.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/ExperimentsTable.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/pages/experiments.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/pages/experiments.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/Member.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/Member.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/NavSidebar.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/NavSidebar.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/pages/home.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/pages/home.js" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -420,7 +419,14 @@
       <option name="project" value="LOCAL" />
       <updated>1626432180224</updated>
     </task>
-    <option name="localTasksCounter" value="36" />
+    <task id="LOCAL-00036" summary="Minimum rows for experiments is 1">
+      <created>1626433106076</created>
+      <option name="number" value="00036" />
+      <option name="presentableId" value="LOCAL-00036" />
+      <option name="project" value="LOCAL" />
+      <updated>1626433106076</updated>
+    </task>
+    <option name="localTasksCounter" value="37" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -451,7 +457,6 @@
     <option name="oldMeFiltersMigrated" value="true" />
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="Broken maps input" />
     <MESSAGE value="Set defaults&#10;* UPIMAPI columns&#10;* UPIMAPI databses&#10;* KEGGCharter maps" />
     <MESSAGE value="Config file is now produced in snake_case" />
     <MESSAGE value="Can now download YAML format" />
@@ -476,13 +481,14 @@
     <MESSAGE value="Default error model now illumina_5" />
     <MESSAGE value="reCOGnizer databases&#10;* can now be picked" />
     <MESSAGE value="MOSFUITO" />
-    <option name="LAST_COMMIT_MESSAGE" value="MOSFUITO" />
+    <MESSAGE value="Minimum rows for experiments is 1" />
+    <option name="LAST_COMMIT_MESSAGE" value="Minimum rows for experiments is 1" />
   </component>
   <component name="WindowStateProjectService">
-    <state x="2192" y="117" key="Vcs.Push.Dialog.v2" timestamp="1626432184508">
+    <state x="2192" y="117" key="Vcs.Push.Dialog.v2" timestamp="1626433108994">
       <screen x="1920" y="0" width="1360" height="768" />
     </state>
-    <state x="2192" y="117" key="Vcs.Push.Dialog.v2/0.0.1280.720/1920.0.1360.768@1920.0.1360.768" timestamp="1626432184508" />
+    <state x="2192" y="117" key="Vcs.Push.Dialog.v2/0.0.1280.720/1920.0.1360.768@1920.0.1360.768" timestamp="1626433108994" />
     <state x="2306" y="117" width="587" height="534" key="find.popup" timestamp="1626432155930">
       <screen x="1920" y="0" width="1360" height="768" />
     </state>
