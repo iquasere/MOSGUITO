@@ -22,6 +22,7 @@ export const emptyValues = {
     "uniprotDatabases":[],
     "recognizerDatabases":[],
     "normalizationMethod":normalizationMethodOptions[0],
+    "minimumDifferentialExpression":1.0,
     "keggcharterMaps":[],
     "keggcharterTaxaLevel":keggcharterTaxaLevelOptions[0],
     "keggcharterNumberOfTaxa":1

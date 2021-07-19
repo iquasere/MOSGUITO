@@ -41,7 +41,7 @@ const Main = () => {
       <div className='rowC'>
         <Card className={classes.root}>
           <CardContent>
-            MOSCA is a command-line pipeline for performing metagenomics, metatranscriptomics and metaproteomics analysis.
+            <b>MOSCA</b> is a command-line pipeline for performing metagenomics, metatranscriptomics and metaproteomics analysis.
             <Divider style={{ margin: '1rem 0' }} />
             <Button
               variant="contained"
@@ -73,7 +73,7 @@ const Main = () => {
         </Card>
         <Card className={classes.root}>
           <CardContent>
-            MOSGUITO is the graphical interface for configuring MOSCA and visualizing its results.
+            <b>MOSGUITO</b> is the graphical interface for configuring MOSCA and visualizing its results.
             <Divider className={classes.mosguitoDivider} />
             <Button
               variant="contained"

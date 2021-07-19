@@ -27,10 +27,16 @@
   <component name="ChangeListManager">
     <list default="true" id="75167860-5315-49c7-8bd4-159fb3049cae" name="Default Changelist" comment="Broken maps input">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/App.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/App.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/Member.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/Member.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/NavSidebar.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/NavSidebar.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/package-lock.json" beforeDir="false" afterPath="$PROJECT_DIR$/package-lock.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/package.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/LabelledNumberField.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/LabelledNumberField.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/LabelledTextField.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/LabelledTextField.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/index.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/index.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/pages/config.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/pages/config.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/pages/home.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/pages/home.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/pages/project.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/pages/project.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/utils/defaultValues.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/utils/defaultValues.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/utils/emptyValues.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/utils/emptyValues.js" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -41,6 +47,7 @@
     <option name="RECENT_TEMPLATES">
       <list>
         <option value="JavaScript File" />
+        <option value="CSS File" />
       </list>
     </option>
   </component>
@@ -79,7 +86,8 @@
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
     <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/../CBEDS" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/../react-minimal-side-navigation" />
+    <property name="list.type.of.created.stylesheet" value="CSS" />
     <property name="node.js.detected.package.eslint" value="true" />
     <property name="node.js.detected.package.stylelint" value="true" />
     <property name="node.js.path.for.package.eslint" value="project" />
@@ -173,6 +181,8 @@
       <workItem from="1617035091910" duration="3525000" />
       <workItem from="1617284759946" duration="4530000" />
       <workItem from="1617356341047" duration="2362000" />
+      <workItem from="1626447192226" duration="3081000" />
+      <workItem from="1626686261092" duration="1401000" />
     </task>
     <task id="LOCAL-00001" summary="First steps">
       <created>1603985640072</created>
@@ -426,7 +436,14 @@
       <option name="project" value="LOCAL" />
       <updated>1626433106076</updated>
     </task>
-    <option name="localTasksCounter" value="37" />
+    <task id="LOCAL-00037" summary="Started working on homepage">
+      <created>1626444308133</created>
+      <option name="number" value="00037" />
+      <option name="presentableId" value="LOCAL-00037" />
+      <option name="project" value="LOCAL" />
+      <updated>1626444308133</updated>
+    </task>
+    <option name="localTasksCounter" value="38" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -457,7 +474,6 @@
     <option name="oldMeFiltersMigrated" value="true" />
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="Set defaults&#10;* UPIMAPI columns&#10;* UPIMAPI databses&#10;* KEGGCharter maps" />
     <MESSAGE value="Config file is now produced in snake_case" />
     <MESSAGE value="Can now download YAML format" />
     <MESSAGE value="Added buttons for setting config&#10;* to default values&#10;* to empty values" />
@@ -482,13 +498,22 @@
     <MESSAGE value="reCOGnizer databases&#10;* can now be picked" />
     <MESSAGE value="MOSFUITO" />
     <MESSAGE value="Minimum rows for experiments is 1" />
-    <option name="LAST_COMMIT_MESSAGE" value="Minimum rows for experiments is 1" />
+    <MESSAGE value="Started working on homepage" />
+    <option name="LAST_COMMIT_MESSAGE" value="Started working on homepage" />
   </component>
   <component name="WindowStateProjectService">
-    <state x="2192" y="117" key="Vcs.Push.Dialog.v2" timestamp="1626433108994">
+    <state x="421" y="116" key="FileChooserDialogImpl" timestamp="1626686501202">
+      <screen x="0" y="0" width="1280" height="720" />
+    </state>
+    <state x="421" y="116" key="FileChooserDialogImpl/0.0.1280.720/1920.0.1360.768@0.0.1280.720" timestamp="1626686501202" />
+    <state x="366" y="63" key="RollbackChangesDialog" timestamp="1626687628894">
+      <screen x="0" y="0" width="1280" height="720" />
+    </state>
+    <state x="366" y="63" key="RollbackChangesDialog/0.0.1280.720/1920.0.1360.768@0.0.1280.720" timestamp="1626687628894" />
+    <state x="2192" y="117" key="Vcs.Push.Dialog.v2" timestamp="1626444311838">
       <screen x="1920" y="0" width="1360" height="768" />
     </state>
-    <state x="2192" y="117" key="Vcs.Push.Dialog.v2/0.0.1280.720/1920.0.1360.768@1920.0.1360.768" timestamp="1626433108994" />
+    <state x="2192" y="117" key="Vcs.Push.Dialog.v2/0.0.1280.720/1920.0.1360.768@1920.0.1360.768" timestamp="1626444311838" />
     <state x="2306" y="117" width="587" height="534" key="find.popup" timestamp="1626432155930">
       <screen x="1920" y="0" width="1360" height="768" />
     </state>

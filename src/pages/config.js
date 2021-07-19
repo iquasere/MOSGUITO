@@ -196,6 +196,14 @@ const Main = ({ configData, onConfigChange, onConfigOverwrite }) => {
               options={normalizationMethodOptions}
             />
 
+            <LabelledNumberField
+              label='Minimum differential expression'
+              value={configData.minimumDifferentialExpression}
+              onChange={(ev) => onConfigChange('minimumDifferentialExpression', ev.target.valueAsNumber)}
+              step={0.1}
+              minimum={0.1}
+            />
+
             <LabelledSelect
               label='Choose the taxonomic level to represent with KEGGCharter'
               value={configData.keggcharterTaxaLevel}
