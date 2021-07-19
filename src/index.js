@@ -2,8 +2,8 @@ import React from 'react';
 import ReactDOM from 'react-dom';
 import './index.css';
 import {App} from './pages/_app';
-//import App from './App'
 import reportWebVitals from './reportWebVitals';
+//import "./styles/main.bundle.css";
 
 ReactDOM.render(
   <App />,

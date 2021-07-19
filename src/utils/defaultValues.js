@@ -60,6 +60,7 @@ export const defaultValues = {
     ],
     "recognizerDatabases":recognizerDatabasesOptions,
     "normalizationMethod":normalizationMethodOptions[0],
+    "minimumDifferentialExpression":1,
     "keggcharterMaps":[
         "00010",
         "00020",
