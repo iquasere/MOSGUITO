@@ -1,25 +1,25 @@
 {
   "files": {
     "main.css": "/MOSGUITO/static/css/main.73123735.chunk.css",
-    "main.js": "/MOSGUITO/static/js/main.2871c152.chunk.js",
-    "main.js.map": "/MOSGUITO/static/js/main.2871c152.chunk.js.map",
+    "main.js": "/MOSGUITO/static/js/main.96dd8b37.chunk.js",
+    "main.js.map": "/MOSGUITO/static/js/main.96dd8b37.chunk.js.map",
     "runtime-main.js": "/MOSGUITO/static/js/runtime-main.6b163e8e.js",
     "runtime-main.js.map": "/MOSGUITO/static/js/runtime-main.6b163e8e.js.map",
     "static/css/2.f6bcfcca.chunk.css": "/MOSGUITO/static/css/2.f6bcfcca.chunk.css",
-    "static/js/2.da2eb805.chunk.js": "/MOSGUITO/static/js/2.da2eb805.chunk.js",
-    "static/js/2.da2eb805.chunk.js.map": "/MOSGUITO/static/js/2.da2eb805.chunk.js.map",
+    "static/js/2.c68b51b2.chunk.js": "/MOSGUITO/static/js/2.c68b51b2.chunk.js",
+    "static/js/2.c68b51b2.chunk.js.map": "/MOSGUITO/static/js/2.c68b51b2.chunk.js.map",
     "static/js/3.feb2210b.chunk.js": "/MOSGUITO/static/js/3.feb2210b.chunk.js",
     "static/js/3.feb2210b.chunk.js.map": "/MOSGUITO/static/js/3.feb2210b.chunk.js.map",
     "index.html": "/MOSGUITO/index.html",
     "static/css/2.f6bcfcca.chunk.css.map": "/MOSGUITO/static/css/2.f6bcfcca.chunk.css.map",
     "static/css/main.73123735.chunk.css.map": "/MOSGUITO/static/css/main.73123735.chunk.css.map",
-    "static/js/2.da2eb805.chunk.js.LICENSE.txt": "/MOSGUITO/static/js/2.da2eb805.chunk.js.LICENSE.txt"
+    "static/js/2.c68b51b2.chunk.js.LICENSE.txt": "/MOSGUITO/static/js/2.c68b51b2.chunk.js.LICENSE.txt"
   },
   "entrypoints": [
     "static/js/runtime-main.6b163e8e.js",
     "static/css/2.f6bcfcca.chunk.css",
-    "static/js/2.da2eb805.chunk.js",
+    "static/js/2.c68b51b2.chunk.js",
     "static/css/main.73123735.chunk.css",
-    "static/js/main.2871c152.chunk.js"
+    "static/js/main.96dd8b37.chunk.js"
   ]
 }
