@@ -15,6 +15,7 @@ export const emptyValues = {
     "assembler":assemblerOptions[0],
     "errorModel":errorModelOptions[0],
     "markerset":markersetOptions[0],
+    "doIterativeBinning":true,
     "diamondDatabase":"",
     "diamondMaxTargetSeqs":1,
     "downloadUniprot":true,

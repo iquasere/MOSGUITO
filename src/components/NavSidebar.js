@@ -74,10 +74,6 @@ export const NavSidebar = ({ outputsFiles }) => {
                     itemId: "/MOSGUITO/general-configuration"
                   },
                   {
-                    title: "Experiments",
-                    itemId: "/MOSGUITO/experiments"
-                  },
-                  {
                     title: "UniProt columns",
                     itemId: "/MOSGUITO/uniprot-columns"
                   },
@@ -90,8 +86,8 @@ export const NavSidebar = ({ outputsFiles }) => {
                     itemId: "/MOSGUITO/keggmaps"
                   },
                   {
-                    title: "Proteomics configuration",
-                    itemId: "/MOSGUITO/proteomics-configuration"
+                    title: "Experiments",
+                    itemId: "/MOSGUITO/experiments"
                   }
                 ]
               }

@@ -19,6 +19,7 @@ export const defaultValues = {
     "assembler":assemblerOptions[0],
     "errorModel":errorModelOptions[0],
     "markerset":markersetOptions[0],
+    "doIterativeBinning":true,
     "diamondDatabase":"resources_directory/uniprot.dmnd",
     "diamondMaxTargetSeqs":1,
     "downloadUniprot":true,
