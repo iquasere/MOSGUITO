@@ -137,11 +137,17 @@ const Main = ({ configData, onConfigChange, onConfigOverwrite }) => {
               configData.doAssembly ? (
                 <>
                   <LabelledSelect
-                    label='Choose assembler'
+                    label='Assembler'
                     value={configData.assembler}
                     onChange={(ev) => onConfigChange('assembler', ev.target.value)}
                     options={assemblerOptions}
                   />
+
+                  <Divider style={{ margin: '1rem 0' }} />
+
+                  <Typography variant='h6'>
+                    Binning settings
+                  </Typography>
 
                   <LabelledCheckbox
                     label='Perform iterative binning'
@@ -150,7 +156,7 @@ const Main = ({ configData, onConfigChange, onConfigOverwrite }) => {
                   />
 
                   <LabelledSelect
-                    label='Choose markerset'
+                    label='Markergene set'
                     value={configData.markerset}
                     onChange={(ev) => onConfigChange('markerset', ev.target.value)}
                     options={markersetOptions}
@@ -246,14 +252,14 @@ const Main = ({ configData, onConfigChange, onConfigOverwrite }) => {
             </Typography>
 
             <LabelledSelect
-              label='Choose the taxonomic level to represent with KEGGCharter'
+              label='Taxonomic level on KEGG pathways'
               value={configData.keggcharterTaxaLevel}
               onChange={(ev) => onConfigChange('keggcharterTaxaLevel', ev.target.value)}
               options={keggcharterTaxaLevelOptions}
             />
 
             <LabelledNumberField
-              label='Number of taxa to represent with KEGGCharter'
+              label='Number of taxa on KEGG pathways'
               value={configData.keggcharterNumberOfTaxa}
               onChange={(ev) => onConfigChange('keggcharterNumberOfTaxa', ev.target.valueAsNumber)}
             />
@@ -265,7 +271,7 @@ const Main = ({ configData, onConfigChange, onConfigOverwrite }) => {
             </Typography>
 
             <LabelledSelect
-              label='Choose proteomics workflow'
+              label='Proteomics workflow'
               value={configData.proteomicsWorkflow}
               onChange={(ev) => onConfigChange('proteomicsWorkflow', ev.target.value)}
               options={proteomicsWorkflowOptions}
@@ -289,7 +295,7 @@ const Main = ({ configData, onConfigChange, onConfigOverwrite }) => {
             }
 
             <LabelledSelect
-              label='Choose taxonomic level to download reference proteomes'
+              label='Taxa level of reference proteomes'
               value={configData.referenceProteomesTaxaLevel}
               onChange={(ev) => onConfigChange('referenceProteomesTaxaLevel', ev.target.value)}
               options={referenceProteomesTaxaLevelOptions}
@@ -303,7 +309,7 @@ const Main = ({ configData, onConfigChange, onConfigOverwrite }) => {
             />
 
             <LabelledSelect
-              label='Choose protease used in proteomics experiment'
+              label='Protease used'
               value={configData.protease}
               onChange={(ev) => onConfigChange('protease', ev.target.value)}
               options={proteaseOptions}

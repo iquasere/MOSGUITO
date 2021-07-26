@@ -6,7 +6,7 @@ const LabelledNumberField = ({ label, value, onChange, minimum=1, step=1 }) => {
     step: step,
   };
 
-  return <div class="container" style={{ margin: '0.5rem 0' }}>
+  return <div class="container">
     <div class="left">
       <span>{label}</span>
     </div>

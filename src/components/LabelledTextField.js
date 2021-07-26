@@ -1,7 +1,7 @@
 import {TextField} from '@material-ui/core'
 
 const LabelledTextField = ({ label, value, onChange, placeholder }) => {
-  return <div class="container" style={{ margin: '0.5rem 0' }}>
+  return <div class="container">
     <div class='left'>
       <span>{label}</span>
     </div>

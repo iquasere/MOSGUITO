@@ -1,13 +1,18 @@
 import {Checkbox} from '@material-ui/core'
+import React from "react";
 
 const LabelledCheckbox = ({ label, checked, setChecked }) => {
-  return <div >
+  return <div className="container">
+    <div className="left">
+      <span>{label}</span>
+    </div>
+    <div class="right">
       <Checkbox
         checked={checked}
         onChange={setChecked}
       />
-      <span>{label}</span>
     </div>
+  </div>
 }
 
 export default LabelledCheckbox
