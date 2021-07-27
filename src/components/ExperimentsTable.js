@@ -70,6 +70,7 @@ const ExperimentsTable = ({ experiments, setExperiments, nExperimentsRows, setEx
         onClick={(ev) => increaseRows()}
         variant='contained'
         color='primary'
+        style={{ margin: '0.5rem' }}
       >
         Add row
       </Button>
@@ -84,6 +85,7 @@ const ExperimentsTable = ({ experiments, setExperiments, nExperimentsRows, setEx
         onClick={(ev) => download(TSV.stringify(experiments), "experiments.tsv", "tsv")}
         variant='contained'
         color='secondary'
+        style={{ margin: '0.5rem' }}
       >
         Download TSV
       </Button>
