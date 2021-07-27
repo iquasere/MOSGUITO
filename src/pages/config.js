@@ -286,7 +286,7 @@ const Main = ({ configData, onConfigChange, onConfigOverwrite }) => {
             {
               configData.useCrap ? (<></>) : (
                 <LabelledTextField
-                  label='Set the path of contaminants database'
+                  label='Contaminants database'
                   value={configData.diamondDatabase}
                   onChange={(ev) => onConfigChange('proteomicsContaminantesDatabase', ev.target.value)}
                   placeholder={defaultValues.proteomicsContaminantesDatabase}
@@ -301,13 +301,6 @@ const Main = ({ configData, onConfigChange, onConfigOverwrite }) => {
               options={referenceProteomesTaxaLevelOptions}
             />
 
-            <LabelledTextField
-              label='Set protease to use'
-              value={configData.diamondDatabase}
-              onChange={(ev) => onConfigChange('diamondDatabase', ev.target.value)}
-              placeholder={defaultValues.diamondDatabase}
-            />
-
             <LabelledSelect
               label='Protease used'
               value={configData.protease}
@@ -318,7 +311,7 @@ const Main = ({ configData, onConfigChange, onConfigOverwrite }) => {
             {
               ((configData.protease) !== "File") ? (<></>) : (
                 <LabelledTextField
-                  label='Set the filename of protease FASTA file'
+                  label='Protease FASTA file'
                   value={configData.proteaseFile}
                   onChange={(ev) => onConfigChange('proteaseFile', ev.target.value)}
                   placeholder={defaultValues.proteaseFile}
