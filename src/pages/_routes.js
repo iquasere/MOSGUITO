@@ -22,7 +22,7 @@ import GeneralReports from "./generalReports";
 import ProteinReports from "./proteinReports";
 
 const Routes = ({ configData, onConfigChange, onConfigOverwrite, experiments, setExperiments,
-                  nExperimentsRows, setExperimentsRows,
+                  nExperimentsRows, setExperimentsRows, hasMt, toggleHasMt, hasMp, toggleHasMp,
                   outputsFiles, setOutputsFiles }) => {
   return (
     <BrowserRouter>
@@ -32,6 +32,10 @@ const Routes = ({ configData, onConfigChange, onConfigOverwrite, experiments, se
             configData={configData}
             onConfigChange={onConfigChange}
             onConfigOverwrite={onConfigOverwrite}
+            hasMt={hasMt}
+            toggleHasMt={toggleHasMt}
+            hasMp={hasMp}
+            toggleHasMp={toggleHasMp}
           />
         </Route>
 

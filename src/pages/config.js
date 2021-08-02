@@ -1,4 +1,4 @@
-import React from 'react'
+import React, {useState} from 'react'
 import YAML from 'yaml'
 import {
   Card,
@@ -27,7 +27,7 @@ import './../App.css'
 import {DashboardLayout} from "../components/Layout";
 import Accordion from "../components/Accordion";
 
-const Main = ({ configData, onConfigChange, onConfigOverwrite }) => {
+const Main = ({ configData, onConfigChange, onConfigOverwrite, hasMt, toggleHasMt, hasMp, toggleHasMp }) => {
 
   const camelToSnakeCase = str => str.replace(/[A-Z]/g, letter => `_${letter.toLowerCase()}`);
 
@@ -103,6 +103,18 @@ const Main = ({ configData, onConfigChange, onConfigOverwrite }) => {
               onChange={(ev) => onConfigChange('maxMemory', ev.target.valueAsNumber)}
             />
 
+            <LabelledCheckbox
+              label='Data contains RNA-Seq'
+              checked={hasMt}
+              setChecked={(ev) => toggleHasMt()}
+            />
+
+            <LabelledCheckbox
+              label='Data contains MS spectra'
+              checked={hasMp}
+              setChecked={(ev) => toggleHasMp()}
+            />
+
             <Divider style={{ margin: '1rem 0' }} />
 
             <Typography variant='h6'>
@@ -174,7 +186,7 @@ const Main = ({ configData, onConfigChange, onConfigOverwrite }) => {
             {
               configData.doAssembly ? (<></>) : (
                 <LabelledSelect
-                    label='Choose error model'
+                    label='Error model'
                     value={configData.errorModel}
                     onChange={(ev) => onConfigChange('errorModel', ev.target.value)}
                     options={errorModelOptions}
@@ -219,33 +231,100 @@ const Main = ({ configData, onConfigChange, onConfigOverwrite }) => {
               </div>
 
             <LabelledNumberField
-              label='Number of identifications per protein'
+              label='Identifications per protein'
               value={configData.diamondMaxTargetSeqs}
               onChange={(ev) => onConfigChange('diamondMaxTargetSeqs', ev.target.valueAsNumber)}
             />
 
             <Divider style={{ margin: '1rem 0' }} />
 
-            <Typography variant='h6'>
-              Differential expression settings
-            </Typography>
+            {
+              hasMt ? (
+                <>
+                  <Typography variant='h6'>
+                    Differential expression settings
+                  </Typography>
 
-            <LabelledSelect
-              label='Choose normalization method'
-              value={configData.normalizationMethod}
-              onChange={(ev) => onConfigChange('normalizationMethod', ev.target.value)}
-              options={normalizationMethodOptions}
-            />
+                  <LabelledSelect
+                    label='Normalization method'
+                    value={configData.normalizationMethod}
+                    onChange={(ev) => onConfigChange('normalizationMethod', ev.target.value)}
+                    options={normalizationMethodOptions}
+                  />
 
-            <LabelledNumberField
-              label='Minimum differential expression'
-              value={configData.minimumDifferentialExpression}
-              onChange={(ev) => onConfigChange('minimumDifferentialExpression', ev.target.valueAsNumber)}
-              step={0.1}
-              minimum={0.1}
-            />
+                  <LabelledNumberField
+                    label='Minimum differential expression'
+                    value={configData.minimumDifferentialExpression}
+                    onChange={(ev) => onConfigChange('minimumDifferentialExpression', ev.target.valueAsNumber)}
+                    step={0.1}
+                    minimum={0.1}
+                  />
 
-            <Divider style={{ margin: '1rem 0' }} />
+                  <Divider style={{ margin: '1rem 0' }} />
+                </>
+              ):(<></>)
+            }
+
+            {
+              hasMp ? (
+                <>
+                  <Typography variant='h6'>
+                    Proteomics settings
+                  </Typography>
+
+                  <LabelledSelect
+                    label='Proteomics workflow'
+                    value={configData.proteomicsWorkflow}
+                    onChange={(ev) => onConfigChange('proteomicsWorkflow', ev.target.value)}
+                    options={proteomicsWorkflowOptions}
+                  />
+
+                  <LabelledCheckbox
+                    label='Use cRAP database'
+                    checked={configData.useCrap}
+                    setChecked={(ev) => onConfigChange('useCrap', ev.target.checked)}
+                  />
+
+                  {
+                    configData.useCrap ? (<></>) : (
+                      <LabelledTextField
+                        label='Contaminants database'
+                        value={configData.diamondDatabase}
+                        onChange={(ev) => onConfigChange('proteomicsContaminantesDatabase', ev.target.value)}
+                        placeholder={defaultValues.proteomicsContaminantesDatabase}
+                      />
+                    )
+                  }
+
+                  <LabelledSelect
+                    label='Taxa level of reference proteomes'
+                    value={configData.referenceProteomesTaxaLevel}
+                    onChange={(ev) => onConfigChange('referenceProteomesTaxaLevel', ev.target.value)}
+                    options={referenceProteomesTaxaLevelOptions}
+                  />
+
+                  <LabelledSelect
+                    label='Protease used'
+                    value={configData.protease}
+                    onChange={(ev) => onConfigChange('protease', ev.target.value)}
+                    options={proteaseOptions}
+                  />
+
+                  {
+                    ((configData.protease) !== "File") ? (<></>) : (
+                      <LabelledTextField
+                        label='Protease FASTA file'
+                        value={configData.proteaseFile}
+                        onChange={(ev) => onConfigChange('proteaseFile', ev.target.value)}
+                        placeholder={defaultValues.proteaseFile}
+                      />
+                    )
+                  }
+
+                  <Divider style={{ margin: '1rem 0' }} />
+                </>
+              ):(<></>)
+            }
 
             <Typography variant='h6'>
               KEGG metabolic maps settings
@@ -265,59 +344,6 @@ const Main = ({ configData, onConfigChange, onConfigOverwrite }) => {
             />
 
             <Divider style={{ margin: '1rem 0' }} />
-
-            <Typography variant='h6'>
-              Proteomics settings
-            </Typography>
-
-            <LabelledSelect
-              label='Proteomics workflow'
-              value={configData.proteomicsWorkflow}
-              onChange={(ev) => onConfigChange('proteomicsWorkflow', ev.target.value)}
-              options={proteomicsWorkflowOptions}
-            />
-
-            <LabelledCheckbox
-              label='Use cRAP database'
-              checked={configData.useCrap}
-              setChecked={(ev) => onConfigChange('useCrap', ev.target.checked)}
-            />
-
-            {
-              configData.useCrap ? (<></>) : (
-                <LabelledTextField
-                  label='Contaminants database'
-                  value={configData.diamondDatabase}
-                  onChange={(ev) => onConfigChange('proteomicsContaminantesDatabase', ev.target.value)}
-                  placeholder={defaultValues.proteomicsContaminantesDatabase}
-                />
-              )
-            }
-
-            <LabelledSelect
-              label='Taxa level of reference proteomes'
-              value={configData.referenceProteomesTaxaLevel}
-              onChange={(ev) => onConfigChange('referenceProteomesTaxaLevel', ev.target.value)}
-              options={referenceProteomesTaxaLevelOptions}
-            />
-
-            <LabelledSelect
-              label='Protease used'
-              value={configData.protease}
-              onChange={(ev) => onConfigChange('protease', ev.target.value)}
-              options={proteaseOptions}
-            />
-
-            {
-              ((configData.protease) !== "File") ? (<></>) : (
-                <LabelledTextField
-                  label='Protease FASTA file'
-                  value={configData.proteaseFile}
-                  onChange={(ev) => onConfigChange('proteaseFile', ev.target.value)}
-                  placeholder={defaultValues.proteaseFile}
-                />
-              )
-            }
 
           </CardContent>
           <CardActions
@@ -379,7 +405,7 @@ const Header = () => {
   )
 }
 
-function Config({ configData, onConfigChange, onConfigOverwrite }) {
+function Config({ configData, onConfigChange, onConfigOverwrite, hasMt, toggleHasMt, hasMp, toggleHasMp }) {
   return (
     <DashboardLayout>
       <div className='App'>
@@ -388,6 +414,10 @@ function Config({ configData, onConfigChange, onConfigOverwrite }) {
           configData={configData}
           onConfigChange={onConfigChange}
           onConfigOverwrite={onConfigOverwrite}
+          hasMt={hasMt}
+          toggleHasMt={toggleHasMt}
+          hasMp={hasMp}
+          toggleHasMp={toggleHasMp}
         />
       </div>
     </DashboardLayout>

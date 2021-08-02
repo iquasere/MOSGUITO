@@ -316,7 +316,7 @@ export const defaultValues = {
         "02040",
         "04810"
     ],
-    "keggcharterTaxaLevel":keggcharterTaxaLevelOptions[0],
+    "keggcharterTaxaLevel":keggcharterTaxaLevelOptions[6],
     "keggcharterNumberOfTaxa":10,
     "proteomicsWorkflow":"compomics",
     "useCrap":true,

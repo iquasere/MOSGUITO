@@ -8,13 +8,13 @@ import { ResultsDisposition } from '../pages/results'
 import "react-minimal-side-navigation/lib/ReactMinimalSideNavigation.css";
 
 
-export const NavSidebar = ({ outputsFiles }) => {
+export const NavSidebar = () => {
   const history = useHistory();
   const location = useLocation();
   const [isSidebarOpen, setIsSidebarOpen] = useState(false);
   if (ResultsDisposition === false) {
     return (
-      <React.Fragment>
+      <>
         {/* Sidebar Overlay */}
         <div
           onClick={() => setIsSidebarOpen(false)}
@@ -110,12 +110,12 @@ export const NavSidebar = ({ outputsFiles }) => {
             />
           </div>
         </div>
-      </React.Fragment>
+      </>
     );
   } else {
 
     return (
-      <React.Fragment>
+      <>
         {/* Sidebar Overlay */}
         <div
           onClick={() => setIsSidebarOpen(false)}
@@ -253,7 +253,7 @@ export const NavSidebar = ({ outputsFiles }) => {
             />
           </div>
         </div>
-      </React.Fragment>
+      </>
     );
   };
 }

@@ -16,6 +16,10 @@ export const App = () => {
   const [configData, setConfig] = useState(defaultValues)
   const [nExperimentsRows, setExperimentsRows] = useState(1)
   const [outputsFiles, setOutputsFiles] = useState({})
+  const [hasMt, setHasMt] = useState(true)
+  const toggleHasMt = () => setHasMt(!hasMt)
+  const [hasMp, setHasMp] = useState(false)
+  const toggleHasMp = () => setHasMp(!hasMp)
 
   const onConfigChange = (field, value) => {
     const newValue = { ...configData, [field]: value }
@@ -37,6 +41,10 @@ export const App = () => {
     setExperiments={setExperiments}
     outputsFiles={outputsFiles}
     setOutputsFiles={setOutputsFiles}
+    hasMt={hasMt}
+    toggleHasMt={toggleHasMt}
+    hasMp={hasMp}
+    toggleHasMp={toggleHasMp}
   />;
 };
 
