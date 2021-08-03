@@ -4,6 +4,7 @@ import './index.css';
 import {App} from './pages/_app';
 import reportWebVitals from './reportWebVitals';
 //import "./styles/main.bundle.css";
+import 'bootstrap/dist/css/bootstrap.min.css';
 
 ReactDOM.render(
   <App />,

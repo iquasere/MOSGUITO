@@ -6,7 +6,7 @@ const LabelledSelect = ({ label, value, onChange, options }) => {
     <div className="left">
       <span>{label}</span>
     </div>
-    <div class="right">
+    <div className="right">
       <Select
         value={value}
         onChange={onChange}

@@ -17,21 +17,26 @@ const UniprotAccordion = ({ uniprotList, onChange, uniprotPossibilities }) => {
   }
 
   return (
-    Object.entries(uniprotPossibilities).map(([section, columns_list], index) => (
-      <Accordion key={index} title={section}>
-        {
-          columns_list.map(( pair , index) => (
-            <LabelledCheckbox
-              key={index}
-              label={pair[0]}
-              checked={uniprotList.indexOf(pair[1]) > -1}
-              setChecked={() => handleCheck(pair[1])}
-            />
+    <div style={{margin:'0.5rem'}}>
+    {
+      Object.entries(uniprotPossibilities).map(([section, columns_list], index) => (
+        <Accordion key={index} title={section}>
+          {
+            columns_list.map(( pair , index) => (
+              <LabelledCheckbox
+                key={index}
+                label={pair[0]}
+                checked={uniprotList.indexOf(pair[1]) > -1}
+                setChecked={() => handleCheck(pair[1])}
+              />
+              )
             )
-          )
-        }
-      </Accordion>
-    )))
+          }
+        </Accordion>
+      ))
+    }
+  </div>
+  )
 }
 
 export default UniprotAccordion

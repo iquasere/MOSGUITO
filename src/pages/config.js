@@ -64,6 +64,48 @@ const Main = ({ configData, onConfigChange, onConfigOverwrite, hasMt, toggleHasM
     <main className='main'>
       <form className='form' >
         <Card >
+          <CardActions
+            style={{
+              display: 'flex',
+              //justifyContent: 'flex-center'
+            }}
+          >
+
+            <Button
+              onClick={() => onConfigOverwrite(defaultValues)}
+              variant='contained'
+              color='primary'
+            >
+              Set to default values
+            </Button>
+
+            <Button
+              onClick={() => onConfigOverwrite(emptyValues)}
+              variant='contained'
+              color='primary'
+            >
+              Clear values
+            </Button>
+
+            <Button
+              onClick={(ev) => downloadYaml(ev)}
+              variant='contained'
+              color='secondary'
+            >
+              Download YAML
+            </Button>
+
+            <Button
+              onClick={(ev) => downloadJson(ev)}
+              variant='contained'
+              color='secondary'
+            >
+              Download JSON
+            </Button>
+          </CardActions>
+
+          <Divider style={{ margin: '1rem 0' }} />
+
           <CardContent>
 
             <Typography variant='h6'>
@@ -213,28 +255,28 @@ const Main = ({ configData, onConfigChange, onConfigOverwrite, hasMt, toggleHasM
               setChecked={(ev) => onConfigChange('downloadCdd', ev.target.checked)}
             />
 
-            <div style={{ margin: '1rem 0', border: '1px solid' }}>
-            <Accordion title="Pick databases of reCOGnizer">
-              {
-                recognizerDatabasesOptions.map(( value, index) => (
-                  <LabelledCheckbox
-                    key={index}
-                    label={value}
-                    checked={configData.recognizerDatabases.indexOf(value) > -1}
-                    setChecked={(ev) => handleCheck(value)}
-                    variant="filled"
-                  />
-                  )
-                )
-              }
-            </Accordion>
-              </div>
-
             <LabelledNumberField
               label='Identifications per protein'
               value={configData.diamondMaxTargetSeqs}
               onChange={(ev) => onConfigChange('diamondMaxTargetSeqs', ev.target.valueAsNumber)}
             />
+
+            <div style={{ margin: '1rem 0', border: '1px solid' }}>
+              <Accordion title="Pick databases of reCOGnizer">
+                {
+                  recognizerDatabasesOptions.map(( value, index) => (
+                    <LabelledCheckbox
+                      key={index}
+                      label={value}
+                      checked={configData.recognizerDatabases.indexOf(value) > -1}
+                      setChecked={(ev) => handleCheck(value)}
+                      variant="filled"
+                    />
+                    )
+                  )
+                }
+              </Accordion>
+            </div>
 
             <Divider style={{ margin: '1rem 0' }} />
 
@@ -343,48 +385,7 @@ const Main = ({ configData, onConfigChange, onConfigOverwrite, hasMt, toggleHasM
               onChange={(ev) => onConfigChange('keggcharterNumberOfTaxa', ev.target.valueAsNumber)}
             />
 
-            <Divider style={{ margin: '1rem 0' }} />
-
           </CardContent>
-          <CardActions
-            style={{
-              display: 'flex',
-              justifyContent: 'flex-end'
-            }}
-          >
-
-            <Button
-              onClick={() => onConfigOverwrite(defaultValues)}
-              variant='contained'
-              color='primary'
-            >
-              Set to default values
-            </Button>
-
-            <Button
-              onClick={() => onConfigOverwrite(emptyValues)}
-              variant='contained'
-              color='primary'
-            >
-              Clear values
-            </Button>
-
-            <Button
-              onClick={(ev) => downloadYaml(ev)}
-              variant='contained'
-              color='secondary'
-            >
-              Download YAML
-            </Button>
-
-            <Button
-              onClick={(ev) => downloadJson(ev)}
-              variant='contained'
-              color='secondary'
-            >
-              Download JSON
-            </Button>
-          </CardActions>
         </Card>
       </form>
     </main>

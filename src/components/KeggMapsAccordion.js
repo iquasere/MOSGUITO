@@ -18,6 +18,8 @@ const KeggMapsAccordion = ({ keggMapList, onChange }) => {
   } 
 
   return (
+    <div style={{margin:'0.5rem'}}>
+      {
         keggMaps.children.map((category, index) => (
           <Accordion key={index} title={category.name}>
             {
@@ -38,6 +40,8 @@ const KeggMapsAccordion = ({ keggMapList, onChange }) => {
             }
           </Accordion>
         ))
+      }
+    </div>
   )
 }
 

@@ -6,15 +6,6 @@
         <item name="ROOT" type="e8cecc67:BranchNodeDescriptor" />
         <item name="LOCAL_ROOT" type="e8cecc67:BranchNodeDescriptor" />
       </path>
-      <path>
-        <item name="ROOT" type="e8cecc67:BranchNodeDescriptor" />
-        <item name="REMOTE_ROOT" type="e8cecc67:BranchNodeDescriptor" />
-      </path>
-      <path>
-        <item name="ROOT" type="e8cecc67:BranchNodeDescriptor" />
-        <item name="REMOTE_ROOT" type="e8cecc67:BranchNodeDescriptor" />
-        <item name="GROUP_NODE:origin" type="e8cecc67:BranchNodeDescriptor" />
-      </path>
     </expand>
     <select>
       <path>
@@ -26,15 +17,24 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="75167860-5315-49c7-8bd4-159fb3049cae" name="Default Changelist" comment="Broken maps input">
+      <change afterPath="$PROJECT_DIR$/webpack.conf.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/App.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/App.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/package-lock.json" beforeDir="false" afterPath="$PROJECT_DIR$/package-lock.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/package.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/KeggMapsAccordion.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/KeggMapsAccordion.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/LabelledCheckbox.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/LabelledCheckbox.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/components/LabelledNumberField.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/LabelledNumberField.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/components/LabelledSelect.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/LabelledSelect.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/components/LabelledTextField.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/LabelledTextField.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/NavSidebar.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/NavSidebar.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/pages/_routes.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/pages/_routes.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/Member.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/Member.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/MembersList.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/UniprotAccordion.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/UniprotAccordion.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/index.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/index.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/pages/config.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/pages/config.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/pages/proteomicsConfiguration.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/pages/keggmaps.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/pages/keggmaps.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/pages/members.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/pages/members.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/pages/uniprotColumns.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/pages/uniprotColumns.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/pages/uniprotDatabases.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/pages/uniprotDatabases.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/utils/defaultValues.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/utils/defaultValues.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/utils/emptyValues.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/utils/emptyValues.js" afterDir="false" />
     </list>
@@ -46,6 +46,7 @@
   <component name="FileTemplateManagerImpl">
     <option name="RECENT_TEMPLATES">
       <list>
+        <option value="CSS File" />
         <option value="JavaScript File" />
       </list>
     </option>
@@ -87,6 +88,7 @@
     <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="last_opened_file_path" value="$PROJECT_DIR$/../CBEDS" />
+    <property name="list.type.of.created.stylesheet" value="CSS" />
     <property name="node.js.detected.package.eslint" value="true" />
     <property name="node.js.detected.package.stylelint" value="true" />
     <property name="node.js.path.for.package.eslint" value="project" />
@@ -180,7 +182,15 @@
       <workItem from="1617035091910" duration="3525000" />
       <workItem from="1617284759946" duration="4530000" />
       <workItem from="1617356341047" duration="2362000" />
-      <workItem from="1627290941058" duration="3608000" />
+      <workItem from="1627290941058" duration="3757000" />
+      <workItem from="1627312663788" duration="3128000" />
+      <workItem from="1627372568638" duration="1372000" />
+      <workItem from="1627377640395" duration="350000" />
+      <workItem from="1627395061087" duration="7000" />
+      <workItem from="1627398307211" duration="1419000" />
+      <workItem from="1627399891270" duration="13000" />
+      <workItem from="1627896566704" duration="11924000" />
+      <workItem from="1627988932805" duration="8537000" />
     </task>
     <task id="LOCAL-00001" summary="First steps">
       <created>1603985640072</created>
@@ -441,7 +451,42 @@
       <option name="project" value="LOCAL" />
       <updated>1626702964678</updated>
     </task>
-    <option name="localTasksCounter" value="38" />
+    <task id="LOCAL-00038" summary="Reorganized general configurations&#10;Much clearer sections&#10;Added iterative binning option&#10;Removed proteomicsConfiguration.js">
+      <created>1627294682114</created>
+      <option name="number" value="00038" />
+      <option name="presentableId" value="LOCAL-00038" />
+      <option name="project" value="LOCAL" />
+      <updated>1627294682114</updated>
+    </task>
+    <task id="LOCAL-00039" summary="Some more improvements on looks">
+      <created>1627314604160</created>
+      <option name="number" value="00039" />
+      <option name="presentableId" value="LOCAL-00039" />
+      <option name="project" value="LOCAL" />
+      <updated>1627314604160</updated>
+    </task>
+    <task id="LOCAL-00040" summary="Buttons on experiments">
+      <created>1627374429479</created>
+      <option name="number" value="00040" />
+      <option name="presentableId" value="LOCAL-00040" />
+      <option name="project" value="LOCAL" />
+      <updated>1627374429479</updated>
+    </task>
+    <task id="LOCAL-00041" summary="Some fixes on settings input">
+      <created>1627377739209</created>
+      <option name="number" value="00041" />
+      <option name="presentableId" value="LOCAL-00041" />
+      <option name="project" value="LOCAL" />
+      <updated>1627377739209</updated>
+    </task>
+    <task id="LOCAL-00042" summary="Added checkboxes hasMT, hasMp&#10;for interface improvement, only see relevant options">
+      <created>1627897993269</created>
+      <option name="number" value="00042" />
+      <option name="presentableId" value="LOCAL-00042" />
+      <option name="project" value="LOCAL" />
+      <updated>1627897993269</updated>
+    </task>
+    <option name="localTasksCounter" value="43" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -472,11 +517,6 @@
     <option name="oldMeFiltersMigrated" value="true" />
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="Config file is now produced in snake_case" />
-    <MESSAGE value="Can now download YAML format" />
-    <MESSAGE value="Added buttons for setting config&#10;* to default values&#10;* to empty values" />
-    <MESSAGE value="Experiments file as google sheet&#10;* for now" />
-    <MESSAGE value="Added customization of experiments in config file" />
     <MESSAGE value="Added experiments table&#10;* still not functional, and huge memory leak problem" />
     <MESSAGE value="Began structuring side menu" />
     <MESSAGE value="Fixed changing config and experiments" />
@@ -497,21 +537,30 @@
     <MESSAGE value="MOSFUITO" />
     <MESSAGE value="Minimum rows for experiments is 1" />
     <MESSAGE value="Started working on project page" />
-    <option name="LAST_COMMIT_MESSAGE" value="Started working on project page" />
+    <MESSAGE value="Reorganized general configurations&#10;Much clearer sections&#10;Added iterative binning option&#10;Removed proteomicsConfiguration.js" />
+    <MESSAGE value="Some more improvements on looks" />
+    <MESSAGE value="Buttons on experiments" />
+    <MESSAGE value="Some fixes on settings input" />
+    <MESSAGE value="Added checkboxes hasMT, hasMp&#10;for interface improvement, only see relevant options" />
+    <option name="LAST_COMMIT_MESSAGE" value="Added checkboxes hasMT, hasMp&#10;for interface improvement, only see relevant options" />
   </component>
   <component name="WindowStateProjectService">
     <state x="371" y="108" key="#com.intellij.refactoring.safeDelete.UnsafeUsagesDialog" timestamp="1627291893288">
       <screen x="0" y="0" width="1280" height="720" />
     </state>
     <state x="371" y="108" key="#com.intellij.refactoring.safeDelete.UnsafeUsagesDialog/0.0.1280.720/1920.0.1360.768@0.0.1280.720" timestamp="1627291893288" />
+    <state x="421" y="103" key="FileChooserDialogImpl" timestamp="1627399053343">
+      <screen x="0" y="0" width="1280" height="720" />
+    </state>
+    <state x="421" y="103" key="FileChooserDialogImpl/0.0.1280.720/1920.0.1360.768@0.0.1280.720" timestamp="1627399053343" />
     <state x="121" y="55" key="MergeDialog" timestamp="1626703073471">
       <screen x="0" y="0" width="1280" height="720" />
     </state>
     <state x="121" y="55" key="MergeDialog/0.0.1280.720/1920.0.1360.768@0.0.1280.720" timestamp="1626703073471" />
-    <state x="256" y="110" key="Vcs.Push.Dialog.v2" timestamp="1626702966891">
+    <state x="256" y="110" key="Vcs.Push.Dialog.v2" timestamp="1627897998226">
       <screen x="0" y="0" width="1280" height="720" />
     </state>
-    <state x="256" y="110" key="Vcs.Push.Dialog.v2/0.0.1280.720/1920.0.1360.768@0.0.1280.720" timestamp="1626702966891" />
+    <state x="256" y="110" key="Vcs.Push.Dialog.v2/0.0.1280.720/1920.0.1360.768@0.0.1280.720" timestamp="1627897998226" />
     <state x="2192" y="117" key="Vcs.Push.Dialog.v2/0.0.1280.720/1920.0.1360.768@1920.0.1360.768" timestamp="1626433108994" />
     <state x="2306" y="117" width="587" height="534" key="find.popup" timestamp="1626432155930">
       <screen x="1920" y="0" width="1360" height="768" />

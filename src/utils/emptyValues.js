@@ -1,20 +1,14 @@
-import {
-  assemblerOptions,
-  errorModelOptions,
-  markersetOptions,
-  normalizationMethodOptions,
-  keggcharterTaxaLevelOptions
-} from './options'
-
 export const emptyValues = {
     "output":"",
     "resourcesDirectory":"",
     "threads":1,
     "experiments": "",
+    "minimumReadLength":0,
+    "minimumReadAverageQuality":0,
     "doAssembly":true,
-    "assembler":assemblerOptions[0],
-    "errorModel":errorModelOptions[0],
-    "markerset":markersetOptions[0],
+    "assembler":"",
+    "errorModel":"",
+    "markerset":"",
     "doIterativeBinning":true,
     "diamondDatabase":"",
     "diamondMaxTargetSeqs":1,
@@ -22,9 +16,15 @@ export const emptyValues = {
     "uniprotColumns":[],
     "uniprotDatabases":[],
     "recognizerDatabases":[],
-    "normalizationMethod":normalizationMethodOptions[0],
+    "normalizationMethod":"",
     "minimumDifferentialExpression":1.0,
     "keggcharterMaps":[],
-    "keggcharterTaxaLevel":keggcharterTaxaLevelOptions[0],
-    "keggcharterNumberOfTaxa":1
+    "keggcharterTaxaLevel":"",
+    "keggcharterNumberOfTaxa":1,
+    "proteomicsWorkflow":"",
+    "useCrap":false,
+    "proteomicsContaminantesDatabase":"",
+    "referenceProteomesTaxaLevel":"",
+    "protease":"",
+    "proteaseFile":""
 }

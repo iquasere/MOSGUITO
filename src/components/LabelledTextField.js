@@ -1,11 +1,11 @@
 import {TextField} from '@material-ui/core'
 
 const LabelledTextField = ({ label, value, onChange, placeholder }) => {
-  return <div class="container">
-    <div class='left'>
+  return <div className="container">
+    <div className='left'>
       <span>{label}</span>
     </div>
-    <div class='right'>
+    <div className='right'>
       <TextField
         type='text'
         fullWidth

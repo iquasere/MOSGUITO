@@ -6,11 +6,11 @@ const LabelledNumberField = ({ label, value, onChange, minimum=1, step=1 }) => {
     step: step,
   };
 
-  return <div class="container">
-    <div class="left">
+  return <div className="container">
+    <div className="left">
       <span>{label}</span>
     </div>
-    <div class="right">
+    <div className="right">
       <TextField
         type='number'
         fullWidth

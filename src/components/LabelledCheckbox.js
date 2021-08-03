@@ -6,7 +6,7 @@ const LabelledCheckbox = ({ label, checked, setChecked }) => {
     <div className="left">
       <span>{label}</span>
     </div>
-    <div class="right">
+    <div className="right">
       <Checkbox
         checked={checked}
         onChange={setChecked}

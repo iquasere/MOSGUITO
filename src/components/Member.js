@@ -1,47 +1,62 @@
-import ListItem from "@material-ui/core/ListItem";
-import ListItemAvatar from "@material-ui/core/ListItemAvatar";
-import Avatar from "@material-ui/core/Avatar";
-import ListItemText from "@material-ui/core/ListItemText";
 import React from "react";
-import Typography from "@material-ui/core/Typography";
 import {makeStyles} from "@material-ui/core/styles";
+import {
+  Card,
+  CardContent,
+  CardActions,
+  Button,
+  Typography
+} from "@material-ui/core"
 
-const useStyles = makeStyles((theme) => ({
+const useStyles = makeStyles({
   root: {
-    width: '100%',
-    maxWidth: '36ch',
-    backgroundColor: theme.palette.background.paper,
+    minWidth: 275,
+    display: 'flex',
+    flexDirection: 'column',
+    justifyContent: 'space-between',
   },
-  inline: {
-    display: 'inline',
+  bullet: {
+    display: 'inline-block',
+    margin: '0 2px',
+    transform: 'scale(0.8)'
   },
-}));
+  title: {
+    fontSize: 14
+  },
+  pos: {
+    marginBottom: 12
+  }
+});
 
-const Member = ({ name, imageLink, pageLink, company, role }) => {
+const Member = ({ name, imageLink, pageLink, company, color, role, description }) => {
     const classes = useStyles();
 
     return (
-      <ListItem alignItems="flex-start">
-        <ListItemAvatar>
-          <Avatar alt={name} src={imageLink} />
-        </ListItemAvatar>
-        <ListItemText
-          primary={name}
-          secondary={
-            <>
-              <Typography
-                component="span"
-                variant="body2"
-                className={classes.inline}
-                color="textPrimary"
-              >
-                {role}
-              </Typography>
-              {<a href={pageLink} target="_blank" rel="noreferrer"><span style={{ color: 'orange' }}>at {company}</span></a>}
-            </>
-          }
-        />
-      </ListItem>
+    <Card className={classes.root}>
+      <CardContent>
+        <div className={'container'} style={{marginBottom: '20px'}}>
+          <div className={'left'} style={{marginRight: '10px'}}>
+            <img src={imageLink} />
+          </div>
+          <div className={'right'}>
+            <Typography variant="h5" component="h2">
+              {name}
+            </Typography>
+            <Typography className={classes.pos} color="textSecondary">
+              {role}
+            </Typography>
+          </div>
+        </div>
+        <Typography variant="body2" component="p">
+          {description}
+        </Typography>
+      </CardContent>
+      <CardActions>
+        <Button size="small" color={color}>
+          {<a href={pageLink} target="_blank" style={{textDecoration:'none', color:color}}>@ {company}</a>}
+        </Button>
+      </CardActions>
+    </Card>
     )
 }
 
