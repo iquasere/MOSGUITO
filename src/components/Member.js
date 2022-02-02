@@ -10,14 +10,13 @@ import {
 
 const useStyles = makeStyles({
   root: {
-    minWidth: 275,
+    width: 280,
     display: 'flex',
     flexDirection: 'column',
-    justifyContent: 'space-between',
+    marginRight: -40
   },
   bullet: {
     display: 'inline-block',
-    margin: '0 2px',
     transform: 'scale(0.8)'
   },
   title: {
@@ -36,7 +35,7 @@ const Member = ({ name, imageLink, pageLink, company, color, role, description }
       <CardContent>
         <div className={'container'} style={{marginBottom: '20px'}}>
           <div className={'left'} style={{marginRight: '10px'}}>
-            <img src={imageLink} />
+            <img src={imageLink} alt={name} />
           </div>
           <div className={'right'}>
             <Typography variant="h5" component="h2">
@@ -53,7 +52,7 @@ const Member = ({ name, imageLink, pageLink, company, color, role, description }
       </CardContent>
       <CardActions>
         <Button size="small" color={color}>
-          {<a href={pageLink} target="_blank" style={{textDecoration:'none', color:color}}>@ {company}</a>}
+          {<a href={pageLink} target="_blank" rel="noreferrer" style={{textDecoration:'none', color:color}}>@ {company}</a>}
         </Button>
       </CardActions>
     </Card>

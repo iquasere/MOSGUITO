@@ -1,42 +1,24 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="BranchesTreeState">
-    <expand>
-      <path>
-        <item name="ROOT" type="e8cecc67:BranchNodeDescriptor" />
-        <item name="LOCAL_ROOT" type="e8cecc67:BranchNodeDescriptor" />
-      </path>
-    </expand>
-    <select>
-      <path>
-        <item name="ROOT" type="e8cecc67:BranchNodeDescriptor" />
-        <item name="LOCAL_ROOT" type="e8cecc67:BranchNodeDescriptor" />
-        <item name="BRANCH:main" type="e8cecc67:BranchNodeDescriptor" />
-      </path>
-    </select>
+    <expand />
+    <select />
   </component>
   <component name="ChangeListManager">
     <list default="true" id="75167860-5315-49c7-8bd4-159fb3049cae" name="Default Changelist" comment="Broken maps input">
-      <change afterPath="$PROJECT_DIR$/webpack.conf.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/package-lock.json" beforeDir="false" afterPath="$PROJECT_DIR$/package-lock.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/package.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/KeggMapsAccordion.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/KeggMapsAccordion.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/LabelledCheckbox.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/LabelledCheckbox.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/LabelledNumberField.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/LabelledNumberField.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/LabelledSelect.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/LabelledSelect.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/LabelledTextField.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/LabelledTextField.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/postcss.config.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/App.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/App.css" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/components/Member.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/Member.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/MembersList.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/NavSidebar.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/NavSidebar.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/components/UniprotAccordion.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/UniprotAccordion.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/index.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/index.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/index.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/index.css" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/pages/config.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/pages/config.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/pages/keggmaps.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/pages/keggmaps.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/pages/members.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/pages/members.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/pages/uniprotColumns.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/pages/uniprotColumns.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/pages/uniprotDatabases.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/pages/uniprotDatabases.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/utils/defaultValues.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/utils/defaultValues.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/utils/emptyValues.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/utils/emptyValues.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/utils/options.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/utils/options.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/tailwind.config.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/webpack.conf.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/yarn.lock" beforeDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -190,7 +172,9 @@
       <workItem from="1627398307211" duration="1419000" />
       <workItem from="1627399891270" duration="13000" />
       <workItem from="1627896566704" duration="11924000" />
-      <workItem from="1627988932805" duration="8537000" />
+      <workItem from="1627988932805" duration="8754000" />
+      <workItem from="1643808003339" duration="3866000" />
+      <workItem from="1643812405185" duration="2604000" />
     </task>
     <task id="LOCAL-00001" summary="First steps">
       <created>1603985640072</created>
@@ -486,7 +470,14 @@
       <option name="project" value="LOCAL" />
       <updated>1627897993269</updated>
     </task>
-    <option name="localTasksCounter" value="43" />
+    <task id="LOCAL-00043" summary="Reformatted members.js">
+      <created>1628008089244</created>
+      <option name="number" value="00043" />
+      <option name="presentableId" value="LOCAL-00043" />
+      <option name="project" value="LOCAL" />
+      <updated>1628008089244</updated>
+    </task>
+    <option name="localTasksCounter" value="44" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -517,7 +508,6 @@
     <option name="oldMeFiltersMigrated" value="true" />
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="Added experiments table&#10;* still not functional, and huge memory leak problem" />
     <MESSAGE value="Began structuring side menu" />
     <MESSAGE value="Fixed changing config and experiments" />
     <MESSAGE value="Experiments can now be downloaded as TSV" />
@@ -542,29 +532,13 @@
     <MESSAGE value="Buttons on experiments" />
     <MESSAGE value="Some fixes on settings input" />
     <MESSAGE value="Added checkboxes hasMT, hasMp&#10;for interface improvement, only see relevant options" />
-    <option name="LAST_COMMIT_MESSAGE" value="Added checkboxes hasMT, hasMp&#10;for interface improvement, only see relevant options" />
+    <MESSAGE value="Reformatted members.js" />
+    <option name="LAST_COMMIT_MESSAGE" value="Reformatted members.js" />
   </component>
   <component name="WindowStateProjectService">
-    <state x="371" y="108" key="#com.intellij.refactoring.safeDelete.UnsafeUsagesDialog" timestamp="1627291893288">
+    <state x="347" y="93" width="587" height="534" key="find.popup" timestamp="1643810742963">
       <screen x="0" y="0" width="1280" height="720" />
     </state>
-    <state x="371" y="108" key="#com.intellij.refactoring.safeDelete.UnsafeUsagesDialog/0.0.1280.720/1920.0.1360.768@0.0.1280.720" timestamp="1627291893288" />
-    <state x="421" y="103" key="FileChooserDialogImpl" timestamp="1627399053343">
-      <screen x="0" y="0" width="1280" height="720" />
-    </state>
-    <state x="421" y="103" key="FileChooserDialogImpl/0.0.1280.720/1920.0.1360.768@0.0.1280.720" timestamp="1627399053343" />
-    <state x="121" y="55" key="MergeDialog" timestamp="1626703073471">
-      <screen x="0" y="0" width="1280" height="720" />
-    </state>
-    <state x="121" y="55" key="MergeDialog/0.0.1280.720/1920.0.1360.768@0.0.1280.720" timestamp="1626703073471" />
-    <state x="256" y="110" key="Vcs.Push.Dialog.v2" timestamp="1627897998226">
-      <screen x="0" y="0" width="1280" height="720" />
-    </state>
-    <state x="256" y="110" key="Vcs.Push.Dialog.v2/0.0.1280.720/1920.0.1360.768@0.0.1280.720" timestamp="1627897998226" />
-    <state x="2192" y="117" key="Vcs.Push.Dialog.v2/0.0.1280.720/1920.0.1360.768@1920.0.1360.768" timestamp="1626433108994" />
-    <state x="2306" y="117" width="587" height="534" key="find.popup" timestamp="1626432155930">
-      <screen x="1920" y="0" width="1360" height="768" />
-    </state>
-    <state x="2306" y="117" width="587" height="534" key="find.popup/0.0.1280.720/1920.0.1360.768@1920.0.1360.768" timestamp="1626432155930" />
+    <state x="347" y="93" width="587" height="534" key="find.popup/0.0.1280.720/1920.0.1360.768@0.0.1280.720" timestamp="1643810742963" />
   </component>
 </project>

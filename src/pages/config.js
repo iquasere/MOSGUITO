@@ -1,4 +1,4 @@
-import React, {useState} from 'react'
+import React from 'react'
 import YAML from 'yaml'
 import {
   Card,
@@ -21,7 +21,11 @@ import {
   markersetOptions,
   normalizationMethodOptions,
   keggcharterTaxaLevelOptions,
-  recognizerDatabasesOptions, proteomicsWorkflowOptions, referenceProteomesTaxaLevelOptions, proteaseOptions
+  upimapiDatabasesOptions,
+  recognizerDatabasesOptions,
+  proteomicsWorkflowOptions,
+  referenceProteomesTaxaLevelOptions,
+  proteaseOptions
 } from '../utils/options'
 import './../App.css'
 import {DashboardLayout} from "../components/Layout";
@@ -102,6 +106,13 @@ const Main = ({ configData, onConfigChange, onConfigOverwrite, hasMt, toggleHasM
             >
               Download JSON
             </Button>
+
+            <Button
+              variant='outlined'
+              color='info'
+            >
+              MOSCA {configData.version}
+            </Button>
           </CardActions>
 
           <Divider style={{ margin: '1rem 0' }} />
@@ -143,18 +154,6 @@ const Main = ({ configData, onConfigChange, onConfigOverwrite, hasMt, toggleHasM
               label='Maximum memory (Gb)'
               value={configData.maxMemory}
               onChange={(ev) => onConfigChange('maxMemory', ev.target.valueAsNumber)}
-            />
-
-            <LabelledCheckbox
-              label='Data contains RNA-Seq'
-              checked={hasMt}
-              setChecked={(ev) => toggleHasMt()}
-            />
-
-            <LabelledCheckbox
-              label='Data contains MS spectra'
-              checked={hasMp}
-              setChecked={(ev) => toggleHasMp()}
             />
 
             <Divider style={{ margin: '1rem 0' }} />
@@ -249,19 +248,36 @@ const Main = ({ configData, onConfigChange, onConfigOverwrite, hasMt, toggleHasM
               setChecked={(ev) => onConfigChange('downloadUniprot', ev.target.checked)}
             />
 
-            <LabelledCheckbox
-              label='Download CDD'
-              checked={configData.downloadCdd}
-              setChecked={(ev) => onConfigChange('downloadCdd', ev.target.checked)}
-            />
-
             <LabelledNumberField
               label='Identifications per protein'
               value={configData.diamondMaxTargetSeqs}
               onChange={(ev) => onConfigChange('diamondMaxTargetSeqs', ev.target.valueAsNumber)}
             />
 
-            <div style={{ margin: '1rem 0', border: '1px solid' }}>
+            <LabelledSelect
+              label='UPIMAPI database'
+              value={configData.upimapiDatabase}
+              onChange={(ev) => onConfigChange('upimapiDatabase', ev.target.value)}
+              options={upimapiDatabasesOptions}
+            />
+
+            {
+              configData.upimapiDatabase === 'taxids' ? (
+                <LabelledTextField
+                  label='Tax IDs (comma-separated)'
+                  value={configData.upimapiTaxids}
+                  onChange={(ev) => onConfigChange('upimapiTaxids', ev.target.value)}
+                  placeholder={defaultValues.upimapiTaxids}
+                />) : (<></>)
+            }
+
+            <LabelledCheckbox
+              label='Download reCOGnizer resources'
+              checked={configData.downloadCddResources}
+              setChecked={(ev) => onConfigChange('downloadCddResources', ev.target.checked)}
+            />
+
+            <div style={{ margin: '1rem 0'}}>
               <Accordion title="Pick databases of reCOGnizer">
                 {
                   recognizerDatabasesOptions.map(( value, index) => (
@@ -280,13 +296,19 @@ const Main = ({ configData, onConfigChange, onConfigOverwrite, hasMt, toggleHasM
 
             <Divider style={{ margin: '1rem 0' }} />
 
+            <Typography variant='h6'>
+              Differential expression settings
+            </Typography>
+
+            <LabelledCheckbox
+              label='Data contains RNA-Seq'
+              checked={hasMt}
+              setChecked={(ev) => toggleHasMt()}
+            />
+
             {
               hasMt ? (
                 <>
-                  <Typography variant='h6'>
-                    Differential expression settings
-                  </Typography>
-
                   <LabelledSelect
                     label='Normalization method'
                     value={configData.normalizationMethod}
@@ -307,80 +329,85 @@ const Main = ({ configData, onConfigChange, onConfigOverwrite, hasMt, toggleHasM
               ):(<></>)
             }
 
+            <Typography variant='h6'>
+              Proteomics settings
+            </Typography>
+
+            <LabelledCheckbox
+              label='Data contains MS spectra'
+              checked={hasMp}
+              setChecked={(ev) => toggleHasMp()}
+            />
             {
-              hasMp ? (
-                <>
-                  <Typography variant='h6'>
-                    Proteomics settings
-                  </Typography>
+            hasMp ? (
+              <>
+                <LabelledSelect
+                  label='Proteomics workflow'
+                  value={configData.proteomicsWorkflow}
+                  onChange={(ev) => onConfigChange('proteomicsWorkflow', ev.target.value)}
+                  options={proteomicsWorkflowOptions}
+                />
 
-                  <LabelledSelect
-                    label='Proteomics workflow'
-                    value={configData.proteomicsWorkflow}
-                    onChange={(ev) => onConfigChange('proteomicsWorkflow', ev.target.value)}
-                    options={proteomicsWorkflowOptions}
-                  />
+                <LabelledCheckbox
+                  label='Use cRAP database'
+                  checked={configData.useCrap}
+                  setChecked={(ev) => onConfigChange('useCrap', ev.target.checked)}
+                />
 
-                  <LabelledCheckbox
-                    label='Use cRAP database'
-                    checked={configData.useCrap}
-                    setChecked={(ev) => onConfigChange('useCrap', ev.target.checked)}
-                  />
+                {
+                  configData.useCrap ? (<></>) : (
+                    <LabelledTextField
+                      label='Contaminants database'
+                      value={configData.diamondDatabase}
+                      onChange={(ev) => onConfigChange('proteomicsContaminantesDatabase', ev.target.value)}
+                      placeholder={defaultValues.proteomicsContaminantesDatabase}
+                    />
+                  )
+                }
 
-                  {
-                    configData.useCrap ? (<></>) : (
-                      <LabelledTextField
-                        label='Contaminants database'
-                        value={configData.diamondDatabase}
-                        onChange={(ev) => onConfigChange('proteomicsContaminantesDatabase', ev.target.value)}
-                        placeholder={defaultValues.proteomicsContaminantesDatabase}
-                      />
-                    )
-                  }
+                <LabelledSelect
+                  label='Get proteomes for level'
+                  value={configData.referenceProteomesTaxaLevel}
+                  onChange={(ev) => onConfigChange('referenceProteomesTaxaLevel', ev.target.value)}
+                  options={referenceProteomesTaxaLevelOptions}
+                />
 
-                  <LabelledSelect
-                    label='Taxa level of reference proteomes'
-                    value={configData.referenceProteomesTaxaLevel}
-                    onChange={(ev) => onConfigChange('referenceProteomesTaxaLevel', ev.target.value)}
-                    options={referenceProteomesTaxaLevelOptions}
-                  />
+                <LabelledSelect
+                  label='Protease used'
+                  value={configData.protease}
+                  onChange={(ev) => onConfigChange('protease', ev.target.value)}
+                  options={proteaseOptions}
+                />
 
-                  <LabelledSelect
-                    label='Protease used'
-                    value={configData.protease}
-                    onChange={(ev) => onConfigChange('protease', ev.target.value)}
-                    options={proteaseOptions}
-                  />
+                {
+                  ((configData.protease) !== "File") ? (<></>) : (
+                    <LabelledTextField
+                      label='Protease FASTA file'
+                      value={configData.proteaseFile}
+                      onChange={(ev) => onConfigChange('proteaseFile', ev.target.value)}
+                      placeholder={defaultValues.proteaseFile}
+                    />
+                  )
+                }
 
-                  {
-                    ((configData.protease) !== "File") ? (<></>) : (
-                      <LabelledTextField
-                        label='Protease FASTA file'
-                        value={configData.proteaseFile}
-                        onChange={(ev) => onConfigChange('proteaseFile', ev.target.value)}
-                        placeholder={defaultValues.proteaseFile}
-                      />
-                    )
-                  }
-
-                  <Divider style={{ margin: '1rem 0' }} />
-                </>
-              ):(<></>)
-            }
+                <Divider style={{ margin: '1rem 0' }} />
+              </>
+            ):(<></>)
+          }
 
             <Typography variant='h6'>
               KEGG metabolic maps settings
             </Typography>
 
             <LabelledSelect
-              label='Taxonomic level on KEGG pathways'
+              label='Taxonomic level on KEGG maps'
               value={configData.keggcharterTaxaLevel}
               onChange={(ev) => onConfigChange('keggcharterTaxaLevel', ev.target.value)}
               options={keggcharterTaxaLevelOptions}
             />
 
             <LabelledNumberField
-              label='Number of taxa on KEGG pathways'
+              label='Number of taxa on KEGG maps'
               value={configData.keggcharterNumberOfTaxa}
               onChange={(ev) => onConfigChange('keggcharterNumberOfTaxa', ev.target.valueAsNumber)}
             />

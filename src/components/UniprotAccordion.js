@@ -26,8 +26,8 @@ const UniprotAccordion = ({ uniprotList, onChange, uniprotPossibilities }) => {
               <LabelledCheckbox
                 key={index}
                 label={pair[0]}
-                checked={uniprotList.indexOf(pair[1]) > -1}
-                setChecked={() => handleCheck(pair[1])}
+                checked={uniprotList.indexOf(pair[0]) > -1}
+                setChecked={() => handleCheck(pair[0])}
               />
               )
             )
