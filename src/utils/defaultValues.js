@@ -12,7 +12,14 @@ export const defaultValues = {
   "output":"output",
   "resourcesDirectory":"resources_directory",
   "threads":14,
-  "experiments": "experiments.tsv",
+  "experiments": [
+    {
+      "Files":"",
+      "Sample":"",
+      "Data type":"",
+      "Condition":"",
+      "Name":""
+    }],
   "minimumReadLength":100,
   "minimumReadAverageQuality":20,
   "doAssembly":true,
@@ -24,7 +31,7 @@ export const defaultValues = {
   "upimapiDatabase":"uniprot",
   "upimapiMaxTargetSeqs":1,
   "upimapiTaxids": "",
-  "uniprotColumns":[
+  "upimapiColumns":[
     "Entry",
     "Entry name",
     "Gene names",
@@ -46,7 +53,7 @@ export const defaultValues = {
     "Taxonomic lineage (SPECIES)",
     "Taxonomic identifier (SPECIES)"
   ],
-  "uniprotDatabases":[
+  "upimapiDatabases":[
     "BioCyc Collection of Pathway/Genome Databases",
     "BRENDA Comprehensive Enzyme Information System",
     "Conserved Domains Database",

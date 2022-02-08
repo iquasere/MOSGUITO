@@ -16,7 +16,7 @@ const Header = () => {
   )
 }
 
-const Experiments = ({ experiments, setExperiments, nExperimentsRows, setExperimentsRows }) => {
+const Experiments = ({ experiments, setExperiments }) => {
 
   return (
     <DashboardLayout>
@@ -25,8 +25,6 @@ const Experiments = ({ experiments, setExperiments, nExperimentsRows, setExperim
         <ExperimentsTable
           experiments={experiments}
           setExperiments={setExperiments}
-          nExperimentsRows={nExperimentsRows}
-          setExperimentsRows={setExperimentsRows}
         />
       </div>
     </DashboardLayout>
