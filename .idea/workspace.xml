@@ -7,15 +7,6 @@
   <component name="ChangeListManager">
     <list default="true" id="75167860-5315-49c7-8bd4-159fb3049cae" name="Default Changelist" comment="Broken maps input">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/ExperimentsTable.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/ExperimentsTable.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/pages/_app.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/pages/_app.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/pages/_routes.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/pages/_routes.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/pages/config.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/pages/config.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/pages/experiments.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/pages/experiments.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/pages/results.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/pages/results.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/utils/defaultValues.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/utils/defaultValues.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/utils/emptyValues.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/utils/emptyValues.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/utils/options.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/utils/options.js" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -173,7 +164,7 @@
       <workItem from="1643808003339" duration="3866000" />
       <workItem from="1643812405185" duration="3548000" />
       <workItem from="1643883823049" duration="35000" />
-      <workItem from="1644337592457" duration="4395000" />
+      <workItem from="1644337592457" duration="5350000" />
     </task>
     <task id="LOCAL-00001" summary="First steps">
       <created>1603985640072</created>
@@ -483,7 +474,14 @@
       <option name="project" value="LOCAL" />
       <updated>1643815370624</updated>
     </task>
-    <option name="localTasksCounter" value="45" />
+    <task id="LOCAL-00045" summary="Integrated experiments into config">
+      <created>1644345613004</created>
+      <option name="number" value="00045" />
+      <option name="presentableId" value="LOCAL-00045" />
+      <option name="project" value="LOCAL" />
+      <updated>1644345613004</updated>
+    </task>
+    <option name="localTasksCounter" value="46" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -514,7 +512,6 @@
     <option name="oldMeFiltersMigrated" value="true" />
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="Fixed changing config and experiments" />
     <MESSAGE value="Experiments can now be downloaded as TSV" />
     <MESSAGE value="Separated the accordions from the general configurations&#10;* Also reworked the links" />
     <MESSAGE value="Started working on proteomics input&#10;Added members page&#10;Also changed settings to results - will be base for visualization of results" />
@@ -539,13 +536,15 @@
     <MESSAGE value="Added checkboxes hasMT, hasMp&#10;for interface improvement, only see relevant options" />
     <MESSAGE value="Reformatted members.js" />
     <MESSAGE value="Now working for MOSCA 1.5.1&#10;Also added info on minimum version it works for" />
-    <option name="LAST_COMMIT_MESSAGE" value="Now working for MOSCA 1.5.1&#10;Also added info on minimum version it works for" />
+    <MESSAGE value="Integrated experiments into config" />
+    <option name="LAST_COMMIT_MESSAGE" value="Integrated experiments into config" />
   </component>
   <component name="WindowStateProjectService">
-    <state x="233" y="81" key="Vcs.Push.Dialog.v2" timestamp="1643815372628">
-      <screen x="0" y="0" width="1280" height="720" />
+    <state x="2168" y="86" key="Vcs.Push.Dialog.v2" timestamp="1644345614846">
+      <screen x="1920" y="0" width="1360" height="768" />
     </state>
     <state x="233" y="81" key="Vcs.Push.Dialog.v2/0.0.1280.720/1920.0.1360.768@0.0.1280.720" timestamp="1643815372628" />
+    <state x="2168" y="86" key="Vcs.Push.Dialog.v2/0.0.1280.720/1920.0.1360.768@1920.0.1360.768" timestamp="1644345614846" />
     <state x="347" y="93" width="587" height="534" key="find.popup" timestamp="1643810742963">
       <screen x="0" y="0" width="1280" height="720" />
     </state>
