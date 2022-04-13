@@ -189,6 +189,8 @@ const Main = ({ configData, onConfigChange, onConfigOverwrite, hasMt, toggleHasM
                     options={assemblerOptions}
                   />
 
+                  If MG data is not available, set assember to RNAspades.
+
                   <Divider style={{ margin: '1rem 0' }} />
 
                   <Typography variant='h6'>
@@ -380,14 +382,14 @@ const Main = ({ configData, onConfigChange, onConfigOverwrite, hasMt, toggleHasM
             </Typography>
 
             <LabelledSelect
-              label='Taxonomic level on KEGG maps'
+              label='KEGG maps taxonomic level'
               value={configData.keggcharterTaxaLevel}
               onChange={(ev) => onConfigChange('keggcharterTaxaLevel', ev.target.value)}
               options={keggcharterTaxaLevelOptions}
             />
 
             <LabelledNumberField
-              label='Number of taxa on KEGG maps'
+              label='KEGG maps number of taxa'
               value={configData.keggcharterNumberOfTaxa}
               onChange={(ev) => onConfigChange('keggcharterNumberOfTaxa', ev.target.valueAsNumber)}
             />
