@@ -69,12 +69,18 @@ async function ObtainBlobArray(event){
       entry.push({name: entryName, blob: entryReport})
     }
     if(entries[i].filename.includes('config')){
+      console.log('entrou')
       const config = await entries[i].getData(new zip.BlobWriter(['application/json']))
+      console.log(config)
       const fileUrl = URL.createObjectURL(config)
-      // eslint-disable-next-line no-loop-func
+      console.log(fileUrl)
       $.getJSON(fileUrl, function(json){
+        exper = json.experiments
+        delete json.experiments
         configFile = json
+        console.log(configFile)
       })
+      console.log('caguei')
     }
     if(entries[i].filename.includes('experiments')){
       const exp = await entries[i].getData(new zip.BlobWriter(['text/tab-separated-values']))
@@ -139,8 +145,8 @@ const Main = ({ outputsFiles, setOutputsFiles, onConfigOverwrite, setExperiments
         }
     })
     }
-    let csvUrl = URL.createObjectURL(Output[2])
-    readCsv(csvUrl)
+    setExperiments(Output[2])
+    setExperimentsRows(Output[2].length)
   }
   return (
     <>
