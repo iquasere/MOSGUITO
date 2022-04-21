@@ -21,7 +21,7 @@ import {
   markersetOptions,
   normalizationMethodOptions,
   keggcharterTaxaLevelOptions,
-  upimapiDatabaseOptions,
+  upimapiDatabasesOptions,
   recognizerDatabasesOptions,
   proteomicsWorkflowOptions,
   referenceProteomesTaxaLevelOptions,
@@ -137,6 +137,13 @@ const Main = ({ configData, onConfigChange, onConfigOverwrite, hasMt, toggleHasM
               placeholder={defaultValues.resourcesDirectory}
             />
 
+            <LabelledTextField
+              label='Experiments filename'
+              value={configData.experiments}
+              onChange={(ev) => onConfigChange('experiments', ev.target.value)}
+              placeholder={defaultValues.experiments}
+            />
+
             <LabelledNumberField
               label='Number of threads to use'
               value={configData.threads}
@@ -230,17 +237,30 @@ const Main = ({ configData, onConfigChange, onConfigOverwrite, hasMt, toggleHasM
               )
             }
 
+            <LabelledTextField
+              label='DIAMOND database'
+              value={configData.diamondDatabase}
+              onChange={(ev) => onConfigChange('diamondDatabase', ev.target.value)}
+              placeholder={defaultValues.diamondDatabase}
+            />
+
+            <LabelledCheckbox
+              label='Download UniProt'
+              checked={configData.downloadUniprot}
+              setChecked={(ev) => onConfigChange('downloadUniprot', ev.target.checked)}
+            />
+
             <LabelledNumberField
               label='Identifications per protein'
-              value={configData.upimapiMaxTargetSeqs}
-              onChange={(ev) => onConfigChange('upimapiMaxTargetSeqs', ev.target.valueAsNumber)}
+              value={configData.diamondMaxTargetSeqs}
+              onChange={(ev) => onConfigChange('diamondMaxTargetSeqs', ev.target.valueAsNumber)}
             />
 
             <LabelledSelect
               label='UPIMAPI database'
               value={configData.upimapiDatabase}
               onChange={(ev) => onConfigChange('upimapiDatabase', ev.target.value)}
-              options={upimapiDatabaseOptions}
+              options={upimapiDatabasesOptions}
             />
 
             {
