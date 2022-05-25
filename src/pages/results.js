@@ -29,6 +29,7 @@ async function ObtainBlobArray(event){
   let Assembly = [];
   let entry = [];
   let configFile = [];
+  let exper = [];
   let general = [];
   let protein = [];
 
@@ -70,11 +71,15 @@ async function ObtainBlobArray(event){
     if(entries[i].filename.includes('config')){
       const config = await entries[i].getData(new zip.BlobWriter(['application/json']))
       const fileUrl = URL.createObjectURL(config)
-      // eslint-disable-next-line no-loop-func
       $.getJSON(fileUrl, function(json){
+        exper = json.experiments
+        delete json.experiments
         configFile = json
-        console.log(configFile)
       })
+    }
+    if(entries[i].filename.includes('experiments')){
+      const exp = await entries[i].getData(new zip.BlobWriter(['text/tab-separated-values']))
+      exper = exp
     }
     if(entries[i].filename.includes('General')){
       const genReport = await entries[i].getData(new zip.BlobWriter(['text/tab-separated-values']))
@@ -99,11 +104,11 @@ async function ObtainBlobArray(event){
     entryReport: entry,
     generalReport: general,
     proteinReport: protein
-  }, configFile]
+  }, configFile, exper]
 }
 
 
-const Main = ({ outputsFiles, setOutputsFiles, onConfigOverwrite }) => {
+const Main = ({ outputsFiles, setOutputsFiles, onConfigOverwrite, setExperiments, setExperimentsRows }) => {
 
   const snakeToCamelCase = str => {
     return str.replace(/([-_][a-z])/ig, ($1) => {
@@ -122,7 +127,21 @@ const Main = ({ outputsFiles, setOutputsFiles, onConfigOverwrite }) => {
     Object.keys(Output[1]).map(
       (key) => delete Object.assign(Output[1], {[snakeToCamelCase(key)]: Output[1][key]}))
     onConfigOverwrite(Output[1])
-    console.log(Output[1])
+    
+    const readCsv = (csvUrl)=>{
+      Papa.parse(csvUrl,{
+        download: true,
+        header: true,
+        complete: function (results) {
+            results.data.pop()
+            let newData = results.data
+            setExperiments(newData);
+            setExperimentsRows(Object.keys(newData).length)
+        }
+    })
+    }
+    setExperiments(Output[2])
+    setExperimentsRows(Output[2].length)
   }
   return (
     <>
@@ -144,7 +163,7 @@ const Main = ({ outputsFiles, setOutputsFiles, onConfigOverwrite }) => {
   )
 };
 
-export const LoadResults = ({ outputsFiles, setOutputsFiles, onConfigOverwrite }) => {
+export const LoadResults = ({ outputsFiles, setOutputsFiles, onConfigOverwrite, setExperiments, setExperimentsRows }) => {
   return (
     <DashboardLayout>
       <Toolbar>
@@ -154,6 +173,8 @@ export const LoadResults = ({ outputsFiles, setOutputsFiles, onConfigOverwrite }
         outputsFiles={outputsFiles}
         setOutputsFiles={setOutputsFiles}
         onConfigOverwrite = {onConfigOverwrite}
+        setExperiments = {setExperiments}
+        setExperimentsRows = {setExperimentsRows}
       />
     </DashboardLayout>
   )

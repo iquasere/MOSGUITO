@@ -21,7 +21,8 @@ import EntryReports from "./entryReport";
 import GeneralReports from "./generalReports";
 import ProteinReports from "./proteinReports";
 
-const Routes = ({ configData, onConfigChange, onConfigOverwrite, hasMt, toggleHasMt, hasMp, toggleHasMp,
+const Routes = ({ configData, onConfigChange, onConfigOverwrite, experiments, setExperiments,
+                  nExperimentsRows, setExperimentsRows, hasMt, toggleHasMt, hasMp, toggleHasMp,
                   outputsFiles, setOutputsFiles }) => {
   return (
     <BrowserRouter>
@@ -40,8 +41,10 @@ const Routes = ({ configData, onConfigChange, onConfigOverwrite, hasMt, toggleHa
 
         <Route path="/MOSGUITO/experiments">
           <Experiments
-            experiments={configData.experiments}
-            setExperiments={(value) => onConfigChange('experiments', value)}
+            experiments={experiments}
+            setExperiments={setExperiments}
+            nExperimentsRows={nExperimentsRows}
+            setExperimentsRows={setExperimentsRows}
           />
         </Route>
 
@@ -90,6 +93,8 @@ const Routes = ({ configData, onConfigChange, onConfigOverwrite, hasMt, toggleHa
             outputsFiles={outputsFiles}
             setOutputsFiles={setOutputsFiles}
             onConfigOverwrite ={onConfigOverwrite}
+            setExperiments = {setExperiments}
+            setExperimentsRows = {setExperimentsRows}
           />
         </Route>
 
@@ -97,7 +102,9 @@ const Routes = ({ configData, onConfigChange, onConfigOverwrite, hasMt, toggleHa
           <LoadResults
             outputsFiles={outputsFiles}
             setOutputsFiles={setOutputsFiles}
-            onConfigOverwrite ={onConfigOverwrite}
+            onConfigChange ={onConfigChange}
+            setExperiments = {setExperiments}
+            setExperimentsRows = {setExperimentsRows}
           />
         </Route>
 

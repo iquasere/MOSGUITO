@@ -32,7 +32,7 @@ export const defaultValues = {
   "upimapiDatabase":"uniprot",
   "upimapiMaxTargetSeqs":1,
   "upimapiTaxids": "",
-  "upimapiColumns":[
+  "uniprotColumns":[
     "Entry",
     "Entry name",
     "Gene names",
@@ -54,7 +54,7 @@ export const defaultValues = {
     "Taxonomic lineage (SPECIES)",
     "Taxonomic identifier (SPECIES)"
   ],
-  "upimapiDatabases":[
+  "uniprotDatabases":[
     "BioCyc Collection of Pathway/Genome Databases",
     "BRENDA Comprehensive Enzyme Information System",
     "Conserved Domains Database",
