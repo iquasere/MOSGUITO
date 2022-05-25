@@ -12,7 +12,15 @@ export const defaultValues = {
   "output":"output",
   "resourcesDirectory":"resources_directory",
   "threads":14,
-  "experiments": "experiments.tsv",
+  "experiments": [
+    {
+      "Files":"",
+      "Sample":"",
+      "Data type":"",
+      "Condition":"",
+      "Name":""
+    }],
+  "suffix": "",
   "minimumReadLength":100,
   "minimumReadAverageQuality":20,
   "doAssembly":true,

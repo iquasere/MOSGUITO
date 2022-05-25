@@ -156,6 +156,12 @@ const Main = ({ configData, onConfigChange, onConfigOverwrite, hasMt, toggleHasM
               onChange={(ev) => onConfigChange('maxMemory', ev.target.valueAsNumber)}
             />
 
+            <LabelledNumberField
+              label='Reads files suffix'
+              value={configData.suffix}
+              onChange={(ev) => onConfigChange('suffix', ev.target.valueAsNumber)}
+            />
+
             <Divider style={{ margin: '1rem 0' }} />
 
             <Typography variant='h6'>
