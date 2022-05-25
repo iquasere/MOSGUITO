@@ -11,6 +11,7 @@ export const emptyValues = {
       "Condition":"",
       "Name":""
     }],
+  "suffix": "",
   "minimumReadLength":0,
   "minimumReadAverageQuality":0,
   "doAssembly":true,
