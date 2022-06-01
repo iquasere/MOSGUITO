@@ -6,23 +6,37 @@ import {
 } from '@material-ui/core'
 import ExpandMoreIcon from '@material-ui/icons/ExpandMore'
 
-const Accordion = ({ title, style, children }) => {
+const Accordion = ({ title, style, children, helpMessage="" }) => {
+    const [isHovering, setIsHovering] = useState(false);
+
+    const handleMouseOver = () => {
+      setIsHovering(true);
+    };
+
+    const handleMouseOut = () => {
+      setIsHovering(false);
+    };
+
     const [isOpen, setIsOpen] = useState(false)
     const toggleIsOpen = () => setIsOpen(!isOpen)
-    return (<MuiAccordion
-        expanded={isOpen}
-        onChange={toggleIsOpen}
-        style={style || {width: '100%'}}
-    >
-        <AccordionSummary
-            expandIcon={<ExpandMoreIcon/>}
+    return (
+      <div onMouseOver={handleMouseOver} onMouseOut={handleMouseOut}>
+        <MuiAccordion
+          expanded={isOpen}
+          onChange={toggleIsOpen}
+          style={style || {width: '100%'}}
         >
-          {title}
-        </AccordionSummary>
-        <AccordionDetails>
-          {children}
-        </AccordionDetails>
-    </MuiAccordion>
+          <AccordionSummary
+              expandIcon={<ExpandMoreIcon/>}
+          >
+            {title}
+          </AccordionSummary>
+          <AccordionDetails>
+            {children}
+          </AccordionDetails>
+        </MuiAccordion>
+        {isHovering && <div className='help'><h6>{helpMessage}</h6></div>}
+      </div>
   )
 }
 

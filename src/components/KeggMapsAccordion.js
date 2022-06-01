@@ -21,7 +21,7 @@ const KeggMapsAccordion = ({ keggMapList, onChange }) => {
     <div style={{margin:'0.5rem'}}>
       {
         keggMaps.children.map((category, index) => (
-          <Accordion key={index} title={category.name}>
+          <Accordion key={index} title={category.name} >
             {
               category.children.map((subCategory, index) => (
                 <Accordion key={index} title={subCategory.name}>

@@ -8,7 +8,7 @@ import {
 } from './options'
 
 export const defaultValues = {
-  "version": "1.5.1",
+  "version": "1.6.1",
   "output":"output",
   "resourcesDirectory":"resources_directory",
   "threads":14,
@@ -73,7 +73,7 @@ export const defaultValues = {
   "minimumDifferentialExpression":1,
   "proteomicsWorkflow":"compomics",
   "useCrap":true,
-  "proteomicsContaminantesDatabase":"crap.fasta",
+  "proteomicsContaminantesDatabase":"contaminants_database.fasta",
   "referenceProteomesTaxaLevel":referenceProteomesTaxaLevelOptions[6],
   "protease":"Trypsin",
   "proteaseFile":"",

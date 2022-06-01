@@ -29,7 +29,6 @@ async function ObtainBlobArray(event){
   let Assembly = [];
   let entry = [];
   let configFile = [];
-  let exper = [];
   let general = [];
   let protein = [];
 
@@ -71,15 +70,11 @@ async function ObtainBlobArray(event){
     if(entries[i].filename.includes('config')){
       const config = await entries[i].getData(new zip.BlobWriter(['application/json']))
       const fileUrl = URL.createObjectURL(config)
+      console.log(fileUrl)
       $.getJSON(fileUrl, function(json){
-        exper = json.experiments
-        delete json.experiments
         configFile = json
       })
-    }
-    if(entries[i].filename.includes('experiments')){
-      const exp = await entries[i].getData(new zip.BlobWriter(['text/tab-separated-values']))
-      exper = exp
+      console.log(configFile)
     }
     if(entries[i].filename.includes('General')){
       const genReport = await entries[i].getData(new zip.BlobWriter(['text/tab-separated-values']))
@@ -104,7 +99,7 @@ async function ObtainBlobArray(event){
     entryReport: entry,
     generalReport: general,
     proteinReport: protein
-  }, configFile, exper]
+  }, configFile]
 }
 
 
@@ -123,10 +118,12 @@ const Main = ({ outputsFiles, setOutputsFiles, onConfigOverwrite, setExperiments
   }
   const handleZipChange = async (event) => {
     let Output = await ObtainBlobArray(event)
+    console.log(Output)
     setOutputsFiles(Output[0])
     Object.keys(Output[1]).map(
       (key) => delete Object.assign(Output[1], {[snakeToCamelCase(key)]: Output[1][key]}))
     onConfigOverwrite(Output[1])
+    console.log(Output[1])
     
     const readCsv = (csvUrl)=>{
       Papa.parse(csvUrl,{
@@ -140,8 +137,6 @@ const Main = ({ outputsFiles, setOutputsFiles, onConfigOverwrite, setExperiments
         }
     })
     }
-    setExperiments(Output[2])
-    setExperimentsRows(Output[2].length)
   }
   return (
     <>

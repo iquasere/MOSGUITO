@@ -1,24 +1,52 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="BranchesTreeState">
-    <expand />
-    <select />
+    <expand>
+      <path>
+        <item name="ROOT" type="e8cecc67:BranchNodeDescriptor" />
+        <item name="LOCAL_ROOT" type="e8cecc67:BranchNodeDescriptor" />
+      </path>
+      <path>
+        <item name="ROOT" type="e8cecc67:BranchNodeDescriptor" />
+        <item name="REMOTE_ROOT" type="e8cecc67:BranchNodeDescriptor" />
+      </path>
+      <path>
+        <item name="ROOT" type="e8cecc67:BranchNodeDescriptor" />
+        <item name="REMOTE_ROOT" type="e8cecc67:BranchNodeDescriptor" />
+        <item name="GROUP_NODE:origin" type="e8cecc67:BranchNodeDescriptor" />
+      </path>
+    </expand>
+    <select>
+      <path>
+        <item name="ROOT" type="e8cecc67:BranchNodeDescriptor" />
+        <item name="LOCAL_ROOT" type="e8cecc67:BranchNodeDescriptor" />
+        <item name="BRANCH:main" type="e8cecc67:BranchNodeDescriptor" />
+      </path>
+    </select>
   </component>
   <component name="ChangeListManager">
     <list default="true" id="75167860-5315-49c7-8bd4-159fb3049cae" name="Default Changelist" comment="Broken maps input">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/postcss.config.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/MOSCA_results.zip" beforeDir="false" afterPath="$PROJECT_DIR$/MOSCA_results.zip" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/package-lock.json" beforeDir="false" afterPath="$PROJECT_DIR$/package-lock.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/package.json" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/App.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/App.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/Member.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/Member.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/NavSidebar.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/NavSidebar.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/Accordion.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/Accordion.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/KeggMapsAccordion.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/KeggMapsAccordion.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/LabelledCheckbox.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/LabelledCheckbox.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/LabelledNumberField.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/LabelledNumberField.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/LabelledSelect.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/LabelledSelect.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/LabelledTextField.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/LabelledTextField.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/components/UniprotAccordion.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/UniprotAccordion.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/index.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/index.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/pages/_routes.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/pages/_routes.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/pages/config.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/pages/config.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/pages/experiments.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/pages/experiments.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/pages/keggmaps.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/pages/keggmaps.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/pages/results.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/pages/results.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/pages/uniprotColumns.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/pages/uniprotColumns.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/pages/uniprotDatabases.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/pages/uniprotDatabases.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/utils/defaultValues.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/utils/defaultValues.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/utils/options.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/utils/options.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/tailwind.config.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/webpack.conf.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/yarn.lock" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/utils/emptyValues.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/utils/emptyValues.js" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -58,29 +86,23 @@
     <setting file="file://$PROJECT_DIR$/node_modules/@types/react/index.d.ts" root0="SKIP_INSPECTION" />
   </component>
   <component name="JupyterTrust" id="f9ba5b0f-2873-44a9-9c2c-7de8cd922a0e" />
+  <component name="MarkdownSettingsMigration">
+    <option name="stateVersion" value="1" />
+  </component>
   <component name="ProjectId" id="1jYe4eiVW4ZOGMrUO3CqEh3jXhv" />
   <component name="ProjectViewState">
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent">
-    <property name="ASKED_ADD_EXTERNAL_FILES" value="true" />
-    <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
-    <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
-    <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
-    <property name="WebServerToolWindowFactoryState" value="false" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/../CBEDS" />
-    <property name="list.type.of.created.stylesheet" value="CSS" />
-    <property name="node.js.detected.package.eslint" value="true" />
-    <property name="node.js.detected.package.stylelint" value="true" />
-    <property name="node.js.path.for.package.eslint" value="project" />
-    <property name="node.js.path.for.package.stylelint" value="project" />
-    <property name="node.js.selected.package.eslint" value="(autodetect)" />
-    <property name="node.js.selected.package.stylelint" value="C:\Users\Utilizador\Documents\Trabalho\github_projects\MOSGUITO\node_modules\stylelint" />
-    <property name="nodejs_package_manager_path" value="yarn" />
-    <property name="settings.editor.selected.configurable" value="preferences.keymap" />
-    <property name="ts.external.directory.path" value="C:\Program Files\JetBrains\PyCharm 2020.2.3\plugins\JavaScriptLanguage\jsLanguageServicesImpl\external" />
-  </component>
+  <component name="PropertiesComponent"><![CDATA[{
+  "keyToString": {
+    "WebServerToolWindowFactoryState": "true",
+    "node.js.detected.package.eslint": "true",
+    "node.js.selected.package.eslint": "(autodetect)",
+    "nodejs_package_manager_path": "npm",
+    "ts.external.directory.path": "C:\\Program Files\\JetBrains\\PyCharm 2020.2.3\\plugins\\JavaScriptLanguage\\jsLanguageServicesImpl\\external"
+  }
+}]]></component>
   <component name="RunManager">
     <configuration name="MOSGUITO" type="PythonConfigurationType" factoryName="Python">
       <module name="MOSGUITO" />
@@ -175,6 +197,7 @@
       <workItem from="1627988932805" duration="8754000" />
       <workItem from="1643808003339" duration="3866000" />
       <workItem from="1643812405185" duration="2604000" />
+      <workItem from="1654092433425" duration="11138000" />
     </task>
     <task id="LOCAL-00001" summary="First steps">
       <created>1603985640072</created>
@@ -505,7 +528,6 @@
         </entry>
       </map>
     </option>
-    <option name="oldMeFiltersMigrated" value="true" />
   </component>
   <component name="VcsManagerConfiguration">
     <MESSAGE value="Began structuring side menu" />

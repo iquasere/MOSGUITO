@@ -109,7 +109,6 @@ const Main = ({ configData, onConfigChange, onConfigOverwrite, hasMt, toggleHasM
 
             <Button
               variant='outlined'
-              color='info'
             >
               MOSCA {configData.version}
             </Button>
@@ -128,6 +127,7 @@ const Main = ({ configData, onConfigChange, onConfigOverwrite, hasMt, toggleHasM
               value={configData.output}
               onChange={(ev) => onConfigChange('output', ev.target.value)}
               placeholder={defaultValues.output}
+              helpMessage='The directory where the output files will be written'
             />
 
             <LabelledTextField
@@ -135,31 +135,28 @@ const Main = ({ configData, onConfigChange, onConfigOverwrite, hasMt, toggleHasM
               value={configData.resourcesDirectory}
               onChange={(ev) => onConfigChange('resourcesDirectory', ev.target.value)}
               placeholder={defaultValues.resourcesDirectory}
-            />
-
-            <LabelledTextField
-              label='Experiments filename'
-              value={configData.experiments}
-              onChange={(ev) => onConfigChange('experiments', ev.target.value)}
-              placeholder={defaultValues.experiments}
+              helpMessage='The directory where supporting files will be stored'
             />
 
             <LabelledNumberField
               label='Number of threads to use'
               value={configData.threads}
               onChange={(ev) => onConfigChange('threads', ev.target.valueAsNumber)}
+              helpMessage='The number of threads to use for the analysis'
             />
 
             <LabelledNumberField
               label='Maximum memory (Gb)'
               value={configData.maxMemory}
               onChange={(ev) => onConfigChange('maxMemory', ev.target.valueAsNumber)}
+              helpMessage='The maximum amount of memory to use for the analysis'
             />
 
-            <LabelledNumberField
+            <LabelledTextField
               label='Reads files suffix'
               value={configData.suffix}
               onChange={(ev) => onConfigChange('suffix', ev.target.valueAsNumber)}
+              helpMessage="The suffix of the reads files. For example, if the reads files are named 'reads_R1_001.fastq.gz' and 'reads_R2_001.fastq.gz', the suffix is '_001'."
             />
 
             <Divider style={{ margin: '1rem 0' }} />
@@ -172,12 +169,14 @@ const Main = ({ configData, onConfigChange, onConfigOverwrite, hasMt, toggleHasM
               label='Minimum read length'
               value={configData.minimumReadLength}
               onChange={(ev) => onConfigChange('minimumReadLength', ev.target.valueAsNumber)}
+              helpMessage='The minimum read length to keep. Reads shorter than this will be discarded.'
             />
 
             <LabelledNumberField
               label='Minimum read average quality'
               value={configData.minimumReadAverageQuality}
               onChange={(ev) => onConfigChange('minimumReadAverageQuality', ev.target.valueAsNumber)}
+              helpMessage='The minimum average quality of the reads to keep. Reads with an average quality lower than this will be discarded.'
             />
 
             <Divider style={{ margin: '1rem 0' }} />
@@ -190,6 +189,7 @@ const Main = ({ configData, onConfigChange, onConfigOverwrite, hasMt, toggleHasM
               label='Perform assembly'
               checked={configData.doAssembly}
               setChecked={(ev) => onConfigChange('doAssembly', ev.target.checked)}
+              helpMessage='Whether to perform assembly. If unchecked, assembly and binning will be skipped, and gene calling will be performed directly on the reads.'
             />
 
             {
@@ -200,9 +200,8 @@ const Main = ({ configData, onConfigChange, onConfigOverwrite, hasMt, toggleHasM
                     value={configData.assembler}
                     onChange={(ev) => onConfigChange('assembler', ev.target.value)}
                     options={assemblerOptions}
+                    helpMessage='The assembler to use for the assembly. MetaSPAdes and Megahit are recommended for metagenomics, while Trinity and rnaSPAdes are recommended for RNA-Seq anaysis.'
                   />
-
-                  If MG data is not available, set assember to RNAspades.
 
                   <Divider style={{ margin: '1rem 0' }} />
 
@@ -214,6 +213,7 @@ const Main = ({ configData, onConfigChange, onConfigOverwrite, hasMt, toggleHasM
                     label='Perform iterative binning'
                     checked={configData.doIterativeBinning}
                     setChecked={(ev) => onConfigChange('doIterativeBinning', ev.target.checked)}
+                    helpMessage='Whether to perform iterative binning. If unchecked, binning will be performed once for default parameters, if checked, iterative binning will cycle through different parameters to obtain better binning results.'
                   />
 
                   <LabelledSelect
@@ -221,6 +221,7 @@ const Main = ({ configData, onConfigChange, onConfigOverwrite, hasMt, toggleHasM
                     value={configData.markerset}
                     onChange={(ev) => onConfigChange('markerset', ev.target.value)}
                     options={markersetOptions}
+                    helpMessage="Use '107' if the analysis is limited to Bacteria, '40' if Archaea are to be considered."
                   />
                 </>
               ) : (<></>)
@@ -239,34 +240,17 @@ const Main = ({ configData, onConfigChange, onConfigOverwrite, hasMt, toggleHasM
                     value={configData.errorModel}
                     onChange={(ev) => onConfigChange('errorModel', ev.target.value)}
                     options={errorModelOptions}
+                    helpMessage='The error model to consider in gene calling, when not performing assembly. _5 and _10 represent expected 5% and 10% of erroneous base calls.'
                   />
               )
             }
-
-            <LabelledTextField
-              label='DIAMOND database'
-              value={configData.diamondDatabase}
-              onChange={(ev) => onConfigChange('diamondDatabase', ev.target.value)}
-              placeholder={defaultValues.diamondDatabase}
-            />
-
-            <LabelledCheckbox
-              label='Download UniProt'
-              checked={configData.downloadUniprot}
-              setChecked={(ev) => onConfigChange('downloadUniprot', ev.target.checked)}
-            />
-
-            <LabelledNumberField
-              label='Identifications per protein'
-              value={configData.diamondMaxTargetSeqs}
-              onChange={(ev) => onConfigChange('diamondMaxTargetSeqs', ev.target.valueAsNumber)}
-            />
 
             <LabelledSelect
               label='UPIMAPI database'
               value={configData.upimapiDatabase}
               onChange={(ev) => onConfigChange('upimapiDatabase', ev.target.value)}
               options={upimapiDatabasesOptions}
+              helpMessage='Database to use as reference for sequence-homology annotation of genes identified.'
             />
 
             {
@@ -276,17 +260,22 @@ const Main = ({ configData, onConfigChange, onConfigOverwrite, hasMt, toggleHasM
                   value={configData.upimapiTaxids}
                   onChange={(ev) => onConfigChange('upimapiTaxids', ev.target.value)}
                   placeholder={defaultValues.upimapiTaxids}
+                  helpMessage='Comma-separated list of Tax IDs to use as reference for sequence-homology annotation.'
                 />) : (<></>)
             }
 
-            <LabelledCheckbox
-              label='Download reCOGnizer resources'
-              checked={configData.downloadCddResources}
-              setChecked={(ev) => onConfigChange('downloadCddResources', ev.target.checked)}
+            <LabelledNumberField
+              label='Identifications per protein'
+              value={configData.diamondMaxTargetSeqs}
+              onChange={(ev) => onConfigChange('diamondMaxTargetSeqs', ev.target.valueAsNumber)}
+              helpMessage='Number of identifications per gene to report from sequence-homology annotation.'
             />
 
             <div style={{ margin: '1rem 0'}}>
-              <Accordion title="Pick databases of reCOGnizer">
+              <Accordion
+                title="Pick databases of reCOGnizer"
+                helpMessage='Databases to use as reference for domain-homology annotation of genes identified.'
+              >
                 {
                   recognizerDatabasesOptions.map(( value, index) => (
                     <LabelledCheckbox
@@ -302,6 +291,13 @@ const Main = ({ configData, onConfigChange, onConfigOverwrite, hasMt, toggleHasM
               </Accordion>
             </div>
 
+            <LabelledCheckbox
+              label='Download CDD resources'
+              checked={configData.downloadCddResources}
+              setChecked={(ev) => onConfigChange('downloadCddResources', ev.target.checked)}
+              helpMessage='Whether to download the CDD resources for domain-homology annotation with reCOGnizer. Select only if these files are not available in the folder "resources_directory" (usually when running MOSCA for the first time).'
+            />
+
             <Divider style={{ margin: '1rem 0' }} />
 
             <Typography variant='h6'>
@@ -312,6 +308,7 @@ const Main = ({ configData, onConfigChange, onConfigOverwrite, hasMt, toggleHasM
               label='Data contains RNA-Seq'
               checked={hasMt}
               setChecked={(ev) => toggleHasMt()}
+              helpMessage='Whether the data contains RNA-Seq data. If unchecked, differential expression will be skipped.'
             />
 
             {
@@ -322,6 +319,7 @@ const Main = ({ configData, onConfigChange, onConfigOverwrite, hasMt, toggleHasM
                     value={configData.normalizationMethod}
                     onChange={(ev) => onConfigChange('normalizationMethod', ev.target.value)}
                     options={normalizationMethodOptions}
+                    helpMessage='The normalization method to use for gene expression.'
                   />
 
                   <LabelledNumberField
@@ -330,6 +328,7 @@ const Main = ({ configData, onConfigChange, onConfigOverwrite, hasMt, toggleHasM
                     onChange={(ev) => onConfigChange('minimumDifferentialExpression', ev.target.valueAsNumber)}
                     step={0.1}
                     minimum={0.1}
+                    helpMessage='The minimum differential expression to test the null hypothesis, i.e., to determine if a difference in expression is relevant enough.'
                   />
 
                   <Divider style={{ margin: '1rem 0' }} />
@@ -345,6 +344,7 @@ const Main = ({ configData, onConfigChange, onConfigOverwrite, hasMt, toggleHasM
               label='Data contains MS spectra'
               checked={hasMp}
               setChecked={(ev) => toggleHasMp()}
+              helpMessage='Whether the data contains MS spectra. If unchecked, proteomics analysis will be skipped.'
             />
             {
             hasMp ? (
@@ -354,21 +354,24 @@ const Main = ({ configData, onConfigChange, onConfigOverwrite, hasMt, toggleHasM
                   value={configData.proteomicsWorkflow}
                   onChange={(ev) => onConfigChange('proteomicsWorkflow', ev.target.value)}
                   options={proteomicsWorkflowOptions}
+                  helpMessage='The proteomics workflow to use for proteomics analysis.'
                 />
 
                 <LabelledCheckbox
                   label='Use cRAP database'
                   checked={configData.useCrap}
                   setChecked={(ev) => onConfigChange('useCrap', ev.target.checked)}
+                  helpMessage='Whether to use the cRAP database automatically retrieved by MOSCA, or use a custom contaminants database.'
                 />
 
                 {
                   configData.useCrap ? (<></>) : (
                     <LabelledTextField
                       label='Contaminants database'
-                      value={configData.diamondDatabase}
+                      value={configData.proteomicsContaminantesDatabase}
                       onChange={(ev) => onConfigChange('proteomicsContaminantesDatabase', ev.target.value)}
                       placeholder={defaultValues.proteomicsContaminantesDatabase}
+                      helpMessage='The custom contaminants database to use for proteomics analysis.'
                     />
                   )
                 }
@@ -378,6 +381,7 @@ const Main = ({ configData, onConfigChange, onConfigOverwrite, hasMt, toggleHasM
                   value={configData.referenceProteomesTaxaLevel}
                   onChange={(ev) => onConfigChange('referenceProteomesTaxaLevel', ev.target.value)}
                   options={referenceProteomesTaxaLevelOptions}
+                  helpMessage='The taxonomic level for which to retrieve reference proteomes, based on taxonomic characterization obtained with MetaPhlan2.'
                 />
 
                 <LabelledSelect
@@ -385,6 +389,7 @@ const Main = ({ configData, onConfigChange, onConfigOverwrite, hasMt, toggleHasM
                   value={configData.protease}
                   onChange={(ev) => onConfigChange('protease', ev.target.value)}
                   options={proteaseOptions}
+                  helpMessage='The protease used in wet-lab proteomics analysis. If not in the list, select "File" and input the filename of the protease sequence in FASTA format.'
                 />
 
                 {
@@ -394,6 +399,7 @@ const Main = ({ configData, onConfigChange, onConfigOverwrite, hasMt, toggleHasM
                       value={configData.proteaseFile}
                       onChange={(ev) => onConfigChange('proteaseFile', ev.target.value)}
                       placeholder={defaultValues.proteaseFile}
+                      helpMessage='The filename of the protease sequence in FASTA format.'
                     />
                   )
                 }
@@ -412,12 +418,14 @@ const Main = ({ configData, onConfigChange, onConfigOverwrite, hasMt, toggleHasM
               value={configData.keggcharterTaxaLevel}
               onChange={(ev) => onConfigChange('keggcharterTaxaLevel', ev.target.value)}
               options={keggcharterTaxaLevelOptions}
+              helpMessage='The taxonomic level at which genomic potential should be represented with KEGGCharter.'
             />
 
             <LabelledNumberField
               label='KEGG maps number of taxa'
               value={configData.keggcharterNumberOfTaxa}
               onChange={(ev) => onConfigChange('keggcharterNumberOfTaxa', ev.target.valueAsNumber)}
+              helpMessage='The number of most abundant taxa for which genomic potential should be represented with KEGGCharter.'
             />
 
           </CardContent>

@@ -50,15 +50,15 @@ const Routes = ({ configData, onConfigChange, onConfigOverwrite, experiments, se
 
         <Route path="/MOSGUITO/uniprot-columns">
           <UniprotColumns
-            uniprotList={configData.upimapiColumns}
-            onChange={(value) => onConfigChange('upimapiColumns', value)}
+            uniprotList={configData.uniprotColumns}
+            onChange={(value) => onConfigChange('uniprotColumns', value)}
           />
         </Route>
 
         <Route path="/MOSGUITO/uniprot-databases">
           <UniprotDatabases
-            uniprotList={configData.upimapiDatabases}
-            onChange={(value) => onConfigChange('upimapiDatabases', value)}
+            uniprotList={configData.uniprotDatabases}
+            onChange={(value) => onConfigChange('uniprotDatabases', value)}
           />
         </Route>
 

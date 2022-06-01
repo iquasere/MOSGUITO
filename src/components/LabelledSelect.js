@@ -1,12 +1,23 @@
 import {MenuItem, Select} from "@material-ui/core";
-import React from "react";
+import React, {useState} from "react";
 
-const LabelledSelect = ({ label, value, onChange, options }) => {
+const LabelledSelect = ({ label, value, onChange, options, helpMessage ="" }) => {
+
+  const [isHovering, setIsHovering] = useState(false);
+
+  const handleMouseOver = () => {
+    setIsHovering(true);
+  };
+
+  const handleMouseOut = () => {
+    setIsHovering(false);
+  };
+
   return <div className="container" >
     <div className="left">
       <span>{label}</span>
     </div>
-    <div className="right">
+    <div className="right" onMouseOver={handleMouseOver} onMouseOut={handleMouseOut}>
       <Select
         value={value}
         onChange={onChange}
@@ -25,6 +36,7 @@ const LabelledSelect = ({ label, value, onChange, options }) => {
         }
       </Select>
     </div>
+    {isHovering && <div className='help'><h6>{helpMessage}</h6></div>}
   </div>
 }
 

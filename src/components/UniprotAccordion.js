@@ -20,7 +20,7 @@ const UniprotAccordion = ({ uniprotList, onChange, uniprotPossibilities }) => {
     <div style={{margin:'0.5rem'}}>
     {
       Object.entries(uniprotPossibilities).map(([section, columns_list], index) => (
-        <Accordion key={index} title={section}>
+        <Accordion key={index} title={section} >
           {
             columns_list.map(( pair , index) => (
               <LabelledCheckbox
