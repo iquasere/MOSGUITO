@@ -1,26 +1,26 @@
 {
   "files": {
-    "main.css": "/MOSGUITO/static/css/main.9686f43f.chunk.css",
-    "main.js": "/MOSGUITO/static/js/main.b6901b6f.chunk.js",
-    "main.js.map": "/MOSGUITO/static/js/main.b6901b6f.chunk.js.map",
-    "runtime-main.js": "/MOSGUITO/static/js/runtime-main.1d7004ef.js",
-    "runtime-main.js.map": "/MOSGUITO/static/js/runtime-main.1d7004ef.js.map",
-    "static/css/2.4db8db50.chunk.css": "/MOSGUITO/static/css/2.4db8db50.chunk.css",
-    "static/js/2.ea58cee1.chunk.js": "/MOSGUITO/static/js/2.ea58cee1.chunk.js",
-    "static/js/2.ea58cee1.chunk.js.map": "/MOSGUITO/static/js/2.ea58cee1.chunk.js.map",
-    "static/js/3.7909f078.chunk.js": "/MOSGUITO/static/js/3.7909f078.chunk.js",
-    "static/js/3.7909f078.chunk.js.map": "/MOSGUITO/static/js/3.7909f078.chunk.js.map",
+    "main.css": "/MOSGUITO/static/css/main.7a1ab899.chunk.css",
+    "main.js": "/MOSGUITO/static/js/main.5e13d23a.chunk.js",
+    "main.js.map": "/MOSGUITO/static/js/main.5e13d23a.chunk.js.map",
+    "runtime-main.js": "/MOSGUITO/static/js/runtime-main.26043765.js",
+    "runtime-main.js.map": "/MOSGUITO/static/js/runtime-main.26043765.js.map",
+    "static/css/2.99ba1457.chunk.css": "/MOSGUITO/static/css/2.99ba1457.chunk.css",
+    "static/js/2.ff7c909a.chunk.js": "/MOSGUITO/static/js/2.ff7c909a.chunk.js",
+    "static/js/2.ff7c909a.chunk.js.map": "/MOSGUITO/static/js/2.ff7c909a.chunk.js.map",
+    "static/js/3.789b82e4.chunk.js": "/MOSGUITO/static/js/3.789b82e4.chunk.js",
+    "static/js/3.789b82e4.chunk.js.map": "/MOSGUITO/static/js/3.789b82e4.chunk.js.map",
     "index.html": "/MOSGUITO/index.html",
-    "static/css/2.4db8db50.chunk.css.map": "/MOSGUITO/static/css/2.4db8db50.chunk.css.map",
-    "static/css/main.9686f43f.chunk.css.map": "/MOSGUITO/static/css/main.9686f43f.chunk.css.map",
-    "static/js/2.ea58cee1.chunk.js.LICENSE.txt": "/MOSGUITO/static/js/2.ea58cee1.chunk.js.LICENSE.txt",
+    "static/css/2.99ba1457.chunk.css.map": "/MOSGUITO/static/css/2.99ba1457.chunk.css.map",
+    "static/css/main.7a1ab899.chunk.css.map": "/MOSGUITO/static/css/main.7a1ab899.chunk.css.map",
+    "static/js/2.ff7c909a.chunk.js.LICENSE.txt": "/MOSGUITO/static/js/2.ff7c909a.chunk.js.LICENSE.txt",
     "static/media/mosca_logo.3d1a5aee.png": "/MOSGUITO/static/media/mosca_logo.3d1a5aee.png"
   },
   "entrypoints": [
-    "static/js/runtime-main.1d7004ef.js",
-    "static/css/2.4db8db50.chunk.css",
-    "static/js/2.ea58cee1.chunk.js",
-    "static/css/main.9686f43f.chunk.css",
-    "static/js/main.b6901b6f.chunk.js"
+    "static/js/runtime-main.26043765.js",
+    "static/css/2.99ba1457.chunk.css",
+    "static/js/2.ff7c909a.chunk.js",
+    "static/css/main.7a1ab899.chunk.css",
+    "static/js/main.5e13d23a.chunk.js"
   ]
 }
