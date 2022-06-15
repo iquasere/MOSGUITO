@@ -3,7 +3,15 @@ export const emptyValues = {
   "output":"",
   "resourcesDirectory":"",
   "threads":1,
-  "experiments": "",
+  "experiments": [
+    {
+      "Files":"",
+      "Sample":"",
+      "Data type":"",
+      "Condition":"",
+      "Name":""
+    }],
+  "suffix": "",
   "minimumReadLength":0,
   "minimumReadAverageQuality":0,
   "doAssembly":true,
