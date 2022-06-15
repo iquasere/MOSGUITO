@@ -11,10 +11,6 @@ export const emptyValues = {
       "Condition":"",
       "Name":""
     }],
-<<<<<<< HEAD
-  "suffix": "",
-=======
->>>>>>> parent of 15b04d0 (ww)
   "minimumReadLength":0,
   "minimumReadAverageQuality":0,
   "doAssembly":true,

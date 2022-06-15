@@ -3,7 +3,6 @@ import { DashboardLayout } from '../components/Layout';
 import { Button, Toolbar, Typography } from "@material-ui/core";
 import * as zip from "@zip.js/zip.js";
 import $ from 'jquery'
-import * as Papa from "papaparse"
 zip.configure({ useWebWorkers: false });
 
 const treatName = (name) =>{
@@ -71,10 +70,7 @@ async function ObtainBlobArray(event){
       const config = await entries[i].getData(new zip.BlobWriter(['application/json']))
       const fileUrl = URL.createObjectURL(config)
       $.getJSON(fileUrl, function(json){
-        exper = json.experiments
-        delete json.experiments
         configFile = json
-        console.log(configFile)
       })
     }
     if(entries[i].filename.includes('General')){
@@ -90,7 +86,7 @@ async function ObtainBlobArray(event){
     }}
   }
   await zipReader.close()
-
+  console.log(FastQCReports, KronaPlotsResults, DifferentailExpressionResults, KEGGMapsResults, Assembly, entry, general, protein)
   return [{
     qcReports: FastQCReports,
     KronaPlots: KronaPlotsResults,
@@ -123,25 +119,7 @@ const Main = ({ outputsFiles, setOutputsFiles, onConfigOverwrite }) => {
     Object.keys(Output[1]).map(
       (key) => delete Object.assign(Output[1], {[snakeToCamelCase(key)]: Output[1][key]}))
     onConfigOverwrite(Output[1])
-<<<<<<< HEAD
-    
-    const readCsv = (csvUrl)=>{
-      Papa.parse(csvUrl,{
-        download: true,
-        header: true,
-        complete: function (results) {
-            results.data.pop()
-            let newData = results.data
-            setExperiments(newData);
-            setExperimentsRows(Object.keys(newData).length)
-        }
-    })
-    }
-    setExperiments(Output[2])
-    setExperimentsRows(Output[2].length)
-=======
     console.log(Output[1])
->>>>>>> parent of 15b04d0 (ww)
   }
   return (
     <>

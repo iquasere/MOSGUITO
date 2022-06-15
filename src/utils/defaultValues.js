@@ -20,10 +20,6 @@ export const defaultValues = {
       "Condition":"",
       "Name":""
     }],
-<<<<<<< HEAD
-  "suffix": "",
-=======
->>>>>>> parent of 15b04d0 (ww)
   "minimumReadLength":100,
   "minimumReadAverageQuality":20,
   "doAssembly":true,

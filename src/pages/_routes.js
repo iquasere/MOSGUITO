@@ -35,7 +35,6 @@ const Routes = ({ configData, onConfigChange, onConfigOverwrite, hasMt, toggleHa
             toggleHasMt={toggleHasMt}
             hasMp={hasMp}
             toggleHasMp={toggleHasMp}
-            experiments = {experiments}
           />
         </Route>
 

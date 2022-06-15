@@ -21,7 +21,7 @@ import {
   markersetOptions,
   normalizationMethodOptions,
   keggcharterTaxaLevelOptions,
-  upimapiDatabaseOptions,
+  upimapiDatabasesOptions,
   recognizerDatabasesOptions,
   proteomicsWorkflowOptions,
   referenceProteomesTaxaLevelOptions,
@@ -31,7 +31,7 @@ import './../App.css'
 import {DashboardLayout} from "../components/Layout";
 import Accordion from "../components/Accordion";
 
-const Main = ({ configData, onConfigChange, onConfigOverwrite, hasMt, toggleHasMt, hasMp, toggleHasMp }) => {
+const Main = ({ configData, onConfigChange, onConfigOverwrite, hasMt, toggleHasMt, hasMp, toggleHasMp}) => {
 
   const camelToSnakeCase = str => str.replace(/[A-Z]/g, letter => `_${letter.toLowerCase()}`);
 
@@ -149,12 +149,6 @@ const Main = ({ configData, onConfigChange, onConfigOverwrite, hasMt, toggleHasM
               onChange={(ev) => onConfigChange('maxMemory', ev.target.valueAsNumber)}
             />
 
-            <LabelledNumberField
-              label='Reads files suffix'
-              value={configData.suffix}
-              onChange={(ev) => onConfigChange('suffix', ev.target.valueAsNumber)}
-            />
-
             <Divider style={{ margin: '1rem 0' }} />
 
             <Typography variant='h6'>
@@ -236,17 +230,30 @@ const Main = ({ configData, onConfigChange, onConfigOverwrite, hasMt, toggleHasM
               )
             }
 
+            <LabelledTextField
+              label='DIAMOND database'
+              value={configData.diamondDatabase}
+              onChange={(ev) => onConfigChange('diamondDatabase', ev.target.value)}
+              placeholder={defaultValues.diamondDatabase}
+            />
+
+            <LabelledCheckbox
+              label='Download UniProt'
+              checked={configData.downloadUniprot}
+              setChecked={(ev) => onConfigChange('downloadUniprot', ev.target.checked)}
+            />
+
             <LabelledNumberField
               label='Identifications per protein'
-              value={configData.upimapiMaxTargetSeqs}
-              onChange={(ev) => onConfigChange('upimapiMaxTargetSeqs', ev.target.valueAsNumber)}
+              value={configData.diamondMaxTargetSeqs}
+              onChange={(ev) => onConfigChange('diamondMaxTargetSeqs', ev.target.valueAsNumber)}
             />
 
             <LabelledSelect
               label='UPIMAPI database'
               value={configData.upimapiDatabase}
               onChange={(ev) => onConfigChange('upimapiDatabase', ev.target.value)}
-              options={upimapiDatabaseOptions}
+              options={upimapiDatabasesOptions}
             />
 
             {
