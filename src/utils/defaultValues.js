@@ -20,7 +20,6 @@ export const defaultValues = {
       "Condition":"",
       "Name":""
     }],
-  "suffix": "",
   "minimumReadLength":100,
   "minimumReadAverageQuality":20,
   "doAssembly":true,
@@ -32,7 +31,7 @@ export const defaultValues = {
   "upimapiDatabase":"uniprot",
   "upimapiMaxTargetSeqs":1,
   "upimapiTaxids": "",
-  "uniprotColumns":[
+  "upimapiColumns":[
     "Entry",
     "Entry name",
     "Gene names",
@@ -54,7 +53,7 @@ export const defaultValues = {
     "Taxonomic lineage (SPECIES)",
     "Taxonomic identifier (SPECIES)"
   ],
-  "uniprotDatabases":[
+  "upimapiDatabases":[
     "BioCyc Collection of Pathway/Genome Databases",
     "BRENDA Comprehensive Enzyme Information System",
     "Conserved Domains Database",

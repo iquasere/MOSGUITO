@@ -3,7 +3,6 @@ import { DashboardLayout } from '../components/Layout';
 import { Button, Toolbar, Typography } from "@material-ui/core";
 import * as zip from "@zip.js/zip.js";
 import $ from 'jquery'
-import * as Papa from "papaparse"
 zip.configure({ useWebWorkers: false });
 
 const treatName = (name) =>{
@@ -74,7 +73,6 @@ async function ObtainBlobArray(event){
       $.getJSON(fileUrl, function(json){
         configFile = json
       })
-      console.log(configFile)
     }
     if(entries[i].filename.includes('General')){
       const genReport = await entries[i].getData(new zip.BlobWriter(['text/tab-separated-values']))
@@ -89,7 +87,7 @@ async function ObtainBlobArray(event){
     }}
   }
   await zipReader.close()
-
+  console.log(FastQCReports, KronaPlotsResults, DifferentailExpressionResults, KEGGMapsResults, Assembly, entry, general, protein)
   return [{
     qcReports: FastQCReports,
     KronaPlots: KronaPlotsResults,
@@ -103,7 +101,7 @@ async function ObtainBlobArray(event){
 }
 
 
-const Main = ({ outputsFiles, setOutputsFiles, onConfigOverwrite, setExperiments, setExperimentsRows }) => {
+const Main = ({ outputsFiles, setOutputsFiles, onConfigOverwrite }) => {
 
   const snakeToCamelCase = str => {
     return str.replace(/([-_][a-z])/ig, ($1) => {
@@ -158,7 +156,7 @@ const Main = ({ outputsFiles, setOutputsFiles, onConfigOverwrite, setExperiments
   )
 };
 
-export const LoadResults = ({ outputsFiles, setOutputsFiles, onConfigOverwrite, setExperiments, setExperimentsRows }) => {
+export const LoadResults = ({ outputsFiles, setOutputsFiles, onConfigOverwrite }) => {
   return (
     <DashboardLayout>
       <Toolbar>
@@ -168,8 +166,6 @@ export const LoadResults = ({ outputsFiles, setOutputsFiles, onConfigOverwrite, 
         outputsFiles={outputsFiles}
         setOutputsFiles={setOutputsFiles}
         onConfigOverwrite = {onConfigOverwrite}
-        setExperiments = {setExperiments}
-        setExperimentsRows = {setExperimentsRows}
       />
     </DashboardLayout>
   )
