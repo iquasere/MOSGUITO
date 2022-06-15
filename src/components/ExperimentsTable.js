@@ -10,7 +10,7 @@ import {
   TableRow,
   Paper,
   Button,
-  TextField,
+  TextField
 } from '@material-ui/core';
 import download from "../utils/download";
 import TSV from "tsv";
