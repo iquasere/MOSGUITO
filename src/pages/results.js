@@ -69,6 +69,7 @@ async function ObtainBlobArray(event){
     if(entries[i].filename.includes('config')){
       const config = await entries[i].getData(new zip.BlobWriter(['application/json']))
       const fileUrl = URL.createObjectURL(config)
+      console.log(fileUrl)
       $.getJSON(fileUrl, function(json){
         configFile = json
       })
@@ -115,11 +116,25 @@ const Main = ({ outputsFiles, setOutputsFiles, onConfigOverwrite }) => {
   }
   const handleZipChange = async (event) => {
     let Output = await ObtainBlobArray(event)
+    console.log(Output)
     setOutputsFiles(Output[0])
     Object.keys(Output[1]).map(
       (key) => delete Object.assign(Output[1], {[snakeToCamelCase(key)]: Output[1][key]}))
     onConfigOverwrite(Output[1])
     console.log(Output[1])
+    
+    const readCsv = (csvUrl)=>{
+      Papa.parse(csvUrl,{
+        download: true,
+        header: true,
+        complete: function (results) {
+            results.data.pop()
+            let newData = results.data
+            setExperiments(newData);
+            setExperimentsRows(Object.keys(newData).length)
+        }
+    })
+    }
   }
   return (
     <>

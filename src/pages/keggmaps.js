@@ -26,6 +26,9 @@ const Header = () => {
       <Typography variant='h4'>
         KEGG metabolic maps
       </Typography>
+      <Typography variant='subtitle1'>
+        Select the maps for which genomic potential and differential expression should be represented.
+      </Typography>
     </header>
   )
 }

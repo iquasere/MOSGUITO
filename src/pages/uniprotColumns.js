@@ -11,11 +11,7 @@ const Main = ({ uniprotList, onChange }) => {
     <main className='main'>
       <form className='form' >
         <Card >
-          <UniprotAccordion
-            uniprotList={uniprotList}
-            onChange={onChange}
-            uniprotPossibilities={uniprotColumns}
-          />
+          <UniprotAccordion uniprotList={uniprotList} onChange={onChange} uniprotPossibilities={uniprotColumns} />
         </Card>
       </form>
     </main>
@@ -27,6 +23,9 @@ const Header = () => {
     <header className='header'>
       <Typography variant='h4'>
         UniProt columns
+      </Typography>
+      <Typography variant='subtitle1'>
+        Select the columns for which information should be retrieved from ID mapping the UniProt knowledgebase.
       </Typography>
     </header>
   )
