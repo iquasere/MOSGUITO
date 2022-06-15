@@ -11,29 +11,34 @@ export const emptyValues = {
       "Condition":"",
       "Name":""
     }],
+<<<<<<< HEAD
   "suffix": "",
+=======
+>>>>>>> parent of 15b04d0 (ww)
   "minimumReadLength":0,
   "minimumReadAverageQuality":0,
   "doAssembly":true,
+  "maxMemory":1,
   "assembler":"",
   "errorModel":"",
   "markerset":"",
   "doIterativeBinning":true,
-  "diamondDatabase":"",
-  "diamondMaxTargetSeqs":1,
-  "downloadUniprot":true,
-  "uniprotColumns":[],
-  "uniprotDatabases":[],
+  "upimapiDatabase":"",
+  "upimapiMaxTargetSeqs":1,
+  "upimapiTaxids": "",
+  "upimapiColumns":[],
+  "upimapiDatabases":[],
+  "downloadCddResources":false,
   "recognizerDatabases":[],
   "normalizationMethod":"",
   "minimumDifferentialExpression":1.0,
-  "keggcharterMaps":[],
-  "keggcharterTaxaLevel":"",
-  "keggcharterNumberOfTaxa":1,
   "proteomicsWorkflow":"",
   "useCrap":false,
   "proteomicsContaminantesDatabase":"",
   "referenceProteomesTaxaLevel":"",
   "protease":"",
-  "proteaseFile":""
+  "proteaseFile":"",
+  "keggcharterTaxaLevel":"",
+  "keggcharterNumberOfTaxa":1,
+  "keggcharterMaps":[]
 }

@@ -4,17 +4,7 @@ import Routes from "./_routes";
 import { defaultValues } from '../utils/defaultValues'
 
 export const App = () => {
-  const [experiments, setExperiments] = useState([
-    {
-      "Files":"",
-      "Sample":"",
-      "Data type":"",
-      "Condition":"",
-      "Name":""
-    }
-    ])
   const [configData, setConfig] = useState(defaultValues)
-  const [nExperimentsRows, setExperimentsRows] = useState(1)
   const [outputsFiles, setOutputsFiles] = useState({})
   const [hasMt, setHasMt] = useState(true)
   const toggleHasMt = () => setHasMt(!hasMt)
@@ -29,16 +19,13 @@ export const App = () => {
   const onConfigOverwrite = (newConfigData) => {
     const newValue = newConfigData
     setConfig(newValue)
+    console.log(newValue)
   }
 
   return <Routes
     configData={configData}
     onConfigChange={onConfigChange}
     onConfigOverwrite={onConfigOverwrite}
-    nExperimentsRows={nExperimentsRows}
-    setExperimentsRows={setExperimentsRows}
-    experiments={experiments}
-    setExperiments={setExperiments}
     outputsFiles={outputsFiles}
     setOutputsFiles={setOutputsFiles}
     hasMt={hasMt}

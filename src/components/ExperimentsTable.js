@@ -26,7 +26,7 @@ const styles = theme => ({
   },
 });
 
-const ExperimentsTable = ({ experiments, setExperiments, nExperimentsRows, setExperimentsRows }) => {
+const ExperimentsTable = ({ experiments, setExperiments }) => {
 
   const increaseRows = () => {
     const newExperiments = [...experiments]
@@ -42,7 +42,6 @@ const ExperimentsTable = ({ experiments, setExperiments, nExperimentsRows, setEx
     )
 
     setExperiments(newExperiments)
-    setExperimentsRows(nExperimentsRows + 1)
   }
 
   const decreaseRows = () => {
@@ -50,9 +49,8 @@ const ExperimentsTable = ({ experiments, setExperiments, nExperimentsRows, setEx
 
     newExperiments.pop()
 
-    if (nExperimentsRows > 1) {
+    if (experiments.length > 1) {
       setExperiments(newExperiments)
-      setExperimentsRows(nExperimentsRows - 1)
     }
   }
 
@@ -101,7 +99,7 @@ const ExperimentsTable = ({ experiments, setExperiments, nExperimentsRows, setEx
         </TableHead>
         <TableBody>
           {
-            Array(nExperimentsRows).fill().map((_, n) => (
+            Array(experiments.length).fill().map((_, n) => (
               <TableRow key={n}>
                 <TableCell>
                   <TextField

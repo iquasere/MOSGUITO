@@ -29,7 +29,6 @@ async function ObtainBlobArray(event){
   let Assembly = [];
   let entry = [];
   let configFile = [];
-  let exper = [];
   let general = [];
   let protein = [];
 
@@ -75,11 +74,8 @@ async function ObtainBlobArray(event){
         exper = json.experiments
         delete json.experiments
         configFile = json
+        console.log(configFile)
       })
-    }
-    if(entries[i].filename.includes('experiments')){
-      const exp = await entries[i].getData(new zip.BlobWriter(['text/tab-separated-values']))
-      exper = exp
     }
     if(entries[i].filename.includes('General')){
       const genReport = await entries[i].getData(new zip.BlobWriter(['text/tab-separated-values']))
@@ -104,11 +100,11 @@ async function ObtainBlobArray(event){
     entryReport: entry,
     generalReport: general,
     proteinReport: protein
-  }, configFile, exper]
+  }, configFile]
 }
 
 
-const Main = ({ outputsFiles, setOutputsFiles, onConfigOverwrite, setExperiments, setExperimentsRows }) => {
+const Main = ({ outputsFiles, setOutputsFiles, onConfigOverwrite }) => {
 
   const snakeToCamelCase = str => {
     return str.replace(/([-_][a-z])/ig, ($1) => {
@@ -127,6 +123,7 @@ const Main = ({ outputsFiles, setOutputsFiles, onConfigOverwrite, setExperiments
     Object.keys(Output[1]).map(
       (key) => delete Object.assign(Output[1], {[snakeToCamelCase(key)]: Output[1][key]}))
     onConfigOverwrite(Output[1])
+<<<<<<< HEAD
     
     const readCsv = (csvUrl)=>{
       Papa.parse(csvUrl,{
@@ -142,6 +139,9 @@ const Main = ({ outputsFiles, setOutputsFiles, onConfigOverwrite, setExperiments
     }
     setExperiments(Output[2])
     setExperimentsRows(Output[2].length)
+=======
+    console.log(Output[1])
+>>>>>>> parent of 15b04d0 (ww)
   }
   return (
     <>
@@ -163,7 +163,7 @@ const Main = ({ outputsFiles, setOutputsFiles, onConfigOverwrite, setExperiments
   )
 };
 
-export const LoadResults = ({ outputsFiles, setOutputsFiles, onConfigOverwrite, setExperiments, setExperimentsRows }) => {
+export const LoadResults = ({ outputsFiles, setOutputsFiles, onConfigOverwrite }) => {
   return (
     <DashboardLayout>
       <Toolbar>
@@ -173,8 +173,6 @@ export const LoadResults = ({ outputsFiles, setOutputsFiles, onConfigOverwrite, 
         outputsFiles={outputsFiles}
         setOutputsFiles={setOutputsFiles}
         onConfigOverwrite = {onConfigOverwrite}
-        setExperiments = {setExperiments}
-        setExperimentsRows = {setExperimentsRows}
       />
     </DashboardLayout>
   )
