@@ -122,19 +122,6 @@ const Main = ({ outputsFiles, setOutputsFiles, onConfigOverwrite }) => {
       (key) => delete Object.assign(Output[1], {[snakeToCamelCase(key)]: Output[1][key]}))
     onConfigOverwrite(Output[1])
     console.log(Output[1])
-    
-    const readCsv = (csvUrl)=>{
-      Papa.parse(csvUrl,{
-        download: true,
-        header: true,
-        complete: function (results) {
-            results.data.pop()
-            let newData = results.data
-            setExperiments(newData);
-            setExperimentsRows(Object.keys(newData).length)
-        }
-    })
-    }
   }
   return (
     <>
