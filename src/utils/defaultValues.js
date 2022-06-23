@@ -20,6 +20,7 @@ export const defaultValues = {
       "Condition":"",
       "Name":""
     }],
+  "suffix": "",
   "minimumReadLength":100,
   "minimumReadAverageQuality":20,
   "doAssembly":true,

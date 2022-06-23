@@ -32,7 +32,6 @@ import {DashboardLayout} from "../components/Layout";
 import Accordion from "../components/Accordion";
 
 const Main = ({ configData, onConfigChange, onConfigOverwrite, hasMt, toggleHasMt, hasMp, toggleHasMp}) => {
-
   const camelToSnakeCase = str => str.replace(/[A-Z]/g, letter => `_${letter.toLowerCase()}`);
 
   const downloadJson = (ev) => {
