@@ -1,10 +1,10 @@
 import React, {useState} from "react";
 
 import Routes from "./_routes";
-import * as defaultValues from '../utils/defaultValues.json';
+import { defaultValues } from '../utils/defaultValues'
 
 export const App = () => {
-  const [configData, setConfig] = useState(defaultValues.default)
+  const [configData, setConfig] = useState(defaultValues)
   const [outputsFiles, setOutputsFiles] = useState({})
   const [hasMt, setHasMt] = useState(true)
   const toggleHasMt = () => setHasMt(!hasMt)
@@ -19,6 +19,7 @@ export const App = () => {
   const onConfigOverwrite = (newConfigData) => {
     const newValue = newConfigData
     setConfig(newValue)
+    console.log(newValue)
   }
 
   return <Routes
