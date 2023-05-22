@@ -11,151 +11,68 @@ import "react-minimal-side-navigation/lib/ReactMinimalSideNavigation.css";
 export const NavSidebar = () => {
   const history = useHistory();
   const location = useLocation();
-  if (ResultsDisposition === false) {
-    return (
-      <>
-        {/* Sidebar */}
-        <div>
-          <Navigation
-            activeItemId={location.pathname}
-            onSelect={({ itemId }) => {
-              history.push(itemId);
-            }}
-            items={[
-              {
-                title: "Home",
-                itemId: "/MOSGUITO/home",
-                elemBefore: () => <Icon name="coffee" />
-              },
-              {
-                title: "About",
-                itemId: "/MOSGUITO/about",
-                elemBefore: () => <Icon name="user" />,
-                subNav: [
-                  {
-                    title: "The MOSCA project",
-                    itemId: "/MOSGUITO/project"
-                  },
-                  {
-                    title: "Members",
-                    itemId: "/MOSGUITO/members"
-                  }
-                ]
-              },
-              {
-                title: "Configuration",
-                itemId: "/MOSGUITO/config",
-                elemBefore: () => <Icon name="settings" />,
-                subNav: [
-                  {
-                    title: "General configuration",
-                    itemId: "/MOSGUITO/general-configuration"
-                  },
-                  {
-                    title: "UniProt columns",
-                    itemId: "/MOSGUITO/uniprot-columns"
-                  },
-                  {
-                    title: "UniProt databases",
-                    itemId: "/MOSGUITO/uniprot-databases"
-                  },
-                  {
-                    title: "KEGG metabolic maps",
-                    itemId: "/MOSGUITO/keggmaps"
-                  },
-                  {
-                    title: "Experiments",
-                    itemId: "/MOSGUITO/experiments"
-                  }
-                ]
-              }
-            ]}
-          />
 
-          <div>
-            <Navigation
-              activeItemId={location.pathname}
-              items={[
+  return (
+    <>
+      {/* Sidebar */}
+      <div>
+        <Navigation
+          activeItemId={location.pathname}
+          onSelect={({ itemId }) => {
+            history.push(itemId);
+          }}
+          items={[
+            {
+              title: "Home",
+              itemId: "/MOSGUITO/home",
+              elemBefore: () => <Icon name="coffee" />
+            },
+            {
+              title: "About",
+              itemId: "/MOSGUITO/about",
+              elemBefore: () => <Icon name="user" />,
+              subNav: [
                 {
-                  title: "Results",
-                  itemId: "/MOSGUITO/results",
-                  elemBefore: () => <FaChartPie />
+                  title: "The MOSCA project",
+                  itemId: "/MOSGUITO/project"
+                },
+                {
+                  title: "Members",
+                  itemId: "/MOSGUITO/members"
                 }
-              ]}
-              onSelect={({ itemId }) => {
-                history.push(itemId);
-              }}
-            />
-          </div>
-        </div>
-      </>
-    );
-  } else {
+              ]
+            },
+            {
+              title: "Configuration",
+              itemId: "/MOSGUITO/config",
+              elemBefore: () => <Icon name="settings" />,
+              subNav: [
+                {
+                  title: "General configuration",
+                  itemId: "/MOSGUITO/general-configuration"
+                },
+                {
+                  title: "UniProt columns",
+                  itemId: "/MOSGUITO/uniprot-columns"
+                },
+                {
+                  title: "UniProt databases",
+                  itemId: "/MOSGUITO/uniprot-databases"
+                },
+                {
+                  title: "KEGG metabolic maps",
+                  itemId: "/MOSGUITO/keggmaps"
+                },
+                {
+                  title: "Experiments",
+                  itemId: "/MOSGUITO/experiments"
+                }
+              ]
+            }
+          ]}
+        />
 
-    return (
-      <>
-        {/* Sidebar */}
-        <div>
-          <Navigation
-            activeItemId={location.pathname}
-            onSelect={({ itemId }) => {
-              history.push(itemId);
-            }}
-            items={[
-              {
-                title: "Home",
-                itemId: "/MOSGUITO/home",
-                elemBefore: () => <Icon name="coffee" />
-              },
-              {
-                title: "About",
-                itemId: "/MOSGUITO/about",
-                elemBefore: () => <Icon name="user" />,
-                subNav: [
-                  {
-                    title: "Project",
-                    itemId: "/MOSGUITO/project"
-                  },
-                  {
-                    title: "Members",
-                    itemId: "/MOSGUITO/members"
-                  }
-                ]
-              },
-              {
-                title: "Configuration",
-                itemId: "/MOSGUITO/config",
-                elemBefore: () => <Icon name="settings" />,
-                subNav: [
-                  {
-                    title: "General configuration",
-                    itemId: "/MOSGUITO/general-configuration"
-                  },
-                  {
-                    title: "Experiments",
-                    itemId: "/MOSGUITO/experiments"
-                  },
-                  {
-                    title: "UniProt columns",
-                    itemId: "/MOSGUITO/uniprot-columns"
-                  },
-                  {
-                    title: "UniProt databases",
-                    itemId: "/MOSGUITO/uniprot-databases"
-                  },
-                  {
-                    title: "KEGG metabolic maps",
-                    itemId: "/MOSGUITO/keggmaps"
-                  },
-                  {
-                    title: "Proteomics configuration",
-                    itemId: "/MOSGUITO/proteomics-configuration"
-                  }
-                ]
-              }
-            ]}
-          />
-
+        {ResultsDisposition ? (
           <div>
             <Navigation
               activeItemId={location.pathname}
@@ -209,8 +126,24 @@ export const NavSidebar = () => {
               }}
             />
           </div>
-        </div>
-      </>
-    );
-  };
+        ) : (
+          <div>
+            <Navigation
+              activeItemId={location.pathname}
+              items={[
+                {
+                  title: "Results",
+                  itemId: "/MOSGUITO/results",
+                  elemBefore: () => <FaChartPie />
+                }
+              ]}
+              onSelect={({ itemId }) => {
+                history.push(itemId);
+              }}
+            />
+          </div>
+        )}
+      </div>
+    </>
+  );
 }
