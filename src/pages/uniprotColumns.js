@@ -1,16 +1,14 @@
-import React from 'react';
-
-import {DashboardLayout} from '../components/Layout';
-import {Card, Typography} from "@material-ui/core";
+import React, { useEffect, useState } from 'react';
+import { DashboardLayout } from '../components/Layout';
+import { Card, Typography } from "@material-ui/core";
 import UniprotAccordion from "../components/UniprotAccordion";
-import {uniprotColumns} from "../utils/uniprotColumns"
+import { fetchUniprotColumns } from "../utils/getUniprotColumns";
 
-const Main = ({ uniprotList, onChange }) => {
-
+const Main = ({ uniprotList, onChange, uniprotColumns }) => {
   return (
     <main className='main'>
-      <form className='form' >
-        <Card >
+      <form className='form'>
+        <Card>
           <UniprotAccordion uniprotList={uniprotList} onChange={onChange} uniprotPossibilities={uniprotColumns} />
         </Card>
       </form>
@@ -32,14 +30,29 @@ const Header = () => {
 }
 
 const UniprotColumns = ({ uniprotList, onChange }) => {
+  const [uniprotColumns, setUniprotColumns] = useState(null);
+
+  useEffect(() => {
+    fetchUniprotColumns()
+      .then(data => {
+        setUniprotColumns(data.uniprotColumns);
+      })
+      .catch(error => {
+        console.error('Error:', error);
+      });
+  }, []);
+
   return (
     <DashboardLayout>
       <div className='App'>
-      <Header />
-      <Main
-        uniprotList={uniprotList}
-        onChange={onChange}
-      />
+        <Header />
+        {uniprotColumns && (
+          <Main
+            uniprotList={uniprotList}
+            onChange={onChange}
+            uniprotColumns={uniprotColumns}
+          />
+        )}
       </div>
     </DashboardLayout>
   )

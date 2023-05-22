@@ -1,11 +1,10 @@
-import React from 'react';
-
-import {DashboardLayout} from '../components/Layout';
-import {Card, Typography} from "@material-ui/core";
+import React, { useEffect, useState } from 'react';
+import { DashboardLayout } from '../components/Layout';
+import { Card, Typography } from "@material-ui/core";
 import UniprotAccordion from "../components/UniprotAccordion";
-import {uniprotDatabases} from "../utils/uniprotDatabases"
+import { fetchUniprotColumns } from "../utils/getUniprotColumns"
 
-const Main = ({ uniprotList, onChange }) => {
+const Main = ({ uniprotList, onChange, uniprotDatabases }) => {
 
   return (
     <main className='main'>
@@ -32,14 +31,29 @@ const Header = () => {
 }
 
 const UniprotDatabases = ({ uniprotList, onChange }) => {
+  const [uniprotDatabases, setUniprotDatabases] = useState(null);
+
+  useEffect(() => {
+    fetchUniprotColumns()
+      .then(data => {
+        setUniprotDatabases(data.uniprotDatabases);
+      })
+      .catch(error => {
+        console.error('Error:', error);
+      });
+  }, []);
+
   return (
     <DashboardLayout>
       <div className='App'>
       <Header />
-      <Main
-        uniprotList={uniprotList}
-        onChange={onChange}
-      />
+      {uniprotDatabases && (
+        <Main
+          uniprotList={uniprotList}
+          onChange={onChange}
+          uniprotDatabases={uniprotDatabases}
+        />
+      )}
       </div>
     </DashboardLayout>
   )
