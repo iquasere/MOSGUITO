@@ -4,11 +4,12 @@ import {
   markersetOptions,
   normalizationMethodOptions,
   keggcharterTaxaLevelOptions,
-  recognizerDatabasesOptions, referenceProteomesTaxaLevelOptions
+  recognizerDatabasesOptions,
+  referenceProteomesTaxaLevelOptions
 } from './options'
 
 export const defaultValues = {
-  "version": "1.6.1",
+  "version": "2.1.0",
   "output":"output",
   "resourcesDirectory":"resources_directory",
   "threads":14,

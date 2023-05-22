@@ -31,6 +31,12 @@ async function ObtainBlobArray(event){
   let general = [];
   let protein = [];
 
+  function processConfigFile(fileUrl) {
+    $.getJSON(fileUrl, function(json) {
+      configFile = json;
+    });
+  }
+
   for(let i = 0; i < entries.length; i++){
     if (entries[i].directory === false && entries[i].compressedSize !== 0){
       if(entries[i].filename.includes('Preprocess')){
@@ -70,9 +76,7 @@ async function ObtainBlobArray(event){
       const config = await entries[i].getData(new zip.BlobWriter(['application/json']))
       const fileUrl = URL.createObjectURL(config)
       console.log(fileUrl)
-      $.getJSON(fileUrl, function(json){
-        configFile = json
-      })
+      processConfigFile(fileUrl);
     }
     if(entries[i].filename.includes('General')){
       const genReport = await entries[i].getData(new zip.BlobWriter(['text/tab-separated-values']))

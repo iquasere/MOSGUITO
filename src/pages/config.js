@@ -152,13 +152,6 @@ const Main = ({ configData, onConfigChange, onConfigOverwrite, hasMt, toggleHasM
               helpMessage='The maximum amount of memory to use for the analysis'
             />
 
-            <LabelledTextField
-              label='Reads files suffix'
-              value={configData.suffix}
-              onChange={(ev) => onConfigChange('suffix', ev.target.valueAsNumber)}
-              helpMessage="The suffix of the reads files. For example, if the reads files are named 'reads_R1_001.fastq.gz' and 'reads_R2_001.fastq.gz', the suffix is '_001'."
-            />
-
             <Divider style={{ margin: '1rem 0' }} />
 
             <Typography variant='h6'>
