@@ -2,7 +2,7 @@
 import { Navigation } from "react-minimal-side-navigation";
 import { useHistory, useLocation } from "react-router-dom";
 import Icon from "awesome-react-icons";
-import React from "react";
+import React, {useState} from "react";
 import { FaChartPie } from 'react-icons/fa';
 import { ResultsDisposition } from '../pages/results'
 import "react-minimal-side-navigation/lib/ReactMinimalSideNavigation.css";
@@ -11,10 +11,32 @@ import "react-minimal-side-navigation/lib/ReactMinimalSideNavigation.css";
 export const NavSidebar = () => {
   const history = useHistory();
   const location = useLocation();
+  const [isSidebarOpen, setIsSidebarOpen] = useState(true);
+
+  const handleSidebarToggle = () => {
+    setIsSidebarOpen(!isSidebarOpen);
+  };
 
   return (
     <>
+      {/* Sidebar Overlay */}
+      {isSidebarOpen && (
+        <div
+          onClick={handleSidebarToggle}
+          className={`fixed inset-0 z-20 block transition-opacity bg-black opacity-50 lg:hidden`}
+        />
+      )}
+      <div>
+        <button
+          className="btn-menu"
+          onClick={handleSidebarToggle}
+          type="button"
+        >
+          <Icon name="burger" className="w-6 h-6" />
+        </button>
+      </div>
       {/* Sidebar */}
+      {isSidebarOpen && (
       <div>
         <Navigation
           activeItemId={location.pathname}
@@ -144,6 +166,7 @@ export const NavSidebar = () => {
           </div>
         )}
       </div>
+      )}
     </>
   );
 }
