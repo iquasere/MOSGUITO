@@ -46,7 +46,7 @@
     "zip-js-webpack": "^1.0.0"
   },
   "scripts": {
-    "start": "react-app-rewired start",
+    "start": "react-app-rewired --openssl-legacy-provider start",
     "build": "react-app-rewired build",
     "test": "react-app-rewired test",
     "eject": "react-scripts eject",
